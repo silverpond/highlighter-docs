@@ -22,6 +22,8 @@ Learn key [concepts](../../concepts/introduction/) and understand how to digitis
 * [Understand what is an enterprise perception system →](../../concepts/enterprise-perception-system/)
 * [Understand what is an agent →](../../concepts/agents/)
 * [Understand capabilities of an agent →](../../concepts/capabilities/)
+* [Understand how to evaluate the assessment process →](../../concepts/evaluation/)
+* [Understand how to monitor the subjects under assessment →](../../concepts/monitoring/)
 
 ## Running your first assessment process: A tutorial
 
