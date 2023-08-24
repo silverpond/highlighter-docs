@@ -1,6 +1,6 @@
 +++
-title = "Creating your first assessment capability"
-description = "A tutorial on how to create your first assessment capability, add it to an agent and run in an assessment process"
+title = "Creating your first capability"
+description = "A tutorial on how to create your first capability, add it to an agent and run in an assessment process"
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
@@ -9,7 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "A tutorial on how to create your first assessment capability, add it to an agent and run in an assessment process"
+lead = "A tutorial on how to create your first capability, add it to an agent and run in an assessment process"
 toc = true
 top = false
 +++
@@ -54,7 +54,7 @@ will take images as input and return an enum attribute indicating the digit
 ![street-number-example-data](resources/creating-your-first-capability/street-number-example-data.png)
 
 For this we will need to create 10 *Object Classes* in Highlighter to represent each
-digit. 
+digit.
 
   - In the Highlighter UI, click the *Develop* tab in the top ribbon
   - Click the *Taxonomy* tab on the Highlighter side bar
@@ -87,7 +87,7 @@ For the programmers among you, a *Model* serves as an Interface.
 ### Model Inputs
 
 The *Model*'s inputs serve two functions depending on where they're being used.
-At training time they inform the Dataset manipulations needed to convert the 
+At training time they inform the Dataset manipulations needed to convert the
 Highlighter Dataset Submissions into a form the model Trainer can use. At
 inference time they tell the Pipeline what data to pass to the model. For more
 information about Model Inputs see [here](../concepts/model-inputs-and-outputs.md).
@@ -129,9 +129,9 @@ Model Outputs.**.
 
 Highlighter uses *Experiments* to track model training. Typically you would like
 to iteratively improve a model by running several training runs. Highlighter requires
-you group *Experiments* under a a *Research Plan*. The *Research Plan* provides 
+you group *Experiments* under a a *Research Plan*. The *Research Plan* provides
 a place to record high level objectives and aggregate performance metrics. Whereas
-*Experiments* provide a place for the more detailed investigations. 
+*Experiments* provide a place for the more detailed investigations.
 
 We recomend an *Experiment* contains a single *Training Run*, this avoids confusion
 when inspecting performance metrics.
@@ -257,4 +257,3 @@ drop the images before the default ops are run.
  }
 
 ```
-
