@@ -37,6 +37,8 @@ More information on Capabilities [here](../concepts/capabilities.md#assments)
 
 1. [Identify The Taxonomy](#identify-the-taxonomy) and create as needed
 2. [Create A Model](#create-a-model) that outputs the desired taxa
+3. [Create An Experiment](#create-an-experiment) to track your model training
+4. [Configure Training Run](#configure-training-run) and click `Train`
 
 
 ## Identify The Taxonomy
@@ -54,26 +56,28 @@ will take images as input and return an enum attribute indicating the digit
 For this we will need to create 10 *Object Classes* in Highlighter to represent each
 digit. 
 
-1. Click the *Taxonomy* tab on the Highlighter side bar
-2. Click the *New Object Class* button
-3. Fill in the form (using Zero as an example):
-  - `Name = Zero`
-  - `Description = The digit zero`
-  - `Color = YOU CHOOSE`
-  - `Include in projects by default? = UNCHECK`
-4. Click *Save Object Class*
+  - In the Highlighter UI, click the *Develop* tab in the top ribbon
+  - Click the *Taxonomy* tab on the Highlighter side bar
+  - Click the *New Object Class* button
+  - Fill in the form (using Zero as an example):
+    - **Name**: Zero`
+    - **Description**: The digit zero
+    - **Color**: YOU CHOOSE
+    - **Include in projects by default?**: ☐  UNCHECK!
+  - Click `Save Object Class`
 
-## Create A *Model*
+## Create A Model
 
 A *Model* in Highlighter represents a transformation from some input to some
 output. Importantly, it does not specify *how* the transformation is performed.
 For the programmers among you, a *Model* serves as an Interface.
 
-**Create a new _Model_**
+**Create a new Model**, You'll need to do this in the admin for now
 
+  - Login into Highlighter admin
   - `Capabilities->Models->New Model`
-  - `Name = Street Number Detector`
-  - `Description = Detects the location of street numbers within an image and classifies each digit from 0-9`
+  - **Name**: Street Number Detector
+  - **Description**: Detects the location of street numbers within an image and classifies each digit from 0-9
   - **Leave the rest of the fields as is. We are currently in the process of refactoring this part of Highlighter and need to do some cleaning up.**
   - Click `Create Model`
   - Stay on this page for the next steps
@@ -112,11 +116,115 @@ Model Outputs.**.
 
 **Add Model Outputs**
 
-  - From the Model page, do this page once for each digit 0-9
-  - `Manage Model Outputs->New Model Output`
-  - `Head = 0`
-  - `Position = 0`  *increment for each digit 0-9*
-  - `Entity Attribute = object_class`
-  - `Entity Attribute Enum = zero` *select the appropriate object class*
-  - `Default Threshold = 0.5`
+  - From the Model page you landed on from the previous step. Do this once for each digit 0-9
+  - In the *Actions* box on the right click, `Manage Model Outputs->New Model Output`
+  - **Head**: 0
+  - **Position**: 0  *increment for each digit 0-9*
+  - **Entity Attribute**: object_class
+  - **Entity Attribute Enum**: zero *select the appropriate object class*
+  - **Default Threshold**: 0.5
   - Click `Create Model Output`
+
+## Create An Experiment
+
+Highlighter uses *Experiments* to track model training. Typically you would like
+to iteratively improve a model by running several training runs. Highlighter requires
+you group *Experiments* under a a *Research Plan*. The *Research Plan* provides 
+a place to record high level objectives and aggregate performance metrics. Whereas
+*Experiments* provide a place for the more detailed investigations. 
+
+We recomend an *Experiment* contains a single *Training Run*, this avoids confusion
+when inspecting performance metrics.
+
+  - Research Plan: (Street Number Detection)
+    - Experiment00: (Baseline: train model using default settings)
+      - TrainingRun00 (Model Template: `Detector DETR Resnet50`)
+      - Metrics ...
+    - Experiment01: (V1: Increased batch size to reduce loss noise)
+      - TrainingRun01 (Model Template: `Detector DETR Resnet50`)
+      - Metrics ...
+    - ...
+
+**The following instructions are in the Highlighter Frontend UI**
+
+**Create Research Plan**
+
+
+  - In the Highlighter UI, click the *Develop* tab in the top ribbon
+  - `Research Plans->New Research Plan`
+    - **Title**: Street Number Detector
+    - **Description**: Tutorial
+    - **Objective**: To develop a model capable of locating street numbers in images
+    and classifying the digit (0-9)
+    - **Evaluation Process**: ToDo
+    - **Assigned To**: YOU
+    - **Add Metrics**: ToDo
+    - Click `Save Research Plan`
+
+**Create Experiment**
+
+  - From the *Street Number Detector Research Plan* page
+  - `Experiments->New Experiment`
+    - **Title**: Baseline
+    - **Description**: Train model using default settings
+    - **Hypothesis**: 🤷
+    - **Assigned To**: YOU
+    - Click `Save Experiment`
+    - Note the experiment id in the url: `https://demo.highlighter.ai/research_plans/123/experiments/456`
+
+
+## Configure Training Run
+
+We're on the home strech!!!
+
+The *Training Run* is where you select the *Model Template*
+to use and configure the various parameters. Some parameters are common to several
+templates and some are unique to a specific template. See the [Model Template](ToDo) reference for
+the specifics of each.
+
+### Select a Model Config Template
+
+*Model Config Templates* are `.json` files with placeholders for some variables.
+Creating a *Modle Config Template* is out of the scope of this tutorial, for
+more information on the see the [Creating a Model Config Template](creating-a-model-config-template.md) tutorial.
+
+For now, we will simply use `Detector DETR Resnet50`. This template
+configures the Trainer to train a DETR model. For more information on DETR see
+[End-to-End Object Detection with Transformers](https://arxiv.org/abs/2005.12872)
+
+
+**Configure Training Run**
+
+  - In the Highlighter UI, click the *Develop* tab in the top ribbon
+  - `Training->Train New Model`
+  - **Name**: Street Number Detector 00
+  - **Model**: Street Number Detector
+  - **Add Dataset**:
+    - **Purpos**: train
+    - *Dataset**: `street-numbers-demo-train-0.8`
+  - **Add Dataset**:
+    - **Purpos**: dev
+    - *Dataset**: `street-numbers-demo-test-0.2`
+  - **Add Dataset**:
+    - **Purpos**: test
+    - *Dataset**: `street-numbers-demo-test-0.2`
+  - **Model Template**: `Detector DETR Resnet50` You can view the full template by clicking `Detail`
+  - **Config Overide**: (see `json` blob below). The Config Override dict is merged with the Model Template prior to training.
+    - `num_classes`: Set the number of classes to 10
+    - `max_epochs`: Set the number of epochs to train for, for brevity lets say `5`
+  - Click `Train`
+
+```json
+{
+  "model": {
+    "bbox_head": {
+      "num_classes": 10
+    }
+  },
+  "train_cfg": {
+    "max_epochs": 5
+  }
+}
+```
+
+
