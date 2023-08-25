@@ -21,7 +21,7 @@ Highlighter. Each step in this tutorial can by carried out in you Highlighter
 account. Although we will be building a toy example, the tutorial wll link to
 other explanations/references as needed.
 
-## Prerequisite
+## Prerequisites
 
   - **Labelled data**: For this tutorial we will be using a Street Number
 detection dataset. To import it into your account click [here](ToDo). Otherwise
