@@ -234,7 +234,7 @@ Highlighter Datasets typically contain more attributes than a specific model
 needs at training time, ie: We may be training cat and dog detector but the
 dataset also has trees and cars. To perform this filtering we have
 `DatasetPreprocessor` class that can run a sequence of operations (ops). See
-the [hl_train/highlighter_dataset/ops.py](/home/josh/Documents/work/highlighter-docs/content/docs/references/hl_train/highlighter_dataset_preprocessor_ops/index.html)
+the [hl_train/highlighter_dataset/ops.py](../references/hl_train/highlighter_dataset_preprocessor_ops/index.html)
 reference for all the common operations.
 
 You can set your own pre-processing ops by setting the `HIGHLIGHTER_DATASET_PREPROCESSING`
