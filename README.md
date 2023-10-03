@@ -29,6 +29,8 @@ The static website is deployed via [Netlify](https://netlify.app/), following Zo
 
 Clone the repo including submodules.
 
-The repo also includes a `justfile` for common interactions with the repo.
+Enter a dev shell via `nix develop`
+
+Serve the site locally in development mode via `zola serve`
 
 Update content in /content and create an MR.

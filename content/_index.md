@@ -21,4 +21,8 @@ content = 'Learn how to setup your assessment process on Highlighter through our
 [[extra.list]]
 title = "Learn Key Concepts"
 content = 'Get up to speed with the concepts that underpin how Highlighter works on our <a href="docs/concepts/introduction/">Concepts page</a>.'
+
+[[extra.list]]
+title = "How-To Guides"
+content = 'Find instructions for practical Highlighter use at our <a href="docs/how-to-guides/">How-To Guides page</a>'
 +++
