@@ -16,7 +16,6 @@ top = false
 
 
 # Create Assessments
-
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tall-josh/highlighter-docs/blob/josh/create-assessment-notebook/notebooks/create_assessments.ipynb)
-- [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?style=for-the-badge&logo=github)](https://github.com/tall-josh/highlighter-docs/blob/josh/create-assessment-notebook/notebooks/create_assessments.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/silverpond/highlighter-docs/blob/josh/create-assessment-notebook/notebooks/create_assessments.ipynb)
+- [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?style=for-the-badge&logo=github)](https://github.com/silverpond/highlighter-docs/blob/josh/create-assessment-notebook/notebooks/create_assessments.ipynb)
 
