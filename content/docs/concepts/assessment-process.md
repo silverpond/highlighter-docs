@@ -49,6 +49,19 @@ Example Assessment Processes:
 
 This 3 step process is an assessment process carried out by Eastern Medical Clinic to discover what is wrong with their patients.
 
+### Phases in the development of an assessment process
+
+The development of an assessment process usually goes through the following phases:
+
+1. Investigate: where an enterprise initiates the digitisation of an assessment process, and works out whether it is worth carrying out the research and development activities.
+
+2. Evaluate: the enterprise carries out a series of research and development activities and evaluates how successful they are. The successful solution is carried forward into the next phase.
+
+3. Optimise: the enterprise integrates the solution into a broader assessment process and optimises the interactions between staff and Highlighter to achieve the best assessment outcome.
+
+4. Operate: the assessment process is run in production and carried out as a Business-As-Usual activity.
+
+Highlighter assists with organising the various research and development efforts by grouping Assessment Processes into Evaluate, Optimise and Operate processes.
 
 ## Assessments
 
