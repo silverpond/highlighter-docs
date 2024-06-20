@@ -18,3 +18,5 @@ top = false
 2. [Enterprise Perception System](../enterprise-perception-system/)
 3. [Agents](../agents/)
 4. [Capabilities](../capabilities/)
+5. [Evaluation](../evaluation/)
+6. [Monitoring](../monitoring/)
