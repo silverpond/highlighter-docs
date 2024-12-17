@@ -37,8 +37,8 @@ The steps are as follows:
      - `DetectorElement`: Locates and classifies objects within an image using a bounding box or polygon. ie: *Locates all cats and dogs in images and classifies the as cat or dog*
      - `BoxClassifierElement`: Performs classification on regions of an image. Typically downstream of a `DetectorElement`. ie: *Given a collection of cat regions produced by the above cat/dog `DetectorElement`, classify if the cat is evil or not*
      - `BoxEmbedderElement`: Similar to `BoxClassifierElement` but returns embeddings for the regions rather than classifications
-  4. Give it a name and description
-  5. Refer to below for information on each tab:
+  3. Give it a name and description
+  4. Refer to below for information on each tab:
      - `DetectorElement`:
         - **Interface**:
            - **inputs**: image
