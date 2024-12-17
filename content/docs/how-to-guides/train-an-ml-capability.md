@@ -28,46 +28,44 @@ The steps are as follows:
   3. [Configure the training run](#configure-the-training-run): Select the type of model you wish to train and configure it
   4. [Schedule training](#schedule-training): 
   5. [Inspect training metrics](#inspect-training-metrics):
-  6. [Deploy the capability[(#deploy-the-capability)
+  6. [Deploy the capability](#deploy-the-capability)
 
 ## Create a Capability
 
   1. From the **Develop** tab select **Capabilites/Library** and click **New Capability**
   2. Select a **Capability Type**
-    - `DetectorElement`: Locates and classifies objects within an image using a bounding box or polygon. ie: *Locates all cats and dogs in images and classifies the as cat or dog*
-    - `BoxClassifierElement`: Performs classification on regions of an image. Typically downstream of a `DetectorElement`. ie: *Given a collection of cat regions produced by the above cat/dog `DetectorElement`, classify if the cat is evil or not*
-    - `BoxEmbedderElement`: Similar to `BoxClassifierElement` but returns embeddings for the regions rather than classifications
-  3. Give it a name and description
-  4. Refer to below for information on each tab:
-    - `DetectorElement`:
-      - **Interface**:
-        - **inputs**: image
-        - **outputs**: entities
-      - **Parameters**:
-        - ToDo
-      - **Model Parameters**:
-        - All *Head* set to "0" for now
-        - Add each output of your capability  to a different *Position*. Must start at 0 and increment by 1
-
-    - `BoxClassifierElement`:
-      - **Interface**:
-        - **inputs**: image, entities
-        - **outputs**: entities
-      - **Parameters**:
-        - ToDo
-      - **Model Parameters**:
-        - All *Head* set to "0" for now
-        - Add each output of your capability  to a different *Position*. Must start at 0 and increment by 1
-
-    - `BoxEmbedderElement`:
-      - **Interface**:
-        - **inputs**: image, entities
-        - **outputs**: entities
-      - **Parameters**:
-        - ToDo
-      - **Model Parameters**:
-        - All *Head* set to "0" for now
-        - Add each output of your capability  to a different *Position*. Must start at 0 and increment by 1
+     - `DetectorElement`: Locates and classifies objects within an image using a bounding box or polygon. ie: *Locates all cats and dogs in images and classifies the as cat or dog*
+     - `BoxClassifierElement`: Performs classification on regions of an image. Typically downstream of a `DetectorElement`. ie: *Given a collection of cat regions produced by the above cat/dog `DetectorElement`, classify if the cat is evil or not*
+     - `BoxEmbedderElement`: Similar to `BoxClassifierElement` but returns embeddings for the regions rather than classifications
+  4. Give it a name and description
+  5. Refer to below for information on each tab:
+     - `DetectorElement`:
+        - **Interface**:
+           - **inputs**: image
+           - **outputs**: entities
+        - **Parameters**:
+           - ToDo
+        - **Model Parameters**:
+           - All *Head* set to "0" for now
+           - Add each output of your capability  to a different *Position*. Must start at 0 and increment by 1
+     - `BoxClassifierElement`:
+        - **Interface**:
+           - **inputs**: image, entities
+           - **outputs**: entities
+        - **Parameters**:
+           - ToDo
+        - **Model Parameters**:
+           - All *Head* set to "0" for now
+           - Add each output of your capability  to a different *Position*. Must start at 0 and increment by 1
+     - `BoxEmbedderElement`:
+        - **Interface**:
+           - **inputs**: image, entities
+           - **outputs**: entities
+        - **Parameters**:
+           - ToDo
+        - **Model Parameters**:
+           - All *Head* set to "0" for now
+           - Add each output of your capability  to a different *Position*. Must start at 0 and increment by 1
 
 
 ## Create datasets
