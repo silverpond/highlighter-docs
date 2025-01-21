@@ -17,7 +17,7 @@ top = false
 To ensure a successful Highlighter implementation, Silverpond offers comprehensive services to develop agents and capabilities that use machine learning to automate your processes. These services are designed to:
 
 #### * Define project scope, success criteria, and efficiency goals.
-Working collaboratively with customers, we will establish clear goals for what defines a successful deployment of an agent into a workflow. This could be a prototype or a production-ready agent. We develop specific metrics tied to business outcomes, such as accuracy rates, processing speed, and resource efficiency so as to measure the outcomes of a successful deployment..
+Working collaboratively with customers, we will establish clear goals for what defines a successful deployment of an agent into a workflow. This could be a prototype or a production-ready agent. We develop specific metrics tied to business outcomes, such as accuracy rates, processing speed, and resource efficiency so as to measure the outcomes of a successful deployment.
 #### * Facilitate agent development and evaluation.
 We use training and evaluation data for the development and testing of an agent. We ensure the datasets has an appropriate taxonomy and represent a balance of positive and negative examples. We also work in an iterative manner, incorporating customer feedback into iterative development cycles to refine model performance. Our evaluation process validates model accuracy, robustness, and alignment with business objectives.
 #### * Establish iterative training and evaluation processes using business-as-usual (BAU) data.
