@@ -37,7 +37,7 @@ Activities:
 
 #### 2. First Workshop: “What Are We Doing and Why?”
 
-Objective: Ideate workflows and prepare for development.
+Objective: Design workflows and prepare for development.
 
 Activities:
 * Review data, success criteria, and business case.
