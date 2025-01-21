@@ -41,8 +41,9 @@ Objective: Design workflows and prepare for development.
 
 Activities:
 * Review data, success criteria, and business case.
-* Design training data development and organize labeling resources.
+* Design training and evaluation datasets and organize labeling resources.
 * Collaborate to gather examples of positive and negative cases.
+* Implement taxonomy/schema in the workflow
 
 #### 3. Silverpond Planning
 
