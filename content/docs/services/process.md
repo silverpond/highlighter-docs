@@ -41,6 +41,7 @@ Objective: Design workflows and prepare for development.
 
 Activities:
 * Review data, success criteria, and business case.
+* Review the overall business process, including how the Highlighter workflow fits in.
 * Design training and evaluation datasets and organize labeling resources.
 * Collaborate to gather examples of positive and negative cases.
 * Implement taxonomy/schema in the workflow
