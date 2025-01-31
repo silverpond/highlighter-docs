@@ -86,3 +86,12 @@ Yes, you can train your own model. These models become an agent's capabilities i
 #### I want to run my own agents, is that possible?
 
 Yes, we have designed the system which runs agents to be capable of running outside of our Highlighter Cloud. This means that you could host and run your own agents and have them submit their work to Highlighter.
+
+
+## Privacy and Security
+
+#### How does Highlighter ensure data security and compliance?
+
+Highlighter is ISO/IEC 27001 certified, employs encrypted data storage, and enforces role-based access controls. Regular audits and risk assessments help ensure robust security measures against data breaches. Access our [Trust Center](https://trust.silverpond.com.au) to download our ISO 27001 certification and other security documentation.
+
+
