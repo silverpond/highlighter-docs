@@ -4,7 +4,7 @@ description = "How to create a set credentials for interacting with Highlighter 
 date = 2024-03-12T08:00:00+00:00
 updated = 2024-03-12T08:00:00+00:00
 draft = false
-weight = 100
+weight = 1
 sort_by = "weight"
 template = "docs/page.html"
 

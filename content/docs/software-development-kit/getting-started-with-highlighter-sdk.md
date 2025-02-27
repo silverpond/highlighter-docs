@@ -1,10 +1,10 @@
 +++
-title = "Highlighter SDK Getting Started"
+title = "Getting Started"
 description = "How to get started with the Highlighter Python SDK"
 date = 2025-02-27T08:00:00+00:00
 updated = 2025-02-27T08:00:00+00:00
 draft = false
-weight = 100
+weight = 0
 sort_by = "weight"
 template = "docs/page.html"
 
@@ -56,7 +56,7 @@ nix-shell
 
 ## Setup Highlighter API Credentials
 
-See [Highlighter API Credentials](./highlighter-credentials.md)
+See [Highlighter API Credentials](../highlighter-credentials/)
 
 ## Using the CLI
 
@@ -75,10 +75,10 @@ hl data-file read -i 12345 -o .
 
 ## Using the Python API
 
-See [Download And Write Datasets](./download-and-writer-datasets-locally)
+See [Download And Write Datasets](../download-and-writer-datasets-locally/)
 
 ## What's next
 
-See [Highlighter Project Scaffolds](./highlighter-scaffolds.md)
+See [Scaffolding new Highlighter agents](../highlighter-scaffolds/)
 
 

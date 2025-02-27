@@ -1,6 +1,6 @@
 +++
-title = "Highlighter SDK Scaffolds"
-description = "How to use Scaffolds to bootstrap your Highlighter project"
+title = "Scaffolding a new agent"
+description = "How to use Scaffolds to bootstrap your Highlighter agents"
 date = 2025-02-27T08:00:00+00:00
 updated = 2025-02-27T08:00:00+00:00
 draft = false
@@ -9,14 +9,14 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "How to use Scaffolds to bootstrap your Highlighter project"
+lead = "How to use Scaffolds to bootstrap your Highlighter agents"
 toc = true
 top = false
 +++
 
 ## Setup
 
-If you haven't already, you should checkout [Getting Started With Highlighter SDK](./getting-started-with-highlighter-sdk.md)
+If you haven't already, you should checkout [Getting Started With Highlighter SDK](../getting-started-with-highlighter-sdk/)
 
 
 ## Create a new Highlighter project scaffold
