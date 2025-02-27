@@ -31,4 +31,4 @@ A tutorial to show you how to run your first assessment process from idea to pro
 
 ## Installing the Highlighter SDK
 
-* [How to get up-and-running with the Highlighter SDK →](../../how-to-guides/getting-started-with-highlighter-sdk.md)
+* [How to get up-and-running with the Highlighter SDK →](../../software-development-kit/getting-started-with-highlighter-sdk/)
