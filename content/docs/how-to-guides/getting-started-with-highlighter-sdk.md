@@ -77,4 +77,8 @@ hl data-file read -i 12345 -o .
 
 See [Download And Write Datasets](./download-and-writer-datasets-locally)
 
+## What's next
+
+See [Highlighter Project Scaffolds](./highlighter-scaffolds.md)
+
 
