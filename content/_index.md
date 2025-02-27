@@ -25,4 +25,8 @@ content = 'Get up to speed with the concepts that underpin how Highlighter works
 [[extra.list]]
 title = "How-To Guides"
 content = 'Find instructions for practical Highlighter use at our <a href="docs/how-to-guides/">How-To Guides page</a>'
+
+[[extra.list]]
+title = "Software Development Kit"
+content = 'Get up and running with the Highlighter SDK  <a href="docs/software-development-kit//">Highlighter SDK</a>'
 +++

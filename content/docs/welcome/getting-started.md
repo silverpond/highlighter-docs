@@ -28,3 +28,7 @@ Learn key [concepts](../../concepts/introduction/) and understand how to digitis
 ## Running your first assessment process: A tutorial
 
 A tutorial to show you how to run your first assessment process from idea to production.
+
+## Installing the Highlighter SDK
+
+* [How to get up-and-running with the Highlighter SDK →](../../software-development-kit/getting-started-with-highlighter-sdk/)
