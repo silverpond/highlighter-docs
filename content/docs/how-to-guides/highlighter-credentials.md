@@ -1,6 +1,6 @@
 +++
-title = "Highlighter API Credentials"
-description = "How to create a set credentials for interacting with Highlighter via the CLI or Python API"
+title = "Highlighter SDK Credentials"
+description = "How to create a set credentials for interacting with Highlighter via the CLI or Python SDK"
 date = 2024-03-12T08:00:00+00:00
 updated = 2024-03-12T08:00:00+00:00
 draft = false
@@ -9,13 +9,13 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = 'Learn to configure credentials for interacting with Highlighter via the CLI or Python  API'
+lead = 'Learn to configure credentials for interacting with Highlighter via the CLI or Python SDK'
 toc = true
 top = false
 +++
 
 This guide will help you to configure the credentials needed to interact with
-Highlighter via the CLI or the Python API.
+Highlighter via the CLI or the Python SDK.
 
 
 ### Create an API Token
@@ -57,5 +57,5 @@ compuglobalhypermeganet:
 ```
 
 You can now use the `--profile compuglobalhypermeganet` option when using the CLI or
-`HLClient.from_profile(...)` if using the Python API
+`HLClient.from_profile(...)` if using the Python SDK
 
