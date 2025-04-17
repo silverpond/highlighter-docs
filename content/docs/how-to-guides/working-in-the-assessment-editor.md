@@ -19,6 +19,8 @@ Working in the Assessment Editor requires access to your tools
 - <a href="#access-the-file-list">Access The File List</a>
 - <a href="#access-the-objects-panel">Access The Objects Panel</a>
 - <a href="#set-annotation-view-options">Set Annotation View Options</a>
+- <a href="#show-and-hide-annotations-tracks">Show And Hide Annotations/Tracks</a>
+- <a href="#submit-assessments">Submit Assessments</a>
 
 ## Use Assessment Editor tools
 
@@ -56,4 +58,18 @@ Set the visibility of each of these options individually:
 
 Options stay set even after reloading the page, or moving to new cases or data files.
 
+## Show And Hide Annotations/Tracks
+Show or hide all annotations/tracks (including associated text) by clicking the View menu, then "Show/hide annotations/tracks" (shortcut key 'f'). Hidden annotations/tracks are still submitted.
 
+What is the difference between annotations and tracks? If you are working with images for example, you will work with annotations. However if you are working with video for example, annotations are grouped together into tracks, that stretch over time.
+
+## Submit Assessments
+Submit assessments by clicking the "Submit" button. Next to that button is a dropdown menu which has other options including "Skip" and "Flag and Submit".
+
+### Skip
+The skip option allows you to temporarily skip the current item/case. The assessment editor will load the next item, and then the next, and so on - you can continue working as normal through your assessment queue. You can even skip more items. When you want to get back your skipped items, just reload your browser window. Then all skipped items will appear again in the order you skipped them.
+
+What is a case? A case is a collection of data files that will be assessed together. They can be of different media types, for example images, video, text and so on. You can see the list of data files in your case by choosing the View menu then "Show/hide left panel" (shortcut key 'l').
+
+### Flag And Submit
+This allows you to submit your assessments, and add in a short message. This message appears prominantly at various places around Highlighter, for example in the Media Search page. It allows you to signal something about this submission, for example that it contains an image that is too dark, and so on.
