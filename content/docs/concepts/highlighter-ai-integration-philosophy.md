@@ -1,6 +1,6 @@
 +++
-title = "Agents"
-description = "Introduction to Agents"
+title = "Highlighter AI Integration Philosophy"
+description = "Highlighter AI Integration Philosophy"
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
@@ -9,79 +9,73 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = 'Agents are people and machines that work on the tasks in an assessment process, or work on developing and monitoring the assessment process itself.'
+lead = ''
 toc = true
 top = false
 +++
 
-## Tasks
+# Ethical AI for Enterprise: Highlighter AI’s Integration Approach
 
-Agents work on tasks specified in an asssessment process. Typically in Highlighter this is assessing incoming data from a data sources, though it is possible for agents to take actions outside of assessing incoming data eg., sending an email, updating data in a 3rd party system etc.
+**Highlighter AI**, developed by Silverpond, is an **Enterprise Perception System** purpose-built to integrate artificial intelligence into enterprise workflows with clarity, control, and measurable impact. As detailed at [enterpriseperceptionsystem.org](https://enterpriseperceptionsystem.org), our platform enables enterprises to act on complex data—without compromising on accountability, security, or human oversight.
 
-## Capabilities
+Highlighter AI ensures users and enterprises stay in control of decision-making at all times. When the system encounters uncertainty, it pauses and escalates to a human for review. All actions are logged, auditable, and transparent - giving users full visibility into how decisions are made. Data privacy and system security are built-in, and the platform improves continuously through real-world feedback. Highlighter AI is designed to support responsible, clear, and user-led AI adoption across enterprise environments.
 
-Capabilities are skills that agents have that carry out work in Highlighter. Find out more about [capabilities →](../capabilities/).
+We don’t position AI as a replacement for decision-makers. Instead, our system is structured around a closed-loop process designed to support, escalate, and refine actions in real time:
 
-## Deploy to Assessment Processes
+**SENSE → PERCEIVE → HIGHLIGHT → PREDICT → ACT**
 
-When you want an agent to get some work done, you deploy them to [assessment processes](../assessment-process/) in Highlighter to complete tasks.
+This structure allows AI to detect patterns, elevate critical information, and recommend outcomes—while keeping humans firmly in control.
 
-## People Agents
+## A Systematic Use of AI That’s Transparent and Controlled
 
-An assessment task can be carried out by people through the use of Highlighter's Assessment Tool. They can also learn how to perform the assessment by reviewing the taxonomy in the system.
+Highlighter AI incorporates three primary AI types, each deployed with a clear operational purpose:
 
-Another common task are for people on your team to work on
+### Generative AI
+**Purpose:** To convert large volumes of raw data into structured, useful outputs
+**Use Cases:** Report generation, structured summaries, incident documentation
+**Controls:** Outputs are reviewable and auditable before action is taken
 
-## Machine Agents
+### AI Agents
+**Purpose:** To perform bounded, goal-specific tasks
+**Use Cases:** Fault detection, asset triage, data monitoring in energy and utilities
+**Controls:** Escalates anomalies and uncertain scenarios for human validation
 
-Machine agents are software programs, often machine learning models, which can be deployed in Highlighter's cloud or on your servers to perform assessment tasks. They are taught to perform assessments according to the taxonomy defined in Highlighter.
+### Agentic AI
+**Purpose:** To manage more complex, ongoing processes over time
+**Use Cases:** Coordinating long-term diagnostics, adaptive operations, process orchestration
+**Platform Integration:** Powered by [MyTiller.io](https://MyTiller.io), our AI agent marketplace
+**Controls:** Full visibility through dashboards, audit trails, and human-in-the-loop correction
 
-### Deployment of Machine Agents
+Each AI capability is modular—deployed independently or in combination depending on the enterprise need.
 
-You can deploy machine agents to different locations to perform work depending on the needs of your solution.
+## Designed for Real-Time Performance, Built for Enterprise Confidence
 
+Our integration philosophy ensures safety, observability, and performance across every deployment. Key system features include:
 
-|Location|Machine Agents|
-|-|-|
-|<div style="width:300px">Highlighter Cloud</div>|<div style="width:150px">Supported</div>|
-|On-Premise Server|Supported|
-|Edge Device|Supported|
+- accuracy in production settings
+- reduction in processing time for data-intensive tasks
+- reduction in operational downtime in utilities
+- onboarding in less than 30 minutes using existing data
 
-|Platform|Machine Agents|
-|-|-|
-|<div style="width:360px">Linux</div>|<div style="width:150px">Supported</div>|
-|Windows|Supported through [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)|
+We offer built-in dashboards, real-time alerts, and agent tracking to ensure that AI never operates in a black box. Every system decision is explainable, traceable, and aligned to enterprise outcomes.
 
-|Language|Machine Agents|
-|-|-|
-|<div style="width:300px">Python</div>|<div style="width:150px">Supported</div>|
-|Golang|Upcoming Release|
+For deeper technical documentation and implementation guides, visit our documentation hub [highlighter-docs.netlify.app](https://highlighter-docs.netlify.app)
 
+## Enterprise Applications With Tangible Outcomes
 
-### Training
+Highlighter is actively deployed in sectors such as:
 
-To train a machine agent, there are three options:
+- Power & Utilities – automating asset monitoring, reducing outages
+- Healthcare and MedTech – accelerating diagnostics, increasing data reliability
+- Agriculture and Forestry – optimizing yield prediction and early risk detection
+- Engineering and Construction – streamlining inspection, maintenance, and project tracking
 
-1. Use a pre-trained machine learning model, e.g from [HuggingFace](https://huggingface.co/models) and upload the model artefact to run in Highlighter
+Our customers report accelerated implementation, lower operational costs, and improved decision accuracy—with AI systems that align to their existing infrastructure and compliance needs.
 
-2. Train your own machine learning model and upload the model artefact to run in Highlighter
+## Practical, Ethical, and Enterprise-Ready
 
-3. Train a machine learning model using Highlighter
+Highlighter AI offers a scalable, no-code, and compliance-ready path to deploying AI in enterprise environments. Designed for control, built for visibility, and proven in production, with the human in control, Highlighter delivers to the highest standards of ethical AI integration.
 
-### Monitoring & Evaluation
-
-Evaluation is the analysis of the efficiency or effectiveness of an agent in carrying out an assigned task. This could include a measurement of how well the agent is carrying out the tasks eg., time taken, cost, accuracy.
-
-Where an evaluation is an analysis conducted at one point in time, monitoring is the continuous analysis of the efficiency and effectiveness of an agent in carrying out a task.
-
-#### People
-
-In addition to measuring accuracy, we allow agents to record their time in timesheets to help with evaluating how well they're carrying out their task.
-
-#### Machines
-
-Highlighter tracks the resource usage of each agent. Resource usage can be measured in:
-* Seconds it takes for a machine to complete work
-* Number of seconds in a file processed (eg., audio, video)
-* Words processed
-* Tokens processed by an LLM
+To explore use cases or see the platform in action, visit:
+- [enterpriseperceptionsystem.org](https://enterpriseperceptionsystem.org)
+- [highlighter-docs.netlify.app](https://highlighter-docs.netlify.app)
