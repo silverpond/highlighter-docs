@@ -40,7 +40,7 @@ When you first log in to Highlighter, you should see your assessment dashboard. 
 3. Click a feature within the yellow box. The first time you do this, the AI will take some time to process that area, and the spinner will appear in the top toolbar. Once complete, it will then create a polygon matching the outlines of the feature. After that, if you don't move the yellow box, the following clicks will be much quicker. If you move the yellow box, the first click will take some time again.
 4. Continue clicking features within the yellow box. If you make a mistake or the tool doesn't find the feature you expect, hit the delete key to remove the polygon, or click the bin icon next to the highlighted Entity in the right panel. You may need to select the polygon you want to delete again - just change to the pointer tool, click the polygon, then delete it as described.
 
-![Auto-Segment](../sam-important-points.png)
+{{ resize_image(path="docs/how-to-guides/sam-important-points.png", width=720, height=1, op="fit_width") }}
 
 
 ## Use Best Practices
