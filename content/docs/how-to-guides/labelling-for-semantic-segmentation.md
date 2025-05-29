@@ -13,10 +13,11 @@ toc = true
 top = false
 +++
 
-When training a semantic segmentation model, you will often need to do some labelling first. This guide covers some of the features common to labelling for semantic segmentation.
+When training a semantic segmentation model, you will often need to do some labelling first. This guide covers some of the features common to labelling for semantic segmentation. You can use either the polygon tool, which lets you manually draw polygons around features, or the auto-segment tool, which allows you to click a point inside a feature and it automatically creates a polygon that matches the visual boundary of that feature. Both are covered below.
 
 - <a href="#navigate-to-the-assessment-editor">Navigate To The Assessment Editor</a>
 - <a href="#draw-a-polygon">Draw A Polygon</a>
+- <a href="#use-the-auto-segment-tool">Use The Auto-Segment Tool</a>
 - <a href="#use-best-practices">Use Best Practices</a>
 - <a href="#avoid-common-issues">Avoid Common Issues</a>
 
@@ -26,7 +27,12 @@ When you first log in to Highlighter, you should see your assessment dashboard. 
 
 ## Draw a Polygon
 
-1. Select the Polygon tool. ![Polygon tool](../polygon-tool.png)
+Select the Polygon tool. ![Polygon tool](../polygon-tool.png)
+
+## Use The Auto-Segment Tool
+
+Select the Auto-Segment tool. ![Auto-Segment tool](../auto-segment-tool.png)
+
 
 ## Use Best Practices
 - **Precision**: Trace object boundaries as accurately as possible to avoid mislabeled pixels.
