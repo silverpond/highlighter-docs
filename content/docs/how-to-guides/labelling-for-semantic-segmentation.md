@@ -21,10 +21,9 @@ When training a semantic segmentation model, you will often need to do some labe
 
 When you first log in to Highlighter, you should see your assessment dashboard. If not, click the 'Assess' link in the top navigation. Click the button in the main pane that says 'Start Task' or 'Continue Task'. This will take you to the Assessment Editor to start work. You will see this button if you have been assigned a work queue. If you don't see it, please contact your Highlighter project manager.
 
-## Drawing a Bounding Box
+## Drawing a Polygon
 
-1. Select the Polygon tool. *Todo, add image of icon*
-...
+1. Select the Polygon tool. ![Polygon tool](../polygon-tool.png)
 
 ## Best Practices
 - **Precision**: Trace object boundaries as accurately as possible to avoid mislabeled pixels.
