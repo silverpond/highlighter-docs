@@ -20,3 +20,20 @@ When training a semantic segmentation model, you will often need to do some labe
 ## Navigate To The Assessment Editor
 
 When you first log in to Highlighter, you should see your assessment dashboard. If not, click the 'Assess' link in the top navigation. Click the button in the main pane that says 'Start Task' or 'Continue Task'. This will take you to the Assessment Editor to start work. You will see this button if you have been assigned a work queue. If you don't see it, please contact your Highlighter project manager.
+
+## Drawing a Bounding Box
+
+1. Select the Polygon tool. *Todo, add image of icon*
+...
+
+## Best Practices
+- **Precision**: Trace object boundaries as accurately as possible to avoid mislabeled pixels.
+- **Consistency**: Apply the same labeling criteria across all images (e.g., consistent class definitions).
+- **Clarity**: Consult guidelines or a supervisor for ambiguous regions or objects.
+- **Efficiency**: Work systematically, prioritizing quality over speed.
+
+## Common Issues to Avoid
+- **Inaccurate Boundaries**: Ensure masks align with object edges, avoiding gaps or overlaps.
+- **Incorrect Labels**: Verify the class for each region before saving.
+- **Missed Regions**: Ensure no objects or areas from the class list are overlooked.
+- **Overlapping Masks**: Avoid assigning multiple classes to the same pixel unless specified.
