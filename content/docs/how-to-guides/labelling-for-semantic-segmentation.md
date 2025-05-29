@@ -25,13 +25,25 @@ When training a semantic segmentation model, you will often need to do some labe
 
 When you first log in to Highlighter, you should see your assessment dashboard. If not, click the 'Assess' link in the top navigation. Click the button in the main pane that says 'Start Task' or 'Continue Task'. This will take you to the Assessment Editor to start work. You will see this button if you have been assigned a work queue. If you don't see it, please contact your Highlighter project manager.
 
-## Draw a Polygon
+## Draw a Polygon Manually
 
-Select the Polygon tool. ![Polygon tool](../polygon-tool.png)
+1. Select the Polygon tool. ![Polygon tool](../polygon-tool.png)
+2. Select the desired class from the Object's menu
+3. Click to set vertex of the polygon 
+4. Continue to click to add more points 
+5. Hit "Enter" to close the Polygon
 
 ## Use The Auto-Segment Tool
 
 Select the Auto-Segment tool. ![Auto-Segment tool](../auto-segment-tool.png)
+
+## Draw a Polygon Using Auto-Segment
+
+![Auto-Segment](../sam-important-points.png)
+
+1. The wand tool selects the Auto-Segment tool.
+2. The yellow box shows where the AI is "looking". Pan and zoom to position it. **Note: To pan, click outside the bounds of the image.**
+3. The first time you click on an object inside the yellow box this spinner will appear. The first click takes the longest while the AI analyses the image. After that, if you don’t move the image the following clicks will be much quicker.
 
 
 ## Use Best Practices
