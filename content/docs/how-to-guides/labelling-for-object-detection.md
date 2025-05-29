@@ -26,7 +26,7 @@ When you first log in to Highlighter, you should see your assessment dashboard. 
 
 ## Draw a Bounding Box
 
-1. Select the Bounding Box tool. ![Bounding Box tool](../bounding-box-tool.png)
+Select the Bounding Box tool. ![Bounding Box tool](../bounding-box-tool.png)
 
 ## Use Best Practices
 - **Consistency**: Use the same criteria for labeling across all images (e.g., include only fully visible objects).
