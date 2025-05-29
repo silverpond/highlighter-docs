@@ -35,7 +35,10 @@ When you first log in to Highlighter, you should see your assessment dashboard. 
 
 ## Use The Auto-Segment Tool
 
-Select the Auto-Segment tool. ![Auto-Segment tool](../auto-segment-tool.png)
+1. Select the Auto-Segment tool. ![Auto-Segment tool](../auto-segment-tool.png)
+2. A yellow box will appear. This is the area of the image that the auto-segment tool analyses to find objects. Position the yellow box across the part of the image you want to find features within.
+3. Click a feature within the yellow box. The first time you do this, the tool will take some time to process the area. While this is happening, you will see a little spinning circle progress indicator in the top toolbar. Once complete, it will then create a polygon matching the outlines of the feature.
+4. Continue clicking features within the yellow box. If you make a mistake or the tool doesn't find the feature you expect, you can just press the delete key to remove the polygon, or click the little bin icon next to the highlighted Entity in the Entities list in the right panel. Or if the poygon you want to delete isn't selected any more, first select the polygon by changing to the pointer tool then delete it as described.
 
 ## Draw a Polygon Using Auto-Segment
 
