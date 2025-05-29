@@ -16,8 +16,8 @@ top = false
 When training a semantic segmentation model, you will often need to do some labelling first. This guide covers some of the features common to labelling for semantic segmentation. You can use either the polygon tool, which lets you manually draw polygons around features, or the auto-segment tool, which allows you to click a point inside a feature and it automatically creates a polygon that matches the visual boundary of that feature. Both are covered below.
 
 - <a href="#navigate-to-the-assessment-editor">Navigate To The Assessment Editor</a>
-- <a href="#draw-a-polygon">Draw A Polygon</a>
-- <a href="#use-the-auto-segment-tool">Use The Auto-Segment Tool</a>
+- <a href="#draw-a-polygon-manually">Draw A Polygon Manually</a>
+- <a href="#draw-a-polygon-using-auto-segment">Draw A Polygon Using Auto-Segment</a>
 - <a href="#use-best-practices">Use Best Practices</a>
 - <a href="#avoid-common-issues">Avoid Common Issues</a>
 
@@ -33,20 +33,14 @@ When you first log in to Highlighter, you should see your assessment dashboard. 
 4. Continue to click to add more points 
 5. Hit "Enter" to close the Polygon
 
-## Use The Auto-Segment Tool
-
-1. Select the Auto-Segment tool. ![Auto-Segment tool](../auto-segment-tool.png)
-2. A yellow box will appear. This is the area of the image that the auto-segment tool analyses to find objects. Position the yellow box across the part of the image you want to find features within.
-3. Click a feature within the yellow box. The first time you do this, the tool will take some time to process the area. While this is happening, you will see a little spinning circle progress indicator in the top toolbar. Once complete, it will then create a polygon matching the outlines of the feature.
-4. Continue clicking features within the yellow box. If you make a mistake or the tool doesn't find the feature you expect, you can just press the delete key to remove the polygon, or click the little bin icon next to the highlighted Entity in the Entities list in the right panel. Or if the poygon you want to delete isn't selected any more, first select the polygon by changing to the pointer tool then delete it as described.
-
 ## Draw a Polygon Using Auto-Segment
 
-![Auto-Segment](../sam-important-points.png)
+1. Select the Auto-Segment tool. ![Auto-Segment tool](../auto-segment-tool.png)
+2. A yellow box will appear. It shows where the AI is "looking", the area of the image that the auto-segment tool analyses to find objects. Pan and zoom to position the yellow box across the part of the image you want to find features within. **Note: To pan, click outside the bounds of the image.**
+3. Click a feature within the yellow box. The first time you do this, the AI will take some time to process that area, and the spinner will appear in the top toolbar. Once complete, it will then create a polygon matching the outlines of the feature. After that, if you don't move the yellow box, the following clicks will be much quicker. If you move the yellow box, the first click will take some time again.
+4. Continue clicking features within the yellow box. If you make a mistake or the tool doesn't find the feature you expect, hit the delete key to remove the polygon, or click the bin icon next to the highlighted Entity in the right panel. You may need to select the polygon you want to delete again - just change to the pointer tool, click the polygon, then delete it as described.
 
-1. The wand tool selects the Auto-Segment tool.
-2. The yellow box shows where the AI is "looking". Pan and zoom to position it. **Note: To pan, click outside the bounds of the image.**
-3. The first time you click on an object inside the yellow box this spinner will appear. The first click takes the longest while the AI analyses the image. After that, if you don’t move the image the following clicks will be much quicker.
+![Auto-Segment](../sam-important-points.png)
 
 
 ## Use Best Practices
