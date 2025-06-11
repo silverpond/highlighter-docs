@@ -59,8 +59,6 @@ Our integration philosophy ensures safety, observability, and performance across
 
 We offer built-in dashboards, real-time alerts, and agent tracking to ensure that AI never operates in a black box. Every system decision is explainable, traceable, and aligned to enterprise outcomes.
 
-For deeper technical documentation and implementation guides, visit our documentation hub [highlighter-docs.netlify.app](https://highlighter-docs.netlify.app)
-
 ### Enterprise Applications With Tangible Outcomes
 
 Highlighter is actively deployed in sectors such as:
