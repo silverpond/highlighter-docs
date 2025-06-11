@@ -2,7 +2,7 @@
 title = "Highlighter AI Integration Philosophy"
 description = "Highlighter AI Integration Philosophy"
 date = 2025-06-04T08:00:00+00:00
-updated = 2021-05-01T08:00:00+00:00
+updated = 2025-06-04T08:00:00+00:00
 draft = false
 weight = 100
 sort_by = "weight"
