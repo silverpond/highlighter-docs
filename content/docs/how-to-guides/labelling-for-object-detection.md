@@ -19,6 +19,7 @@ When training an object detection model, you will often need to do some labellin
 - <a href="#draw-a-bounding-box">Draw A Bounding Box</a>
 - <a href="#use-best-practices">Use Best Practices</a>
 - <a href="#avoid-common-issues">Avoid Common Issues</a>
+- <a href="#tips-and-tricks">Tips and Tricks</a>
 
 ## Navigate To The Assessment Editor
 
@@ -39,3 +40,7 @@ Select the Bounding Box tool. ![Bounding Box tool](../bounding-box-tool.png)
 - **Incorrect Labels**: Verify the class before saving.
 - **Missing Objects**: Ensure no objects from the class list are overlooked.
 - **Duplicate Boxes**: Avoid labeling the same object twice.
+
+## Tips and Tricks
+### Quickly Label Multiple Annotations With The Same Attributes
+Label multiple annotations with the same attributes by selecting your first annotation, then holding down shift and selecting more annotations. Then open the attributes form in the bottom left by clicking Edit, set your attributes, then click Update. The selected attributes will be applied to all the annotations you selected.
