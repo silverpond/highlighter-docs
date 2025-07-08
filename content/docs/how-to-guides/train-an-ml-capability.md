@@ -18,7 +18,7 @@ top = false
 
 This tutorial expects you:
 
-  1. You already have labelled data in a Highlighter _Assessment Process_
+  1. You already have labelled data in a Highlighter _Assessment Workflow_
   2. You are using an existing _Model Template_ (ie: Training a model supported by Highlighter Training, not a custom model)
 
 The steps are as follows:

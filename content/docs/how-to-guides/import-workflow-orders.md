@@ -15,7 +15,7 @@ top = false
 
 Work in a Highlighter Workflow can be divided up into Workflow Orders. Each Workflow Order can represent a particular grouping of data files that you want to keep separate. This might be for the purpose of ingesting them, tracking their flow through Highlighter, or exporting assessment results for them separately.
 
-Workflow Orders are a way of dividing up the work of your Assessment Workflow into manageable chunks. Each Workflow Order can match a certain subset of the data in your process' data source, allowing you to handle the processing of different groupings of data separately.
+Workflow Orders are a way of dividing up the work of your Assessment Workflow into manageable chunks. Each Workflow Order can match a certain subset of the data in your workflow's data source, allowing you to handle the processing of different groupings of data separately.
 
 A Workflow Order funnels work through a sequence of Workflow Stages. For example, the sequence might be Data Source -> Machine Assessment Stage -> Human Assessment Stage. The following instructions assume your sequence of Workflow stages has already been set up, and includes a data source as the first stage.
 
@@ -34,7 +34,7 @@ Click the 'New Order' button then fill out the required fields.
 <ul>
   <li><em>Name</em> - A name is created for you with the current date and time but this can be altered or replaced if needed.</li>
   <li><em>Lock and prevent addition of new files to order</em> - Locked orders are unchangeable once they are created, and new files cannot be added.</li>
-  <li><em>Original Source URL Filter</em> - The original source URL filter defines a path within the folder structure of the S3 bucket belonging to the Workflow's data source. Only files with source URLs matching this path will be added to the Workflow Order. This allows you to group files in the folder structure of the data source into separate process orders.</li>
+  <li><em>Original Source URL Filter</em> - The original source URL filter defines a path within the folder structure of the S3 bucket belonging to the Workflow's data source. Only files with source URLs matching this path will be added to the Workflow Order. This allows you to group files in the folder structure of the data source into separate workflow orders.</li>
 </ul>
 
 Click the 'Review Order' button.

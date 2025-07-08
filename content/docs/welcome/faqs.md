@@ -51,7 +51,7 @@ The data is scheduled for deletion after 90 days at the end of the subscription.
 
 We believe in helping your business with what it takes to succeed, and you can access our services to help you get the most out of Highlighter. These services can include:
 * Training in how to use Highlighter
-* Assistance with the development of your assessment process with Highlighter
+* Assistance with the development of your assessment workflow with Highlighter
 * Help with building your own agents and custom capabilities
 * Support in dealing with any issues in the use of Highlighter
 

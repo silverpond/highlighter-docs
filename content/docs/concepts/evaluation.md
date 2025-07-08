@@ -1,6 +1,6 @@
 +++
 title = "Evaluation"
-description = "Evaluating agents and the assessment process in Highlighter"
+description = "Evaluating agents and the assessment workflow in Highlighter"
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
@@ -9,12 +9,12 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = 'Evaluation is the continual analysis of the performance of the assessment process and work completed by Agents.'
+lead = 'Evaluation is the continual analysis of the performance of the assessment workflow and work completed by Agents.'
 toc = true
 top = false
 +++
 
-[Evaluation](../evaluation/) aims to provide data about how the claims are generated in the Assessment Process, while [Monitoring & Reporting](../monitoring/) aims to provide the data out of the Assessment Process itself. The purpose of the evaluation is to identify areas of improvement in the Assessment Process itself, and the purpose of monitoring & reporting is to understand the subject under assessment.
+[Evaluation](../evaluation/) aims to provide data about how the claims are generated in the Assessment Workflow, while [Monitoring & Reporting](../monitoring/) aims to provide the data out of the Assessment Workflow itself. The purpose of the evaluation is to identify areas of improvement in the Assessment Workflow itself, and the purpose of monitoring & reporting is to understand the subject under assessment.
 
 
 ## Metrics
@@ -76,7 +76,7 @@ $$
 
 
 #### Compliance Rate
-The compliance rate is the fraction of all claims that meet the assessment process’s taxonomy. This rate is used to measure errors in the agent’s ability to comply with an assessment process’s taxonomy.
+The compliance rate is the fraction of all claims that meet the assessment workflow’s taxonomy. This rate is used to measure errors in the agent’s ability to comply with an assessment workflow’s taxonomy.
 
 
 #### Processing Time
@@ -86,7 +86,7 @@ Processing time is the time it takes for an agent to complete an assessment. The
 
 #### Throughput
 
-Throughput is a measure of the amount of work in the system. We can measure the work done by agents or the assessment process. The amount of work can be measured by claim, submission, file or task.
+Throughput is a measure of the amount of work in the system. We can measure the work done by agents or the assessment workflow. The amount of work can be measured by claim, submission, file or task.
 
 #### Model Size
 

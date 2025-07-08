@@ -9,7 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = 'Highlighter is an Enterprise Perception System that helps organisations digitise their assessment processes.'
+lead = 'Highlighter is an Enterprise Perception System that helps organisations digitise their assessment workflows.'
 toc = true
 top = false
 +++
@@ -24,13 +24,13 @@ Highlighter supports assessment different types of data sources: image, video, a
 
 Define your own taxonomy that matches the concepts in your organisation
 
-#### Customisable Assessment Processes
+#### Customisable Assessment Workflows
 
-Define and customise assessment processes that fit your organisation's needs
+Define and customise assessment workflows that fit your organisation's needs
 
 ## Getting Started
 
-One page summary of how to start a new Highlighter Assessment Process. [Getting Started →](../getting-started/)
+One page summary of how to start a new Highlighter Assessment Workflow. [Getting Started →](../getting-started/)
 
 ## Support
 
