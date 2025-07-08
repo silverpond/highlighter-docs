@@ -17,7 +17,7 @@ Once data has been uploaded and processed in Highlighter, it is common to look f
 
 - <a href="#search-for-files">Search for files</a>
 - <a href="#download-files">Download files</a>
-- <a href="#add-files-to-a-process-order">Add files to a process order</a>
+- <a href="#add-files-to-a-workflow-order">Add files to a workflow order</a>
 
 ## Find the page
 
@@ -44,7 +44,7 @@ Once you have your results, you can take a variety of actions.
 #### Take actions on a single file
 
 1. View a single file by clicking the eye icon on a file thumbnail.
-2. Edit a single file in the annotation tool by clicking the pencil icon on the file thumbnail. This option is only available if an assessment process filter is set.
+2. Edit a single file in the annotation tool by clicking the pencil icon on the file thumbnail. This option is only available if an assessment workflow filter is set.
 3. Download a single file clicking the download icon on the file thumbnail.
 
 #### Download files
@@ -55,9 +55,9 @@ This will only download files shown on the current page of results. Download the
 
 This process can be helped by increasing the number of results shown on each page as described in the <a href="#filter-results-per-page">Filter results per page</a> section.
 
-#### Add files to a process order
+#### Add files to a workflow order
 
-To add files to a process order, click the 'Add to Order' button. In the dialog box that appears, select the desired order, then click 'Add Files To Order'. You will see a message confirming the files have been added, or with any errors.
+To add files to a workflow order, click the 'Add to Order' button. In the dialog box that appears, select the desired order, then click 'Add Files To Order'. You will see a message confirming the files have been added, or with any errors.
 
 ## Filters
 
@@ -113,13 +113,13 @@ Choose whether files have been completed in a human assessment stage or not.
 
 Choose one or more datasets containing desired files.
 
-#### Filter by Assessment Processes
+#### Filter by Assessment Workflows
 
-Choose one or more assessment processes containing desired files.
+Choose one or more assessment workflows containing desired files.
 
-#### Filter by Assessment Process Orders
+#### Filter by Assessment Workflow Orders
 
-Choose one or more assessment process orders containing desired files. To use this filter, you need to also set the Assessment Process filter, as above, to the process that contains the selected assessment process order.
+Choose one or more assessment workflow orders containing desired files. To use this filter, you need to also set the Assessment Workflow filter, as above, to the workflow that contains the selected assessment workflow order.
 
 #### Filter by Capabilities
 

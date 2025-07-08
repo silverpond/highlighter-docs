@@ -9,7 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = 'Agents are people and machines that work on the tasks in an assessment process, or work on developing and monitoring the assessment process itself.'
+lead = 'Agents are people and machines that work on the tasks in an assessment workflow, or work on developing and monitoring the assessment workflow itself.'
 toc = true
 top = false
 +++
@@ -22,9 +22,9 @@ Agents work on tasks specified in an asssessment process. Typically in Highlight
 
 Capabilities are skills that agents have that carry out work in Highlighter. Find out more about [capabilities →](../capabilities/).
 
-## Deploy to Assessment Processes
+## Deploy to Assessment Workflows
 
-When you want an agent to get some work done, you deploy them to [assessment processes](../assessment-process/) in Highlighter to complete tasks.
+When you want an agent to get some work done, you deploy them to [assessment workflows](../assessment-workflow/) in Highlighter to complete tasks.
 
 ## People Agents
 

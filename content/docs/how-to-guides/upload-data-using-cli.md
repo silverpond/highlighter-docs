@@ -97,9 +97,9 @@ This tutorial expects you to have done the following:
   2. Created a Data Source in the Highlighter Web UI, note the ID from the URL, eg:
   `https://your-account-subdomain.highlighter.ai/data_source/DATASOURCE_ID`
   4. Create the Object Classes of the same name in Highlighter
-  3. Created an Assessment Process in Highlighter, note the ID from the URL, eq:
+  3. Created an Assessment Workflow in Highlighter, note the ID from the URL, eq:
   `https://your-account-subdomain.highlighter.ai/projects/PROCESS_ID`
-  5. Added the Object Classes to the Assessment Process
+  5. Added the Object Classes to the Assessment Workflow
   6. Found your Highlighter User Id
 
 ### Coco Dataset
@@ -121,7 +121,7 @@ hl image create --data-source-id 123 \
   --file annotations/train.json \
   --image-dir images
 
-# Upload the labels in the dataset to an Assessment Process
+# Upload the labels in the dataset to an Assessment Workflow
 hl submission create-from-dataset \
   --dataset-format coco \
   --data-path annotations/train_with_hl_ids.json \

@@ -14,7 +14,7 @@ toc = true
 top = false
 +++
 
-1. [Assessment Process](../assessment-process/)
+1. [Assessment Workflow](../assessment-workflow/)
 2. [Enterprise Perception System](../enterprise-perception-system/)
 3. [Agents](../agents/)
 4. [Capabilities](../capabilities/)

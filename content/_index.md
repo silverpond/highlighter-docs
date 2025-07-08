@@ -16,7 +16,7 @@ repo_version = " "
 
 [[extra.list]]
 title = "Getting Started"
-content = 'Learn how to setup your assessment process on Highlighter through our <a href="docs/welcome/getting-started/">Getting Started page</a>.'
+content = 'Learn how to setup your assessment workflow on Highlighter through our <a href="docs/welcome/getting-started/">Getting Started page</a>.'
 
 [[extra.list]]
 title = "Learn Key Concepts"

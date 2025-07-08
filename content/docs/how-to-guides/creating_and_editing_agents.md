@@ -18,7 +18,7 @@ In this guide you'll create a new Agent, add Capabilities, and connect the Capab
 
 ### Create an Agent
 
-1. Navigate to the Assessment Process you want to add an Agent to (create a new Assessment Process if you need).
+1. Navigate to the Assessment Workflow you want to add an Agent to (create a new Assessment Workflow if you need).
 2. Navigate to the "Stage Definition" tab of your new Process and under "Machine Assessments" click "New Machine Assessment Stage".
 3. Give your new Stage a name and click "Save Machine Assessment Stage".
 4. Looking at your new Machine Assessment Stage, click "Edit" on the top right of the page. You're now in the Agent Designer!

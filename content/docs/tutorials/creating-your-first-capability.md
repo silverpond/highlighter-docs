@@ -1,6 +1,6 @@
 +++
 title = "Creating your first capability"
-description = "A tutorial on how to create your first capability, add it to an agent and run in an assessment process"
+description = "A tutorial on how to create your first capability, add it to an agent and run in an assessment workflow"
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
@@ -9,7 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "A tutorial on how to create your first capability, add it to an agent and run in an assessment process"
+lead = "A tutorial on how to create your first capability, add it to an agent and run in an assessment workflow"
 toc = true
 top = false
 +++
@@ -29,7 +29,7 @@ you can just follow along and fill-in-the-blanks with your own data.
 
 ## What Is An *Assessment Capability*
 
-> Assessments tasks are sub-tasks of a larger assessment process that an organisation wishes to carry out.
+> Assessments tasks are sub-tasks of a larger assessment workflow that an organisation wishes to carry out.
 
 More information on Capabilities [here](../concepts/capabilities.md#assments)
 
