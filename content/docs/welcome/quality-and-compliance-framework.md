@@ -16,7 +16,7 @@ top = false
 
 Silverpond is committed to delivering high-quality solutions and services that consistently meet and exceed client expectations. Our approach to **Quality Management** is holistically integrated within our certified **Information Security Management System (ISMS)** and Highlighter's support of the **Artificial Intelligence Management System (AIMS)** framework.
 
-While we have not pursued formal **AS/NZS ISO 9001** certification, we operate a robust management system that delivers the core objectives of quality assurance:
+Rather than pursuing **ISO 9001**, we’ve built a system grounded in **ISO 27001** and **ISO 42001** that delivers the same principles:
 
 - Consistency  
 - Reliability  
