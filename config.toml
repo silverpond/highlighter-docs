@@ -49,6 +49,7 @@ author = "Jono Chang"
 github = "https://github.com/silverpond/"
 twitter = "https://twitter.com/silverponddev"
 email = "studio@silverpond.com.au"
+ganalytics = "G-36HRXGFR2F"
 
 # If running on netlify.app site, set to true
 is_netlify = true
