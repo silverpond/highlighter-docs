@@ -9,18 +9,18 @@ weight = 1
 # The homepage contents
 [extra]
 lead = ''
-url = "/docs/welcome/getting-started/"
+url = "/docs/tutorials/getting-started/"
 url_button = "Get started"
 repo_license = " "
 repo_version = " "
 
 [[extra.list]]
 title = "Getting Started"
-content = 'Learn how to setup your assessment workflow on Highlighter through our <a href="docs/welcome/getting-started/">Getting Started page</a>.'
+content = 'Learn how to setup your assessment workflow on Highlighter through our <a href="docs/tutorials/getting-started/">Getting Started page</a>.'
 
 [[extra.list]]
 title = "Learn Key Concepts"
-content = 'Get up to speed with the concepts that underpin how Highlighter works on our <a href="docs/concepts/introduction/">Concepts page</a>.'
+content = 'Get up to speed with the concepts that underpin how Highlighter works on our <a href="docs/concepts/core-system/introduction/">Concepts page</a>.'
 
 [[extra.list]]
 title = "How-To Guides"
@@ -28,5 +28,5 @@ content = 'Find instructions for practical Highlighter use at our <a href="docs/
 
 [[extra.list]]
 title = "Software Development Kit"
-content = 'Get up and running with the Highlighter SDK  <a href="docs/software-development-kit//">Highlighter SDK</a>'
+content = 'Get up and running with the Highlighter SDK  <a href="docs/reference/sdk/">Highlighter SDK</a>'
 +++
