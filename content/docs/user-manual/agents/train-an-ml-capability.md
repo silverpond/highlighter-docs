@@ -4,7 +4,7 @@ description = "The following document is a detailed tutorial guiding you through
 date = 2024-03-15T08:00:00+00:00
 updated = 2024-03-15T08:00:00+00:00
 draft = false
-weight = 100
+weight = 300
 sort_by = "weight"
 template = "docs/page.html"
 

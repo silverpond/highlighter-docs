@@ -4,7 +4,7 @@ description = "Labelling for Object Detection in Highlighter"
 date = 2023-09-26T08:00:00+00:00
 updated = 2023-09-26T08:00:00+00:00
 draft = false
-weight = 10
+weight = 20
 sort_by = "weight"
 template = "docs/page.html"
 

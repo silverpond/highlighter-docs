@@ -4,7 +4,7 @@ description = "Using the Assessment Editor to view and make submissions in Highl
 date = 2023-09-26T08:00:00+00:00
 updated = 2023-09-26T08:00:00+00:00
 draft = false
-weight = 10
+weight = 5
 sort_by = "weight"
 template = "docs/page.html"
 

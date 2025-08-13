@@ -27,7 +27,7 @@ In this guide you'll create a new Agent, add Capabilities, and connect the Capab
 
 You should now be looking at a blank Agent. By default it has two nodes: "Pipeline Inputs" and "Pipeline Outputs". You can drag these around.
 
-{{ resize_image(path="docs/how-to-guides/new-agent.png", width=700, height=1, op="fit_width") }}
+{{ resize_image(path="docs/user-manual/resources/new-agent.png", width=700, height=1, op="fit_width") }}
 
 <br/>
 <br/>
@@ -42,7 +42,7 @@ You can add edges to the "Pipeline Outputs" node by dragging the outputs of the 
 
 The new ports on the "Pipeline Inputs" and "Pipeline Outputs" nodes are given the names of the ports you have connected them to, but you can edit these names by clicking on them.
 
-{{ resize_image(path="docs/how-to-guides/new-agent-with-detector.png", width=700, height=1, op="fit_width") }}
+{{ resize_image(path="docs/user-manual/resources/new-agent-with-detector.png", width=700, height=1, op="fit_width") }}
 
 ### Configure your Capabilities
 

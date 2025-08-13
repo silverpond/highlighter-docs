@@ -1,6 +1,6 @@
 +++
-title = "FAQs"
-description = "Frequently Asked Questions about Highlighter"
+title = "Frequently Asked Questions"
+description = ""
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
@@ -9,7 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = 'Frequently Asked Questions about Highlighter'
+lead = ''
 toc = true
 top = false
 +++

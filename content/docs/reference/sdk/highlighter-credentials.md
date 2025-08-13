@@ -20,7 +20,7 @@ Highlighter via the CLI or the Python SDK.
 
 ### Create an API Token
 
-1. Click the user icon on the right of the top ribbon {{ resize_image(path="docs/how-to-guides/user-icon.png", width=200, height=1, op="fit_width") }}
+1. Click the user icon on the right of the top ribbon {{ resize_image(path="docs/user-manual/resources/user-icon.png", width=200, height=1, op="fit_width") }}
 1. Click your name at the top of the dropdown
 2. Scroll to the bottom and click **Request Access Token** and save it somewhere safe
 

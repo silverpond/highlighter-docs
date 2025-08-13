@@ -4,7 +4,7 @@ description = "A tutorial on how to create your first capability, add it to an a
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
-weight = 400
+weight = 200
 sort_by = "weight"
 template = "docs/page.html"
 
@@ -50,7 +50,7 @@ For this tutorial we will be creating a street number detector. The detector
 will take images as input and return an enum attribute indicating the digit
 (0-9) and a pixel location attribute. For example:
 
-{{ resize_image(path="docs/tutorials/resources/creating-your-first-capability/street-number-example-data.png", width=600, height=1, op="fit_width") }}
+{{ resize_image(path="docs/user-manual/agents/resources/creating-your-first-capability/street-number-example-data.png", width=600, height=1, op="fit_width") }}
 <br>
 
 For this we will need to create 10 *Object Classes* in Highlighter to represent each
@@ -82,7 +82,7 @@ For the programmers among you, a *Model* serves as an Interface.
   - Click `Create Model`
   - Stay on this page for the next steps
 
-{{ resize_image(path="docs/tutorials/resources/creating-your-first-capability/model-created-page.png", width=600, height=1, op="fit_width") }}
+{{ resize_image(path="docs/user-manual/agents/resources/creating-your-first-capability/model-created-page.png", width=600, height=1, op="fit_width") }}
 <br>
 
 ### Model Inputs
@@ -109,7 +109,7 @@ In our case we're creating a single headed *Model*. With `head 0` producing 10
 *Object Class* attributes (one for each digit 0-9) and a pixel location
 attribute representing the bounding box contaning each digit.
 
-{{ resize_image(path="docs/tutorials/resources/creating-your-first-capability/model-heads.png", width=600, height=1, op="fit_width") }}
+{{ resize_image(path="docs/user-manual/agents/resources/creating-your-first-capability/model-heads.png", width=600, height=1, op="fit_width") }}
 <br>
 
 **At the moment the pixel_location attribute is infered within the code and has
