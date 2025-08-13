@@ -24,7 +24,7 @@ If you haven't already, you should checkout [Getting Started With Highlighter SD
 Highlighter project scaffolds provide a bunch of the boilerplate we all hate
 when starting any new project.
 
-```console
+```bash
 # create a Highlighter project, follow the prompts
 hl new .
 ```

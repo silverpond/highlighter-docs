@@ -23,7 +23,7 @@ loose this information you must use the `hdf` or `json` format.
 
 ## CLI
 
-```console
+```bash
 hl dataset read --help
 Usage: hl dataset read [OPTIONS] COMMAND [ARGS]...
 
@@ -45,7 +45,7 @@ For example, the following will:
   - save the images to `/my/image/cache/`
    - save the annotations as a `coco` dataset to `my_dataset/`
 
-```console
+```bash
 hl dataset read -i 123:train -i 456:test coco --annotations-dir my_dataset/ --data-file-dir /my/image/cache/
 
 ls my_dataset/
@@ -54,7 +54,7 @@ ls my_dataset/
 
 Use `--help` to see the format specific cli Options
 
-```console
+```bash
 hl dataset read -i 123 yolo --help
 ```
 

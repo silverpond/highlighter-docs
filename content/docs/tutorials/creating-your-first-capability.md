@@ -1,5 +1,5 @@
 +++
-title = "Creating your first capability"
+title = "Creating Your First Capability"
 description = "A tutorial on how to create your first capability, add it to an agent and run in an assessment workflow"
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
@@ -24,14 +24,13 @@ other explanations/references as needed.
 ## Prerequisites
 
   - **Labelled data**: For this tutorial we will be using a Street Number
-detection dataset. To import it into your account click [here](ToDo). Otherwise
-you can just follow along and fill-in-the-blanks with your own data.
+detection dataset, you can follow along and fill-in-the-blanks with your own data.
 
 ## What Is An *Assessment Capability*
 
 > Assessments tasks are sub-tasks of a larger assessment workflow that an organisation wishes to carry out.
 
-More information on Capabilities [here](../concepts/capabilities.md#assments)
+More information on Capabilities [here](../../concepts/agents-and-capabilities/capabilities)
 
 ## Steps
 
@@ -51,7 +50,8 @@ For this tutorial we will be creating a street number detector. The detector
 will take images as input and return an enum attribute indicating the digit
 (0-9) and a pixel location attribute. For example:
 
-![street-number-example-data](resources/creating-your-first-capability/street-number-example-data.png)
+{{ resize_image(path="docs/tutorials/resources/creating-your-first-capability/street-number-example-data.png", width=600, height=1, op="fit_width") }}
+<br>
 
 For this we will need to create 10 *Object Classes* in Highlighter to represent each
 digit.
@@ -82,7 +82,8 @@ For the programmers among you, a *Model* serves as an Interface.
   - Click `Create Model`
   - Stay on this page for the next steps
 
-![model-created-page](resources/creating-your-first-capability/model-created-page.png)
+{{ resize_image(path="docs/tutorials/resources/creating-your-first-capability/model-created-page.png", width=600, height=1, op="fit_width") }}
+<br>
 
 ### Model Inputs
 
@@ -108,7 +109,8 @@ In our case we're creating a single headed *Model*. With `head 0` producing 10
 *Object Class* attributes (one for each digit 0-9) and a pixel location
 attribute representing the bounding box contaning each digit.
 
-![model-heads](resources/creating-your-first-capability/model-heads.png)
+{{ resize_image(path="docs/tutorials/resources/creating-your-first-capability/model-heads.png", width=600, height=1, op="fit_width") }}
+<br>
 
 **At the moment the pixel_location attribute is infered within the code and has
 not been made explicit so we need only add the *Object Class* attributes to the

@@ -37,7 +37,7 @@ provided.
 Upon completion, you will also have a local directory `<IMAGE_DIR>_with_hl_ids/` with symlinks mapping the
 newly created Highlighter file ids to the original files you uploaded.
 
-```shell
+```bash
 hl image create --data-source-id 123 --image-dir my_images/
 ```
 
@@ -60,7 +60,7 @@ images/01.jpg
 images/02.jpg
 ```
 
-```shell
+```bash
 # Upload images with paths in file
 hl image create --data-source-id 123 --file images.txt
 
@@ -77,7 +77,7 @@ in the coco image records.
 
 Upon completion you will also have a duplicate coco json `<COCO_FILENAME>_with_hl_ids.json` file with the `.images[].file_name` values updated to use the newly created Highlighter file ids
 
-```shell
+```bash
 # Upload images located at foo/image_dir/FILENAME with paths image_dir/FILENAME listed in coco.json
 hl image create --data-source-id 123 --file coco.json --image-dir foo
 ```
@@ -114,7 +114,7 @@ images/
   ...
 ```
 
-```shell
+```bash
 # Upload the images. After this you should have a duplicate of train.json
 # containing the new Highlighter file ids train_with_hl_ids.json
 hl image create --data-source-id 123 \

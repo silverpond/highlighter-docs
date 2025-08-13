@@ -29,14 +29,14 @@ Highlighter via the CLI or the Python SDK.
 This is a quick and simple solution if you're only interacting with a single
 Highlighter account.
 
-```shell
+```bash
 export HL_WEB_GRAPHQL_API_TOKEN=###
 export HL_WEB_GRAPHQL_ENDPOINT=https://YOUR_HIGHLIGHTER_ACCOUNT.highlighter.ai/graphql
 ```
 
 For example
 
-```shell
+```bash
 export HL_WEB_GRAPHQL_API_TOKEN=d000d0d0d0d0d0d0d000d0d0d0d0d0d0
 export HL_WEB_GRAPHQL_ENDPOINT=https://compuglobalhypermeganet.highlighter.ai/graphql
 ```

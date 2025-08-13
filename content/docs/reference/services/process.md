@@ -1,5 +1,5 @@
 +++
-title = "Services Process"
+title = "Services Workflow"
 description = "How Silverpond delivers managed services for your Highlighter platform"
 date = 2025-01-21T08:00:00+00:00
 updated = 2025-01-21T08:00:00+00:00
@@ -14,14 +14,14 @@ toc = true
 top = false
 +++
 
-To ensure a successful Highlighter implementation, Silverpond offers comprehensive services to develop agents and capabilities that use machine learning to automate your processes. These services are designed to:
+To ensure a successful Highlighter implementation, Silverpond offers comprehensive services to develop agents and capabilities that use machine learning to automate your workflows. These services are designed to:
 
 #### * Define project scope, success criteria, and efficiency goals.
 Working collaboratively with customers, we will establish clear goals for what defines a successful deployment of an agent into a workflow. This could be a prototype or a production-ready agent. We develop specific metrics tied to business outcomes, such as accuracy rates, processing speed, and resource efficiency so as to measure the outcomes of a successful deployment.
 #### * Facilitate agent development and evaluation.
 We use training and evaluation data for the development and testing of an agent. We ensure the datasets have an appropriate taxonomy and represent a balance of positive and negative examples. We also work in an iterative manner, incorporating customer feedback into iterative development cycles to refine model performance. Our evaluation process validates model accuracy, robustness, and alignment with business objectives.
-#### * Establish iterative training and evaluation processes using business-as-usual (BAU) data.
-Highlighter has the ability to seamlessly incorporate new data into the training of agents. This means enterprises do not have to separately invest in developing training datasets, but can leverage their existing processes for continual improvement.
+#### * Establish iterative training and evaluation workflows using business-as-usual (BAU) data.
+Highlighter has the ability to seamlessly incorporate new data into the training of agents. This means enterprises do not have to separately invest in developing training datasets, but can leverage their existing workflows for continual improvement.
 #### * Enable seamless collaboration between human and AI agents.
 We help design workflows that allow human experts to complement AI agents, especially in edge cases or ambiguous scenarios where human oversight is required. Highlighter provides the means for staff to validate, override, or augment AI-generated insights. We also help train staff to use the agents to maximise the value of the delivered agents.
 
