@@ -9,24 +9,31 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = 'Highlighter is an Enterprise Perception System that helps organisations digitise their assessment workflows.'
+lead = ''
 toc = true
 top = false
 +++
 
-## Features
+## Focussed team, significant impact
 
-#### Data Sources
+Silverpond are creators of AI systems.
 
-Highlighter supports assessment different types of data sources: image, video, audio and text.
+With a 15-person team, Silverpond's compact size enables close collaboration with customers, allowing rapid deployment and iteration in real world environments. This agility delivers significant impact across systems handling millions of data points, hundreds of edge devices, and thousands of users.
 
-#### Taxonomy
+## The Highlighter AI story
+As far back as 2018, the Silverpond team recognized a critical gap across diverse enterprise sectors—all were experiencing an explosion of sensor data, increasing risk exposure in critical infrastructure, and rising compliance pressures. All were collecting vast volumes of data but lacked tools to turn it into actionable insights. 
 
-Define your own taxonomy that matches the concepts in your organisation
+Silverpond quickly identified that as data volumes grow, enterprises find it harder to turn complex information into quick decisions. The problem wasn't industry-specific—it was universal. Perception is perception, regardless of sector. This insight led to Highlighter AI, enterprise software purpose-built in Australia as an Enterprise Perception System designed to think, predict, and act.
 
-#### Customisable Assessment Workflows
+Highlighter's mission is to see what others miss, going beyond simple data interpretation to reveal critical insights that, until now, remained hidden.
 
-Define and customise assessment workflows that fit your organisation's needs
+## Making sense of complex sensory data
+Highlighter AI serves as the perception layer for operations, processing real-world data regardless of type or format—flagging degraded power assets before failure, enabling 24/7 agricultural monitoring, identifying rare species of marine life, and accelerating pathological diagnosis, and much more.
+
+Highlighter uncovers what human eyes alone cannot.
+
+Today, Highlighter operates across thousands of assets in medical technology, power utilities, agriculture, transportation, and conservation—helping organizations make sense of the data they've been gathering all along.
+
 
 ## Getting Started
 
