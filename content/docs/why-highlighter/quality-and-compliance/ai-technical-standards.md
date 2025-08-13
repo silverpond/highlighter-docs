@@ -1,10 +1,10 @@
 +++
-title = "AI Technical Standards"
+title = "AUS AI Technical Standards"
 description = "Highlighter supports Australian Government AI Technical Standards"
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
-weight = 200
+weight = 300
 sort_by = "weight"
 template = "docs/page.html"
 
