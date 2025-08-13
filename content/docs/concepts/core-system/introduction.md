@@ -16,7 +16,7 @@ top = false
 
 1. [Assessment Workflow](../assessment-workflow/)
 2. [Enterprise Perception System](../enterprise-perception-system/)
-3. [Agents](../agents/)
-4. [Capabilities](../capabilities/)
-5. [Evaluation](../evaluation/)
-6. [Monitoring](../monitoring/)
+3. [Agents](../../agents-and-capabilities/agents/)
+4. [Capabilities](../../agents-and-capabilities/capabilities/)
+5. [Evaluation](../../operations/evaluation/)
+6. [Monitoring](../../operations/monitoring/)

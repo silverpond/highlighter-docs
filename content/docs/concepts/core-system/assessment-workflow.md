@@ -59,7 +59,7 @@ Assessments are the individual tasks that an agent carries out when progressing 
  * Identifying unique entities across multiple views across time and space of the same object.
  * Tracks are sets of localised detections in adjacent frames of a video or sections of text, such that each detection in the track captures the same entity.
 
-See [Capabilities](../capabilities/) for more information and examples of the types of tasks agents complete.
+See [Capabilities](../../agents-and-capabilities/capabilities/) for more information and examples of the types of tasks agents complete.
 
 Each of these assessments results in data that are claims about the world.
 
@@ -67,4 +67,4 @@ Each of these assessments results in data that are claims about the world.
 
 Claims is data that results from an assessment performed by an agent. Each claim is a data point about an entity at a point in time eg., species of a fish. Since multiple different agents can assess the same entity, the resulting claims can be in conflict with each other. Currently Highlighter assumes the most recent claim in the assessment of a file is the official claim made (as close to a fact as the system can determine).
 
-Claims, which result from an assessment workflow, are the central information used by the organisation to make decisions and take actions. This data is expected to conform to the Taxonomy specifed in Highlighter. See [Monitoring & Reporting](../monitoring/) for more information on how to review the data output by an Assessment Workflow.
+Claims, which result from an assessment workflow, are the central information used by the organisation to make decisions and take actions. This data is expected to conform to the Taxonomy specifed in Highlighter. See [Monitoring & Reporting](../../operations/monitoring/) for more information on how to review the data output by an Assessment Workflow.

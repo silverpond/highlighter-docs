@@ -101,6 +101,6 @@ Leverage AI-assisted segmentation for complex shapes.
 - Consider reducing video resolution for complex annotations
 
 ### Getting Help
-- See [Troubleshooting Annotation Tool](../troubleshooting-annotation-tool) for more troubleshotting tips.
+- See [Troubleshooting Annotation Tool](./troubleshooting-annotation-tool/) for more troubleshooting tips.
 - Contact support [support@highlighter.ai](mailto:support@highlighter.ai)
 - Check system status for service updates

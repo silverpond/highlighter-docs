@@ -93,7 +93,7 @@ the labels as follows.
   
 This tutorial expects you to have done the following:
 
-  1. Created [Highlighter Credentials](./highlighter-credentials.md)
+  1. Created [Highlighter Credentials](../../reference/sdk/highlighter-credentials/)
   2. Created a Data Source in the Highlighter Web UI, note the ID from the URL, eg:
   `https://your-account-subdomain.highlighter.ai/data_source/DATASOURCE_ID`
   4. Create the Object Classes of the same name in Highlighter

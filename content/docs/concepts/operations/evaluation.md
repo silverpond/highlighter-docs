@@ -14,7 +14,7 @@ toc = true
 top = false
 +++
 
-[Evaluation](../evaluation/) aims to provide data about how the claims are generated in the Assessment Workflow, while [Monitoring & Reporting](../monitoring/) aims to provide the data out of the Assessment Workflow itself. The purpose of the evaluation is to identify areas of improvement in the Assessment Workflow itself, and the purpose of monitoring & reporting is to understand the subject under assessment.
+[Evaluation](./) aims to provide data about how the claims are generated in the Assessment Workflow, while [Monitoring & Reporting](../monitoring/) aims to provide the data out of the Assessment Workflow itself. The purpose of the evaluation is to identify areas of improvement in the Assessment Workflow itself, and the purpose of monitoring & reporting is to understand the subject under assessment.
 
 
 ## Metrics
