@@ -33,7 +33,7 @@ This guide will help you install and configure the Highlighter Python SDK
 python -m venv venv
 source venv/bin/activate
 pip install -U pip
-pip install -e .
+pip install highlighter-sdk
 ```
 
 
@@ -43,7 +43,7 @@ pip install -e .
 python -m venv venv
 venv\Scripts\activate.bat
 venv\Scripts\python.exe -m pip install -U pip
-venv\Scripts\python.exe -m pip install -e .
+venv\Scripts\python.exe -m pip install highlighter-sdk
 ```
 
 ### NixOS
