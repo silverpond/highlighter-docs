@@ -14,7 +14,7 @@ toc = true
 top = false
 +++
 
-Highlighter is the world’s only fully integrated Enterprise Perception System (EPS)—a platform that brings together human expertise and AI capabilities to collect, analyze, and act on data from diverse sources. While open-source tools and other commercial solutions can address fragments of this process, Highlighter offers a unified, end-to-end approach that simplifies development, accelerates results, and ensures consistent, enterprise-grade performance. Learn more about what an Enterprise Perception System is in our [Concepts section](/docs/concepts/introduction).
+Highlighter is the world’s only fully integrated Enterprise Perception System (EPS)—a platform that brings together human expertise and AI capabilities to collect, analyze, and act on data from diverse sources. While open-source tools and other commercial solutions can address fragments of this process, Highlighter offers a unified, end-to-end approach that simplifies development, accelerates results, and ensures consistent, enterprise-grade performance. Learn more about what an Enterprise Perception System is in our [Concepts section](/docs/user-manual/concepts/introduction).
 
 ## A Complete Perception Lifecycle in One Platform
 

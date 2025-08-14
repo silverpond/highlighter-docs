@@ -24,7 +24,7 @@ both options.
   
 This tutorial expects you to have done the following:
 
-  1. Created [Highlighter Credentials →](../highlighter-credentials/)
+  1. Created [Highlighter Credentials →](../../reference/sdk/highlighter-credentials/)
   2. Created a Data Source in the Highlighter Web UI, note the Data Source ID from the URL, eg:
   `https://your-account-subdomain.highlighter.ai/data_source/DATASOURCE_ID`
 

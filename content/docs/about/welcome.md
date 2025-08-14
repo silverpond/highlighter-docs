@@ -37,7 +37,7 @@ Today, Highlighter operates across thousands of assets in medical technology, po
 
 ## Getting Started
 
-One page summary of how to start a new Highlighter Assessment Workflow. [Getting Started →](../../tutorials/getting-started/)
+One page summary of how to start a new Highlighter Assessment Workflow. [Getting Started →](../../user-manual/getting-started/)
 
 ## Support
 

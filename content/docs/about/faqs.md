@@ -77,7 +77,7 @@ Currently this is not possible, but it is on our roadmap. If you have data sover
 
 ## Agents and Capabilities
 
-Agents are workers in Highlighter that have specific capabilities to perform assessments. Please see our [Agents concepts page](../concepts/agents/) learn more about what agents and capabilities are and how they work.
+Agents are workers in Highlighter that have specific capabilities to perform assessments. Please see our [Agents concepts page](../user-manual/concepts/agents/) learn more about what agents and capabilities are and how they work.
 
 #### Can I train my own model?
 

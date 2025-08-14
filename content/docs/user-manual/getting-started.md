@@ -16,14 +16,14 @@ top = false
 
 ## Learn Key Concepts
 
-Learn key [concepts](../../concepts/core-system/introduction/) and understand how to digitise your assessment workflows.
+Learn key [concepts](../concepts/introduction/) and understand how to digitise your assessment workflows.
 
-* [Understand what is an assessment workflow →](../../concepts/core-system/assessment-workflow/)
-* [Understand what is an enterprise perception system →](../../concepts/core-system/enterprise-perception-system/)
-* [Understand what is an agent →](../../concepts/agents-and-capabilities/agents/)
-* [Understand capabilities of an agent →](../../concepts/agents-and-capabilities/capabilities/)
-* [Understand how to evaluate the assessment workflow →](../../concepts/operations/evaluation/)
-* [Understand how to monitor the subjects under assessment →](../../concepts/operations/monitoring/)
+* [Understand what is an assessment workflow →](../concepts/assessment-workflow/)
+* [Understand what is an enterprise perception system →](../concepts/enterprise-perception-system/)
+* [Understand what is an agent →](../concepts/agents/)
+* [Understand capabilities of an agent →](../concepts/capabilities/)
+* [Understand how to evaluate the assessment workflow →](../concepts/evaluation/)
+* [Understand how to monitor the subjects under assessment →](../concepts/monitoring/)
 
 ## Running your first assessment workflow: A tutorial
 

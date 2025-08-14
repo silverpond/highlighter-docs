@@ -18,5 +18,5 @@ top = false
 
 You can email [support@highlighter.ai](mailto:support@highlighter.ai) for customer support.
 
-Before emailing, please see if your issue has been addressed in user manual below.
+Before emailing, please see if your issue has been addressed in the user manual below.
 
