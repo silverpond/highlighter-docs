@@ -1,133 +1,62 @@
 +++
 title = "Creating Workflow Orders"
-description = "How to create and manage workflow orders in Highlighter"
-date = 2025-05-01T08:00:00+00:00
-updated = 2025-05-01T08:00:00+00:00
+description = "Creating Workflow Orders in Highlighter"
+date = 2023-09-26T08:00:00+00:00
+updated = 2023-09-26T08:00:00+00:00
 draft = false
-weight = 20
+weight = 10
 sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "Learn how to create, configure, and manage workflow orders to organize your assessment tasks in Highlighter."
+lead = ''
 toc = true
 top = false
 +++
 
-## Overview
+Work in a Highlighter Workflow can be divided up into Workflow Orders. Each Workflow Order can represent a particular grouping of data files that you want to keep separate. This might be for the purpose of ingesting them, tracking their flow through Highlighter, or exporting assessment results for them separately.
 
-Workflow orders are containers that organize and manage batches of data through your assessment workflows. They allow you to track progress, assign tasks, and monitor completion status across multiple files and assessment stages.
+Workflow Orders are a way of dividing up the work of your Assessment Workflow into manageable chunks. Each Workflow Order can match a certain subset of the data in your workflow's data source, allowing you to handle the processing of different groupings of data separately.
 
-## Creating a New Workflow Order
+A Workflow Order funnels work through a sequence of Workflow Stages. For example, the sequence might be Data Source -> Machine Assessment Stage -> Human Assessment Stage. The following instructions assume your sequence of Workflow stages has already been set up, and includes a data source as the first stage.
 
-### Prerequisites
-- Access to Highlighter platform
-- Appropriate permissions for workflow management
-- A configured assessment workflow
+- <a href="#navigate-to-the-workflow-orders-page">Navigate To The Workflow Orders Page</a>
+- <a href="#manually-create-workflow-orders">Manually Create Workflow Orders</a>
+- <a href="#bulk-create-workflow-orders">Bulk-Create Workflow Orders</a>
 
-### Steps
+## Navigate To The Workflow Orders Page
 
-1. **Navigate to Workflow Orders**
-   - Go to the main dashboard
-   - Click on "Workflow Orders" in the navigation menu
-   - Select "Create New Order"
+Click 'Develop' in the top navigation then click 'Workflows' under 'Assessments' in the side navigation. Then click the 'Orders' tab.
 
-2. **Basic Configuration**
-   - **Order Name**: Provide a descriptive name
-   - **Description**: Add details about the order's purpose
-   - **Workflow**: Select the target assessment workflow
-   - **Priority**: Set the processing priority (High/Normal/Low)
+## Manually Create Workflow Orders
 
-3. **Data Assignment**
-   - **File Selection**: Choose files to include in the order
-   - **Batch Size**: Set the number of files per batch
-   - **Data Sources**: Specify input data sources
-   - **Output Destination**: Configure where results will be stored
+### Create New Workflow Order
+Click the 'New Order' button then fill out the required fields.
+<ul>
+  <li><em>Name</em> - A name is created for you with the current date and time but this can be altered or replaced if needed.</li>
+  <li><em>Lock and prevent addition of new files to order</em> - Locked orders are unchangeable once they are created, and new files cannot be added.</li>
+  <li><em>Original Source URL Filter</em> - The original source URL filter defines a path within the folder structure of the S3 bucket belonging to the Workflow's data source. Only files with source URLs matching this path will be added to the Workflow Order. This allows you to group files in the folder structure of the data source into separate workflow orders.</li>
+</ul>
 
-4. **Workflow Configuration**
-   - **Assessment Stages**: Review and configure workflow stages
-   - **Human Assignment**: Assign human reviewers if needed
-   - **Machine Agents**: Configure automated processing agents
-   - **Quality Thresholds**: Set accuracy and quality requirements
+Click the 'Review Order' button.
 
-## Order Management
+### Review Order
+Check the data presented including number of files matched and the list of matched folders. If you need to make changes, you can click the 'Back to New Order' button. Otherwise click 'Create and Approve Order'.
 
-### Monitoring Progress
-- **Dashboard View**: Track overall progress and status
-- **Stage-by-Stage**: Monitor progress at each assessment stage
-- **File-Level Details**: View individual file processing status
-- **Performance Metrics**: Review throughput and quality metrics
+You will be returned to your Workflow page with a message indicating whether it was successful. Scroll down again to the 'Orders' section and locate the new Workflow Order in the list.
 
-### Managing Assignments
-- **Reassign Tasks**: Move tasks between reviewers
-- **Workload Balancing**: Distribute work evenly across team members
-- **Deadline Management**: Set and track completion deadlines
-- **Escalation**: Handle overdue or problematic assignments
+## Bulk-Create Workflow Orders
+You can also create Workflow Orders in bulk by uploading a CSV. This saves time and reduces errors when you have a lot of Orders to create.
 
-### Quality Control
-- **Review Checkpoints**: Set up quality review points
-- **Approval Workflows**: Configure approval processes
-- **Rejection Handling**: Manage rejected items and rework
-- **Audit Trail**: Track all changes and decisions
+### Upload via CSV
 
-## Advanced Features
+Navigate to the Orders page as <a href="#navigate-to-the-workflow-orders-page">above</a> and click the 'Create via CSV' button.
 
-### Batch Operations
-- **Bulk Actions**: Apply actions to multiple orders
-- **Template Orders**: Create reusable order templates
-- **Scheduling**: Set up recurring or scheduled orders
-- **Dependencies**: Configure order dependencies and sequencing
+### Select a CSV and set options
 
-### Integration Features
-- **API Access**: Programmatic order management
-- **Webhook Notifications**: Real-time status updates
-- **Export Options**: Export results and reports
-- **External Systems**: Integration with business systems
+You will see instructions about the format of CSV required. Once you have created your CSV, click the 'Select CSV' button and choose your CSV file.
 
-## Best Practices
+Also set the 'State of Orders' dropdown to indicate whether you want the new Workflow Orders to be created as 'draft' or 'approved'. The state of an order is a way to indicate whether it's a work-in-progress that you will make further changes to, or whether it's finished and approved.
 
-### Order Organization
-- Use clear, descriptive naming conventions
-- Group related orders together
-- Set appropriate priorities based on business needs
-- Document special requirements or conditions
+Then click 'Create Orders' and you'll be redirected to your orders page, with a message indicating the results, for example:<blockquote>Successfully imported orders: 30 total, 30 created, 0 skipped due to same name, 0 skipped due to same filter original source url.</blockquote> You can change your CSV and try again - only orders that don't already exists in the system will be created.
 
-### Resource Management
-- Balance workload across available resources
-- Monitor processing capacity and adjust accordingly
-- Plan for peak processing periods
-- Maintain reserve capacity for urgent orders
-
-### Quality Assurance
-- Implement consistent quality standards
-- Regular review of output quality
-- Feedback loops for continuous improvement
-- Documentation of quality issues and resolutions
-
-## Troubleshooting
-
-### Common Issues
-
-**Order Stuck in Processing**
-- Check for failed dependencies
-- Verify resource availability
-- Review error logs
-- Contact system administrator if needed
-
-**Quality Issues**
-- Review assessment stage configuration
-- Check training data quality
-- Verify human reviewer guidelines
-- Adjust quality thresholds if needed
-
-**Performance Problems**
-- Monitor system resources
-- Check for bottlenecks in the workflow
-- Review batch sizes and processing limits
-- Consider load balancing options
-
-### Getting Help
-For additional support:
-- Check the system documentation
-- Contact technical support
-- Review community forums and knowledge base
