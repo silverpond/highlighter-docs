@@ -19,7 +19,7 @@ top = false
 ### Navigation
 - **Spacebar**: Play/pause video
 - **Left/Right arrows**: Frame-by-frame navigation
-- **Shift + Left/Right**: Jump 10 frames
+- **Shift + Left/Right**: Jump 1 second
 - **Home/End**: Go to start/end of video
 - **J/K/L**: Reverse/pause/forward (industry standard)
 
