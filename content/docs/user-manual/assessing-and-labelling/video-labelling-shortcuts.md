@@ -63,6 +63,11 @@ Leverage AI-assisted segmentation for complex shapes.
 - Refine AI suggestions manually when needed
 - Use the brush tool for fine-tuning
 
+## Joining Tracks
+If multiple tracks are actually for the same entity (in other words, for the same real-world object), you may want to join the tracks together. This process takes any number of separate tracks and joins them together, to result in one continuous tracks. To do this:
+- Select the tracks to be joined. To do this, select the first track, hold down the shift key, then select subsequent tracks until they are all selected. Select tracks either in the list in the left side panel (use keyboard shortcut 'l', lower-case L, to open the side panel if it is closed), or in the main panel.
+- In the top menu select Edit -> Join Tracks or use shortcut key 'a'.
+
 ## Productivity Tips
 
 ### Efficient Workflow
