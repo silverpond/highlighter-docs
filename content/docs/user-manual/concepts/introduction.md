@@ -1,6 +1,6 @@
 +++
-title = "Introduction"
-description = "Introduction to key concepts in Highlighter"
+title = "Concepts Introduction | Highlighter Documentation"
+description = "Discover the core concepts of Highlighter AI: assessment workflows, Enterprise Perception System, AI agents, capabilities, evaluation, and monitoring in one platform."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
