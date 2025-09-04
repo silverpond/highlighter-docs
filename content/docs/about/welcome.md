@@ -1,6 +1,6 @@
 +++
-title = "Introduction"
-description = "Welcome to Highlighter"
+title = "Introduction & Getting Started"
+description = "Transform sensory data into insights. Highlighter AI by Silverpond is for every enterprise; Power, Medtech, Agriculture, Transport, Conservation, Mining and more"
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
