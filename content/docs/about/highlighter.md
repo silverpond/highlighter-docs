@@ -1,6 +1,6 @@
 +++
-title = "Highlighter"
-description = ""
+title = "Highlighter AI and the Enterprise Perception System"
+description = "Highlighter AI is the Enterprise Perception System. With a media-agnostic, human-in-loop workflows, and flexible deployment, Highlighter turns complex data into clear actions."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
