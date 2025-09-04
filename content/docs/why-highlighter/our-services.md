@@ -1,6 +1,6 @@
 +++
 title = "Services Workflow"
-description = "How Silverpond delivers managed services for your Highlighter platform"
+description = "Realise the full potential of your EPS. Transform perception into decisive, enterprise-wide action with experts by your side, every step of the way. From scoping and iterative agent development to human, AI workflows and iterative training for enterprise impact."
 date = 2025-01-21T08:00:00+00:00
 updated = 2025-01-21T08:00:00+00:00
 draft = false
