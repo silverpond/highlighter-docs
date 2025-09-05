@@ -1,6 +1,6 @@
 +++
 title = "Creating Workflow Orders"
-description = "Creating Workflow Orders in Highlighter"
+description = "Create Workflow Orders in Highlighter AI，manually or via CSV to group data files, streamline processing, track results, and scale enterprise annotation workflows."
 date = 2023-09-26T08:00:00+00:00
 updated = 2023-09-26T08:00:00+00:00
 draft = false
