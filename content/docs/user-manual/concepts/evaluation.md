@@ -1,6 +1,6 @@
 +++
-title = "Evaluation"
-description = "Evaluating agents and the assessment workflow in Highlighter"
+title = "Evaluation | Highlighter Concepts"
+description = "Highlighter AI evaluates workflows and agents using metrics such as accuracy, precision, recall, throughput, processing time, and compliance rate."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
