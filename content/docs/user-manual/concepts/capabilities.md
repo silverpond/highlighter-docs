@@ -1,6 +1,6 @@
 +++
-title = "Capabilities"
-description = "Introduction to Capabilities of Agents"
+title = "Capabilities | Highlighter Concepts"
+description = "Highlighter AI defines agent capabilities, human or machine skills for data sourcing, assessments, and custom workflows to deliver accurate, scalable insights."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
