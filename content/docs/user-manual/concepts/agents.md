@@ -1,6 +1,6 @@
 +++
-title = "Agents"
-description = "Introduction to Agents"
+title = "Agents | Highlighter Concepts"
+description = "Discover Highlighter's AI agents: where both people and machines, trained or deployed across cloud, edge, or on-premise to carry out tasks, monitor workflows, and deliver assessed results."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
