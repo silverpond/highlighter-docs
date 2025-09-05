@@ -1,6 +1,6 @@
 +++
-title = "Media Search"
-description = "Using the media search page in Highlighter"
+title = "Media Search to Discover Assets"
+description = "Use Media Search in Highlighter AI to find, filter, and download files by applying detailed filters like data source, metadata, and assessment workflows."
 date = 2023-09-26T08:00:00+00:00
 updated = 2023-09-26T08:00:00+00:00
 draft = false
