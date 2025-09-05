@@ -1,6 +1,6 @@
 +++
-title = "Assessment Workflow"
-description = "Introduction to key concepts in Highlighter"
+title = "Assessment Workflow | Highlighter Concepts"
+description = "Assessment Workflows in Highlighter AI systematically process data for evaluation. Define criteria, collect and analyze inputs, report findings, and drive action through iterative review."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
