@@ -1,6 +1,6 @@
 +++
 title = "Train an ML Capability"
-description = "The following document is a detailed tutorial guiding you through creating a _Capability_ by training an deep learning model using Highlighter"
+description = "Train an ML capability in Highlighter AI, set up capability inputs/outputs, create snapshot datasets, configure and schedule training runs, inspect metrics, and deploy models efficiently."
 date = 2024-03-15T08:00:00+00:00
 updated = 2024-03-15T08:00:00+00:00
 draft = false
