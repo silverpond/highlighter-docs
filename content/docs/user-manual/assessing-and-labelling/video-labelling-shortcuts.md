@@ -1,6 +1,6 @@
 +++
 title = "Video Labelling Shortcuts, Tools and Tips"
-description = "Essential shortcuts, tools and tips for efficient video annotation in Highlighter"
+description = "Boost video annotation efficiency in Highlighter AI with essential keyboard shortcuts, navigation tools, and productivity tips to speed up labelling and streamline workflows."
 date = 2025-05-01T08:00:00+00:00
 updated = 2025-05-01T08:00:00+00:00
 draft = false
