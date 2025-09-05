@@ -1,6 +1,6 @@
 +++
 title = "Troubleshooting Annotation Tool"
-description = "Common issues and solutions for the Highlighter annotation tool"
+description = "Resolve common issues with Highlighter AI’s annotation tool，fix loading, performance, tools, session errors, and precision problems with practical error-handling and best practices."
 date = 2025-05-01T08:00:00+00:00
 updated = 2025-05-01T08:00:00+00:00
 draft = false
