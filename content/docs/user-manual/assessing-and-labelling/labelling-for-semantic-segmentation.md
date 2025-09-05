@@ -1,6 +1,6 @@
 +++
 title = "Labelling for Semantic Segmentation"
-description = "Labelling for Semantic Segmentation in Highlighter"
+description = "Use polygon and AI-assisted segmentation tools in Highlighter AI to create pixel-level annotations, ensuring accuracy and consistency for deep learning and computer vision workflows."
 date = 2023-09-26T08:00:00+00:00
 updated = 2023-09-26T08:00:00+00:00
 draft = false
