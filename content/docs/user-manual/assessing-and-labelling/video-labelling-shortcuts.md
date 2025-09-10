@@ -108,6 +108,6 @@ If multiple tracks are actually for the same entity (in other words, for the sam
 - Consider reducing video resolution for complex annotations
 
 ### Getting Help
-- See [Troubleshooting Annotation Tool](./troubleshooting-annotation-tool/) for more troubleshooting tips.
+- See [Troubleshooting Annotation Tool](../troubleshooting-annotation-tool/) for more troubleshooting tips.
 - Contact support [support@highlighter.ai](mailto:support@highlighter.ai)
 - Check system status for service updates
