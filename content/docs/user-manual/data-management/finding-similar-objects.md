@@ -1,6 +1,6 @@
 +++
 title = "Finding Similar Objects in Videos"
-description = "How to use Highlighter's similarity detection to find similar objects across video content"
+description = "Highlighter AI uses similarity detection to find visually matched objects across video content with feature extraction, embedding matching, and configurable search filters."
 date = 2025-05-01T08:00:00+00:00
 updated = 2025-05-01T08:00:00+00:00
 draft = false

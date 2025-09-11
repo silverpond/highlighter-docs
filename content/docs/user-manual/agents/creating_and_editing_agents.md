@@ -1,6 +1,6 @@
 +++
 title = "How To Create and Edit a Machine Agent"
-description = "How to Create and Edit a Machine Agent"
+description = "Design and configure a Machine Agent in Highlighter AI. Add capabilities, connect pipeline inputs and outputs, and edit parameters to build deployable AI agents."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false

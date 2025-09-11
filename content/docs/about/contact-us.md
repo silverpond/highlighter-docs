@@ -1,6 +1,6 @@
 +++
-title = "Contact Us"
-description = ""
+title = "Highlighter | Contact Us"
+description = "Contact the Highlighter AI team at Silverpond for business support"
 date = 2025-01-21T08:00:00+00:00
 updated = 2025-01-31T08:00:00+00:00
 draft = false

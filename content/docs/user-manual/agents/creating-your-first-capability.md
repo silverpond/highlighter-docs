@@ -1,6 +1,6 @@
 +++
 title = "Creating Your First Capability"
-description = "A tutorial on how to create your first capability, add it to an agent and run in an assessment workflow"
+description = "Step-by-step tutorial to create your first Assessment Capability in Highlighter AI: define taxonomy, build a model, run experiments, configure training runs, and kickstart agent development."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false

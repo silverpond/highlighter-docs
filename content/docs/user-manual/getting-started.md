@@ -1,6 +1,6 @@
 +++
-title = "Getting Started"
-description = "One page summary of how to start a new Highlighter Assessment Workflow."
+title = "Getting Started | Highlighter Documentation"
+description = "Start your journey with Highlighter AI. Learn key concepts, run your first assessment workflow, and install the Highlighter SDK for seamless digital assessment operations."
 date = 2021-05-01T08:20:00+00:00
 updated = 2021-05-01T08:20:00+00:00
 draft = false

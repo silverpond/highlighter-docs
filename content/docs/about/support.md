@@ -1,6 +1,6 @@
 +++
-title = "Support"
-description = ""
+title = "Support Resources"
+description = "Access user manuals or email support@highlighter.ai for customer help and troubleshooting."
 date = 2025-01-21T08:00:00+00:00
 updated = 2025-01-31T08:00:00+00:00
 draft = false

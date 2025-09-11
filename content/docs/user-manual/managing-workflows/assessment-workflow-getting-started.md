@@ -1,6 +1,6 @@
 +++
 title = "Assessment Workflows"
-description = "Step-by-step tutorial for creating your first assessment workflow in Highlighter"
+description = "Get started with Highlighter AI’s Assessment Workflows. Configure data sources, AI and human assessment stages, routing logic, and launch scalable workflows for operational clarity."
 date = 2025-05-01T08:00:00+00:00
 updated = 2025-05-01T08:00:00+00:00
 draft = false
