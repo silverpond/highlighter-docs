@@ -31,14 +31,14 @@ This tutorial expects you to have done the following:
 
 ### Upload Images From a Directory
 
-The following will upload all files in `--image-dir` to the `--data-source-id`
+The following will upload all files in `--data-file-dir` to the `--data-source-uuid`
 provided.
 
 Upon completion, you will also have a local directory `<IMAGE_DIR>_with_hl_ids/` with symlinks mapping the
 newly created Highlighter file ids to the original files you uploaded.
 
 ```bash
-hl image create --data-source-id 123 --image-dir my_images/
+hl data-file create --data-source-uuid 123 --data-file-dir my_images/
 ```
 
 
@@ -48,7 +48,7 @@ If you have a text file containing paths to the images you want to upload you ca
 use the `--file` option.
 
 Each path should be on a new line and should be an absolute path or, they can
-be relative paths where `--image-dir` will be prepended to each path in the file.
+be relative paths where `--data-file-dir` will be prepended to each path in the file.
 
 Upon completion, you will also have a local directory `<IMAGE_DIR>_with_hl_ids/` with symlinks mapping the
 newly created Highlighter file ids to the original files you uploaded.
@@ -62,24 +62,24 @@ images/02.jpg
 
 ```bash
 # Upload images with paths in file
-hl data-file create --data-source-id 123 --file images.txt
+hl data-file create --data-source-uuid 123 --file images.txt
 
 # Upload images with paths foo/PATH_FROM_TXT_FILE
-hl data-file create --data-source-id 123 --file images.txt --image-dir foo
+hl data-file create --data-source-uuid 123 --file images.txt --data-file-dir foo
 ```
 
 ### Upload a Dataset from a Coco JSON File
 
 If you have a coco dataset json file you can use the `--file` option.
 
-If needed you can use `--image-dir` to append a directory to the `file_name`s
+If needed you can use `--data-file-dir` to append a directory to the `file_name`s
 in the coco image records.
 
 Upon completion you will also have a duplicate coco json `<COCO_FILENAME>_with_hl_ids.json` file with the `.images[].file_name` values updated to use the newly created Highlighter file ids
 
 ```bash
 # Upload images located at foo/image_dir/FILENAME with paths image_dir/FILENAME listed in coco.json
-hl data-file create --data-source-id 123 --file coco.json --image-dir foo
+hl data-file create --data-source-uuid 123 --file coco.json --data-file-dir foo
 ```
 
 ## Images And Observations
@@ -117,16 +117,16 @@ images/
 ```bash
 # Upload the images. After this you should have a duplicate of train.json
 # containing the new Highlighter file ids train_with_hl_ids.json
-hl data-file create --data-source-id 123 \
+hl data-file create --data-source-uuid 123 \
   --file annotations/train.json \
-  --image-dir images
+  --data-file-dir images
 
 # Upload the labels in the dataset to an Assessment Workflow
-hl submission create-from-dataset \
+hl assessment create-from-dataset \
   --dataset-format coco \
   --data-path annotations/train_with_hl_ids.json \
   --user-id ### \
-  --process-id ### \
-  --data-source-id ###
+  --workflow-id ### \
+  --data-source-ids ###
 ```
 
