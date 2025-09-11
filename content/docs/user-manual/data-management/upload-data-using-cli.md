@@ -62,10 +62,10 @@ images/02.jpg
 
 ```bash
 # Upload images with paths in file
-hl image create --data-source-id 123 --file images.txt
+hl data-file create --data-source-id 123 --file images.txt
 
 # Upload images with paths foo/PATH_FROM_TXT_FILE
-hl image create --data-source-id 123 --file images.txt --image-dir foo
+hl data-file create --data-source-id 123 --file images.txt --image-dir foo
 ```
 
 ### Upload a Dataset from a Coco JSON File
@@ -79,7 +79,7 @@ Upon completion you will also have a duplicate coco json `<COCO_FILENAME>_with_h
 
 ```bash
 # Upload images located at foo/image_dir/FILENAME with paths image_dir/FILENAME listed in coco.json
-hl image create --data-source-id 123 --file coco.json --image-dir foo
+hl data-file create --data-source-id 123 --file coco.json --image-dir foo
 ```
 
 ## Images And Observations
@@ -117,7 +117,7 @@ images/
 ```bash
 # Upload the images. After this you should have a duplicate of train.json
 # containing the new Highlighter file ids train_with_hl_ids.json
-hl image create --data-source-id 123 \
+hl data-file create --data-source-id 123 \
   --file annotations/train.json \
   --image-dir images
 
