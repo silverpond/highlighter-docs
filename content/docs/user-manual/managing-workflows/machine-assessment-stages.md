@@ -1,6 +1,6 @@
 +++
 title = "Machine Assessment Stages"
-description = "How to create and configure machine assessment stages in Highlighter workflows"
+description = "Configure machine-powered stages in Highlighter AI—assign AI agents, set quality thresholds, handle routing logic, and optimize performance for scalable enterprise workflows."
 date = 2025-05-01T08:00:00+00:00
 updated = 2025-05-01T08:00:00+00:00
 draft = false

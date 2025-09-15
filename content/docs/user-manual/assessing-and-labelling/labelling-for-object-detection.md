@@ -1,6 +1,6 @@
 +++
 title = "Labelling for Object Detection"
-description = "Labelling for Object Detection in Highlighter"
+description = "Label objects in Highlighter AI with bounding boxes. Follow best practices to capture precise object boundaries and build high-quality datasets for machine learning models."
 date = 2023-09-26T08:00:00+00:00
 updated = 2023-09-26T08:00:00+00:00
 draft = false

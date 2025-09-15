@@ -1,6 +1,6 @@
 +++
-title = "Frequently Asked Questions"
-description = ""
+title = "FAQs | How Can We Help"
+description = "Find answers to common questions about Highlighter AI:  data ownership, model training, agent capabilities, and ISO 27001 security compliance."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false

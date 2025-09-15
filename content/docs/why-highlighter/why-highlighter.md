@@ -1,6 +1,6 @@
 +++
-title = "Why Highlighter?"
-description = "Why Highlighter? A True Enterprise Perception System"
+title = "Why Highlighter | The Enterprise Perception System"
+description = "Discover why Highlighter AI is the Enterprise Perception System for mission-critical environments. Highlighter unifies the full AI lifecycle for clarity, efficiency, and scale."
 date = 2025-01-21T08:00:00+00:00
 updated = 2025-01-31T08:00:00+00:00
 draft = false

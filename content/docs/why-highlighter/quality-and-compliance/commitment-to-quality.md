@@ -1,6 +1,6 @@
 +++
-title = "Commitment to Quality"
-description = ""
+title = "Precision in Details"
+description = "Silverpond’s quality philosophy compliance is rooted in ISO 27001 ISMS (Information Security Management System) and ISO 42001 AIMS (Artificial Intelligence Management System) —ensuring consistency, reliability, risk management, and continuous improvement of Highlighter AI."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false

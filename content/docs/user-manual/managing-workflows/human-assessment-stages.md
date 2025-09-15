@@ -1,6 +1,6 @@
 +++
 title = "Human Assessment Stages"
-description = "How to create and manage human assessment stages in Highlighter workflows"
+description = "Configure human assessment stages in Highlighter AI, assign reviewers, define quality criteria, enable multi-stage review, and integrate feedback loops for consistent workflow performance."
 date = 2025-05-01T08:00:00+00:00
 updated = 2025-05-01T08:00:00+00:00
 draft = false

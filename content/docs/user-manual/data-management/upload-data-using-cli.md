@@ -1,6 +1,6 @@
 +++
-title = "Upload a Local Dataset via the CLI"
-description = "How to upload images and optionally annotations to Highlighter using the CLI"
+title = "Upload a Local Dataset via the CLI "
+description = "Learn how to upload datasets to Highlighter AI using the CLI (Command Line Interface), supporting images, text file lists, and COCO (Common Objects in Context) JSON (JavaScript Object Notation) with automatic Highlighter file IDs and workflow integration."
 date = 2024-03-12T08:00:00+00:00
 updated = 2024-03-12T08:00:00+00:00
 draft = false

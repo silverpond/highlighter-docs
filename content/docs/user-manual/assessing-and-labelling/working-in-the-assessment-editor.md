@@ -1,6 +1,6 @@
 +++
 title = "Working in the Assessment Editor"
-description = "Using the Assessment Editor to view and make submissions in Highlighter"
+description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
 updated = 2023-09-26T08:00:00+00:00
 draft = false
