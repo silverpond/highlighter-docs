@@ -75,7 +75,7 @@ If multiple tracks are actually for the same entity (in other words, for the sam
 ### Efficient Workflow
 1. **Preview First**: Scan through the entire video before starting
 2. **Consistency**: Maintain consistent annotation standards
-3. **Save Frequently**: Use the save button regularly to avoid data loss
+3. **Save Frequently**: Use the Save button regularly to avoid data loss
 4. **Batch Similar Objects**: Annotate similar objects in sequence
 
 ### Quality Control
