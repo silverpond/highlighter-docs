@@ -16,6 +16,8 @@ top = false
 
 ## Keyboard Shortcuts
 
+See a summary of all keyboard shortcuts available in the Assessment Editor by typing ? (shift + /)
+
 ### Navigation
 - **Spacebar**: Play/pause video
 - **Left/Right arrows**: Frame-by-frame navigation
@@ -73,7 +75,7 @@ If multiple tracks are actually for the same entity (in other words, for the sam
 ### Efficient Workflow
 1. **Preview First**: Scan through the entire video before starting
 2. **Consistency**: Maintain consistent annotation standards
-3. **Save Frequently**: Use Ctrl+S regularly to avoid data loss
+3. **Save Frequently**: Use the Save button regularly to avoid data loss
 4. **Batch Similar Objects**: Annotate similar objects in sequence
 
 ### Quality Control
@@ -106,6 +108,6 @@ If multiple tracks are actually for the same entity (in other words, for the sam
 - Consider reducing video resolution for complex annotations
 
 ### Getting Help
-- See [Troubleshooting Annotation Tool](./troubleshooting-annotation-tool/) for more troubleshooting tips.
+- See [Troubleshooting Annotation Tool](../troubleshooting-annotation-tool/) for more troubleshooting tips.
 - Contact support [support@highlighter.ai](mailto:support@highlighter.ai)
 - Check system status for service updates
