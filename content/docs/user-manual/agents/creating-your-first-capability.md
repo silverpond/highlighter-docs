@@ -2,7 +2,7 @@
 title = "Creating Your First Capability"
 description = "Step-by-step tutorial to create your first Assessment Capability in Highlighter AI: define taxonomy, build a model, run experiments, configure training runs, and kickstart agent development."
 date = 2021-05-01T08:00:00+00:00
-updated = 2021-05-01T08:00:00+00:00
+updated = 2025-09-19T00:00:00+00:00
 draft = false
 weight = 200
 sort_by = "weight"
@@ -34,11 +34,108 @@ More information on Capabilities [here](../../concepts/capabilities/)
 
 ## Steps
 
+Follow these steps to create and train a Capability with the current Highlighter workflow. The legacy tutorial remains below for reference.
+
+1. Prepare annotated images
+   - Ensure you have labeled images ready in your workflow.
+
+2. Create an Assessment Dataset
+   - In the Highlighter UI: Assessments → Datasets → New Assessment Dataset.
+   - Record the Dataset ID for later use.
+
+3. Split annotated images into train/test (CLI) (workflowID is the one contains labelled images)
+     ```bash
+     hl --profile <PROFILE_NAME> dataset create \
+       -n "<datasetname>" \
+       -pid <WORKFLOW_ID> \
+       --split-frac train <TRAINING_RATIO> \
+       --split-frac test <TESTING_RATIO>
+     ```
+    - Example:
+     ```bash
+     hl --profile dorony dataset create \
+       -n "defective-tamper-ring-labelling" \
+       -pid 1109 \
+       --split-frac train 0.7 \
+       --split-frac test 0.3
+     ```
+
+4. Define evaluation metrics
+   - In the Highlighter UI: Agents → Evaluations → New Evaluation.
+
+5. Create a Capability in the Library
+   - In the Highlighter UI: Develop → Capabilities → Library → New Capability.
+   - Choose a Capability Type to match your task, for example:
+     - Classification: `BoxClassificationElement`
+     - Object detection: `DetectorElement`
+   - Click Save Capability.
+
+6. Configure Capability parameters
+   - Open the newly created Capability → Model Parameters.
+   - Add Entity Attributes and Values (your class names, matching image labels).
+   - Adjust thresholds as needed.
+
+7. Create a Training Run
+   - In the Highlighter UI: Develop → Training → Train a new model.
+   - Click Add Dataset and attach your train/test/val splits created earlier.
+   - Select a Model Template that matches the Capability (e.g., classification with "CLASSIFY YOLOv8").
+   - Save Training Run and note the Training ID.
+
+8. Generate the training configuration (CLI)
+     ```bash
+     hl generate training-run <TRAINING_ID> <MODEL_TYPE> <PROJECT_DIR>
+     ```
+    - Example:
+     ```bash
+     hl generate training-run 670 YOLO_CLS ml_training
+     ```
+
+9. (Optional) Inspect available GPUs for training
+   ```bash
+   nvidia-smi
+   ```
+
+10. (Optional) Select a specific GPU, for example, selecting using CUDA number 1
+    ```bash
+    export CUDA_VISIBLE_DEVICES=1
+    ```
+
+11. Export credentials and defaults (CLI)
+    ```bash
+    hl --profile <PROFILE_NAME> export
+    ```
+
+12. Edit the generated config
+    ```bash
+    nvim <PROJECT_DIR>/<TRAINING_ID>/cfg.yaml
+    ```
+    - Example:
+    ```bash
+    nvim ml_training/670/cfg.yaml
+    ```
+
+13. Start training
+    ```bash
+    hl train start <PROJECT_DIR>/<TRAINING_ID>
+    ```
+    - Example:
+    ```bash
+    hl train start ml_training/670
+    ```
+
+14. Locate training artifacts
+    - After completion, weights (e.g., .pt, .onnx) are in:
+      `ml_training/<TRAINING_ID>/runs/train/weights`
+
+
+## Legacy Tutorial (Reference)
+
+## Steps
+
 1. [Identify The Taxonomy](#identify-the-taxonomy) and create as needed
 2. [Create A Model](#create-a-model) that outputs the desired taxa
 3. [Create An Experiment](#create-an-experiment) to track your model training
 4. [Configure Training Run](#configure-training-run) and click `Train`
-
 
 ## Identify The Taxonomy
 
