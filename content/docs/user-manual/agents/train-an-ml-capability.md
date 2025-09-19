@@ -21,6 +21,7 @@ This tutorial expects you:
   1. You already have labelled data in a Highlighter _Assessment Workflow_
   2. You are using an existing _Model Template_ (ie: Training a model supported by Highlighter Training, not a custom model)
   3. You have the Highlighter CLI installed and configured
+  4. Local [Highlighter Credentials](../../reference/sdk/highlighter-credentials.md)
 
 ## Training Workflows
 
@@ -45,6 +46,12 @@ The streamlined command-line approach:
 
 ## CLI Workflow (Recommended)
 
+**Before you start**: You must either have your Highlighter credentials exported
+as environment variables, or use the `--profile NAME` option for all `hl` commands.
+In the following examples, it is assumed the credentials are exported. See 
+[Highlighter Credentials](../../reference/sdk/highlighter-credentials.md) for more
+information.
+
 ### Generate Training Boilerplate
 
 First, generate the training configuration and download the required datasets:
@@ -55,7 +62,7 @@ hl generate training-run <TRAINING_RUN_ID> <TRAINER_TYPE> [ML_TRAINING_DIR]
 
 **Parameters:**
 - `TRAINING_RUN_ID`: The ID of your Highlighter Training Run
-- `TRAINER_TYPE`: Currently supports `yolo-det` for YOLO detection models
+- `TRAINER_TYPE`: Currently supports `yolo-det|yolo-seg|yolo-cls` for YOLO detection models
 - `ML_TRAINING_DIR`: Directory for training files (default: `./ml_training`)
 
 **Example:**
