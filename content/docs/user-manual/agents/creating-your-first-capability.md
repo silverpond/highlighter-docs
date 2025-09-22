@@ -37,13 +37,15 @@ More information on Capabilities [here](../../concepts/capabilities/)
 Follow these steps to create and train a Capability with the current Highlighter workflow. The legacy tutorial remains below for reference.
 
 1. Prepare annotated images
-   - Ensure you have labeled images ready in your workflow.
+  - Ensure you have labeled images ready in your workflow.
 
 2. Create an Assessment Dataset
-   - In the Highlighter UI: Assessments → Datasets → New Assessment Dataset.
-   - Record the Dataset ID for later use.
+  - In the Highlighter UI, go to Assessments → Datasets → New Assessment Dataset.
+  - Record the Dataset ID for later use.
 
-3. Split annotated images into train/test (CLI) (workflowID is the one contains labelled images)
+
+
+3. Split annotated images into train and test using the Highlighter SDK. Use the ID of workflow that contains your labelled images.
      ```bash
      hl --profile <PROFILE_NAME> dataset create \
        -n "<datasetname>" \
@@ -61,31 +63,31 @@ Follow these steps to create and train a Capability with the current Highlighter
      ```
 
 4. Define evaluation metrics
-   - In the Highlighter UI: Agents → Evaluations → New Evaluation.
+  - In the Highlighter UI, go to Agents → Evaluations → New Evaluation.
 
 5. Create a Capability in the Library
-   - In the Highlighter UI: Develop → Capabilities → Library → New Capability.
-   - Choose a Capability Type to match your task, for example:
-     - Classification: `BoxClassificationElement`
-     - Object detection: `DetectorElement`
-   - Click Save Capability.
+  - In the Highlighter UI, go to Develop → Capabilities → Library → New Capability.
+  - Choose a Capability Type to match your task, for example:
+    - Classification: `BoxClassificationElement`
+    - Object detection: `DetectorElement`
+  - Click Save Capability.
 
 6. Configure Capability parameters
-   - Open the newly created Capability → Model Parameters.
-   - Add Entity Attributes and Values (your class names, matching image labels).
-   - Adjust thresholds as needed.
+  - Open the newly created Capability → Model Parameters.
+  - Add Entity Attributes and Values (your class names, matching image labels).
+  - Adjust thresholds as needed.
 
 7. Create a Training Run
-   - In the Highlighter UI: Develop → Training → Train a new model.
-   - Click Add Dataset and attach your train/test/val splits created earlier.
-   - Select a Model Template that matches the Capability (e.g., classification with "CLASSIFY YOLOv8").
-   - Save Training Run and note the Training ID.
+  - In the Highlighter UI, go to Develop → Training → Train a new model.
+  - Click Add Dataset and attach your train/test/val splits created earlier.
+  - Select a Model Template that matches the Capability (e.g., classification with "CLASSIFY YOLOv8").
+  - Save Training Run and note the Training ID.
 
 8. Generate the training configuration (CLI)
      ```bash
      hl generate training-run <TRAINING_ID> <MODEL_TYPE> <PROJECT_DIR>
      ```
-    - Example:
+   - Example:
      ```bash
      hl generate training-run 670 YOLO_CLS ml_training
      ```
@@ -109,7 +111,7 @@ Follow these steps to create and train a Capability with the current Highlighter
     ```bash
     nvim <PROJECT_DIR>/<TRAINING_ID>/cfg.yaml
     ```
-    - Example:
+   - Example:
     ```bash
     nvim ml_training/670/cfg.yaml
     ```
@@ -118,13 +120,13 @@ Follow these steps to create and train a Capability with the current Highlighter
     ```bash
     hl train start <PROJECT_DIR>/<TRAINING_ID>
     ```
-    - Example:
+   - Example:
     ```bash
     hl train start ml_training/670
     ```
 
 14. Locate training artifacts
-    - After completion, weights (e.g., .pt, .onnx) are in:
+   - After completion, weights (e.g., .pt, .onnx) are in:
       `ml_training/<TRAINING_ID>/runs/train/weights`
 
 
