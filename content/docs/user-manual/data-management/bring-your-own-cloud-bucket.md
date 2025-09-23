@@ -160,7 +160,36 @@ Once you have completed the AWS setup of the role for Highlighter to assume:
 3. Click **Test Connection** to verify the setup
 4. If successful, click **Save**
 
-## Step 5: Verification
+## Step 5: CORS setup
+
+1. Back in the AWS console go to your bucket and click the Permissions tab. Scroll down to the Cross-origin resource sharing (CORS) section and click the Edit button.
+2. Paste in the following, replacing `YOUR_HIGHLIGHTER_ACCOUNT` with the URL of your Highlighter account, for example `my-company.highlighter.ai`.
+
+```json
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "GET",
+            "POST",
+            "HEAD",
+            "DELETE",
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "https://YOUR_HIGHLIGHTER_ACCOUNT"
+        ],
+        "ExposeHeaders": [],
+        "MaxAgeSeconds": 3000
+    }
+]
+```
+
+3. Click the Save changes button
+
+## Step 6: Verification
 
 After configuration, verify that the setup is working:
 
