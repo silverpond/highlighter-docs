@@ -30,7 +30,7 @@ detection dataset, you can follow along and fill-in-the-blanks with your own dat
 
 > Assessments tasks are sub-tasks of a larger assessment workflow that an organisation wishes to carry out.
 
-More information on Capabilities [here](../../concepts/agents-and-capabilities/capabilities)
+More information on Capabilities [here](../../concepts/capabilities/)
 
 ## Steps
 
