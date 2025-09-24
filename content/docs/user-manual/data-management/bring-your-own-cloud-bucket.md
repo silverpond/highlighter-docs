@@ -145,6 +145,7 @@ After creating the role, you need to update its trust policy:
 ```
 
 5. Click **Update policy**
+6. Copy the role ARN from the top panel to your clipboard to use in the next step.
 
 ## Step 4: Configure Cloud Credential in Highlighter
 
@@ -154,11 +155,12 @@ Once you have completed the AWS setup of the role for Highlighter to assume:
 2. Fill in the required information:
    - **Name**: A descriptive name for this credential (e.g., "My Company S3 Bucket")
    - **Provider**: Select **AWS S3**
-   - **Role ARN**: The ARN of your IAM role (e.g., `arn:aws:iam::123456789012:role/HighlighterBucketAccessRole`)
+   - **Role ARN**: The ARN of your IAM role that you copied in the previous step (e.g., `arn:aws:iam::123456789012:role/HighlighterBucketAccessRole`)
    - **Bucket Name**: Your S3 bucket name
    - **Region**: Your S3 bucket's AWS region
 3. Click **Test Connection** to verify the setup
 4. If successful, click **Save**
+5. Note: for security reasons, whenever a Cloud Credential is created or updated, all users with role 'Admin' are emailed with the details.
 
 ## Step 5: CORS setup
 
