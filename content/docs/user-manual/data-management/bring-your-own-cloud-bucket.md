@@ -131,7 +131,7 @@ After creating the role, you need to update its trust policy:
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": "arn:aws:iam::195892427074:user/highlighter.data.broker.role"
+        "AWS": "arn:aws:iam::195892427074:role/highlighter.data.broker.role"
       },
       "Action": "sts:AssumeRole",
       "Condition": {
