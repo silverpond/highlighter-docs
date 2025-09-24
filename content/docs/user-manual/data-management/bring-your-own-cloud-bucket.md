@@ -106,7 +106,7 @@ Now that we have a permissions policy, let's create a new IAM role in your AWS a
 2. Select **AWS account** as the trusted entity type
 3. Choose **Another AWS account**
 4. Enter the Highlighter AWS Account ID: `195892427074`
-5. Check **Require external ID** 
+5. Check **Require external ID** and enter the External ID you copied in Step 1
 7. Click **Next**
 8. Adding permission policy from Step 2, eg., `HighlighterS3BucketAccess`
 8. Click **Next**
