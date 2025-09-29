@@ -158,9 +158,9 @@ Once you have completed the AWS setup of the role for Highlighter to assume:
    - **Role ARN**: The ARN of your IAM role that you copied in the previous step (e.g., `arn:aws:iam::123456789012:role/HighlighterBucketAccessRole`)
    - **Bucket Name**: Your S3 bucket name
    - **Region**: Your S3 bucket's AWS region
-3. Click **Test Connection** to verify the setup
-4. If successful, click **Save**
-5. Note: for security reasons, whenever a Cloud Credential is created or updated, all users with role 'Admin' are emailed with the details.
+3. Click **Save**
+4. Click **Test Connection** to verify the setup
+5. Note: for security reasons, whenever a Cloud Credential is created or updated, all users of your account with role 'Admin' are emailed with the details.
 
 ## Step 5: CORS setup
 
