@@ -41,4 +41,4 @@ One page summary of how to start a new Highlighter Assessment Workflow. [Getting
 
 ## Support
 
-If you are on a paid support plan, you can reach our team on our Freshdesk support site. [Freshdesk →](https://newaccount1632785401203.freshdesk.com/)
+If you are on a paid support plan, you can reach our team on our Freshdesk support site. [Freshdesk →](https://silverpond.freshdesk.com/)
