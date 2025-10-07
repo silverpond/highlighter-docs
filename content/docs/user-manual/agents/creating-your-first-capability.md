@@ -90,8 +90,7 @@ For the programmers among you, a *Model* serves as an Interface.
 The *Model*'s inputs serve two functions depending on where they're being used.
 At training time they inform the Dataset manipulations needed to convert the
 Highlighter Dataset Submissions into a form the model Trainer can use. At
-inference time they tell the Pipeline what data to pass to the model. For more
-information about Model Inputs see [here](../concepts/model-inputs-and-outputs.md).
+inference time they tell the Pipeline what data to pass to the model.
 
 In our case the *Model* we're creating is a Detector. It takes images as an
 input. At the moment an input image is assumed. Also, a Detector expects a full
@@ -179,20 +178,13 @@ when inspecting performance metrics.
 
 We're on the home strech!!!
 
-The *Training Run* is where you select the *Model Template*
-to use and configure the various parameters. Some parameters are common to several
-templates and some are unique to a specific template. See the [Model Template](ToDo) reference for
-the specifics of each.
+The *Training Run* is where you select the *Model Template* to use and configure the various parameters. Some parameters are common to several templates and some are unique to a specific template.
 
 ### Select a Model Config Template
 
 *Model Config Templates* are `.json` files with placeholders for some variables.
-Creating a *Model Config Template* is out of the scope of this tutorial, for
-more information on this see the [Creating a Model Config Template](creating-a-model-config-template.md) tutorial.
-
-For now, we will simply use `Detector DETR Resnet50`. This template
-configures the Trainer to train a DETR model. For more information on DETR see
-[End-to-End Object Detection with Transformers](https://arxiv.org/abs/2005.12872)
+Creating a *Model Config Template* is out of the scope of this tutorial. For now, we will simply use `Detector DETR Resnet50`. This template configures the Trainer to train a DETR model. For more information on DETR see
+<a href='https://arxiv.org/abs/2005.12872' target='_blank'>End-to-End Object Detection with Transformers</a>
 
 
 **Configure Training Run**
