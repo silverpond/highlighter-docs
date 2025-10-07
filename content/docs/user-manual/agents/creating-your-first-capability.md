@@ -187,8 +187,8 @@ the specifics of each.
 ### Select a Model Config Template
 
 *Model Config Templates* are `.json` files with placeholders for some variables.
-Creating a *Modle Config Template* is out of the scope of this tutorial, for
-more information on the see the [Creating a Model Config Template](creating-a-model-config-template.md) tutorial.
+Creating a *Model Config Template* is out of the scope of this tutorial, for
+more information on this see the [Creating a Model Config Template](creating-a-model-config-template.md) tutorial.
 
 For now, we will simply use `Detector DETR Resnet50`. This template
 configures the Trainer to train a DETR model. For more information on DETR see
