@@ -19,11 +19,23 @@ This guide will help you install and configure the Highlighter Python SDK
 
 ## Steps
 
+  - [Check Required Prerequisites](#prerequisites)
   - [Install the Highlighter SDK](#install-the-highlighter-sdk)
   - [Setup Highlighter API Credentials](#setup-highlighter-api-credentials)
   - [Using the CLI](#using-the-cli)
   - [Using the Python API](#using-the-python-api)
 
+## Prerequisites
+
+Before you install `highlighter-sdk`, make sure the following dependencies are available on your machine:
+
+- Python 3.12–3.14. Confirm with `python3 --version`.
+- Optionally, some features in the SDK are not included by default and require additional packages. To install them, use `pip install "highlighter-sdk[extra-name]"` after installing highlighter-sdk. Each extra installs specific dependencies:
+  - `cv2` extra → `opencv-python`
+  - `matplotlib` extra → `matplotlib`
+  - `predictors` extra → `torch`, `onnxruntime`, `opencv-python`
+  - `tracker` extra → `torch`, `pykalman`
+  - `yolo` extra → `torch`, `onnxruntime`, `opencv-python`, `ultralytics`
 
 ## Install the Highlighter SDK
 
@@ -80,5 +92,3 @@ See [Download And Write Datasets](../download-and-writer-datasets-locally/)
 ## What's next
 
 See [Scaffolding new Highlighter agents](../highlighter-scaffolds/)
-
-
