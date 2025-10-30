@@ -1,6 +1,6 @@
 +++
-title = "Exporting Reports"
-description = "Export assessment workflow data into CSV reports with flexible formatting options including attribute values, confidences, and annotations layouts."
+title = "Exporting Data"
+description = "Export assessment workflow data into CSV reports with flexible formatting options including attribute values, confidences, and annotations layouts, and flexible file downloads."
 date = 2023-09-26T08:00:00+00:00
 updated = 2023-09-26T08:00:00+00:00
 draft = false
@@ -14,7 +14,7 @@ toc = true
 top = false
 +++
 
-Follow these steps to export assessment workflow data into a report CSV.
+Follow these steps to export assessment workflow data into a report CSV, or to download files.
 
 ## Navigate to Export Function
 
