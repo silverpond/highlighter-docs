@@ -152,24 +152,66 @@ class MyPersonDetector(OnnxYoloV8):
 hl agent run agents/YOU_AGENT_DEF.json -f VIDEO_PATH
 ```
 
-## Training
+### Training
 
-Training a model is done in 3 steps (4 if you want to tweak the config)
+## Training a model using the Highlighter SDK
 
-  1. create a TrainingRun in Highlighter and configure the Datasets. (You can 
-ignore the reset of the configuration for now)
 
-  2. `generate` a new training run in your `scaffold` directory. This  will download the Dataset 
-  annotations defined in the Highlighter TrainingRun and add a directory to the
-  `ml_training` directory of the scaffold.
 
+Concepts
+
+* **Highlighter Training Run**: A record in the Highlighter tool used to configure a training run.
+* **Evaluation**: A page in the Highlighter tool used to record and track the performance of trained models.
+* **Artefact**: A file containing model weights and accompanying information needed to run a model for inference.(Enables saving and tracking of trained models and results in Highlighter, ensuring others can access and reuse them without retraining.)
+* **Highlighter SDK**: A python library including a CLI for interacting with Highlighter and doing common Highlighter related things, like training models.
+
+
+To train a model using the SDK you must first setup the training run in the Highlighter Account. Then you can start the training run on the development machine using the Highlighter SDK
+
+## Create New Training Run In Highlighter
+1. Navigate to the Training tab in Highlighter
+   ![training tab](content/docs/user-manual/resources/training_tab_image.png)
+
+2. Click **Train a new model** or select an existing training run (we're going to assume you're training a new model)
+3. Fill in the **Name** field with a meaningful name for your training run
+4. Select the Capability the what the training run is for.
+5. Select the **Evaluation** that will store the training run's evaluation metrics.
+6. Select **Datasets**
+
+   A training run must have at least one dataset for training and another of testing. There can be no overlay between the training  and test annotations.
+
+   ![Dataset Sample](content/docs/user-manual/resources/dataset_sample.png)
+
+7. **Model Template** can be ignored, leave as default.
+2. **Config Override** can be ignored, leave as default.
+3. Click **Save Training Run**.
+4. Note the Training Run Id from the URL, (ie: https://highlighter-marketing-demo.highlighter.ai/training_runs/123).The training run id is 123
+
+
+
+## Start Model Training Using The Highlighter SDK
+
+1. 'hl generate training-run TRAINING_RUN_ID {yolo-det|yolo-seg|yolo-cls} ML_TRAINING_DIR'
+   Generates a local training directory for a specified Highlighter training run.Downloads the configuration files, datasets, and model weights (for detection, segmentation, or classification) into the provided directory, allowing you to reproduce, resume, or evaluate the training locally.
+```bash
+hl generate training-run 123 yolo-seg .
 ```
-hl generate training-run TRAINING_RUN_ID MODEL_TYPE PROJECT_DIR
+Where:
+  123: is the Training Run ID 
+  yolo-seg : is the type of model to train
+  . (dot): tells the sdk to create the directory (./123) in the current working directory that will store the training files
 
-# MODEL_TYPE: {yolo-det} <-- More to come
-```
-  optionally you can modify the `PROJECT_DIR/ml_training/TRAINING_RUN_ID/trainer.py`
-  file to customize your training
+2. **OPTIONAL**:  Edit the cfg.yaml using your favourite text editor: eg: 'vim 123/cfg.yaml' .
+3. Start training hl train start **TRAINING_RUN_DIR** , eg 'hl train start 123/' .
+4. **OPTIONAL**: Run evaluation hl train evaluate **TRAINING_RUN_DIR CHECKPOINT CONFIG** , use the '--create' flag to upload the evaluation metrics to the Highlighter Evaluation linked to the Training Run.
+5. **OPTIONAL**: Export the trained model and upload as a Highlighter Training Run **Artefact**.Eg: 'hl training-run artefact create -i 123 -a 123/runs/weights/artefact.yaml' .
 
-  3. `start` the training: `hl train start TRAINING_RUN_DIR`
-  4. Modify the config in `ml_training/TRAINING_RUN_ID/` and train again
+
+
+
+
+
+
+
+
+
