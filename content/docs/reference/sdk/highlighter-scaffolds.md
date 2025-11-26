@@ -189,10 +189,7 @@ Generates a local training directory for a specified Highlighter training run. D
 ```bash
 hl generate training-run 123 yolo-seg .
 ```
-Where:
-  123: is the Training Run ID 
-  yolo-seg : is the type of model to train
-  . (dot): tells the sdk to create the directory (./123) in the current working directory that will store the training files
+Where `123` is the Training Run ID, `yolo-seg` is the type of model to train, and `.` (dot) tells the sdk to create the directory (./123) in the current working directory that will store the training files.
 
 2. **OPTIONAL**: Edit the `cfg.yaml` using your favourite text editor: eg: `vim 123/cfg.yaml`.
 3. **OPTIONAL**: Override the default `Trainer` class: You may need to override to default `Trainer` class if you need to:
