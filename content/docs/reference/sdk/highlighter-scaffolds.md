@@ -181,7 +181,6 @@ To train a model using the SDK you must first setup the training run in the High
 4. Note the Training Run Id from the URL, (ie: https://highlighter-marketing-demo.highlighter.ai/training_runs/123).The training run id is 123
 
 
-
 ## Start Model Training Using The Highlighter SDK
 
 1. `hl generate training-run TRAINING_RUN_ID {yolo-det|yolo-seg|yolo-cls} ML_TRAINING_DIR`
@@ -275,13 +274,3 @@ class Trainer(YoloV11Trainer):
 4. Start training hl train start **TRAINING_RUN_DIR** , eg `hl train start 123/`.
 5. **OPTIONAL**: Run evaluation hl train evaluate **TRAINING_RUN_DIR CHECKPOINT CONFIG** , use the `--create` flag to upload the evaluation metrics to the Highlighter Evaluation linked to the Training Run.
 6. **OPTIONAL**: Export the trained model and upload as a Highlighter Training Run **Artefact**.Eg: `hl training-run artefact create -i 123 -a 123/runs/weights/artefact.yaml`.
-
-
-
-
-
-
-
-
-
-
