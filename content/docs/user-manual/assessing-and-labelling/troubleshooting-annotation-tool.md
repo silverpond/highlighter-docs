@@ -147,7 +147,7 @@ top = false
 
 2. **Workflow Status**
    - Check if workflow is active
-   - Verify stage configuration
+   - Verify step configuration
    - Confirm prerequisites are met
    - Review workflow dependencies
 

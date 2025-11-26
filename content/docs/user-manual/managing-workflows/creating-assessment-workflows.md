@@ -1,8 +1,8 @@
 +++
 title = "Creating Assessment Workflows"
-description = "Design assessment workflows in Highlighter AI，combine human expertise with AI, configure stages, apply routing logic, and implement best practices for scalable enterprise operations."
+description = "Design assessment workflows in Highlighter AI，combine human expertise with AI, configure steps, apply routing logic, and implement best practices for scalable enterprise operations."
 date = 2025-05-01T08:00:00+00:00
-updated = 2025-05-01T08:00:00+00:00
+updated = 2025-11-19T08:00:00+00:00
 draft = false
 weight = 30
 sort_by = "weight"
@@ -16,12 +16,12 @@ top = false
 
 ## What is an Assessment Workflow?
 
-An assessment workflow is a systematic sequence of evaluation stages that processes data through various assessment tasks. These workflows can combine human expertise, machine learning capabilities, and business rules to achieve comprehensive data evaluation and decision-making.
+An assessment workflow is a systematic sequence of evaluation steps that processes data through various assessment tasks. These workflows can combine human expertise, machine learning capabilities, and business rules to achieve comprehensive data evaluation and decision-making.
 
 ## Core Components
 
-### Assessment Stages
-Assessment workflows consist of multiple stages, each serving a specific purpose:
+### Assessment Steps
+Assessment workflows consist of multiple steps, each serving a specific purpose:
 
 - **Data Intake**: Initial data validation and preprocessing
 - **Machine Assessment**: Automated processing using AI agents
@@ -32,7 +32,7 @@ Assessment workflows consist of multiple stages, each serving a specific purpose
 ### Workflow Types
 
 **Linear Workflows**
-- Sequential processing through predefined stages
+- Sequential processing through predefined steps
 - Simple, predictable flow from start to finish
 - Ideal for standardized assessment processes
 
@@ -80,9 +80,9 @@ Assessment workflows consist of multiple stages, each serving a specific purpose
 - **Resource Constraints**: Consider available human and technical resources
 
 ### 2. Workflow Architecture
-- **Stage Definition**: Identify necessary assessment stages
+- **Step Definition**: Identify necessary assessment steps
 - **Flow Logic**: Design the routing and decision logic
-- **Resource Allocation**: Assign appropriate resources to each stage
+- **Resource Allocation**: Assign appropriate resources to each step
 - **Integration Points**: Plan for system and data integrations
 
 ### 3. Implementation Planning
@@ -112,7 +112,7 @@ Assessment workflows consist of multiple stages, each serving a specific purpose
 - **Continuous Monitoring**: Regular performance review and optimization
 
 ### Quality Assurance
-- **Multi-layered Quality Control**: Implement quality checks at multiple stages
+- **Multi-layered Quality Control**: Implement quality checks at multiple steps
 - **Audit Trails**: Maintain complete records of all assessment decisions
 - **Calibration Processes**: Ensure consistency across reviewers and systems
 - **Error Analysis**: Regular analysis of errors and quality issues

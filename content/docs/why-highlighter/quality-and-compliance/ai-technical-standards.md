@@ -2,7 +2,7 @@
 title = "AUS AI Technical Standards | Enterprise Perception System"
 description = "Highlighter AI aligns with the Australian Government’s AI Technical Standards, covering full lifecycle compliance, human-centered design, traceability, and maturity-based deployment."
 date = 2021-05-01T08:00:00+00:00
-updated = 2021-05-01T08:00:00+00:00
+updated = 2025-11-19T08:00:00+00:00
 draft = false
 weight = 300
 sort_by = "weight"
@@ -17,7 +17,7 @@ top = false
 Silverpond's Highlighter platform is in alignment with the Australian Government's AI Technical Standards, positioning it as the Enterprise Perception System for government agencies seeking compliant AI deployment.
 
 # Comprehensive Lifecycle Management
-Highlighter operates as the world's only Enterprise Perception System (EPS), providing a centralized platform that merges human expertise and AI capabilities to analyze data from various sources and take appropriate actions. This comprehensive approach directly supports the Australian Government's AI lifecycle requirements across all stages from discovery to retirement.
+Highlighter operates as the world's only Enterprise Perception System (EPS), providing a centralized platform that merges human expertise and AI capabilities to analyze data from various sources and take appropriate actions. This comprehensive approach directly supports the Australian Government's AI lifecycle requirements across all steps from discovery to retirement.
 
 ## Whole of AI Lifecycle Compliance:
 
