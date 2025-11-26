@@ -185,7 +185,7 @@ To train a model using the SDK you must first setup the training run in the High
 ## Start Model Training Using The Highlighter SDK
 
 1. `hl generate training-run TRAINING_RUN_ID {yolo-det|yolo-seg|yolo-cls} ML_TRAINING_DIR`
-   Generates a local training directory for a specified Highlighter training run.Downloads the configuration files, datasets, and model weights (for detection, segmentation, or classification) into the provided directory, allowing you to reproduce, resume, or evaluate the training locally.
+Generates a local training directory for a specified Highlighter training run. Downloads the configuration files, datasets, and model weights (for detection, segmentation, or classification) into the provided directory, allowing you to reproduce, resume, or evaluate the training locally.
 ```bash
 hl generate training-run 123 yolo-seg .
 ```
