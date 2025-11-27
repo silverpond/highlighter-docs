@@ -61,6 +61,20 @@ You can configure three types of parameters for a Capability, which are edited i
 - **Stream Parameters:** Settings applied to the entire data stream.
 - **Deployment Parameters:** Settings related to the deployment environment of the Capability.
 
+### Linking a Capability to a Training-Run Artefact
+
+Capabilities can use trained model weights that are stored as Training-Run Artefacts.
+
+To override the artefact used by a Capability, change the "training_run_artefact_id" value in the **Deployment Parameters** when editing Capability attributes.
+
+Alternatively, the "training_run_id" field can be set, and the Capability will use the most recent Training-Run Artefact uploaded to that Training Run.
+
+{{ resize_image(path="docs/user-manual/resources/new-agent-capability-set-training-run-artefact.png", width=700, height=1, op="fit_width") }}
+
+The IDs of Training-Run Artefacts and Training Runs can be found via the "Training" page.
+
+### Removing a Capability
+
 You can remove a Capability from your Machine Agent by clicking **Remove Capability** in this detailed view.
 
 ### 🎉
