@@ -2,7 +2,7 @@
 title = "Media Search to Discover Assets"
 description = "Use Media Search in Highlighter AI to find, filter, and download files by applying detailed filters like data source, metadata, and assessment workflows."
 date = 2023-09-26T08:00:00+00:00
-updated = 2023-09-26T08:00:00+00:00
+updated = 2025-11-19T08:00:00+00:00
 draft = false
 weight = 10
 sort_by = "weight"
@@ -97,17 +97,17 @@ Choose the desired value of the key provided above in File Metadata Key.
 
 Choose one or more data sources that contain desired files.
 
-#### Filter by Human Assessment Stages
+#### Filter by Human Assessment Steps
 
-Choose one or more human assessment stages containing desired files.
+Choose one or more human assessment steps containing desired files.
 
 #### Filter by Checked Out By Users
 
-Choose one or more users who have checked out desired files in a human assessment stage.
+Choose one or more users who have checked out desired files in a human assessment step.
 
 #### Filter by Completed in Queue status
 
-Choose whether files have been completed in a human assessment stage or not.
+Choose whether files have been completed in a human assessment step or not.
 
 #### Filter by Datasets
 
@@ -129,9 +129,9 @@ Choose one or more capabilities that have made machine assessments on desired fi
 
 Choose one or more training runs that have made machine assessments on desired files.
 
-#### Filter by Machine Assessment Stages
+#### Filter by Machine Assessment Steps
 
-Choose one or more machine assessment stages containing desired files.
+Choose one or more machine assessment steps containing desired files.
 
 #### Filter by Object Classes
 

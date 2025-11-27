@@ -1,8 +1,8 @@
 +++
 title = "Assessment Workflows"
-description = "Get started with Highlighter AI’s Assessment Workflows. Configure data sources, AI and human assessment stages, routing logic, and launch scalable workflows for operational clarity."
+description = "Get started with Highlighter AI's Assessment Workflows. Configure data sources, AI and human assessment steps, routing logic, and launch scalable workflows for operational clarity."
 date = 2025-05-01T08:00:00+00:00
-updated = 2025-05-01T08:00:00+00:00
+updated = 2025-11-19T08:00:00+00:00
 draft = false
 weight = 3
 sort_by = "weight"
@@ -16,7 +16,7 @@ top = false
 
 ## Overview
 
-This tutorial will guide you through creating a complete assessment workflow from start to finish. You'll learn how to set up data sources, configure assessment stages, assign reviewers, and monitor progress.
+This tutorial will guide you through creating a complete assessment workflow from start to finish. You'll learn how to set up data sources, configure assessment steps, assign reviewers, and monitor progress.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ Before starting this tutorial, ensure you have:
 
 By the end of this tutorial, you will have:
 - Created a functional assessment workflow
-- Configured both machine and human assessment stages
+- Configured both machine and human assessment steps
 - Set up data routing and quality controls
 - Launched your first workflow order
 - Monitored workflow performance
@@ -71,11 +71,11 @@ For this tutorial, we'll create a workflow that:
 3. **Size Limits**: Set reasonable file size constraints
 4. **Validation Rules**: Configure basic data validation
 
-## Step 3: Configuring Assessment Stages
+## Step 3: Configuring Assessment Steps
 
-### Stage 1: Data Intake and Validation
-1. **Stage Name**: "Data Validation"
-2. **Stage Type**: Automated Processing
+### Data Intake and Validation
+1. **Step Name**: "Data Validation"
+2. **Step Type**: Automated Processing
 3. **Functions**:
    - File format verification
    - Size and resolution checks
@@ -87,9 +87,9 @@ For this tutorial, we'll create a workflow that:
 - Configure error handling for invalid files
 - Define quality thresholds for automatic rejection
 
-### Stage 2: Machine Assessment
-1. **Stage Name**: "AI Quality Analysis"
-2. **Stage Type**: Machine Assessment
+### Machine Assessment
+1. **Step Name**: "AI Quality Analysis"
+2. **Step Type**: Machine Assessment
 3. **Agent Selection**: Choose or configure your AI quality assessment agent
 4. **Processing Parameters**:
    - Batch size: 10 images
@@ -101,9 +101,9 @@ For this tutorial, we'll create a workflow that:
 - Medium confidence (70-90%): Route to human review
 - Low confidence (<70%): Flag for detailed review
 
-### Stage 3: Human Review
-1. **Stage Name**: "Expert Review"
-2. **Stage Type**: Human Assessment
+### Human Review
+1. **Step Name**: "Expert Review"
+2. **Step Type**: Human Assessment
 3. **Review Type**: Classification and Quality Control
 4. **Reviewer Assignment**:
    - Assign to "Quality Reviewers" group
@@ -119,7 +119,7 @@ For this tutorial, we'll create a workflow that:
 ## Step 4: Workflow Logic and Routing
 
 ### Decision Points
-Configure routing logic between stages:
+Configure routing logic between steps:
 
 1. **After Data Validation**:
    - Valid files → AI Quality Analysis
@@ -133,7 +133,7 @@ Configure routing logic between stages:
 3. **After Human Review**:
    - Approved → Final approval
    - Rejected → Final rejection with feedback
-   - Clarification needed → Return to previous stage
+   - Clarification needed → Return to previous step
 
 ### Quality Control Measures
 - **Audit Sampling**: 10% of auto-approved items undergo human review
@@ -151,7 +151,7 @@ Configure routing logic between stages:
 
 2. **Workflow Testing**:
    - Run test data through the workflow
-   - Verify each stage functions correctly
+   - Verify each step functions correctly
    - Check routing logic and decision points
    - Validate output quality and format
 
@@ -208,7 +208,7 @@ Configure routing logic between stages:
 Monitor these key indicators:
 - **Throughput**: Items processed per hour/day
 - **Quality**: Accuracy rates and error percentages
-- **Efficiency**: Average processing time per stage
+- **Efficiency**: Average processing time per step
 - **User Satisfaction**: Feedback from reviewers and stakeholders
 
 ### Regular Optimization

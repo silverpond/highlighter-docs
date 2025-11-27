@@ -2,7 +2,7 @@
 title = "Creating Workflow Orders"
 description = "Create Workflow Orders in Highlighter AI，manually or via CSV to group data files, streamline processing, track results, and scale enterprise annotation workflows."
 date = 2023-09-26T08:00:00+00:00
-updated = 2023-09-26T08:00:00+00:00
+updated = 2025-11-19T08:00:00+00:00
 draft = false
 weight = 10
 sort_by = "weight"
@@ -18,7 +18,7 @@ Work in a Highlighter Workflow can be divided up into Workflow Orders. Each Work
 
 Workflow Orders are a way of dividing up the work of your Assessment Workflow into manageable chunks. Each Workflow Order can match a certain subset of the data in your workflow's data source, allowing you to handle the processing of different groupings of data separately.
 
-A Workflow Order funnels work through a sequence of Workflow Stages. For example, the sequence might be Data Source -> Machine Assessment Stage -> Human Assessment Stage. The following instructions assume your sequence of Workflow stages has already been set up, and includes a data source as the first stage.
+A Workflow Order funnels work through a sequence of Workflow Steps. For example, the sequence might be Data Source -> Machine Assessment Step -> Human Assessment Step. The following instructions assume your sequence of Workflow steps has already been set up, and includes a data source as the first step.
 
 - <a href="#navigate-to-the-workflow-orders-page">Navigate To The Workflow Orders Page</a>
 - <a href="#manually-create-workflow-orders">Manually Create Workflow Orders</a>

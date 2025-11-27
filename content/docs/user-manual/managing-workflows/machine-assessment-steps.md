@@ -1,24 +1,24 @@
 +++
-title = "Machine Assessment Stages"
-description = "Configure machine-powered stages in Highlighter AI—assign AI agents, set quality thresholds, handle routing logic, and optimize performance for scalable enterprise workflows."
+title = "Machine Assessment Steps"
+description = "Configure machine-powered steps in Highlighter AI—assign AI agents, set quality thresholds, handle routing logic, and optimize performance for scalable enterprise workflows."
 date = 2025-05-01T08:00:00+00:00
-updated = 2025-05-01T08:00:00+00:00
+updated = 2025-11-19T08:00:00+00:00
 draft = false
 weight = 30
 sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "Learn how to set up and configure machine assessment stages that use AI agents to automatically process and evaluate data."
+lead = "Learn how to set up and configure machine assessment steps that use AI agents to automatically process and evaluate data."
 toc = true
 top = false
 +++
 
 ## Overview
 
-Machine assessment stages are automated workflow components that use trained AI agents to process data without human intervention. These stages can perform tasks like classification, detection, segmentation, and quality assessment at scale.
+Machine assessment steps are automated workflow components that use trained AI agents to process data without human intervention. These steps can perform tasks like classification, detection, segmentation, and quality assessment at scale.
 
-## Creating Machine Assessment Stages
+## Creating Machine Assessment Steps
 
 ### Prerequisites
 - A trained AI agent or capability
@@ -28,14 +28,14 @@ Machine assessment stages are automated workflow components that use trained AI 
 
 ### Basic Setup
 
-1. **Stage Configuration**
-   - **Stage Name**: Descriptive identifier for the assessment stage
-   - **Stage Type**: Select "Machine Assessment"
+1. **Step Configuration**
+   - **Step Name**: Descriptive identifier for the assessment step
+   - **Step Type**: Select "Machine Assessment"
    - **Input Requirements**: Define expected data formats and requirements
    - **Output Specifications**: Configure output format and destinations
 
 2. **Agent Assignment**
-   - **Select Agent**: Choose the trained AI agent for this stage
+   - **Select Agent**: Choose the trained AI agent for this step
    - **Agent Version**: Specify which version to use
    - **Fallback Options**: Configure backup agents if primary fails
    - **Performance Monitoring**: Set up performance tracking
@@ -56,7 +56,7 @@ Machine assessment stages are automated workflow components that use trained AI 
 
 ### Workflow Integration
 - **Input Filters**: Pre-processing filters and data validation
-- **Output Routing**: Direct results to appropriate next stages
+- **Output Routing**: Direct results to appropriate next steps
 - **Conditional Logic**: Branch workflow based on results
 - **Error Recovery**: Handle processing failures gracefully
 
@@ -66,7 +66,7 @@ Machine assessment stages are automated workflow components that use trained AI 
 - **Caching**: Cache frequently used models and data
 - **Load Balancing**: Distribute work across available resources
 
-## Adding Tasks to Machine Assessment Stages
+## Adding Tasks to Machine Assessment Steps
 
 ### Task Types
 - **Classification Tasks**: Categorize input data
@@ -85,7 +85,7 @@ Machine assessment stages are automated workflow components that use trained AI 
    - **Validation Rules**: Automated checks on task results
    - **Confidence Requirements**: Minimum confidence for acceptance
    - **Review Triggers**: Conditions that require human review
-   - **Approval Workflows**: Multi-stage approval processes
+   - **Approval Workflows**: Multi-step approval processes
 
 3. **Performance Monitoring**
    - **Metrics Collection**: Track accuracy, speed, and throughput
@@ -108,7 +108,7 @@ Machine assessment stages are automated workflow components that use trained AI 
 - **Rollback Mechanisms**: Revert to previous configurations if needed
 
 ### Integration Capabilities
-- **API Endpoints**: Programmatic access to stage configuration
+- **API Endpoints**: Programmatic access to step configuration
 - **Webhook Notifications**: Real-time status updates
 - **External Systems**: Integration with business applications
 - **Data Pipeline**: Seamless data flow between systems
@@ -135,7 +135,7 @@ Machine assessment stages are automated workflow components that use trained AI 
 
 ## Best Practices
 
-### Stage Design
+### Step Design
 - Start with simple, well-defined tasks
 - Build in appropriate quality controls
 - Plan for edge cases and error conditions
@@ -148,7 +148,7 @@ Machine assessment stages are automated workflow components that use trained AI 
 - Monitor for concept drift and model degradation
 
 ### Workflow Integration
-- Ensure smooth data flow between stages
+- Ensure smooth data flow between steps
 - Implement comprehensive logging and monitoring
 - Plan for failure scenarios and recovery
 - Document configuration decisions and rationale

@@ -2,7 +2,7 @@
 title = "Assessment Workflow | Highlighter Concepts"
 description = "Assessment Workflows in Highlighter AI systematically process data for evaluation. Define criteria, collect and analyze inputs, report findings, and drive action through iterative review."
 date = 2021-05-01T08:00:00+00:00
-updated = 2021-05-01T08:00:00+00:00
+updated = 2025-11-19T08:00:00+00:00
 draft = false
 weight = 200
 sort_by = "weight"
@@ -37,7 +37,7 @@ In the context of a business process, an assessment workflow could serve multipl
 * Auditing financial performance or compliance with regulations
 * Evaluating the performance of employees, departments, or entire business units
 
-Designing an assessment workflow usually involves several stages, such as defining the assessment criteria, collecting and analyzing relevant data, reporting findings, developing an action plan based on these findings, and regularly reviewing and adjusting the workflow as necessary.
+Designing an assessment workflow usually involves several steps, such as defining the assessment criteria, collecting and analyzing relevant data, reporting findings, developing an action plan based on these findings, and regularly reviewing and adjusting the workflow as necessary.
 
 By integrating assessment workflows into broader business processes, organizations can ensure continuous improvement, optimize resource allocation, maintain high standards of quality and compliance, and drive strategic decision-making.
 

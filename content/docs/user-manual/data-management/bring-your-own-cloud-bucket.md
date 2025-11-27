@@ -2,7 +2,7 @@
 title = "Bring Your Own Cloud Bucket"
 description = "Learn how to setup Highlighter to use your own Cloud  Bucket to store data."
 date = 2024-03-12T08:00:00+00:00
-updated = 2024-03-12T08:00:00+00:00
+updated = 2025-11-19T08:00:00+00:00
 draft = false
 weight = 100
 sort_by = "weight"
@@ -38,7 +38,7 @@ Before starting, ensure you have:
 1. Log into your Highlighter account
 2. At the bottom left where your profile photo is, click on the chevron and navigate to **Cloud Credentials**
 3. Click **Add New Cloud Credential**
-4. At this stage just copy the External ID, which you will need later on in setting up the Trust Policy.
+4. At this step just copy the External ID, which you will need later on in setting up the Trust Policy.
 
 ## Step 2: Create a S3 Permissions Policy
 

@@ -18,13 +18,13 @@ Highlighter is the world’s only fully integrated Enterprise Perception System 
 
 ## A Complete Perception Lifecycle in One Platform
 
-Many data-processing and AI solutions tackle only a narrow piece of the perception pipeline—such as data ingestion, model training, or reporting. Others may provide analytics insights but stop short of enabling automated or structured decision-making and action. Highlighter, on the other hand, brings every stage of the perception process under one platform, ensuring you can seamlessly transform raw data into informed actions:
+Many data-processing and AI solutions tackle only a narrow piece of the perception pipeline—such as data ingestion, model training, or reporting. Others may provide analytics insights but stop short of enabling automated or structured decision-making and action. Highlighter, on the other hand, brings every step of the perception process under one platform, ensuring you can seamlessly transform raw data into informed actions:
 
 1.	Data Collection -- Rapidly gather information from sensors, IoT devices, cameras, and more—so you can capture every relevant signal your enterprise needs.
 2.	Schema -- Organize and structure data through a standardized taxonomy. This foundation ensures that human and AI agents alike can interpret, compare, and act on the information effectively.
 3.	Assessment -- Leverage both domain experts and AI models within a unified workflow. By standardizing processes, your team gains repeatable, reliable ways to turn raw data into actionable insights.
 4.	Decide -- Configure your organization’s decision logic—whether automated via AI rules or controlled by human approvals—to ensure consistent, data-driven judgments.
-5.	Actions -- Close the loop by automating or coordinating real-world tasks, whether they are physical processes in a factory or digital actions in your IT systems. Highlighter ensures you never get stuck at the “analysis” stage.
+5.	Actions -- Close the loop by automating or coordinating real-world tasks, whether they are physical processes in a factory or digital actions in your IT systems. Highlighter ensures you never get stuck at the "analysis" step.
 6.	Agent Development & Deployment -- Train and deploy specialized ML models or human-managed processes within the same ecosystem. This accelerates iteration and reduces the overhead of juggling separate tools for different use cases.
 7.	Evaluation -- Continuously monitor the accuracy, efficiency, and cost-effectiveness of each agent and action step. This feedback loop enables proactive improvements and ensures your enterprise stays ahead of evolving demands.
 8.	Visualization -- Transform data into intuitive dashboards, charts, and maps that clarify trends and patterns—making it easy for stakeholders at all levels to understand and act on critical insights.

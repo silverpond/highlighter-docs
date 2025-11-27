@@ -2,7 +2,7 @@
 title = "Exporting Data"
 description = "Export assessment workflow data into CSV reports with flexible formatting options including attribute values, confidences, and annotations layouts, and flexible file downloads."
 date = 2023-09-26T08:00:00+00:00
-updated = 2023-09-26T08:00:00+00:00
+updated = 2025-11-19T08:00:00+00:00
 draft = false
 weight = 50
 sort_by = "weight"
@@ -28,7 +28,7 @@ The left panel is titled "Export". Choose options for the following fields:
 ### Assessments
 Select the scope of assessments to include in your export:
 
-- **All Assessments**: Export all assessments for each file (e.g., if each file was processed by a machine assessment stage and then reviewed by a human, this will include both the machine assessment and the human assessment)
+- **All Assessments**: Export all assessments for each file (e.g., if each file was processed by a machine assessment step and then reviewed by a human, this will include both the machine assessment and the human assessment)
 - **Latest Assessments**: Export only the most recent assessment on each file (e.g., this would only include the human assessment if it came after the machine assessment)
 
 ### Layout
