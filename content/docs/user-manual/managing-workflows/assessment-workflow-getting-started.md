@@ -101,7 +101,7 @@ For this tutorial, we'll create a workflow that:
 - Medium confidence (70-90%): Route to human review
 - Low confidence (<70%): Flag for detailed review
 
-### Step 3: Human Review
+### Human Review
 1. **Step Name**: "Expert Review"
 2. **Step Type**: Human Assessment
 3. **Review Type**: Classification and Quality Control
