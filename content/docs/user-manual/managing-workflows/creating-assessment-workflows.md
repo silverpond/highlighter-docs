@@ -1,6 +1,6 @@
 +++
 title = "Creating Assessment Workflows"
-description = "Design assessment workflows in Highlighter AI，combine human expertise with AI, configure steps, apply routing logic, and implement best practices for scalable enterprise operations."
+description = "Design assessment workflows in Highlighter AI, combine human expertise with AI, configure steps, apply routing logic, and implement best practices for scalable enterprise operations."
 date = 2025-05-01T08:00:00+00:00
 updated = 2025-11-19T08:00:00+00:00
 draft = false
