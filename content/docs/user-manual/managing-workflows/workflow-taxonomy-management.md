@@ -91,39 +91,6 @@ The import process will:
 - Update workflow-specific configurations
 - Preserve data integrity through validation
 
-## Performance Improvements
-
-Recent enhancements have significantly improved the speed and efficiency of taxon group imports and exports:
-
-### What Changed (November 2025)
-
-The import and export processes have been optimized to use bulk database operations instead of processing records individually. This architectural improvement results in:
-
-- **Faster Import Times**: Large taxon groups import up to 10x faster
-- **Reduced Server Load**: More efficient use of database resources
-- **Better Reliability**: Improved error handling and transaction management
-- **Enhanced Testing**: Comprehensive round-trip validation ensures data integrity
-
-### Technical Improvements
-
-The optimization includes:
-
-1. **Bulk Data Operations**: CSV parsing and data collection happens outside database transactions for better performance
-2. **Efficient Database Queries**: Records are created and updated in batches rather than one-by-one
-3. **Optimized Lookups**: Entity attributes, object classes, and enums are fetched in bulk with indexed lookups
-4. **Transaction Optimization**: Database locks are minimized while maintaining data consistency
-
-### What This Means for You
-
-These improvements are transparent to users - you don't need to change how you work with taxon groups. You'll simply experience:
-
-- Faster imports when uploading large taxonomy files
-- Quicker exports when backing up or sharing taxonomies
-- More responsive workflow taxonomy management
-- Improved reliability for large-scale taxonomy operations
-
-The same CSV format and workflow remain unchanged, ensuring backward compatibility with existing taxonomy files.
-
 ## Best Practices
 
 ### Organizing Taxon Groups
