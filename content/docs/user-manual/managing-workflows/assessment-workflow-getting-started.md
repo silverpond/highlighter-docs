@@ -73,7 +73,7 @@ For this tutorial, we'll create a workflow that:
 
 ## Step 3: Configuring Assessment Steps
 
-### Step 1: Data Intake and Validation
+### Data Intake and Validation
 1. **Step Name**: "Data Validation"
 2. **Step Type**: Automated Processing
 3. **Functions**:
