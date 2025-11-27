@@ -22,7 +22,7 @@ When a Training Run completes successfully, it produces various artefacts, inclu
 
 To access the artefacts for a Training Run:
 
-1. Navigate to the **Training Runs** section of the application.
+1. In the "Develop" section of the application, navigate to the **Training** page.
 2. Select the specific Training Run you are interested in.
 3. On the Training Run details page, look for the **Artefacts** panel (usually on the right-hand side).
 
