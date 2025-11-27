@@ -87,7 +87,7 @@ For this tutorial, we'll create a workflow that:
 - Configure error handling for invalid files
 - Define quality thresholds for automatic rejection
 
-### Step 2: Machine Assessment
+### Machine Assessment
 1. **Step Name**: "AI Quality Analysis"
 2. **Step Type**: Machine Assessment
 3. **Agent Selection**: Choose or configure your AI quality assessment agent
