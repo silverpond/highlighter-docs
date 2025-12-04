@@ -102,7 +102,7 @@ After processing, cases automatically flow to the next connected step(s) in your
 2. **Step Type**: Human Assessment
 3. **Configuration**:
    - Link to an image queue that defines the annotation interface and task structure
-   - Assign contributor users who can work on tasks in this step
+   - In the **Assignees** field, assign contributor users who can work on tasks in this step
    - Configure batch size (how many items a reviewer sees at once)
    - Set capacity limits (maximum concurrent tasks)
    - Configure whether tasks are consumable and lockable
