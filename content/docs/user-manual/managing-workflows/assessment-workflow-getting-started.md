@@ -57,212 +57,169 @@ For this tutorial, we'll create a workflow that:
 1. Log into your Highlighter platform
 2. Navigate to the "Workflows" section
 3. Click "Create New Workflow"
-4. Choose "Assessment Workflow" as the template type
 
 ### Basic Workflow Configuration
 1. **Workflow Name**: "Image Quality Assessment"
 2. **Description**: "Automated quality assessment of uploaded images with human review escalation"
-3. **Category**: Quality Control
-4. **Priority**: Normal
 
-### Data Source Configuration
-1. **Input Source**: Select your data source (file upload, database, API)
-2. **File Types**: Specify accepted formats (JPG, PNG, etc.)
-3. **Size Limits**: Set reasonable file size constraints
-4. **Validation Rules**: Configure basic data validation
+The workflow builder provides a visual, node-based interface where you can drag and drop different types of steps and connect them together to create your assessment workflow.
 
 ## Step 3: Configuring Assessment Steps
 
-### Data Intake and Validation
-1. **Step Name**: "Data Validation"
-2. **Step Type**: Automated Processing
-3. **Functions**:
-   - File format verification
-   - Size and resolution checks
-   - Basic quality metrics
-   - Duplicate detection
+Highlighter workflows consist of four types of steps that you can connect together:
 
-**Configuration**:
-- Set timeout limits for processing
-- Configure error handling for invalid files
-- Define quality thresholds for automatic rejection
+1. **Data Source Steps**: Import data from configured data sources
+2. **Machine Assessment Steps**: Automated processing using AI agents
+3. **Human Assessment Steps**: Manual review and annotation queues
+4. **Filter Steps**: Filter data based on criteria without creating tasks
 
-### Machine Assessment
+### Data Source Step
+1. **Step Type**: Data Source
+2. **Configuration**:
+   - Select an existing data source from your project
+   - Assign users who can manage this data source step
+   - The step name will automatically match your data source name
+
+Data source steps serve as entry points to your workflow, importing files and creating cases that flow through subsequent steps.
+
+### Machine Assessment Step
 1. **Step Name**: "AI Quality Analysis"
 2. **Step Type**: Machine Assessment
-3. **Agent Selection**: Choose or configure your AI quality assessment agent
-4. **Processing Parameters**:
-   - Batch size: 10 images
-   - Confidence threshold: 85%
-   - Processing timeout: 30 seconds per image
+3. **Configuration**:
+   - Select a task definition that specifies what the machine agent should do
+   - Link to a specific machine agent version
+   - Configure cloud instance settings (if using cloud-hosted agents)
 
-**Quality Gates**:
-- High confidence (>90%): Auto-approve
-- Medium confidence (70-90%): Route to human review
-- Low confidence (<70%): Flag for detailed review
+Machine assessment steps automatically process cases using AI agents. You can monitor:
+- Task statistics (pending, running, failed, success)
+- Cloud instance status (if applicable)
+- Agent logs and performance metrics
 
-### Human Review
+After processing, cases automatically flow to the next connected step(s) in your workflow.
+
+### Human Assessment Step
 1. **Step Name**: "Expert Review"
 2. **Step Type**: Human Assessment
-3. **Review Type**: Classification and Quality Control
-4. **Reviewer Assignment**:
-   - Assign to "Quality Reviewers" group
-   - Set workload distribution to "Even"
-   - Configure backup reviewers
+3. **Configuration**:
+   - Link to an image queue that defines the annotation interface and task structure
+   - Assign contributor users who can work on tasks in this step
+   - Configure batch size (how many items a reviewer sees at once)
+   - Set capacity limits (maximum concurrent tasks)
+   - Configure whether tasks are consumable and lockable
 
-**Review Configuration**:
-- Review interface: Image annotation tool
-- Decision options: Approve, Reject, Request Clarification
-- Time limit: 2 minutes per image
-- Quality requirements: 95% accuracy
+Human assessment steps create manual review tasks that appear in the assigned reviewers' work queues. The review interface, available actions, and task structure are all defined by the linked image queue.
+
+### Filter Step
+1. **Step Type**: Filter
+2. **Configuration**:
+   - Define filter criteria to match specific cases
+   - Filter criteria can include: confidence scores, object classes, annotation status, data sources, and more
+   - Supports operators: >, >=, ==, <=, <
+   - Multiple filters can be combined with AND/OR logic
+
+Filter steps route cases without creating tasks. They automatically pass matching cases to the next connected step, allowing you to implement conditional routing logic in your workflow.
 
 ## Step 4: Workflow Logic and Routing
 
-### Decision Points
-Configure routing logic between steps:
+### Connecting Steps
+In the visual workflow builder, connect your steps together by drawing a connection from one step to the next. Workflows follow a linear flow where each step connects to one next step.
 
-1. **After Data Validation**:
-   - Valid files → AI Quality Analysis
-   - Invalid files → Automatic rejection with notification
+**Example Flow**:
+Data Source → Machine Assessment → Filter Step → Human Review
 
-2. **After AI Assessment**:
-   - High confidence approval → Final approval
-   - Medium confidence → Human review
-   - Low confidence/rejection → Human review with priority flag
-
-3. **After Human Review**:
-   - Approved → Final approval
-   - Rejected → Final rejection with feedback
-   - Clarification needed → Return to previous step
-
-### Quality Control Measures
-- **Audit Sampling**: 10% of auto-approved items undergo human review
-- **Consensus Reviews**: Difficult cases reviewed by multiple experts
-- **Escalation Rules**: Complex cases escalated to senior reviewers
-- **Feedback Loops**: Human decisions used to improve AI performance
+### How Cases Flow
+- When a case completes a step, it automatically moves to the next connected step
+- All completed cases from a step proceed to the next step
+- Filter steps evaluate cases and only pass through those matching the filter criteria - unmatched cases stop at the filter step
+- This allows you to control which cases require human review vs. which can be automatically completed
 
 ## Step 5: Testing Your Workflow
 
-### Validation Testing
-1. **Test Data Preparation**:
-   - Gather representative sample data (20-30 files)
-   - Include edge cases and challenging examples
-   - Prepare expected outcomes for comparison
+Once you've configured your workflow steps and connections:
 
-2. **Workflow Testing**:
-   - Run test data through the workflow
-   - Verify each step functions correctly
-   - Check routing logic and decision points
-   - Validate output quality and format
+1. **Save Your Workflow**: Click the Save button in the workflow builder to persist your configuration
+2. **Create a Workflow Order**: Navigate to the workflow and create a new workflow order to begin processing
+3. **Add Test Data**: Start with a small batch of representative data to verify the workflow functions as expected
+4. **Monitor Progress**: Use the step statistics to track cases as they move through your workflow
+5. **Verify Results**: Check that cases are being processed correctly at each step
 
-3. **Performance Testing**:
-   - Test with larger data volumes
-   - Monitor processing times and resource usage
-   - Identify potential bottlenecks
-   - Verify scalability under load
+## Step 6: Running Your Workflow
 
-### User Acceptance Testing
-1. **Reviewer Training**:
-   - Train human reviewers on new workflow
-   - Provide guidelines and examples
-   - Conduct practice sessions
-   - Address questions and concerns
+### Creating Workflow Orders
+To process data through your workflow:
 
-2. **Feedback Collection**:
-   - Gather input from all stakeholders
-   - Test user interfaces and tools
-   - Identify usability improvements
-   - Refine processes based on feedback
+1. **Create a New Workflow Order**: From the workflow page, create a new order
+2. **Add Files**: Upload or import files into the workflow order
+3. **Case Matching** (if applicable): Choose how to match imported files to existing entities:
+   - By geolocation
+   - By ingestion path (folder structure)
+   - No matching (create new cases)
+4. **Start Processing**: Once files are added, cases will begin flowing through your workflow automatically
 
-## Step 6: Launching Your Workflow
+### Managing Active Workflows
+- **Monitor Statistics**: Each step shows counts of pending, running, failed, and successful tasks
+- **User Assignment**: Ensure reviewers are assigned to human assessment steps so they can access their work queues
+- **Machine Agents**: For machine assessment steps, verify that agents are running and processing tasks
+- **Add More Data**: You can add additional files to existing workflow orders as needed
 
-### Deployment Preparation
-1. **Final Configuration Review**:
-   - Verify all settings and parameters
-   - Double-check reviewer assignments
-   - Confirm quality thresholds
-   - Test notification systems
+## Step 7: Monitoring Your Workflow
 
-2. **Documentation**:
-   - Create user guides for reviewers
-   - Document workflow processes
-   - Prepare troubleshooting guides
-   - Set up training materials
+### Task Statistics by Step
+Each workflow step displays real-time statistics:
+- **Pending Tasks**: Tasks waiting to be processed
+- **Running Tasks**: Tasks currently being processed
+- **Failed Tasks**: Tasks that encountered errors (last 7 days)
+- **Successful Tasks**: Tasks that completed successfully (last 7 days)
 
-### Go-Live Process
-1. **Pilot Launch**:
-   - Start with limited data volume
-   - Monitor closely for issues
-   - Make adjustments as needed
-   - Gradually increase volume
+### Machine Assessment Monitoring
+For machine assessment steps, you can monitor:
+- **Agent Status**: Whether agents are running, stopped, or failed
+- **Instance Information**: Cloud instance details if using cloud-hosted agents
+- **Agent Logs**: View execution logs to debug issues
+- **Processing Rate**: Track how quickly tasks are being completed
 
-2. **Full Deployment**:
-   - Scale up to production volumes
-   - Monitor performance metrics
-   - Collect user feedback
-   - Optimize based on real-world usage
+### Human Assessment Monitoring
+For human assessment steps, you can view:
+- **Contributor Statistics**: See how many tasks each reviewer has checked out and completed
+- **Available Tasks**: Track how many tasks are available for review
+- **Assigned Orders**: View which reviewers are assigned to which workflow orders
 
-## Step 7: Monitoring and Optimization
-
-### Performance Metrics
-Monitor these key indicators:
-- **Throughput**: Items processed per hour/day
-- **Quality**: Accuracy rates and error percentages
-- **Efficiency**: Average processing time per step
-- **User Satisfaction**: Feedback from reviewers and stakeholders
-
-### Regular Optimization
-1. **Weekly Reviews**:
-   - Analyze performance metrics
-   - Identify bottlenecks or issues
-   - Review quality outcomes
-   - Collect user feedback
-
-2. **Monthly Optimization**:
-   - Adjust thresholds and parameters
-   - Retrain AI models with new data
-   - Update reviewer assignments
-   - Implement process improvements
-
-3. **Quarterly Assessment**:
-   - Comprehensive workflow review
-   - Cost-benefit analysis
-   - Strategic alignment check
-   - Planning for future enhancements
+### Optimization
+Based on monitoring data, you can:
+- Adjust user assignments if workload is unbalanced
+- Start or stop machine agents as needed for processing
+- Modify filter criteria if too many/too few cases are passing through
+- Update task definitions or image queues to refine processes
 
 ## Troubleshooting Common Issues
 
 ### Low Throughput
-- Check for processing bottlenecks
-- Verify adequate reviewer capacity
-- Optimize batch sizes and timeouts
-- Consider parallel processing options
+- **Check Machine Agents**: Ensure machine agents are running and not in a failed state
+- **Verify User Assignment**: Make sure reviewers are assigned to human assessment steps
+- **Review Filter Criteria**: Check if filters are too restrictive and blocking cases
+- **Monitor Failed Tasks**: Investigate and retry any failed tasks
 
-### Quality Issues
-- Review and update assessment criteria
-- Provide additional reviewer training
-- Adjust AI model thresholds
-- Implement additional quality controls
-
-### User Adoption Challenges
-- Gather detailed user feedback
-- Provide additional training and support
-- Simplify complex processes
-- Improve user interface design
+### Tasks Not Progressing
+- **Check Step Connections**: Verify steps are properly connected in the workflow builder
+- **Review Filter Logic**: Ensure filter criteria are correctly configured to pass cases
+- **Verify Data Source**: Confirm files were successfully imported into the workflow order
+- **Check Task Leasing**: Ensure tasks aren't stuck in a locked/leased state
 
 ## Next Steps
 
-After completing this tutorial:
-1. **Explore Advanced Features**: Learn about complex routing, multi-agent systems, and advanced analytics
-2. **Integration**: Connect your workflow with existing business systems
-3. **Scaling**: Expand to handle larger volumes and more complex scenarios
-4. **Optimization**: Continuously improve performance and quality
+Now that you've created your first workflow, you can:
+
+1. **Configure Image Queues**: Set up custom annotation interfaces and task structures for human assessment
+2. **Set Up Sampling Policies**: Implement quality control by sampling a percentage of cases for review
+3. **Create Multiple Workflows**: Build different workflows for different assessment needs
+4. **Integrate Data Sources**: Connect various data sources to automate data ingestion
+5. **Develop Machine Agents**: Create custom machine assessment agents for your specific use cases
 
 ## Additional Resources
 
-- **Advanced Workflow Configuration**: Learn about complex scenarios
-- **Agent Management**: Deep dive into AI agent configuration
-- **Performance Optimization**: Advanced techniques for scaling
-- **Integration Guides**: Connect with external systems
+- [**Creating Assessment Workflows**](/docs/user-manual/managing-workflows/creating-assessment-workflows/): Detailed guide on workflow concepts and architecture
+- [**Human Assessment Steps**](/docs/user-manual/managing-workflows/human-assessment-steps/): Learn more about configuring human review queues
+- [**Machine Assessment Steps**](/docs/user-manual/managing-workflows/machine-assessment-steps/): Deep dive into machine agent configuration
+- [**Working in the Assessment Editor**](/docs/user-manual/assessing-and-labelling/working-in-the-assessment-editor/): Guide for reviewers performing assessments
 
-Congratulations! You've successfully created your first assessment workflow. This foundation will serve you well as you build more sophisticated assessment systems in Highlighter.
+You've successfully created your first assessment workflow in Highlighter.
