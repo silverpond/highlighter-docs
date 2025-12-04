@@ -130,7 +130,7 @@ Data Source → Machine Assessment → Filter Step → Human Review
 ### How Cases Flow
 - When a case completes a step, it automatically moves to the next connected step
 - All completed cases from a step proceed to the next step
-- Filter steps evaluate cases and only pass through those matching the filter criteria - unmatched cases stop at the filter step
+- Filter steps evaluate cases and only allow those matching the filter criteria to proceed to the next step. Unmatched cases skip all remaining steps and are marked as complete
 - This allows you to control which cases require human review vs. which can be automatically completed
 
 ## Step 5: Testing Your Workflow
