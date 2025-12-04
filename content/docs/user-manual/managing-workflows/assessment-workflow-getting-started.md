@@ -77,7 +77,7 @@ Highlighter workflows consist of four types of steps that you can connect togeth
 1. **Step Type**: Data Source
 2. **Configuration**:
    - Select an existing data source from your project
-   - Assign users who can manage this data source step
+   - In the **Assign Contributors** field, assign users who can manage this data source step
    - The step name will automatically match your data source name
 
 Data source steps serve as entry points to your workflow, importing files and creating cases that flow through subsequent steps.
