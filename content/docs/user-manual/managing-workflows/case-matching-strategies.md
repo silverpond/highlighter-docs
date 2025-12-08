@@ -117,7 +117,7 @@ For a file path like: `s3://bucket-name/order-folder/pole-001/image.jpg`
 
 When creating or editing a workflow order:
 
-1. Set **Case Matching Strategy** to "Ingestion path"
+1. Set **Case Matching Strategy** to "Ingestion Path"
 2. Organize your file uploads so each entity's files are in a folder named with that entity's external_id
 3. Optionally enable **Create Cases For Non-Matches** to handle files that don't match any entity
 
