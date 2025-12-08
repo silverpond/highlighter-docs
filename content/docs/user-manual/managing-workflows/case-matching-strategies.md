@@ -47,7 +47,7 @@ The Geolocation strategy matches files to entities by comparing the GPS coordina
 
 - **GPS Metadata**: Files must contain valid GPS coordinates in their metadata (e.g., EXIF data for images)
 - **Maximum Radius To Matched Entity**: You must specify the maximum distance (in meters) within which a file will be matched to an entity
-- **Pre-existing Cases**: Entities must already have cases in the workflow order for files to be matched to them
+- **Pre-existing Cases**: Entities must already have cases in the "pre-processing" state in the workflow order for files to be matched to them
 - **Entities with GPS**: Case entities must have valid GPS coordinates for files to be matched to them
 
 ### Configuration
