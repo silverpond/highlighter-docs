@@ -101,21 +101,20 @@ After processing, cases automatically flow to the next connected step(s) in your
 1. **Step Name**: "Expert Review"
 2. **Step Type**: Human Assessment
 3. **Configuration**:
-   - Link to an image queue that defines the annotation interface and task structure
-   - In the **Assignees** field, assign contributor users who can work on tasks in this step
-   - Configure batch size (how many items a reviewer sees at once)
-   - Set capacity limits (maximum concurrent tasks)
-   - Configure whether tasks are consumable and lockable
+   - **Queue Name**: Name for this assessment step (required)
+   - **Assignees**: Select contributor users who can work on tasks in this step (multi-select)
+   - **Previous Step**: Connect to the upstream step in your workflow (optional)
+   - **Batch Size**: Configure how many items a reviewer sees at once
+   - **Queue Capacity**: Set maximum concurrent tasks (optional - unlimited if not specified)
+   - **Consumable**: Enable/disable consumable queue behavior
+   - **Lockable**: Enable/disable task locking mechanism
 
-Human assessment steps create manual review tasks that appear in the assigned reviewers' work queues. The review interface, available actions, and task structure are all defined by the linked image queue.
+Human assessment steps create manual review tasks that appear in the assigned reviewers' work queues.
 
 ### Filter Step
 1. **Step Type**: Filter
 2. **Configuration**:
-   - Define filter criteria to match specific cases
-   - Filter criteria can include: confidence scores, object classes, annotation status, data sources, and more
-   - Supports operators: >, >=, ==, <=, <
-   - Multiple filters can be combined with AND/OR logic
+   - See your admin to configure filters.
 
 Filter steps route cases without creating tasks. They automatically pass matching cases to the next connected step, allowing you to implement conditional routing logic in your workflow.
 
@@ -188,8 +187,6 @@ For human assessment steps, you can view:
 Based on monitoring data, you can:
 - Adjust user assignments if workload is unbalanced
 - Start or stop machine agents as needed for processing
-- Modify filter criteria if too many/too few cases are passing through
-- Update task definitions or image queues to refine processes
 
 ## Troubleshooting Common Issues
 
@@ -209,11 +206,11 @@ Based on monitoring data, you can:
 
 Now that you've created your first workflow, you can:
 
-1. **Configure Image Queues**: Set up custom annotation interfaces and task structures for human assessment
-2. **Set Up Sampling Policies**: Implement quality control by sampling a percentage of cases for review
-3. **Create Multiple Workflows**: Build different workflows for different assessment needs
-4. **Integrate Data Sources**: Connect various data sources to automate data ingestion
-5. **Develop Machine Agents**: Create custom machine assessment agents for your specific use cases
+1. **Configure Taxonomy**: Define object classes, attributes, and taxon groups for your specific classification needs
+2. **Add Team Members**: Invite users to your workflow and assign them roles and permissions
+3. **Develop Machine Agents**: Create custom machine assessment agents with training artifacts and inference configurations
+4. **Create Datasets**: Build curated collections from annotations for training and evaluation
+5. **Create Multiple Workflows**: Build different workflows for different assessment needs
 
 ## Additional Resources
 
