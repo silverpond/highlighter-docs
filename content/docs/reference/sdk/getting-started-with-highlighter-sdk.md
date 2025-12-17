@@ -2,7 +2,7 @@
 title = "Getting Started"
 description = "How to get started with the Highlighter Python SDK"
 date = 2025-02-27T08:00:00+00:00
-updated = 2025-02-27T08:00:00+00:00
+updated = 2025-12-17T08:00:00+00:00
 draft = false
 weight = 0
 sort_by = "weight"
@@ -72,6 +72,24 @@ Below is how to download an data-file using the cli.
 # -o will save the resulting DataFile to your cwd
 hl data-file read -i 12345 -o .
 ```
+
+### Network Discovery and Data Sources
+
+The Highlighter SDK includes powerful tools for discovering devices on your network and managing data sources:
+
+- **Network Discovery**: Use `hl datasource discover` to find cameras and devices via mDNS/Bonjour
+  - Discover all cameras on your network: `hl datasource discover list`
+  - Find a camera by MAC address: `hl datasource discover find --mac XX:XX:XX:XX:XX:XX`
+  - Batch lookup multiple devices: `hl datasource discover batch --file macs.txt`
+
+- **Data Source Management**: Use `hl datasource` to create, update, and manage data sources in Highlighter Cloud
+  - List data sources: `hl datasource list`
+  - Create a data source: `hl datasource create --name "Camera-1" --source-uri "rtsp://..."`
+  - Import/export data sources: `hl datasource import --file cameras.json --create-missing`
+
+For detailed information, see:
+- [Network Device Discovery](../network-discovery/)
+- [Data Source Management CLI](../data-source-cli/)
 
 ## Using the Python API
 
