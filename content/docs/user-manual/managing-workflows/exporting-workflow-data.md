@@ -16,7 +16,7 @@ top = false
 Use the workflow page to export data for an entire workflow or a specific workflow order.
 
 - If you select a workflow order, exports include only that order.
-- If no order is selected, exports include all cases in the workflow.
+- If no order is selected, exports include all cases in the workflow. Note that some export types, such as annotated case files, require a workflow order.
 
 ## Navigate to the workflow page
 
