@@ -96,19 +96,25 @@ hl evaluation metric create --evaluation-id <EVALUATION_ID> --code Accuracy --na
 
 # Record evaluation results
 hl evaluation result create --metric-id <METRIC_ID> --value 0.95
+
+# Delete an evaluation
+hl evaluation delete --id <EVALUATION_ID>
 ```
 
 ### Training Runs
 
 ```bash
+# Create a training run
+hl training-run create --evaluation-id <EVAL_ID> --experiment-id <EXP_ID> --capability-id <MODEL_ID> --workflow-id <WORKFLOW_ID> --name "Run v1"
+
 # Read training run configuration
 hl training-run read --id <RUN_ID> --output config.yaml
 
 # Delete a training run
 hl training-run delete --id <RUN_ID>
 
-# Manage artefacts
-hl training-run artefact list --training-run-id <RUN_ID>
+# Download a training run artefact
+hl training-run artefact read --id <RUN_ID> --artefact-type OnnxOpset14 --save-path ./model.onnx
 ```
 
 ## Entities & Pipelines
