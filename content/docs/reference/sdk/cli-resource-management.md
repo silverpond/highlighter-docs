@@ -102,7 +102,7 @@ hl evaluation result create --metric-id <METRIC_ID> --value 0.95
 
 ```bash
 # Read training run configuration
-hl training-run read <RUN_ID> --output config.yaml
+hl training-run read --id <RUN_ID> --output config.yaml
 
 # Delete a training run
 hl training-run delete --id <RUN_ID>
