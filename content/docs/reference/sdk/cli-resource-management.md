@@ -16,7 +16,7 @@ top = false
 
 ## Overview
 
-The Highlighter CLI (`hl`) has been expanded to support full lifecycle management of core system resources. This allows for "headless" operation, automation scripts, and cleanup tasks without needing to access the web interface.
+The Highlighter CLI (`hl`) has been expanded to support lifecycle management of core system resources. This allows for "headless" operation, automation scripts, and cleanup tasks without needing to access the web interface.
 
 You can now manage the following entities directly from your terminal:
 
@@ -28,16 +28,11 @@ You can now manage the following entities directly from your terminal:
 
 ## Common Operations
 
-Most resource command groups support a standard set of operations:
-
-*   **List**: View resources with filtering options.
-*   **Delete**: Remove resources (including bulk deletion).
-
-Use the `--help` flag with any command to see available options.
+Most resource command groups support a `delete` operation for cleanup. Use the `--help` flag with any command to see available options.
 
 ```bash
 hl case --help
-hl experiment list --help
+hl evaluation --help
 ```
 
 ## Cases
@@ -45,11 +40,14 @@ hl experiment list --help
 Manage the cases (tasks) within your workflows.
 
 ```bash
-# List cases in a specific workflow order
-hl case list --workflow-order-id <ORDER_ID>
+# Create a new case
+hl case create --workflow-order-id <ORDER_ID> --name "My Case"
 
 # Delete a specific case
 hl case delete --id <CASE_ID>
+
+# Add a message to a case
+hl case message create --case-id <CASE_ID> --content "Please review this."
 ```
 
 ## Workflows & Orders
@@ -57,13 +55,10 @@ hl case delete --id <CASE_ID>
 Manage the structure of your projects.
 
 ```bash
-# List all workflows
-hl workflow list
+# Delete a workflow
+hl workflow delete --id <WORKFLOW_ID>
 
-# List orders within a workflow
-hl workflow-order list --workflow-id <WORKFLOW_ID>
-
-# Delete a workflow order (and all its cases)
+# Delete a workflow order
 hl workflow-order delete --id <ORDER_ID>
 ```
 
@@ -71,22 +66,59 @@ hl workflow-order delete --id <ORDER_ID>
 
 Manage your model development lifecycle.
 
+### Experiments
+
 ```bash
-# List experiments associated with a research plan
-hl experiment list --research-plan-id <PLAN_ID>
+# Read experiment details to a markdown file
+hl experiment read --id <EXPERIMENT_ID> --save-dir ./output
+
+# Delete an experiment
+hl experiment delete --id <EXPERIMENT_ID>
+```
+
+### Evaluations
+
+Evaluations support a rich set of commands for managing metrics and results.
+
+```bash
+# List all evaluations
+hl evaluation list
+
+# Read a specific evaluation
+hl evaluation read --id <EVALUATION_ID>
+
+# Create a new evaluation
+hl evaluation create --title "Model v2 Benchmark" --assigned-to-id <USER_ID>
+
+# Manage metrics within an evaluation
+hl evaluation metric list --evaluation-id <EVALUATION_ID>
+hl evaluation metric create --evaluation-id <EVALUATION_ID> --code Accuracy --name "Test Accuracy"
+
+# Record evaluation results
+hl evaluation result create --metric-id <METRIC_ID> --value 0.95
+```
+
+### Training Runs
+
+```bash
+# Read training run configuration
+hl training-run read <RUN_ID> --output config.yaml
 
 # Delete a training run
 hl training-run delete --id <RUN_ID>
 
-# Manage evaluations
-hl evaluation list
+# Manage artefacts
+hl training-run artefact list --training-run-id <RUN_ID>
 ```
 
-## Entities
+## Entities & Pipelines
 
-Manage the underlying entities (objects) tracked by the system.
+Manage other core resources.
 
 ```bash
 # Delete an entity
 hl entity delete --id <ENTITY_ID>
+
+# Delete a pipeline instance
+hl pipeline-instance delete --id <INSTANCE_ID>
 ```

@@ -64,7 +64,7 @@ Use `hl --help` to list the individual commands. Use `hl COMMAND --help`
 for help on specific commands. Some commands are nested so,
 `hl COMMAND SUB_COMMAND --help` may be required.
 
-The CLI now supports headless management of many system resources, allowing you to list and delete entities like Cases, Experiments, and Workflows directly from the terminal. See [CLI Resource Management](../cli-resource-management/) for details.
+The CLI supports headless management of many system resources, allowing you to list and delete entities like Cases, Experiments, and Workflows directly from the terminal. See [CLI Resource Management](../cli-resource-management/) for details.
 
 Below is how to download an data-file using the cli.
 
