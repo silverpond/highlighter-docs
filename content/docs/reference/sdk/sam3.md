@@ -28,7 +28,7 @@ For detailed guidance on writing more informed prompts for this model, please re
 
 **Crucially, when used with Highlighter, every single prompt you provide to the capability—whether text or geometric—must be accompanied by an `object_class_id`. Because the capability must assign an object class to every mask it generates, any prompt missing a valid UUID for this ID will be silently discarded, failing to produce segmentation masks.**
 
-### Static text prompts
+### Text prompts
 
 You can define text prompts using the capability's `prompts.text` parameter. These text strings are applied automatically to every frame the capability processes. Specifically, each text prompt must provide both the `prompt` string and its corresponding `object_class_id` UUID (see [testing SAM3](#testing-sam3) for structure).
 
