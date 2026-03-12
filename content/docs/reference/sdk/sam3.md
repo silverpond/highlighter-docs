@@ -56,7 +56,7 @@ When configurating SAM3 within a broader agent definition, all parameters to the
 | `iou` | `float` | `0.7` | The Intersection over Union (IoU) threshold for Non-Maximum Suppression (NMS). If two masks overlap by more than this ratio, the mask with the lower confidence score is discarded. |
 | `max_det` | `int` | `300` | The maximum number of masks the model will return per frame. |
 | `max_imgsz` | `int` | `1036` | The upper bound for the longest dimension of the input image. You can use this to ensure that large images are not being compressed before inference. |
-| `prompts` | `object` | `{}` | An object for defining prompts. For static text prompts, use the `text` key with a list of prompt objects, each with a `prompt` (string) and an `object_class_id` (UUID). |
+| `prompts` | `object` | `{}` | An object for defining text prompts. Use the `text` key with a list of prompt objects, each with a `prompt` (string) and an `object_class_id` (UUID). |
 
 ## Resource usage
 
