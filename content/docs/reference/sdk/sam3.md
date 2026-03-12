@@ -2,7 +2,7 @@
 title = "Segment Anything Model 3 (SAM3)"
 description = "Reference documentation for the SAM3 inference capability."
 date = 2025-02-11T08:00:00+00:00
-updated = 2025-03-11T08:00:00+00:00
+updated = 2026-03-12T08:00:00+00:00
 draft = false
 weight = 200
 sort_by = "weight"
@@ -34,7 +34,7 @@ You can define text prompts using the capability's `prompts.text` parameter. The
 
 ### Dynamic geometric prompts
 
-Geometric prompts are provided as inputs to the capability accompanying the image (rather than set as parameters like text prompts). 
+Geometric prompts are provided as inputs to the capability accompanying the image (rather than set as parameters like text prompts).
 
 To do this, an upstream capability must emit an `Entity` containing an `Observation` (which holds your `object_class_id` as a UUID) and an `Annotation` (which holds the `Polygon`, `MultiPolygon`, or `Point` geometry). You can provide these entities to the capability via inputs named `positive_prompt_entities` and `negative_prompt_entities`, which are used during frame processing to explicitly _include_ or _exclude_ regions for mask generation.
 
@@ -46,7 +46,7 @@ To run efficiently, it then groups these prompts based on their `object_class_id
 
 ## Initialisation and parameters
 
-When configurating SAM3 within a broader agent definition, all parameters to the capability should be qualified inside a `parameters` dictionary. Here are the available options:
+When configuring SAM3 within a broader agent definition, all parameters to the capability should be qualified inside a `parameters` dictionary. Here are the available options:
 
 | Parameter | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
@@ -56,7 +56,7 @@ When configurating SAM3 within a broader agent definition, all parameters to the
 | `iou` | `float` | `0.7` | The Intersection over Union (IoU) threshold for Non-Maximum Suppression (NMS). If two masks overlap by more than this ratio, the mask with the lower confidence score is discarded. |
 | `max_det` | `int` | `300` | The maximum number of masks the model will return per frame. |
 | `max_imgsz` | `int` | `1036` | The upper bound for the longest dimension of the input image. You can use this to ensure that large images are not being compressed before inference. |
-| `prompts` | `object` | `{}` | An object for defining text prompts. Use the `text` key with a list of prompt objects, each with a `prompt` (string) and an `object_class_id` (UUID). |
+| `prompts` | `object` | `{}` | An object for defining prompts. For static text prompts, use the `text` key with a list of prompt objects, each with a `prompt` (string) and an `object_class_id` (UUID). |
 
 ## Resource usage
 
@@ -64,20 +64,30 @@ SAM3 is efficient for its size, but its performance depends heavily on the hardw
 
 ## Testing SAM3
 
-To verify the SAM3 capability locally, save the following agent definition to a file named `agent.json`. This configuration establishes a minimal pipeline incorporating `AssessmentRead` and `AssessmentWrite` for testing purposes:
+To verify the SAM3 capability locally, you can use the following agent configuration. This example uses a local image as source and writes the output to a JSON file.
+
+### Example agent definition
+
+Save this as `agent.json`:
 
 ```json
 {
   "version": 0,
-  "name": "sam3_assessment",
+  "name": "sam3_local",
   "runtime": "python",
   "graph": [
-    "(AssessmentRead SAM3 AssessmentWrite)"
+    "(ImageRead SAM3 JsonWrite)"
   ],
   "parameters": {},
   "elements": [
+```
+
+<details>
+<summary><code>ImageRead</code> capability:</summary>
+
+```json
     {
-      "name": "AssessmentRead",
+      "name": "ImageRead",
       "input": [
         { "name": "data_samples", "type": "list" },
         { "name": "entities", "type": "dict" }
@@ -88,18 +98,23 @@ To verify the SAM3 capability locally, save the following agent definition to a 
       ],
       "deploy": {
         "local": {
-          "module": "highlighter.agent.capabilities.assessment_read",
-          "class_name": "AssessmentRead"
+          "module": "highlighter.agent.capabilities.sources",
+          "class_name": "ImageDataSource"
         }
       },
       "parameters": {}
     },
+```
+</details>
+<br>
+<code>SAM3</code> capability:
+
+```json
     {
       "name": "SAM3",
       "input": [
         { "name": "data_samples", "type": "list" },
-        { "name": "positive_prompt_entities", "type": "dict" },
-        { "name": "negative_prompt_entities", "type": "dict" }
+        { "name": "entities", "type": "dict" }
       ],
       "output": [
         { "name": "entities", "type": "dict" }
@@ -111,26 +126,26 @@ To verify the SAM3 capability locally, save the following agent definition to a 
         }
       },
       "parameters": {
-        "model_path": "sam3.pt",
-        "conf": 0.45,
-        "iou": 0.6,
-        "max_det": 100,
+        "model_path": "weights/sam3.pt",
         "prompts": {
           "text": [
             {
-              "prompt": "person",
-              "object_class_id": "123e4567-e89b-12d3-a456-426614174000"
-            },
-            {
-              "prompt": "vehicle",
-              "object_class_id": "987e6543-e21b-34c5-b678-426614174111"
+              "prompt": "leaves",
+              "object_class_id": "00000000-0000-0000-0000-000000000000"
             }
           ]
-        }
+        },
+        "conf": 0.2
       }
     },
+```
+
+<details>
+<summary><code>JsonWrite</code> capability:</summary>
+
+```json
     {
-      "name": "AssessmentWrite",
+      "name": "JsonWrite",
       "input": [
         { "name": "data_samples", "type": "list" },
         { "name": "entities", "type": "dict" }
@@ -138,19 +153,32 @@ To verify the SAM3 capability locally, save the following agent definition to a 
       "output": [],
       "deploy": {
         "local": {
-          "module": "highlighter.agent.capabilities.assessment_write",
-          "class_name": "AssessmentWrite"
+          "module": "highlighter.agent.capabilities.targets",
+          "class_name": "EntityWriteFile"
         }
       },
-      "parameters": {}
+      "parameters": {
+        "per_frame_output_file": "data_out/sam3/frame_{task_id}_{frame_id}.json"
+      }
     }
+```
+</details>
+<br>
+...
+
+```json
   ]
 }
 ```
 
-Once saved, you can execute this agent against an evaluation workflow using the Highlighter CLI. While your specific environment may require minor adjustments, the following command is designed to accommodate most standard development circumstances:
+
+### Running the agent
+
+Once saved, you can run the agent locally against one or more images using the Highlighter CLI.
+While your specific environment may require minor adjustments, the following command is designed to accommodate most standard development circumstances:
 
 ```bash
-HL_LOG_LEVEL=INFO hl --profile <profile_name> agent start agent.json --step-id <step_id> --allow-non-machine-user
+HL_LOG_LEVEL=INFO hl --profile <profile_name> agent start agent.json path/to/images/*
 ```
 
+This will process each image and save the results (segmentation masks for "leaves") as JSON files in the `data_out/sam3/` directory.
