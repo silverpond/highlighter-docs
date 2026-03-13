@@ -101,6 +101,8 @@ The following JSON snippet demonstrates how to configure the SAM3 capability as 
 
 To verify the SAM3 capability locally, you can use the following agent configuration. This example uses a local image as source and writes the output to a JSON file.
 
+If you haven't set up the Highlighter SDK, see the [Getting Started guide](../getting-started-with-highlighter-sdk/).
+
 ### Example agent definition
 
 <details>
