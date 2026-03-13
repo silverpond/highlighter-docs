@@ -189,8 +189,7 @@ If you haven't set up the Highlighter SDK, see the [Getting Started guide](../ge
 
 ### Running the agent
 
-Once saved, you can run the agent locally against one or more images using the Highlighter CLI.
-While your specific environment may require minor adjustments, the following command is designed to accommodate most standard development circumstances:
+Once saved, you can run the agent locally against one or more images using the Highlighter CLI:
 
 ```bash
 hl agent start agent.json path/to/images/*
