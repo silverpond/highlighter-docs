@@ -195,7 +195,7 @@ If you haven't set up the Highlighter SDK, see the [Getting Started guide](../ge
 Once saved, you can run the agent locally against one or more images using the Highlighter CLI:
 
 ```bash
-hl agent start agent.json path/to/images/*
+hl agent start agent.json test_image.png
 ```
 
 This will process each image and save the results to the `data_out/sam3/` directory: a JSON file containing the raw Highlighter entities and a JPEG with the detected polygons rendered on the source image.
