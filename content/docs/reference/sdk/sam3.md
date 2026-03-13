@@ -54,7 +54,7 @@ When configuring SAM3 within a broader agent definition, all parameters to the c
 | `training_run_artefact_id` | `uuid.UUID` | `None` | The UUID of a Highlighter training run artefact if you are downloading weights from HL cloud. |
 | `conf` | `float` | `0.4` | The minimum confidence score required to retain a detection. |
 | `iou` | `float` | `0.7` | The Intersection over Union (IoU) threshold for Non-Maximum Suppression (NMS). If two segmentations overlap by more than this ratio, the segmentation with the lower confidence score is discarded. |
-| `max_det` | `int` | `300` | The maximum number of masks the model will return per frame. |
+| `max_det` | `int` | `300` | The maximum number of entities the model will return per frame. |
 | `max_imgsz` | `int` | `1036` | The upper bound for the longest dimension of the input image. You can use this to ensure that large images are not being compressed before inference. |
 | `prompts` | `object` | `{}` | An object for defining prompts. For static text prompts, use the `text` key with a list of prompt objects, each with a `prompt` (string) and an `object_class_id` (UUID). |
 
