@@ -17,7 +17,7 @@ Cargo.lock
 public/
 .direnv/
 
-/static
+/static/processed_images
 
 .DS_Store
 **/.DS_Store
