@@ -99,7 +99,7 @@ The following JSON snippet demonstrates how to configure the SAM3 capability as 
 
 ## Testing SAM3
 
-To verify the SAM3 capability locally, you can use the following agent configuration. This example uses a local image as source and writes the output to a JSON file.
+To verify the SAM3 capability locally, you can use the following agent configuration. This example uses a local image as source and writes the output to both a JSON file and a rendered image with the detected polygons overlaid.
 
 If you haven't set up the Highlighter SDK, see the [Getting Started guide](../getting-started-with-highlighter-sdk/).
 
@@ -174,11 +174,14 @@ If you haven't set up the Highlighter SDK, see the [Getting Started guide](../ge
       "deploy": {
         "local": {
           "module": "highlighter.agent.capabilities.targets",
-          "class_name": "EntityWriteFile"
+          "class_name": "EntityRenderFile"
         }
       },
       "parameters": {
-        "per_frame_output_file": "data_out/sam3/frame_{task_id}_{frame_id}.json"
+        "per_frame_output_file": "data_out/sam3/frame_{task_id}_{frame_id}.json",
+        "per_frame_render_file": "data_out/sam3/frame_{task_id}_{frame_id}.jpg",
+        "polygon_width": 4,
+        "polygon_color": "#00ff00"
       }
     }
   ]
@@ -195,4 +198,5 @@ Once saved, you can run the agent locally against one or more images using the H
 hl agent start agent.json path/to/images/*
 ```
 
-This will process each image and save the results (Highlighter entities with polygons for each detection) as JSON files in the `data_out/sam3/` directory (configured via the parameter to the `JsonWrite` capability in the agent definition).
+This will process each image and save the results to the `data_out/sam3/` directory: a JSON file containing the raw Highlighter entities and a JPEG with the detected polygons rendered on the source image.
+
