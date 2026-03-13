@@ -195,4 +195,4 @@ Once saved, you can run the agent locally against one or more images using the H
 hl agent start agent.json path/to/images/*
 ```
 
-This will process each image and save the results (segmentation masks for "leaves") as JSON files in the `data_out/sam3/` directory (configured via the parameter to the `JsonWrite` capability in the agent definition).
+This will process each image and save the results (Highlighter entities with polygons for each detection) as JSON files in the `data_out/sam3/` directory (configured via the parameter to the `JsonWrite` capability in the agent definition).
