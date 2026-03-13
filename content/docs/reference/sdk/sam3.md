@@ -114,7 +114,7 @@ If you haven't set up the Highlighter SDK, see the [Getting Started guide](../ge
   "name": "sam3_local",
   "runtime": "python",
   "graph": [
-    "(ImageRead SAM3 JsonWrite)"
+    "(ImageRead SAM3 EntityRenderFile)"
   ],
   "parameters": {},
   "elements": [
@@ -165,7 +165,7 @@ If you haven't set up the Highlighter SDK, see the [Getting Started guide](../ge
       }
     },
     {
-      "name": "JsonWrite",
+      "name": "EntityRenderFile",
       "input": [
         { "name": "data_samples", "type": "list" },
         { "name": "entities", "type": "dict" }
@@ -173,8 +173,7 @@ If you haven't set up the Highlighter SDK, see the [Getting Started guide](../ge
       "output": [],
       "deploy": {
         "local": {
-          "module": "highlighter.agent.capabilities.targets",
-          "class_name": "EntityRenderFile"
+          "module": "highlighter.agent.capabilities.targets"
         }
       },
       "parameters": {
