@@ -62,13 +62,49 @@ When configuring SAM3 within a broader agent definition, all parameters to the c
 
 SAM3 is efficient for its size, but its performance depends heavily on the hardware it is running on. For standard single-image inference, running SAM3 on a GPU with at least 4 GB of VRAM is sufficient. However, for real-time applications or high-throughput batching, a GPU with 8 GB to 11 GB of VRAM (e.g., an NVIDIA GTX 1080 Ti or better) is highly recommended. CPU inference is supported but will be significantly slower. Memory usage scales with the `max_imgsz` parameter and the number of simultaneous prompts being processed.
 
+## Example capability configuration
+
+The following JSON snippet demonstrates how to configure the SAM3 capability as a standalone element:
+
+```json
+{
+  "name": "SAM3",
+  "input": [
+    { "name": "data_samples", "type": "list" },
+    { "name": "entities", "type": "dict" }
+  ],
+  "output": [
+    { "name": "entities", "type": "dict" }
+  ],
+  "deploy": {
+    "local": {
+      "module": "highlighter.agent.capabilities.sam3",
+      "class_name": "SAM3"
+    }
+  },
+  "parameters": {
+    "model_path": "weights/sam3.pt",
+    "prompts": {
+      "text": [
+        {
+          "prompt": "leaves",
+          "object_class_id": "00000000-0000-0000-0000-000000000000"
+        }
+      ]
+    },
+    "conf": 0.2
+  }
+}
+```
+
 ## Testing SAM3
 
 To verify the SAM3 capability locally, you can use the following agent configuration. This example uses a local image as source and writes the output to a JSON file.
 
 ### Example agent definition
 
-Save this as `agent.json`:
+<details>
+<summary>Save this as <code>agent.json</code>:</summary>
 
 ```json
 {
@@ -80,12 +116,6 @@ Save this as `agent.json`:
   ],
   "parameters": {},
   "elements": [
-```
-
-<details>
-<summary><code>ImageRead</code> capability:</summary>
-
-```json
     {
       "name": "ImageRead",
       "input": [
@@ -104,12 +134,6 @@ Save this as `agent.json`:
       },
       "parameters": {}
     },
-```
-</details>
-<br>
-<code>SAM3</code> capability:
-
-```json
     {
       "name": "SAM3",
       "input": [
@@ -138,12 +162,6 @@ Save this as `agent.json`:
         "conf": 0.2
       }
     },
-```
-
-<details>
-<summary><code>JsonWrite</code> capability:</summary>
-
-```json
     {
       "name": "JsonWrite",
       "input": [
@@ -161,16 +179,11 @@ Save this as `agent.json`:
         "per_frame_output_file": "data_out/sam3/frame_{task_id}_{frame_id}.json"
       }
     }
-```
-</details>
-<br>
-...
-
-```json
   ]
 }
 ```
 
+</details>
 
 ### Running the agent
 
