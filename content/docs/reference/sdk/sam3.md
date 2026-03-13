@@ -191,7 +191,7 @@ Once saved, you can run the agent locally against one or more images using the H
 While your specific environment may require minor adjustments, the following command is designed to accommodate most standard development circumstances:
 
 ```bash
-HL_LOG_LEVEL=INFO hl --profile <profile_name> agent start agent.json path/to/images/*
+hl agent start agent.json path/to/images/*
 ```
 
 This will process each image and save the results (segmentation masks for "leaves") as JSON files in the `data_out/sam3/` directory.
