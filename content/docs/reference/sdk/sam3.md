@@ -26,7 +26,7 @@ SAM3 weights are not bundled with the Highlighter SDK by default due to licensin
 
 For detailed guidance on writing more informed prompts for this model, please refer to the [official Ultralytics SAM3 documentation](https://docs.ultralytics.com/models/sam-3/).
 
-**Crucially, when used with Highlighter, every single prompt you provide to the capability—whether text or geometric—must be accompanied by an `object_class_id`. Because the capability must assign an object class to every mask it generates, any prompt missing a valid UUID for this ID will be silently discarded, failing to produce segmentation masks.**
+**Crucially, when used with Highlighter, every single prompt you provide to the capability—whether text or geometric—must be accompanied by an `object_class_id`. The capability must assign an object class to every entity it identifies.**
 
 ### Text prompts
 
