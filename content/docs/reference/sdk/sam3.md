@@ -194,4 +194,4 @@ While your specific environment may require minor adjustments, the following com
 hl agent start agent.json path/to/images/*
 ```
 
-This will process each image and save the results (segmentation masks for "leaves") as JSON files in the `data_out/sam3/` directory.
+This will process each image and save the results (segmentation masks for "leaves") as JSON files in the `data_out/sam3/` directory (configured via the parameter to the `JsonWrite` capability in the agent definition).
