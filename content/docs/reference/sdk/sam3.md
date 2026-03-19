@@ -20,6 +20,16 @@ SAM3 is specifically designed for "Promptable Concept Segmentation". This means 
 
 ## Prerequisites
 
+### Installation
+
+SAM3 requires additional dependencies not included in the base Highlighter SDK. Install them with the `sam3` extra:
+
+```bash
+pip install highlighter-sdk[sam3]
+```
+
+### Model weights
+
 SAM3 weights are not bundled with the Highlighter SDK by default due to licensing. To access the weights, you must download them manually from [Hugging Face](https://huggingface.co/facebook/sam3) (the `sam3.pt` file contains the weights).
 
 ## Prompting mechanisms
