@@ -1,0 +1,67 @@
+.code-tabs {
+  margin: 2rem 0;
+}
+
+.code-tabs__nav {
+  display: flex;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.code-tabs__tab {
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-family: sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
+  color: #6c757d;
+  margin-bottom: -2px;
+}
+
+.code-tabs__tab.active {
+  background: #fbf7f0;
+  border-color: #e9ecef;
+  border-bottom-color: #fbf7f0;
+  color: #1d2d35;
+}
+
+.code-tabs__tab:hover:not(.active) {
+  background: #f8f9fa;
+  color: #1d2d35;
+}
+
+.code-tabs .code-tabs__panel {
+  display: none;
+}
+
+.code-tabs .code-tabs__panel.active {
+  display: block;
+}
+
+.code-tabs .code-tabs__panel pre {
+  margin-top: 0;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Dark mode */
+body.dark .code-tabs__nav {
+  border-bottom-color: #1c1e20;
+}
+
+body.dark .code-tabs__tab {
+  color: #adb5bd;
+}
+
+body.dark .code-tabs__tab.active {
+  background: #1c1e20;
+  border-color: #1c1e20;
+  border-bottom-color: #1c1e20;
+  color: #dee2e6;
+}
+
+body.dark .code-tabs__tab:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.05);
+  color: #dee2e6;
+}

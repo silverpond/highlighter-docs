@@ -39,12 +39,21 @@ pip install highlighter-sdk
 
 ### Windows
 
+{% code_tabs(tabs="CMD,PowerShell") %}
 ```
 python -m venv venv
 venv\Scripts\activate.bat
 venv\Scripts\python.exe -m pip install -U pip
 venv\Scripts\python.exe -m pip install highlighter-sdk
 ```
+
+```powershell
+python -m venv venv
+venv\Scripts\Activate.ps1
+venv\Scripts\python.exe -m pip install -U pip
+venv\Scripts\python.exe -m pip install highlighter-sdk
+```
+{% end %}
 
 ### NixOS
 
