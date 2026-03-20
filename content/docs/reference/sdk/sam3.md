@@ -2,7 +2,7 @@
 title = "Segment Anything Model 3 (SAM3)"
 description = "Reference documentation for the SAM3 inference capability."
 date = 2025-02-11T08:00:00+00:00
-updated = 2026-03-12T08:00:00+00:00
+updated = 2026-03-21T08:00:00+00:00
 draft = false
 weight = 200
 sort_by = "weight"
@@ -34,7 +34,7 @@ SAM3 weights are not bundled with the Highlighter SDK by default due to licensin
 
 ## Prompting mechanisms
 
-For detailed guidance on writing more informed prompts for this model, please refer to the [official Ultralytics SAM3 documentation](https://docs.ultralytics.com/models/sam-3/).
+For detailed guidance on writing more informed prompts for this model, please refer to the [official SAM3 documentation](https://github.com/facebookresearch/sam3).
 
 **Crucially, when used with Highlighter, every single prompt you provide to the capability—whether text or geometric—must be accompanied by an `object_class_id`. The capability must assign an object class to every entity it identifies.**
 
@@ -62,15 +62,15 @@ When configuring SAM3 within a broader agent definition, all parameters to the c
 | :--- | :--- | :--- | :--- |
 | `model_path` | `str` | `None` | The _local_ file path to the SAM3 PyTorch weights (e.g., `weights/sam3.pt`). You must provide either this or a training run artefact ID. |
 | `training_run_artefact_id` | `uuid.UUID` | `None` | The UUID of a Highlighter training run artefact if you are downloading weights from HL cloud. |
-| `conf` | `float` | `0.4` | The minimum confidence score required to retain a detection. |
-| `iou` | `float` | `0.7` | The Intersection over Union (IoU) threshold for Non-Maximum Suppression (NMS). If two segmentations overlap by more than this ratio, the segmentation with the lower confidence score is discarded. |
-| `max_det` | `int` | `300` | The maximum number of entities the model will return per frame. |
-| `max_imgsz` | `int` | `1036` | The upper bound for the longest dimension of the input image. You can use this to ensure that large images are not being compressed before inference. |
+| `confidence_threshold` | `float` | `0.4` | The minimum confidence score required to retain a detection. |
+| `nms_iou_threshold` | `float` | `0.7` | The mask Intersection over Union (IoU) threshold for Non-Maximum Suppression (NMS). If two segmentations overlap by more than this ratio, the segmentation with the lower confidence score is discarded. |
+| `max_detections` | `int` | `300` | The maximum number of entities the model will return per frame. |
+| `max_image_size` | `int` | `1024` | Input images with their longest side exceeding this value are downscaled before inference to limit GPU memory usage. Masks are resized back to original dimensions afterwards. |
 | `prompts` | `object` | `{}` | An object for defining prompts. For static text prompts, use the `text` key with a list of prompt objects, each with a `prompt` (string) and an `object_class_id` (UUID). |
 
 ## Resource usage
 
-SAM3 is efficient for its size, but its performance depends heavily on the hardware it is running on. For standard single-image inference, running SAM3 on a GPU with at least 4 GB of VRAM is sufficient. However, for real-time applications or high-throughput batching, a GPU with 8 GB to 11 GB of VRAM (e.g., an NVIDIA GTX 1080 Ti or better) is highly recommended. CPU inference is supported but will be significantly slower. Memory usage scales with the `max_imgsz` parameter and the number of simultaneous prompts being processed.
+SAM3 is efficient for its size, but its performance depends heavily on the hardware it is running on. For standard single-image inference, running SAM3 on a GPU with at least 4 GB of VRAM is sufficient. However, for real-time applications or high-throughput batching, a GPU with 8 GB to 11 GB of VRAM (e.g., an NVIDIA GTX 1080 Ti or better) is highly recommended. CPU inference is supported but will be significantly slower. Memory usage scales with the `max_image_size` parameter and the number of simultaneous prompts being processed.
 
 ## Example capability configuration
 
@@ -102,7 +102,7 @@ The following JSON snippet demonstrates how to configure the SAM3 capability as 
         }
       ]
     },
-    "conf": 0.2
+    "confidence_threshold": 0.2
   }
 }
 ```
@@ -171,7 +171,7 @@ If you haven't set up the Highlighter SDK, see the [Getting Started guide](../ge
             }
           ]
         },
-        "conf": 0.2
+        "confidence_threshold": 0.2
       }
     },
     {
