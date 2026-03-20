@@ -48,8 +48,8 @@
   is_page=false,
   page_images="",
   page_section="",
-  created_time="2021-05-01T08:08:00+08:00",
-  updated_time="2021-05-01T08:08:08+08:00"
+  created_time="",
+  updated_time=""
   )
 %}
 
@@ -109,7 +109,7 @@
     <meta property="og:image" content="{{ config.base_url | safe }}/{{ config.extra.open.image }}">
   {% endif %}
 
-  <meta property="og:updated_time" content="{{ updated_time }}">
+  {% if updated_time %}<meta property="og:updated_time" content="{{ updated_time }}">{% endif %}
   <meta property="og:site_name" content="{{ title }}">
 
   {% if config.extra.open.audio %}
@@ -230,33 +230,33 @@
       {% set paths = page_path | trim_start_matches(pat="/") | trim_end_matches(pat="/") | split(pat="/") %}
       {% for val in paths %}
         {% set name_array = val | split(pat="-") %}
-        {% set_global str = "" %}
+        {% set_global _breadcrumb_str = "" %}
         {% for val in name_array %}
         {% set cap_val = val | capitalize %}
-        {% set_global str = str ~ cap_val ~ " " %}
+        {% set_global _breadcrumb_str = _breadcrumb_str ~ cap_val ~ " " %}
         {% endfor %}
-        {% set name = str | trim_end_matches(pat=" ") | title %}
-        {% if not index %}
+        {% set name = _breadcrumb_str | trim_end_matches(pat=" ") | title %}
+        {% if not _breadcrumb_index %}
           {
             "@type": "ListItem",
             "position":  1 ,
             "name": "Home",
             "item": "{{ url_item | safe }}"
           },
-          {% set_global index = 2 %}
+          {% set_global _breadcrumb_index = 2 %}
           {% set_global url_item = url_item ~ val ~ "/" %}
           {
             "@type": "ListItem",
-            "position":  {{ index }} ,
+            "position":  {{ _breadcrumb_index }} ,
             "name": "{{ name }}",
             "item": "{{ url_item | safe }}"
           },
         {% else %}
-          {% set_global index = index + 1 %}
+          {% set_global _breadcrumb_index = _breadcrumb_index + 1 %}
           {% set_global url_item = url_item ~ val ~ "/" %}
           {
             "@type": "ListItem",
-            "position":  {{ index }} ,
+            "position":  {{ _breadcrumb_index }} ,
             "name": "{{ name }}",
             "item": "{{ url_item | safe }}"
           },

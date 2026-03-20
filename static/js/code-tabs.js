@@ -1,15 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.code-tabs-wrapper').forEach(function(wrapper) {
-    var labels = (wrapper.dataset.tabs || '').split(',').map(function(s) { return s.trim(); }).filter(Boolean);
-    var pres = Array.from(wrapper.querySelectorAll('pre'));
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.code-tabs-wrapper').forEach(wrapper => {
+    const labels = (wrapper.dataset.tabs || '').split(',').map(s => s.trim()).filter(Boolean);
+    const pres = Array.from(wrapper.querySelectorAll('pre'));
     if (pres.length < 2 || labels.length < 2) return;
 
     // Build nav
-    var nav = document.createElement('div');
+    const nav = document.createElement('div');
     nav.className = 'code-tabs__nav';
     nav.setAttribute('role', 'tablist');
-    labels.slice(0, pres.length).forEach(function(label, i) {
-      var btn = document.createElement('button');
+    labels.slice(0, pres.length).forEach((label, i) => {
+      const btn = document.createElement('button');
       btn.className = 'code-tabs__tab' + (i === 0 ? ' active' : '');
       btn.setAttribute('role', 'tab');
       btn.setAttribute('type', 'button');
@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Build panels — pair each pre with its preceding .doks-clipboard if present
-    var content = document.createElement('div');
+    const content = document.createElement('div');
     content.className = 'code-tabs__content';
-    pres.forEach(function(pre, i) {
-      var panel = document.createElement('div');
+    pres.forEach((pre, i) => {
+      const panel = document.createElement('div');
       panel.className = 'code-tabs__panel' + (i === 0 ? ' active' : '');
-      var prev = pre.previousElementSibling;
+      const prev = pre.previousElementSibling;
       if (prev && prev.classList.contains('doks-clipboard')) {
         panel.appendChild(prev);
       }
@@ -32,19 +32,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Assemble and replace wrapper
-    var tabsDiv = document.createElement('div');
+    const tabsDiv = document.createElement('div');
     tabsDiv.className = 'code-tabs';
     tabsDiv.appendChild(nav);
     tabsDiv.appendChild(content);
     wrapper.replaceWith(tabsDiv);
 
     // Wire up click handlers
-    var buttons = tabsDiv.querySelectorAll('.code-tabs__tab');
-    var panels = tabsDiv.querySelectorAll('.code-tabs__panel');
-    buttons.forEach(function(btn, i) {
-      btn.addEventListener('click', function() {
-        buttons.forEach(function(b) { b.classList.remove('active'); });
-        panels.forEach(function(p) { p.classList.remove('active'); });
+    const buttons = tabsDiv.querySelectorAll('.code-tabs__tab');
+    const panels = tabsDiv.querySelectorAll('.code-tabs__panel');
+    buttons.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
         btn.classList.add('active');
         if (panels[i]) panels[i].classList.add('active');
       });
