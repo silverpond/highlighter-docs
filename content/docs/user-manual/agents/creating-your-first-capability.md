@@ -248,6 +248,6 @@ drop the images before the default ops are run.
       "ops": [{"type": "DropImages",
                "image_ids": [12345, 67890]
             }]
- }
-
+  }
+}
 ```

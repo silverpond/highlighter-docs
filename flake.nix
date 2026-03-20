@@ -14,7 +14,7 @@
         let
           pkgs = import nixpkgs { inherit system; };
         in
-        { default = pkgs.mkShell { buildInputs = with pkgs;[ zola just ]; }; }
+        { default = pkgs.mkShell { buildInputs = with pkgs;[ zola just python3 ]; }; }
       );
     };
 }

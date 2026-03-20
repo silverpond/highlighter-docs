@@ -25,10 +25,13 @@ loose this information you must use the `hdf` or `json` format.
 
 ```bash
 hl dataset read --help
+```
+
+```
 Usage: hl dataset read [OPTIONS] COMMAND [ARGS]...
 
 Options:
-  -i, --dataset-ids TEXT  integet <id> or <id>:<split>
+  -i, --dataset-ids TEXT  integer <id> or <id>:<split>
   --page-size INTEGER     [default: 200]
   --help                  Show this message and exit.
 
