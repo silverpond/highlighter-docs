@@ -89,9 +89,10 @@ extract_hl_commands() {
                     cmd=$(printf '%s' "$line" \
                         | sed 's/^[[:space:]]*//' \
                         | sed 's/#.*//' \
+                        | sed 's/\\[[:space:]]*$//' \
                         | awk '{
                             for (i=1; i<=NF; i++) {
-                                if ($i ~ /^-/ || $i ~ /^"/ || $i ~ /^[0-9]/ || $i ~ /^</ || $i ~ /^\$/) break
+                                if ($i ~ /^-/ || $i ~ /^"/ || $i ~ /^[0-9]/ || $i ~ /^</ || $i ~ /^\$/ || $i ~ /^\[/ || $i ~ /^\|/ || $i ~ /[\/\.A-Z]/) break
                                 printf "%s ", $i
                             }
                             printf "\n"
@@ -113,8 +114,9 @@ extract_hl_commands() {
 
 run_hl_help() {
     local cmd="$1"
-    # Validate: must start with "hl" and contain only [a-z0-9 -]
-    if [[ ! "$cmd" =~ ^hl[a-z0-9\ -]+$ ]]; then
+    # Validate: must start with "hl " and contain only lowercase, digits, spaces, hyphens
+    if [[ ! "$cmd" =~ ^hl( +[a-z][a-z0-9-]*)+$ ]] && [[ "$cmd" != "hl" ]]; then
+        printf '  %sSKIP%s %s (unexpected format)\n' "$YELLOW" "$NC" "$cmd"
         return 1
     fi
     # Split into array on spaces
@@ -155,16 +157,16 @@ printf '%sFound %d unique hl subcommands to check:%s\n\n' "$BOLD" "$total" "$NC"
 errors=0
 passed=0
 
-for cmd in $(printf '%s\n' "${!cmd_seen[@]}" | sort); do
+while IFS= read -r cmd; do
     if run_hl_help "$cmd"; then
         printf '  %s✓%s %s\n' "$GREEN" "$NC" "$cmd"
         passed=$(( passed + 1 ))
     else
         printf '  %s✗%s %s\n' "$RED" "$NC" "$cmd"
-        printf '    referenced in: %s\n' "${cmd_locations[$cmd]}"
+        printf '    referenced in: %s\n' "${cmd_locations[$cmd]:-unknown}"
         errors=$(( errors + 1 ))
     fi
-done
+done < <(printf '%s\n' "${!cmd_seen[@]}" | sort)
 
 printf '\n---\n'
 printf '%sResults:%s\n' "$BOLD" "$NC"
