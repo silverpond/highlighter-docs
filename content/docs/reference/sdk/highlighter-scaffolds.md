@@ -145,12 +145,19 @@ class MyPersonDetector(OnnxYoloV8):
 ```
 ## Run Detector Agent
 **Run all scripts from the top level of the repo**
-**Note: on Windows replace `/` with `\`**
 - Create a directory called `image_overlays`
-```
+
+{% code_tabs(tabs="Bash,PowerShell") %}
+```bash
 # process one file
 hl agent run agents/YOU_AGENT_DEF.json -f VIDEO_PATH
 ```
+
+```powershell
+# process one file
+hl agent run agents\YOU_AGENT_DEF.json -f VIDEO_PATH
+```
+{% end %}
 
 ## Training
 

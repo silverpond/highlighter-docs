@@ -77,12 +77,19 @@ The CLI supports headless management of many system resources, allowing you to l
 
 Below is how to download an data-file using the cli.
 
-**Note: on Windows replace `/` with `\`**
-```
+{% code_tabs(tabs="Bash,PowerShell") %}
+```bash
 # Replace 12345 with a DataFile ID from your Highlighter account
 # -o will save the resulting DataFile to your cwd
 hl data-file read -i 12345 -o .
 ```
+
+```powershell
+# Replace 12345 with a DataFile ID from your Highlighter account
+# -o will save the resulting DataFile to your cwd
+hl data-file read -i 12345 -o .
+```
+{% end %}
 
 ### Network Discovery and Data Sources
 

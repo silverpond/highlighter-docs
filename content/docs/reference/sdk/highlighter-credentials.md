@@ -29,17 +29,31 @@ Highlighter via the CLI or the Python SDK.
 This is a quick and simple solution if you're only interacting with a single
 Highlighter account.
 
+{% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 export HL_WEB_GRAPHQL_API_TOKEN=###
 export HL_WEB_GRAPHQL_ENDPOINT=https://YOUR_HIGHLIGHTER_ACCOUNT.highlighter.ai/graphql
 ```
 
+```powershell
+$env:HL_WEB_GRAPHQL_API_TOKEN = "###"
+$env:HL_WEB_GRAPHQL_ENDPOINT = "https://YOUR_HIGHLIGHTER_ACCOUNT.highlighter.ai/graphql"
+```
+{% end %}
+
 For example
 
+{% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 export HL_WEB_GRAPHQL_API_TOKEN=d000d0d0d0d0d0d0d000d0d0d0d0d0d0
 export HL_WEB_GRAPHQL_ENDPOINT=https://compuglobalhypermeganet.highlighter.ai/graphql
 ```
+
+```powershell
+$env:HL_WEB_GRAPHQL_API_TOKEN = "d000d0d0d0d0d0d0d000d0d0d0d0d0d0"
+$env:HL_WEB_GRAPHQL_ENDPOINT = "https://compuglobalhypermeganet.highlighter.ai/graphql"
+```
+{% end %}
 
 #### Option 2: Highlighter Profiles
 

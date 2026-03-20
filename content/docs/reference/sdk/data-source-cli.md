@@ -425,10 +425,18 @@ A template defines:
 
 List available templates:
 
+{% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # Templates are stored in the SDK
 ls $(python -c "import highlighter.datasource; import os; print(os.path.dirname(highlighter.datasource.__file__))")/templates/
 ```
+
+```powershell
+# Templates are stored in the SDK
+$dir = python -c "import highlighter.datasource; import os; print(os.path.dirname(highlighter.datasource.__file__))"
+Get-ChildItem "$dir\templates\"
+```
+{% end %}
 
 ### Using Templates with Discovery
 
@@ -507,6 +515,7 @@ hl datasource discover batch --file macs.txt \
 
 ### Workflow 1: Discover and Import Cameras
 
+{% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # Step 1: Create MAC address file
 cat > cameras.txt <<EOF
@@ -531,8 +540,34 @@ hl datasource import --file discovered-cameras.json --create-missing
 hl datasource list
 ```
 
+```powershell
+# Step 1: Create MAC address file
+@"
+80:BE:AF:F9:78:17
+80:BE:AF:F9:77:FE
+50:E5:38:C7:8A:17
+"@ | Set-Content cameras.txt
+
+# Step 2: Discover and export to JSON with template
+hl datasource discover batch --file cameras.txt `
+  --format datasource `
+  --template rtsp `
+  --output discovered-cameras.json
+
+# Step 3: Review the file
+Get-Content discovered-cameras.json
+
+# Step 4: Import to cloud
+hl datasource import --file discovered-cameras.json --create-missing
+
+# Step 5: Verify import
+hl datasource list
+```
+{% end %}
+
 ### Workflow 2: Bulk Update Existing Data Sources
 
+{% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # Step 1: Export current data sources
 hl datasource export --output current-cameras.json
@@ -544,8 +579,21 @@ vim current-cameras.json
 hl datasource import --file current-cameras.json --update-existing
 ```
 
+```powershell
+# Step 1: Export current data sources
+hl datasource export --output current-cameras.json
+
+# Step 2: Edit the file (update names, URIs, etc.)
+notepad current-cameras.json
+
+# Step 3: Import with update flag
+hl datasource import --file current-cameras.json --update-existing
+```
+{% end %}
+
 ### Workflow 3: Backup and Restore
 
+{% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # Backup all data sources
 hl datasource export --output backup-$(date +%Y%m%d).json
@@ -556,8 +604,20 @@ hl datasource import --file backup-20251217.json \
   --update-existing
 ```
 
+```powershell
+# Backup all data sources
+hl datasource export --output "backup-$(Get-Date -Format 'yyyyMMdd').json"
+
+# Restore from backup (creates missing, updates existing)
+hl datasource import --file backup-20251217.json `
+  --create-missing `
+  --update-existing
+```
+{% end %}
+
 ### Workflow 4: Migrate Between Environments
 
+{% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # Export from production
 hl datasource export --output prod-cameras.json
@@ -568,6 +628,18 @@ export HL_API_URL=https://staging.highlighter.ai
 # Import to staging
 hl datasource import --file prod-cameras.json --create-missing
 ```
+
+```powershell
+# Export from production
+hl datasource export --output prod-cameras.json
+
+# Switch to staging environment (configure different credentials)
+$env:HL_API_URL = "https://staging.highlighter.ai"
+
+# Import to staging
+hl datasource import --file prod-cameras.json --create-missing
+```
+{% end %}
 
 ---
 
@@ -694,10 +766,17 @@ Configure Highlighter API access:
 
 Set these in your shell:
 
+{% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 export HL_API_URL=https://api.highlighter.ai
 export HL_API_TOKEN=your-token-here
 ```
+
+```powershell
+$env:HL_API_URL = "https://api.highlighter.ai"
+$env:HL_API_TOKEN = "your-token-here"
+```
+{% end %}
 
 Or create a `.env` file in your project directory.
 
