@@ -19,22 +19,9 @@ top = false
 If you haven't already, you should checkout [Getting Started With Highlighter SDK](../getting-started-with-highlighter-sdk/)
 
 
-## Create a new Highlighter project scaffold
-
-Highlighter project scaffolds provide a bunch of the boilerplate we all hate
-when starting any new project.
-
-```bash
-# create a Highlighter project, follow the prompts
-hl new .
-```
-
 ## Create simple Agent
 
-1. If you have not run `hl new .` to create a scaffold then do that first
-  - This should have created a directory from the `title_slug` field of prompts, `cd` to that.
-  - `pip install -e .`
-2. `hl generate agent .`. This will:
+1. `hl generate agent`. This will:
   - create an `agents/` dir with an agent definition and a data source Capability
   for the data type specified in the prompts
   - create a `src/<title_slug>/<capability_name>.py` with a dummy implementation
@@ -151,12 +138,12 @@ class MyPersonDetector(OnnxYoloV8):
 {% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # process one file
-hl agent run agents/YOU_AGENT_DEF.json -f VIDEO_PATH
+hl agent start agents/YOUR_AGENT_DEF.json -f VIDEO_PATH
 ```
 
 ```powershell
 # process one file
-hl agent run agents\YOU_AGENT_DEF.json -f VIDEO_PATH
+hl agent start agents\YOUR_AGENT_DEF.json -f VIDEO_PATH
 ```
 {% end %}
 
