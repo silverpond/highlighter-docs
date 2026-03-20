@@ -1,0 +1,39 @@
+name: Check documentation
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  syntax-check:
+    name: Syntax check code blocks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Check bash and JSON syntax
+        run: ./scripts/check-code-blocks.sh
+
+  hl-commands:
+    name: Validate hl CLI commands
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cache venv
+        uses: actions/cache@v4
+        with:
+          path: .venv-check
+          key: venv-${{ runner.os }}-${{ hashFiles('scripts/check-hl-commands.sh') }}
+
+      - name: Validate hl subcommands exist
+        run: ./scripts/check-hl-commands.sh
