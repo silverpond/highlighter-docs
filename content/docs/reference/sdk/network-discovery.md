@@ -251,6 +251,7 @@ The discovery commands are designed to be script-friendly.
 
 ### Batch Scripting Example
 
+{% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # Parse CSV output with hostname (default)
 hl datasource discover batch --file macs.txt --quiet | tail -n +2 | while IFS=',' read -r mac ip hostname; do
@@ -264,8 +265,25 @@ hl datasource discover batch --file macs.txt --quiet | tail -n +2 | while IFS=',
 done
 ```
 
+```powershell
+# Parse CSV output with hostname (default)
+hl datasource discover batch --file macs.txt --quiet | Select-Object -Skip 1 | ForEach-Object {
+    $parts = $_ -split ','
+    $mac = $parts[0]; $ip = $parts[1]; $hostname = $parts[2]
+    if ($ip -ne "not_found") {
+        Write-Host "Camera $mac is at $ip (hostname: $hostname)"
+        # Perform actions on each camera
+        if (Test-Connection -ComputerName $ip -Count 1 -Quiet) { Write-Host "  - Online" }
+    } else {
+        Write-Host "Camera $mac not found on network"
+    }
+}
+```
+{% end %}
+
 ### Network Inventory Workflow
 
+{% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # Discover all devices and export to CSV
 hl datasource discover batch \
@@ -277,6 +295,19 @@ hl datasource discover batch \
 arp -a | grep -oE '([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}' > all-macs.txt
 hl datasource discover batch --file all-macs.txt --output inventory.csv
 ```
+
+```powershell
+# Discover all devices and export to CSV
+$macs = arp -a | Select-String -Pattern '([0-9a-fA-F]{2}[:-]){5}[0-9a-fA-F]{2}' -AllMatches |
+    ForEach-Object { $_.Matches.Value }
+hl datasource discover batch --timeout 10 --output network-inventory.csv $macs
+
+# Or from existing ARP table
+arp -a | Select-String -Pattern '([0-9a-fA-F]{2}[:-]){5}[0-9a-fA-F]{2}' -AllMatches |
+    ForEach-Object { $_.Matches.Value } | Set-Content all-macs.txt
+hl datasource discover batch --file all-macs.txt --output inventory.csv
+```
+{% end %}
 
 ---
 
@@ -358,15 +389,27 @@ hl datasource discover list --no-show-mac
 
 The zeroconf library is automatically included with the Highlighter SDK. If you encounter import errors:
 
+{% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # Reinstall the SDK
 pip install --upgrade highlighter-sdk
 
 # Or in a fresh virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate
 pip install highlighter-sdk
 ```
+
+```powershell
+# Reinstall the SDK
+pip install --upgrade highlighter-sdk
+
+# Or in a fresh virtual environment
+python -m venv venv
+venv\Scripts\Activate.ps1
+pip install highlighter-sdk
+```
+{% end %}
 
 ### Slow discovery
 
