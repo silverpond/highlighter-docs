@@ -433,8 +433,8 @@ ls $(python -c "import highlighter.datasource; import os; print(os.path.dirname(
 
 ```powershell
 # Templates are stored in the SDK
-$dir = python -c "import highlighter.datasource; import os; print(os.path.dirname(highlighter.datasource.__file__))"
-Get-ChildItem "$dir\templates\"
+$dir = (python -c "import highlighter.datasource; import os; print(os.path.dirname(highlighter.datasource.__file__))") | Select-Object -First 1
+Get-ChildItem (Join-Path $dir "templates")
 ```
 {% end %}
 
