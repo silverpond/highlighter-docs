@@ -62,6 +62,45 @@ nix-shell
 # Then follow the normal Linux setup
 ```
 
+### GPU inference
+
+Several SDK extras—`sam3`, `predictors`, `yolo`, `tracker`, and `ort`—depend on PyTorch and/or ONNX Runtime. By default, `pip` will install the **CPU-only** builds of these packages. If your machine is configured for CUDA and you want GPU-accelerated inference, install the GPU variants **before** the SDK so that `pip` recognises them as already satisfied.
+
+#### PyTorch (for `sam3`, `predictors`, `yolo`, `tracker`)
+
+Install PyTorch with CUDA support first. Check the [PyTorch install matrix](https://pytorch.org/get-started/locally/) for the command matching your CUDA version. For example, with CUDA 12.6:
+
+```bash
+pip install torch --index-url https://download.pytorch.org/whl/cu126
+```
+
+Then install the SDK extra as normal:
+
+```bash
+pip install highlighter-sdk[sam3]
+```
+
+Because `torch` is already present, `pip` will skip the CPU-only version that would otherwise be pulled in.
+
+#### ONNX Runtime (for `predictors`, `yolo`, `ort`)
+
+For ONNX-based capabilities, install the GPU provider package before the SDK:
+
+```bash
+pip install onnxruntime-gpu
+pip install highlighter-sdk[predictors]
+```
+
+`onnxruntime-gpu` satisfies the `onnxruntime` dependency declared by the SDK, so `pip` will not replace it with the CPU-only build.
+
+#### Verifying GPU availability
+
+After installation you can confirm that both frameworks can see your GPU:
+
+```bash
+python -c "import torch; print('CUDA available:', torch.cuda.is_available())"
+python -c "import onnxruntime as ort; print('Providers:', ort.get_available_providers())"
+```
 
 ## Setup Highlighter API Credentials
 
