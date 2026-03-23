@@ -95,11 +95,18 @@ pip install highlighter-sdk[predictors]
 
 #### Verifying GPU availability
 
-After installation you can confirm that both frameworks can see your GPU:
+After installation you can confirm that the framework(s) you installed can see your GPU.
+
+For PyTorch (used by `sam3`, `predictors`, `yolo`, `tracker`):
 
 ```bash
-python -c "import torch; print('CUDA available:', torch.cuda.is_available())"
-python -c "import onnxruntime as ort; print('Providers:', ort.get_available_providers())"
+python -c "import torch; print('PyTorch CUDA available:', torch.cuda.is_available())"
+```
+
+For ONNX Runtime (used by `predictors`, `yolo`, `ort`):
+
+```bash
+python -c "import onnxruntime as ort; print('ONNX Runtime providers:', ort.get_available_providers())"
 ```
 
 ## Setup Highlighter API Credentials
