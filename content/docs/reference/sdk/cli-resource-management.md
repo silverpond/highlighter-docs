@@ -88,7 +88,10 @@ hl evaluation list
 hl evaluation read --id <EVALUATION_ID>
 
 # Create a new evaluation
-hl evaluation create --title "Model v2 Benchmark" --assigned-to-id <USER_ID>
+hl evaluation create --title "Model v2 Benchmark" --assigned-to-id <USER_ID> \
+  --description "Benchmark description" \
+  --objective "Measure model accuracy" \
+  --evaluation-process "Run inference and score predictions"
 
 # Manage metrics within an evaluation
 hl evaluation metric list --evaluation-id <EVALUATION_ID>
