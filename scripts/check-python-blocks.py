@@ -80,15 +80,8 @@ def run_pyright(blocks: list[dict], repo_root: str) -> list[dict]:
             "reportMissingModuleSource": "none",
         }
 
-        # Point pyright at the right Python environment:
-        # - CI uses .venv-check/
-        # - Nix shell provides Python on PATH
-        venv_path = Path(repo_root) / ".venv-check"
-        if venv_path.is_dir():
-            config["venvPath"] = repo_root
-            config["venv"] = ".venv-check"
-        else:
-            config["pythonPath"] = sys.executable
+        # Point pyright at the current Python (provided by nix develop)
+        config["pythonPath"] = sys.executable
 
         (Path(tmpdir) / "pyrightconfig.json").write_text(json.dumps(config))
 

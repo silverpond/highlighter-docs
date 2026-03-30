@@ -25,28 +25,12 @@ jobs:
         with:
           submodules: true
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+      - uses: cachix/install-nix-action@v30
 
-      - name: Cache venv
-        uses: actions/cache@v4
-        with:
-          path: .venv-check
-          key: venv-${{ runner.os }}-${{ hashFiles('scripts/check-hl-commands.py', 'scripts/check-python-blocks.py') }}
-
-      - name: Setup venv
-        run: |
-          if [ ! -d .venv-check ]; then python3 -m venv .venv-check; fi
-          source .venv-check/bin/activate
-          pip install -q highlighter-sdk pyright
+      - uses: DeterminateSystems/magic-nix-cache-action@v8
 
       - name: Validate hl CLI commands
-        run: |
-          source .venv-check/bin/activate
-          python scripts/check-hl-commands.py
+        run: nix develop --command python scripts/check-hl-commands.py
 
       - name: Validate Python code blocks
-        run: |
-          source .venv-check/bin/activate
-          python scripts/check-python-blocks.py
+        run: nix develop --command python scripts/check-python-blocks.py
