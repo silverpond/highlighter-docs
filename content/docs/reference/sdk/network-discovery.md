@@ -461,7 +461,7 @@ hl datasource discover batch --file macs.txt \
   --output cameras.json
 
 # Import to Highlighter Cloud
-hl datasource import --file cameras.json --create-missing
+hl datasource import -i cameras.json
 ```
 
 ---

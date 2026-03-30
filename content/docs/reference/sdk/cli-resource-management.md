@@ -111,7 +111,7 @@ hl evaluation delete --id <EVALUATION_ID>
 hl training-run create --evaluation-id <EVAL_ID> --experiment-id <EXP_ID> --capability-id <MODEL_ID> --workflow-id <WORKFLOW_ID> --name "Run v1"
 
 # Read training run configuration
-hl training-run read --id <RUN_ID> --output config.yaml
+hl training-run read <RUN_ID> -o config.yaml
 
 # Delete a training run
 hl training-run delete --id <RUN_ID>

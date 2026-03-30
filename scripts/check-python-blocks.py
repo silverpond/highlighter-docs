@@ -70,7 +70,10 @@ def extract_python_blocks(search_path: Path):
 def run_pyright(blocks: list[dict], repo_root: str) -> list[dict]:
     """Write blocks to temp files, run pyright, return diagnostics."""
     with tempfile.TemporaryDirectory() as tmpdir:
-        # Pyright config: basic type checking, import validation, no stub noise
+        # Pyright config: validate imports and undefined names.
+        # Attribute access and call-site checks are disabled because the
+        # highlighter SDK lacks complete type stubs, producing false positives
+        # on valid code (e.g. DataFrame.loc, dynamic base-class attributes).
         config: dict = {
             "include": ["."],
             "typeCheckingMode": "basic",
@@ -78,6 +81,9 @@ def run_pyright(blocks: list[dict], repo_root: str) -> list[dict]:
             "reportUndefinedVariable": "error",
             "reportMissingTypeStubs": "none",
             "reportMissingModuleSource": "none",
+            "reportAttributeAccessIssue": "none",
+            "reportCallIssue": "none",
+            "reportArgumentType": "none",
         }
 
         # Point pyright at the current Python (provided by nix develop)
