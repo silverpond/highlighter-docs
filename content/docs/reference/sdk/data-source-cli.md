@@ -59,11 +59,11 @@ hl datasource list
 hl datasource create --name "Camera-Front-Entrance" \
   --source-uri "rtsp://10.1.1.100:554/stream"
 
-# Export all data sources to a file
-hl datasource export --output my-cameras.json
+# Export all data source definitions to a file
+hl datasource list --format json > my-cameras.json
 
 # Import data sources from file
-hl datasource import --file my-cameras.json --create-missing
+hl datasource import -i my-cameras.json
 ```
 
 ---
@@ -281,31 +281,20 @@ hl datasource delete --uuid 550e8400-e29b-41d4-a716-446655440000 --yes
 
 ## Import and Export
 
-### `hl datasource export`
+### `hl datasource list`
 
-Export data sources from Highlighter Cloud to a local JSON file.
+Export data source definitions from Highlighter Cloud to a local JSON file by piping `list` output.
 
 **Usage:**
 ```bash
-hl datasource export [OPTIONS]
+hl datasource list --format json > OUTPUT_FILE
 ```
-
-**Options:**
-- `--output, -o PATH` - Output file path (required)
-- `--limit N` - Limit number of data sources to export
-- `--template NAME` - Associate exported data sources with a template
 
 **Examples:**
 
 ```bash
 # Export all data sources
-hl datasource export --output all-cameras.json
-
-# Export first 10 data sources
-hl datasource export --output sample-cameras.json --limit 10
-
-# Export with template association
-hl datasource export --output rtsp-cameras.json --template rtsp
+hl datasource list --format json > all-cameras.json
 ```
 
 **Output Format:**
@@ -344,11 +333,10 @@ hl datasource import [OPTIONS]
 ```
 
 **Options:**
-- `--file, -f PATH` - Local JSON file to import (required)
-- `--create-missing` - Create data sources that don't exist in cloud
-- `--update-existing` - Update matched data sources with local values
-- `--match-by [id|uuid|name|source_uri|auto]` - Matching strategy (default: auto)
-- `--output, -o PATH` - Save updated file with cloud IDs/UUIDs
+- `-i, --input PATH` - Local JSON file to import (required)
+- `-o, --output PATH` - Output file with updated cloud IDs/UUIDs (if not specified, updates input in-place)
+- `--match-by [id|uuid|name|source_uri|mac|serial|auto]` - Matching strategy (default: auto)
+- `--dry-run` - Preview changes without applying them
 
 **Matching Strategies:**
 
@@ -356,34 +344,28 @@ hl datasource import [OPTIONS]
 - `id` - Match only by ID field
 - `uuid` - Match only by UUID field
 - `name` - Match only by name field
-- `source_uri` - Match only by source URI field
+- `source_uri` - Match only by source URI field (skips duplicates)
+- `mac` / `serial` - Match by MAC address or serial number
 
 **Examples:**
 
 ```bash
-# Import with auto-matching (read-only, shows what would match)
-hl datasource import --file cameras.json
+# Preview what would be imported
+hl datasource import -i cameras.json --dry-run
 
-# Create missing data sources
-hl datasource import --file cameras.json --create-missing
-
-# Update existing and create missing
-hl datasource import --file cameras.json --create-missing --update-existing
+# Import (upserts: creates missing, updates existing)
+hl datasource import -i cameras.json
 
 # Match only by name
-hl datasource import --file cameras.json --match-by name --create-missing
+hl datasource import -i cameras.json --match-by name
 
-# Save updated file with cloud IDs
-hl datasource import --file cameras.json --create-missing --output cameras-with-ids.json
+# Save updated file with cloud IDs to a separate file
+hl datasource import -i cameras.json -o cameras-with-ids.json
 ```
 
 **Deduplication Behavior:**
 
-The import command prevents creating duplicate data sources:
-
-- If a data source with the same `source_uri` already exists in cloud, it will be matched and not duplicated
-- Use `--update-existing` to update the matched data source with new values
-- Without `--update-existing`, matched data sources are skipped
+The import command upserts data sources: it creates entries that don't exist in the cloud and updates those that match.
 
 **Complete Workflow Example:**
 
@@ -397,14 +379,12 @@ hl datasource discover batch --file macs.txt \
 cat cameras.json
 
 # 3. Import to cloud (creates new data sources)
-hl datasource import --file cameras.json --create-missing
-
+hl datasource import -i cameras.json
 # 4. Save file with cloud IDs for future updates
-hl datasource import --file cameras.json --output cameras-synced.json
+hl datasource import -i cameras.json -o cameras-synced.json
 
 # 5. Later, update existing data sources
-hl datasource import --file cameras-synced.json --update-existing
-```
+hl datasource import -i cameras-synced.json```
 
 ---
 
@@ -534,8 +514,7 @@ hl datasource discover batch --file cameras.txt \
 cat discovered-cameras.json
 
 # Step 4: Import to cloud
-hl datasource import --file discovered-cameras.json --create-missing
-
+hl datasource import -i discovered-cameras.json
 # Step 5: Verify import
 hl datasource list
 ```
@@ -558,8 +537,7 @@ hl datasource discover batch --file cameras.txt `
 Get-Content discovered-cameras.json
 
 # Step 4: Import to cloud
-hl datasource import --file discovered-cameras.json --create-missing
-
+hl datasource import -i discovered-cameras.json
 # Step 5: Verify import
 hl datasource list
 ```
@@ -570,25 +548,23 @@ hl datasource list
 {% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # Step 1: Export current data sources
-hl datasource export --output current-cameras.json
+hl datasource list --format json > current-cameras.json
 
 # Step 2: Edit the file (update names, URIs, etc.)
 vim current-cameras.json
 
 # Step 3: Import with update flag
-hl datasource import --file current-cameras.json --update-existing
-```
+hl datasource import -i current-cameras.json```
 
 ```powershell
 # Step 1: Export current data sources
-hl datasource export --output current-cameras.json
+hl datasource list --format json > current-cameras.json
 
 # Step 2: Edit the file (update names, URIs, etc.)
 notepad current-cameras.json
 
 # Step 3: Import with update flag
-hl datasource import --file current-cameras.json --update-existing
-```
+hl datasource import -i current-cameras.json```
 {% end %}
 
 ### Workflow 3: Backup and Restore
@@ -596,22 +572,18 @@ hl datasource import --file current-cameras.json --update-existing
 {% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # Backup all data sources
-hl datasource export --output backup-$(date +%Y%m%d).json
+hl datasource list --format json > backup-$(date +%Y%m%d).json
 
-# Restore from backup (creates missing, updates existing)
-hl datasource import --file backup-20251217.json \
-  --create-missing \
-  --update-existing
+# Restore from backup
+hl datasource import -i backup-20251217.json
 ```
 
 ```powershell
 # Backup all data sources
-hl datasource export --output "backup-$(Get-Date -Format 'yyyyMMdd').json"
+hl datasource list --format json > "backup-$(Get-Date -Format 'yyyyMMdd').json"
 
-# Restore from backup (creates missing, updates existing)
-hl datasource import --file backup-20251217.json `
-  --create-missing `
-  --update-existing
+# Restore from backup
+hl datasource import -i backup-20251217.json
 ```
 {% end %}
 
@@ -620,25 +592,23 @@ hl datasource import --file backup-20251217.json `
 {% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # Export from production
-hl datasource export --output prod-cameras.json
+hl datasource list --format json > prod-cameras.json
 
 # Switch to staging environment (configure different credentials)
 export HL_API_URL=https://staging.highlighter.ai
 
 # Import to staging
-hl datasource import --file prod-cameras.json --create-missing
-```
+hl datasource import -i prod-cameras.json```
 
 ```powershell
 # Export from production
-hl datasource export --output prod-cameras.json
+hl datasource list --format json > prod-cameras.json
 
 # Switch to staging environment (configure different credentials)
 $env:HL_API_URL = "https://staging.highlighter.ai"
 
 # Import to staging
-hl datasource import --file prod-cameras.json --create-missing
-```
+hl datasource import -i prod-cameras.json```
 {% end %}
 
 ---
@@ -657,8 +627,7 @@ hl datasource discover batch --file camera-macs.txt \
   --output cameras.json
 
 # Import discovered cameras to cloud
-hl datasource import --file cameras.json --create-missing
-
+hl datasource import -i cameras.json
 # Verify
 hl datasource list
 ```
@@ -721,7 +690,7 @@ Data source files use JSON format with this structure:
 
 **Solutions:**
 - Use `--match-by source_uri` for explicit URI-based matching
-- Review matched data sources with import (without `--create-missing`) first
+- Preview changes with `--dry-run` before importing
 - Ensure `source_uri` values are consistent (trailing slashes, port numbers, etc.)
 
 ### Missing required fields
@@ -791,7 +760,7 @@ from highlighter.client import HLClient
 from highlighter.datasource.service import DataSourceService
 
 # Initialize client
-client = HLClient()
+client = HLClient.from_env()
 service = DataSourceService(client)
 
 # List data sources

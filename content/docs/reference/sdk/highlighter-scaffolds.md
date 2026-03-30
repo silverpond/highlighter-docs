@@ -143,12 +143,12 @@ class MyPersonDetector(OnnxYoloV8):
 {% code_tabs(tabs="Bash,PowerShell") %}
 ```bash
 # process one file
-hl agent start agents/YOUR_AGENT_DEF.json -f VIDEO_PATH
+hl agent start agents/YOUR_AGENT_DEF.json VIDEO_PATH
 ```
 
 ```powershell
 # process one file
-hl agent start agents\YOUR_AGENT_DEF.json -f VIDEO_PATH
+hl agent start agents\YOUR_AGENT_DEF.json VIDEO_PATH
 ```
 {% end %}
 
