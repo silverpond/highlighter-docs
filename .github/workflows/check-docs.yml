@@ -17,8 +17,8 @@ jobs:
       - name: Check bash and JSON syntax
         run: ./scripts/check-code-blocks.sh
 
-  hl-commands:
-    name: Validate hl CLI commands
+  sdk-validation:
+    name: Validate SDK references
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -33,7 +33,20 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .venv-check
-          key: venv-${{ runner.os }}-${{ hashFiles('scripts/check-hl-commands.sh') }}
+          key: venv-${{ runner.os }}-${{ hashFiles('scripts/check-hl-commands.py', 'scripts/check-python-blocks.py') }}
 
-      - name: Validate hl subcommands exist
-        run: ./scripts/check-hl-commands.sh
+      - name: Setup venv
+        run: |
+          if [ ! -d .venv-check ]; then python3 -m venv .venv-check; fi
+          source .venv-check/bin/activate
+          pip install -q highlighter-sdk pyright
+
+      - name: Validate hl CLI commands
+        run: |
+          source .venv-check/bin/activate
+          python scripts/check-hl-commands.py
+
+      - name: Validate Python code blocks
+        run: |
+          source .venv-check/bin/activate
+          python scripts/check-python-blocks.py
