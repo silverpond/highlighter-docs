@@ -18,15 +18,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1689068996,
-        "narHash": "sha256-GuHEri9MmETNiKNro+Vmfj79finl4njfz0X3NTuvvck=",
+        "lastModified": 1774701658,
+        "narHash": "sha256-CIS/4AMUSwUyC8X5g+5JsMRvIUL3YUfewe8K4VrbsSQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b2bbed2f792ce2ca82bffd4ab0c111b792d22fb2",
+        "rev": "b63fe7f000adcfa269967eeff72c64cafecbbebe",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -34,7 +35,24 @@
     "root": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "silverpond-nix": "silverpond-nix"
+      }
+    },
+    "silverpond-nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773294722,
+        "narHash": "sha256-FUrk6BiPV1teE8hvXSQEWzzqz6NKYGP+KX7d/HiW8AQ=",
+        "owner": "silverpond",
+        "repo": "silverpond-nix",
+        "rev": "e3a7ef1fd93f006bb17a4f1c6cf6b04d1041430e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "silverpond",
+        "repo": "silverpond-nix",
+        "type": "github"
       }
     }
   },

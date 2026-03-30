@@ -7,7 +7,8 @@
 #   json        → jq empty  (parse validity)
 #
 # Cannot check (no runtime available):
-#   python, powershell, yaml, csv
+#   powershell, yaml, csv
+# Python is checked separately by check-python-blocks.py
 #
 # Usage:
 #   ./scripts/check-code-blocks.sh                     # check all docs
