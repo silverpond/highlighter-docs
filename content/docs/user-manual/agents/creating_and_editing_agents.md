@@ -37,7 +37,7 @@ You should now be looking at a blank Machine Agent. By default it has two nodes:
 To add a Capability to the Machine Agent, click on **Add Capability** in the top right. You will see a list of available Capabilities to choose from.
 
 There are two types of Capabilities:
-- **Built-In Capabilities:** A set of pre-defined capabilities for common tasks (e.g., `GroupEntities`).
+- **Built-In Capabilities:** A set of pre-defined capabilities for common tasks (e.g., `GroupEntities`, `SAM3`).
 - **Your Capabilities:** A library of custom capabilities that have been published within your organization.
 
 > Note: To create and publish a new Capability that can be used here, see your account administrator.

@@ -2,7 +2,7 @@
 title = "Segment Anything Model 3 (SAM3)"
 description = "Reference documentation for the SAM3 inference capability."
 date = 2025-02-11T08:00:00+00:00
-updated = 2026-03-21T08:00:00+00:00
+updated = 2026-03-30T08:00:00+00:00
 draft = false
 weight = 200
 sort_by = "weight"
@@ -30,7 +30,23 @@ pip install highlighter-sdk[sam3]
 
 ### Model weights
 
-SAM3 weights are not bundled with the Highlighter SDK by default due to licensing. To access the weights, you must download them manually from [Hugging Face](https://huggingface.co/facebook/sam3) (the `sam3.pt` file contains the weights).
+When running SAM3 locally, there are two ways to obtain the weights:
+
+**Option 1: Download from Highlighter (recommended)**
+
+If you have the Highlighter CLI installed, you can download the weights directly from Highlighter using the SAM3 training-run artefact:
+
+```bash
+hl training-run artefact read -u be3fd409-73a2-48b1-81e0-3a2e492f246c -s sam3.pt
+```
+
+This downloads the `sam3.pt` weights file to your current directory. You can then reference this path in the `model_path` parameter of your agent configuration.
+
+> **Note:** When using SAM3 as a [built-in capability in the Agent Designer](#using-sam3-in-the-agent-designer), the weights are downloaded automatically via the pre-configured `training_run_artefact_id` — no manual download is required.
+
+**Option 2: Download from Hugging Face**
+
+Alternatively, you can download the weights manually from [Hugging Face](https://huggingface.co/facebook/sam3) (the `sam3.pt` file contains the weights).
 
 ## Prompting mechanisms
 
@@ -72,7 +88,41 @@ When configuring SAM3 within a broader agent definition, all parameters to the c
 
 SAM3 is efficient for its size, but its performance depends heavily on the hardware it is running on. For standard single-image inference, running SAM3 on a GPU with at least 4 GB of VRAM is sufficient. However, for real-time applications or high-throughput batching, a GPU with 8 GB to 11 GB of VRAM (e.g., an NVIDIA GTX 1080 Ti or better) is highly recommended. CPU inference is supported but will be significantly slower. Memory usage scales with the `max_image_size` parameter and the number of simultaneous prompts being processed.
 
-## Example capability configuration
+## Using SAM3 in the Agent Designer
+
+SAM3 is available as a **built-in capability** in the Highlighter [Agent Designer](../../user-manual/agents/creating-and-editing-agents/).
+
+### Adding SAM3 to your agent
+
+1. Open the Agent Designer for your Machine Agent (see [How To Create and Edit a Machine Agent](../../user-manual/agents/creating-and-editing-agents/)).
+2. Click **Add Capability** in the top right.
+3. Under **Built-In Capabilities**, select **SAM3**.
+
+The SAM3 node will appear on the canvas with three input ports and one output port:
+
+| Port | Direction | Description |
+| :--- | :--- | :--- |
+| `data_samples` | Input | The image frames to process. Connect this to your **Pipeline Inputs**. |
+| `positive_prompt_entities` | Input | Optional geometric prompts from an upstream capability to _include_ regions. |
+| `negative_prompt_entities` | Input | Optional geometric prompts from an upstream capability to _exclude_ regions. |
+| `entities` | Output | The detected segmentation entities. Connect this to **Pipeline Outputs** or a downstream capability. |
+
+### Configuring prompts
+
+The SAM3 node includes an inline prompt configuration widget. To add a text prompt:
+
+1. Use the **Add object class...** dropdown to select an object class from your workflow.
+2. The object class is added to the prompt list with a text input field pre-filled with the class name.
+3. Edit the text field to customise the prompt description — this is the text the model uses to identify the object (e.g., change "Tree" to "a large deciduous tree with green foliage").
+4. To remove a prompt, click the **✕** button next to it.
+
+Prompt changes are saved automatically. Each prompt pairs a text description with an `object_class_id`, which the model uses to label the entities it detects (see [prompting mechanisms](#prompting-mechanisms) for details).
+
+### Model weights
+
+When SAM3 is added as a built-in capability, its deployment parameters are pre-configured with a `training_run_artefact_id` pointing to the hosted SAM3 weights. The SDK will download these weights automatically at runtime.
+
+## Example capability configuration (SDK)
 
 The following JSON snippet demonstrates how to configure the SAM3 capability as a standalone element:
 
