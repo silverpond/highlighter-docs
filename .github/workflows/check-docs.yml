@@ -1,9 +1,9 @@
 name: Check documentation
 
+# Disabled until self-hosted runners are available for this repo.
+# Run locally with: nix develop --command bash -c './scripts/check-code-blocks.sh && python scripts/check-hl-commands.py && python scripts/check-python-blocks.py'
 on:
-  pull_request:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   syntax-check:
