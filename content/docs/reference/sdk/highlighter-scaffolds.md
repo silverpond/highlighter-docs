@@ -41,6 +41,7 @@ hl new .
   - add a `## Run Agent` section to your `README.md`
 3. Run the command in the `## Run Agent` section of the `README.md`
 ## Create a new Capability and add it to the Agent
+- Install the cv2 optional dependency for image processing: `pip install highlighter-sdk[cv2]`
 - Download some weights from Huggingface, https://huggingface.co/SpotLab/YOLOv8Detection/blob/3005c6751fb19cdeb6b10c066185908faf66a097/yolov8n.onnx
 - Make a `weights` directory and move them to `weights/yolov8n.onnx`
 - Create a new file in `src/???/capabilities/detector_capability.py`

@@ -65,7 +65,7 @@ The following will do same download and conversion as in the CLI example
 ```python
 from pathlib import Path
 from highlighter.datasets import Dataset 
-from highlighter.datasets.formats.coco import CocoWriter
+from highlighter.datasets.formats.coco.writer import CocoWriter
 from highlighter import HLClient
 
 client = HLClient.from_env()
