@@ -8,7 +8,7 @@ on:
 jobs:
   syntax-check:
     name: Syntax check code blocks
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
         with:
@@ -19,15 +19,11 @@ jobs:
 
   sdk-validation:
     name: Validate SDK references
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: true
-
-      - uses: cachix/install-nix-action@v30
-
-      - uses: DeterminateSystems/magic-nix-cache-action@v8
 
       - name: Validate hl CLI commands
         run: nix develop --command python scripts/check-hl-commands.py
