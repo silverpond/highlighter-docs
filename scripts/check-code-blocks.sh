@@ -27,7 +27,7 @@ checked=0
 skipped=0
 declare -A lang_counts
 
-inc() { eval "$1=\$(( $1 + 1 ))"; }
+inc() { local -n var="$1"; var=$(( var + 1 )); }
 
 check_bash() {
     local file="$1" line="$2" block="$3"
