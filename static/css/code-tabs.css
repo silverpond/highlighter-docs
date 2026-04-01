@@ -68,25 +68,22 @@ body.dark .code-tabs__tab:hover:not(.active) {
 
 /* Copy button visibility fix for macOS browsers */
 .copy-status::after {
-  color: #000 !important;
+  color: #000;
   font-weight: 500;
 }
 
-.copy-status:hover::after {
-  color: #d32e9d !important;
-}
-
+.copy-status:hover::after,
 .copy-status:focus::after,
 .copy-status:active::after {
-  color: #d32e9d !important;
+  color: #d32e9d;
 }
 
 body.dark .copy-status::after {
-  color: #dee2e6 !important;
+  color: #dee2e6;
 }
 
 body.dark .copy-status:hover::after,
 body.dark .copy-status:focus::after,
 body.dark .copy-status:active::after {
-  color: #8ed6fb !important;
+  color: #8ed6fb;
 }
