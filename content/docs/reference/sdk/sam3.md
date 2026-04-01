@@ -90,11 +90,11 @@ SAM3 is efficient for its size, but its performance depends heavily on the hardw
 
 ## Using SAM3 in the Agent Designer
 
-SAM3 is available as a **built-in capability** in the Highlighter [Agent Designer](../../user-manual/agents/creating-and-editing-agents/).
+SAM3 is available as a **built-in capability** in the Highlighter [Agent Designer](../../../user-manual/agents/creating-and-editing-agents/).
 
 ### Adding SAM3 to your agent
 
-1. Open the Agent Designer for your Machine Agent (see [How To Create and Edit a Machine Agent](../../user-manual/agents/creating-and-editing-agents/)).
+1. Open the Agent Designer for your Machine Agent (see [How To Create and Edit a Machine Agent](../../../user-manual/agents/creating-and-editing-agents/)).
 2. Click **Add Capability** in the top right.
 3. Under **Built-In Capabilities**, select **SAM3**.
 
