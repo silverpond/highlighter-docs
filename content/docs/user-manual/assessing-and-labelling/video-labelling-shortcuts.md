@@ -16,9 +16,9 @@ top = false
 
 ## Keyboard Shortcuts
 
-See a summary of all keyboard shortcuts available in the Assessment Editor by typing **?** (shift + /)
+See a summary of all keyboard shortcuts available in the Assessment Editor by typing **?** (Shift + /)
 
-### Annotation Tools
+### Annotation Tool Shortcuts
 - **q**: Pointer/Selection tool
 - **w**: Bounding Box tool
 - **e**: Polygon tool
@@ -35,7 +35,7 @@ See a summary of all keyboard shortcuts available in the Assessment Editor by ty
 - **Alt + Left/Right**: Jump to previous/next marker
 - **Home/End**: Go to start/end of video
 - **Tab**: Seek to next visible track
-- **[** / **]**: Decrease/increase playback speed
+- **[/]**: Decrease/increase playback speed
 
 ### Track Operations
 - **a**: Join selected tracks
