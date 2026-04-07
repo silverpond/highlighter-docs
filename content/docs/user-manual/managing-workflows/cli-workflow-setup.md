@@ -102,18 +102,21 @@ hl --profile myaccount workflow-order list --workflow-id <WORKFLOW_ID>
 
 ## Step 5: Upload Files and Trigger Processing
 
-Upload your data files to the data source and add them to the workflow order. The CLI will create cases and trigger the machine assessment tasks automatically:
+Upload your data files to the data source, then add them to the workflow order. Adding files creates cases and triggers machine assessment tasks automatically:
 
 ```bash
 # Upload files to the data source
 hl --profile myaccount data-file create \
   --data-source-uuid <DATA_SOURCE_UUID> \
   --data-file-dir ./my_files/
+# Outputs a JSON map of local path → file ID
 
-# Add files to the workflow order (triggers processing)
+# Add files to the workflow order — this creates cases and triggers processing
+# (hl task create wraps the addFilesToWorkflowOrder mutation)
 hl --profile myaccount task create \
   --workflow-order-id <ORDER_ID> \
-  --file-ids <FILE_ID_1> <FILE_ID_2> ...
+  --file-ids <FILE_ID_1> \
+  --file-ids <FILE_ID_2>
 ```
 
 ## Step 6: Verify Results
@@ -142,6 +145,8 @@ OBJECT_CLASS_UUID="868bbe70-c549-42ed-be6e-fb65b8d52ebd"
 DATA_SOURCE_UUID="abc123"
 FILES_DIR="./import_files/"
 
+# Note: create commands always output JSON, so no --format flag is needed.
+
 # 1. Create task definition
 TD=$(hl --profile "$PROFILE" task-definition create \
   --name "Import Pole Entities $(date +%Y-%m)" \
@@ -168,10 +173,19 @@ ORDER=$(hl --profile "$PROFILE" workflow-order create \
 ORDER_ID=$(echo "$ORDER" | python3 -c "import sys,json; print(json.load(sys.stdin)['workflowOrder']['id'])")
 echo "Created order: $ORDER_ID"
 
-# 4. Upload files and trigger
-hl --profile "$PROFILE" data-file create \
+# 4. Upload files
+UPLOAD=$(hl --profile "$PROFILE" data-file create \
   --data-source-uuid "$DATA_SOURCE_UUID" \
-  --data-file-dir "$FILES_DIR"
+  --data-file-dir "$FILES_DIR")
+
+FILE_IDS=$(echo "$UPLOAD" | python3 -c "
+import sys, json
+m = json.load(sys.stdin)['data_file_path_to_id']
+print(' '.join(f'--file-ids {v}' for v in m.values()))
+")
+
+# 5. Add files to the workflow order — creates cases and triggers processing
+eval "hl --profile '$PROFILE' task create --workflow-order-id '$ORDER_ID' $FILE_IDS"
 
 echo "Done. Check results with:"
 echo "  hl --profile $PROFILE entity count --external-id-type Pole"
