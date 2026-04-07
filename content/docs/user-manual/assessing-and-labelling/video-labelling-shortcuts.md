@@ -16,28 +16,60 @@ top = false
 
 ## Keyboard Shortcuts
 
-See a summary of all keyboard shortcuts available in the Assessment Editor by typing ? (shift + /)
+See a summary of all keyboard shortcuts available in the Assessment Editor by typing **?** (shift + /)
+
+### Annotation Tools
+- **q**: Pointer/Selection tool
+- **w**: Bounding Box tool
+- **e**: Polygon tool
+- **r**: Brush tool
+- **t**: Eraser tool
+- **y**: Line tool
+- **k**: Clone mode
+- **u**: Auto segment mode
 
 ### Navigation
 - **Spacebar**: Play/pause video
 - **Left/Right arrows**: Frame-by-frame navigation
 - **Shift + Left/Right**: Jump 1 second
+- **Alt + Left/Right**: Jump to previous/next marker
 - **Home/End**: Go to start/end of video
-- **J/K/L**: Reverse/pause/forward (industry standard)
+- **Tab**: Seek to next visible track
+- **[** / **]**: Decrease/increase playback speed
 
-### Annotation Tools
-- **B**: Bounding box tool
-- **P**: Polygon tool
-- **S**: Segmentation tool
-- **E**: Erase tool
-- **Esc**: Cancel current annotation
+### Track Operations
+- **a**: Join selected tracks
+- **g**: Union selected tracks
+- **x**: Truncate selected tracks
+- **s**: Split current track at current frame
+- **z**: Remove detection/keyframe
+- **Shift + A**: Assign entity ID to selected tracks
+- **Ctrl + A**: Select all tracks that match similarity
+- **Delete/Backspace**: Delete selected tracks
 
-### Workflow Controls
-- **Save** button: Save current work
+### Markers
+- **m**: Add marker at current time
+- **Shift + M**: Remove nearest marker
+
+### Similarity
+- **n**: Set similarity anchors
+- **Shift + N**: Clear similarity anchor
+- **b**: Show similar tracks
+
+### Display & Panels
+- **d**: Fit editors to screen
+- **f**: Show/hide annotations/tracks
+- **l**: Show/hide left panel
+- **c**: Toggle chat
+- **Shift + B**: Change brightness/contrast
+
+### Object Class Selection
+- **1–9, 0**: Select object class 1–10
+
+### General
+- **Enter**: Confirm/complete current annotation
+- **Escape**: Cancel current annotation or deselect all tracks
 - **Ctrl + Z**: Undo last action
-- **Ctrl + Y**: Redo action
-- **Tab**: Switch between objects
-- **Enter**: Confirm current annotation
 
 ## Annotation Tools
 
