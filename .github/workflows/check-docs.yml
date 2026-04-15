@@ -30,3 +30,14 @@ jobs:
 
       - name: Validate Python code blocks
         run: nix develop --command python scripts/check-python-blocks.py
+
+  build:
+    name: Build site
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Build site
+        run: nix develop --command zola build
