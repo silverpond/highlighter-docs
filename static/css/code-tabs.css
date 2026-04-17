@@ -67,8 +67,18 @@ body.dark .code-tabs__tab:hover:not(.active) {
 }
 
 /* Copy button visibility fix for macOS browsers */
+.btn-clipboard {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fbf7f0;
+  border: 1px solid #ced4da;
+  color: #1d2d35;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
 .copy-status::after {
-  color: #000;
+  color: #1d2d35;
   font-weight: 500;
 }
 
@@ -76,6 +86,12 @@ body.dark .code-tabs__tab:hover:not(.active) {
 .copy-status:focus::after,
 .copy-status:active::after {
   color: #d32e9d;
+}
+
+body.dark .btn-clipboard {
+  background-color: #2b3035;
+  border-color: #495057;
+  color: #dee2e6;
 }
 
 body.dark .copy-status::after {
