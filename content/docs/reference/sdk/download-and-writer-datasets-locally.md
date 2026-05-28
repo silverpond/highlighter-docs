@@ -18,8 +18,8 @@ account and save it in some common formats.
 
 When converting to common formats sucs as Coco or Yolo things like `entity_id`
 will not be preserved. Only the information nessessary for training will end up 
-in the resulting saved dataset. If you want to save a dataset localled and not 
-loose this information you must use the `hdf` or `json` format.
+in the resulting saved dataset. If you want to save a dataset locally and not
+lose this information you must use the `hdf` or `json` format.
 
 ## CLI
 
