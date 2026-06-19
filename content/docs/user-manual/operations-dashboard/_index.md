@@ -1,8 +1,6 @@
 +++
 title = "Operations Dashboard"
 description = "The Operate workspace for viewing, exploring, and acting on the data your assessment workflows produce — map, grid, and dashboard views, filtering, and case and order actions."
-date = 2026-06-19T08:00:00+00:00
-updated = 2026-06-19T08:00:00+00:00
 template = "docs/section.html"
 sort_by = "weight"
 weight = 5
