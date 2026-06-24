@@ -53,7 +53,7 @@ The Objects Panel lists the attributes of the selected annotation (or, for video
 
 The edit form opens with its first field already focused, so you can fill it in from the keyboard without reaching for the mouse:
 
-- Each enum attribute is a dropdown; other attributes are text or number fields. The focused field is outlined so you can always see where keyboard input will go.
+- Attributes with predefined options are dropdowns; other attributes are text or number fields. The focused field is outlined so you can always see where keyboard input will go.
 - Press Tab to move from one field to the next, and on to the "Update" button.
 - Confirm your changes by clicking "Update", or by pressing Enter while the "Update" button is focused. The panel then returns to its read-only view showing the saved values.
 
