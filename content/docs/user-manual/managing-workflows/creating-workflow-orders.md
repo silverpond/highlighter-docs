@@ -20,6 +20,8 @@ Workflow Orders are a way of dividing up the work of your Assessment Workflow in
 
 A Workflow Order funnels work through a sequence of Workflow Steps. For example, the sequence might be Data Source -> Machine Assessment Step -> Human Assessment Step. The following instructions assume your sequence of Workflow steps has already been set up, and includes a data source as the first step.
 
+To export workflow data (CSV results or case files) for a workflow order, see [Exporting Workflow Data](/docs/user-manual/managing-workflows/exporting-workflow-data/).
+
 - <a href="#navigate-to-the-workflow-orders-page">Navigate To The Workflow Orders Page</a>
 - <a href="#manually-create-workflow-orders">Manually Create Workflow Orders</a>
 - <a href="#bulk-create-workflow-orders">Bulk-Create Workflow Orders</a>
@@ -59,4 +61,3 @@ You will see instructions about the format of CSV required. Once you have create
 Also set the 'State of Orders' dropdown to indicate whether you want the new Workflow Orders to be created as 'draft' or 'approved'. The state of an order is a way to indicate whether it's a work-in-progress that you will make further changes to, or whether it's finished and approved.
 
 Then click 'Create Orders' and you'll be redirected to your orders page, with a message indicating the results, for example:<blockquote>Successfully imported orders: 30 total, 30 created, 0 skipped due to same name, 0 skipped due to same filter original source url.</blockquote> You can change your CSV and try again - only orders that don't already exists in the system will be created.
-
