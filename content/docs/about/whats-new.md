@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-06-25T00:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -14,6 +14,18 @@ toc = true
 top = false
 +++
 
+
+## RT-DETRv2 Person Detection
+
+**Release Date:** June 2026
+
+Highlighter now includes an RT-DETRv2-based person-detection capability for agents. The associated model artefacts are published as `OnnxOpset16`, which you can download from the Training Run artefacts panel and use in a detector capability.
+
+### What Changed
+
+- Added the `RtDetrV2Detector` capability to the Python SDK
+- Added `OnnxOpset16` to the supported training-run artefact types
+- Added a person-detection example pipeline for RT-DETRv2
 
 ## Taxon Group Import/Export Performance
 
