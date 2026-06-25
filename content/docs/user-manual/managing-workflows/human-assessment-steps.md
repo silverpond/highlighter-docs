@@ -2,7 +2,7 @@
 title = "Human Assessment Steps"
 description = "Configure human assessment steps in Highlighter AI, assign contributors, configure queue settings, and monitor task progress for manual review workflows."
 date = 2025-05-01T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-06-25T08:00:00+00:00
 draft = false
 weight = 40
 sort_by = "weight"
@@ -41,6 +41,24 @@ When creating a human assessment step, you configure the following:
    - **Lockable**: Whether tasks can be locked for exclusive access
 
 > **Note**: Contributors work across all workflow step types using a unified interface. See [Assigning Contributors to Workflow Steps](../assigning-contributors/) for detailed assignment instructions.
+
+## Shadow Entities
+
+Shadow entities let you dim entities that aren't relevant to this step so contributors can focus on the task at hand, while still keeping potentially-useful inferences from earlier steps visible for context. Entities carried over from previous steps that don't match the step's **key attribute** rules appear as faint "shadow" overlays in the assessment editor instead of as normal annotations.
+
+When editing a human assessment step, configure shadow entities in the **Shadow Entities** section:
+
+1. Tick **Enable Shadow Entities** to turn the feature on for the step.
+2. Under **Key Attributes**, add one or more rules describing which entities are relevant:
+   - Click **+ Add Key Attribute** to add a rule.
+   - Choose an attribute from the dropdown.
+   - Optionally choose a specific value, or leave it as **Any value** to match any entity that has that attribute.
+   - Use the **×** button to remove a rule.
+3. Save the step.
+
+Rules combine with OR logic: an entity stays fully visible if it matches at least one rule, and entities matching no rule are shadowed. With the feature enabled but no rules configured, every carried-over entity is shadowed.
+
+Contributors can bring a shadowed entity back into their working set from the editor — see [Shadow Entities](../../assessing-and-labelling/working-in-the-assessment-editor/#shadow-entities) in *Working in the Assessment Editor*.
 
 ## Assigning Contributors
 

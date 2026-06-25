@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2023-09-26T08:00:00+00:00
+updated = 2026-06-25T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -62,6 +62,15 @@ Options stay set even after reloading the page, or moving to new cases or data f
 Show or hide all annotations/tracks (including associated text) by clicking the View menu, then "Show/hide annotations/tracks" (shortcut key 'f'). Hidden annotations/tracks are still submitted.
 
 What is the difference between annotations and tracks? If you are working with images for example, you will work with annotations. However if you are working with video for example, annotations are grouped together into tracks, that stretch over time.
+
+## Shadow Entities
+When a step has [shadow entities](../../managing-workflows/human-assessment-steps/#shadow-entities) configured, entities carried over from earlier steps that aren't relevant to your current task appear as faint "shadow" overlays rather than as normal annotations. They are kept out of the entities list and timeline and are not submitted, so you can focus on the entities that matter while still seeing the others for spatial context.
+
+You can interact with shadows in three ways:
+
+- **Reveal a shadow**: hover over a faint shadow overlay to temporarily show it, along with a "Shadow entity" label.
+- **Promote a shadow**: click a shadow to promote it into your working set. It becomes fully visible, appears in the entities list, and will be submitted. Only the entity you click is promoted.
+- **Shadow an entity yourself**: select one or more entities and press **Shift+S** (or choose "Shadow selected" from the menu) to move them out of your working set into the shadows.
 
 ## Submit Assessments
 Submit assessments by clicking the "Submit" button. Next to that button is a dropdown menu which has other options including "Skip" and "Flag and Submit".
