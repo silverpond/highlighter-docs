@@ -64,11 +64,11 @@ Show or hide all annotations/tracks (including associated text) by clicking the 
 What is the difference between annotations and tracks? If you are working with images for example, you will work with annotations. However if you are working with video for example, annotations are grouped together into tracks, that stretch over time.
 
 ## Shadow Entities
-When a step has [shadow entities](../../managing-workflows/human-assessment-steps/#shadow-entities) configured, entities carried over from earlier steps that aren't relevant to your current task appear as faint "shadow" overlays rather than as normal annotations. They are kept out of the entities list and timeline and are not submitted, so you can focus on the entities that matter while still seeing the others for spatial context.
+When a step has [shadow entities](../../managing-workflows/human-assessment-steps/#shadow-entities) configured, entities carried over from earlier steps that aren't relevant to your current task are hidden on the canvas instead of being drawn as normal annotations. They are also kept out of the entities list and timeline and are not submitted, so the screen stays focused on the entities that matter — but the hidden ("shadowed") entities are still there if you need them.
 
 You can interact with shadows in three ways:
 
-- **Reveal a shadow**: hover over a faint shadow overlay to temporarily show it, along with a "Shadow entity" label.
+- **Reveal a shadow**: shadowed entities are invisible at rest. Hover over the spot on the canvas where one sits to temporarily reveal it, along with a "Shadow entity" label.
 - **Promote a shadow**: click a shadow to promote it into your working set. It becomes fully visible, appears in the entities list, and will be submitted. Only the entity you click is promoted.
 - **Shadow an entity yourself**: select one or more entities and press **Shift+S** (or choose "Shadow selected" from the menu) to move them out of your working set into the shadows.
 
