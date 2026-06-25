@@ -48,7 +48,7 @@ Shadow entities let you hide entities that aren't relevant to this step so contr
 
 When editing a human assessment step, configure shadow entities in the **Shadow Entities** section:
 
-1. Tick **Enable Shadow Entities** to turn the feature on for the step.
+1. Select **Enable Shadow Entities** to turn the feature on for the step.
 2. Under **Key Attributes**, add one or more rules describing which entities are relevant:
    - Click **+ Add Key Attribute** to add a rule.
    - Choose an attribute from the dropdown.
