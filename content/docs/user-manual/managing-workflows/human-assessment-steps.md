@@ -44,7 +44,7 @@ When creating a human assessment step, you configure the following:
 
 ## Shadow Entities
 
-Shadow entities let you hide entities that aren't relevant to this step so contributors can focus on the task at hand, while still keeping potentially-useful inferences from earlier steps accessible. Entities carried over from previous steps that don't match the step's **key attribute** rules are hidden in the assessment editor instead of being drawn as normal annotations — contributors can reveal an individual one by hovering over it.
+Shadow entities let you hide entities that aren't relevant to this step so contributors can focus on the task at hand, while still keeping potentially useful inferences from earlier steps accessible. Entities carried over from previous steps that don't match the step's **key attribute** rules are hidden in the assessment editor instead of being drawn as normal annotations — contributors can reveal an individual one by hovering over it.
 
 When editing a human assessment step, configure shadow entities in the **Shadow Entities** section:
 
