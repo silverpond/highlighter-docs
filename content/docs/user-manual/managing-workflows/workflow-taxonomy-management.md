@@ -2,7 +2,7 @@
 title = "Workflow Taxonomy Management"
 description = "Manage workflow taxonomies in Highlighter including importing, exporting, and working with taxon groups for efficient classification and data organization."
 date = 2025-11-24T08:00:00+00:00
-updated = 2025-11-24T08:00:00+00:00
+updated = 2026-06-28T08:00:00+00:00
 draft = false
 weight = 45
 sort_by = "weight"
@@ -22,6 +22,17 @@ Workflow taxonomy is the structured schema that defines what agents (both human 
 - **Entity Attributes**: Properties or characteristics of those objects (e.g., Condition, Color, Size)
 - **Attribute Values**: Specific values for those properties (e.g., Good, Fair, Poor)
 - **Taxon Groups**: Organized collections of classifications that link object classes with their attributes
+
+### Stable Attributes
+
+An entity attribute can be marked as **stable** by giving it a *stability window* — the length of time a value of that attribute is expected to remain unchanged. This suits attributes that change only slowly, such as the condition of an asset: within the window, differing readings are treated as conflicts to resolve rather than as a genuine change over time.
+
+An attribute with no stability window has no stability semantics (the default). When a window is set, Highlighter:
+
+- Resolves conflicting machine readings within the window down to a single value, so machine agents never submit a value that flips back and forth inside one window.
+- Edits the attribute once for the whole entity (across all of its views/annotations) in the assessment editor when the window covers the entity's lifetime, and prevents two different values from being recorded within a single window.
+
+See [Edit Stable Attributes](../../assessing-and-labelling/working-in-the-assessment-editor/#edit-stable-attributes) for how stable attributes appear and behave for assessors.
 
 ## Taxon Groups
 
