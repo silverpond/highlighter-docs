@@ -2,7 +2,7 @@
 title = "Human Assessment Steps"
 description = "Configure human assessment steps in Highlighter AI, assign contributors, configure queue settings, and monitor task progress for manual review workflows."
 date = 2025-05-01T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-06-28T08:00:00+00:00
 draft = false
 weight = 40
 sort_by = "weight"
@@ -41,6 +41,25 @@ When creating a human assessment step, you configure the following:
    - **Lockable**: Whether tasks can be locked for exclusive access
 
 > **Note**: Contributors work across all workflow step types using a unified interface. See [Assigning Contributors to Workflow Steps](../assigning-contributors/) for detailed assignment instructions.
+
+### Shadow Entities
+
+By default, an assessor sees every entity carried over from earlier assessment stages. For a step that only cares about a subset of those entities, you can **shadow** the irrelevant ones so they are hidden on the canvas (but kept on the case for later use). For example, a "vehicle damage" step can hide the trees and pedestrians detected by an upstream "object detection" step while still showing the vehicles.
+
+In the human assessment step's edit form, the **Shadow Entities** section controls this:
+
+1. Tick **Enable Shadow Entities** to turn the feature on for the step.
+2. Under **Key Attributes**, add one or more rules that describe which entities stay visible. Each rule is:
+   - An **entity attribute** (required) — choose the attribute that identifies relevant entities (for example, "Species").
+   - An optional **value**. Leave it as **Any value** to match any entity that has the attribute, or pick a specific value (for example, "Cat") to match only entities with that value.
+3. Use **+ Add Key Attribute** to add more rules, and the **×** button to remove one.
+4. Save the step.
+
+Rules combine with **OR** logic: an entity stays visible if it matches *at least one* rule. Any entity that matches no rule is shadowed. If you enable the feature but add no rules, every carried-over entity is shadowed.
+
+The step details page shows a read-only summary of the configured key attribute rules.
+
+Assessors can reveal shadowed entities by hovering, promote them back into the active set by clicking, and manually shadow entities themselves — see [Work With Shadow Entities](../../assessing-and-labelling/working-in-the-assessment-editor/#work-with-shadow-entities).
 
 ## Assigning Contributors
 

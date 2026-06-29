@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2026-06-24T08:00:00+00:00
+updated = 2026-06-28T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -19,6 +19,8 @@ Working in the Assessment Editor requires access to your tools
 - <a href="#access-the-file-list">Access The File List</a>
 - <a href="#access-the-objects-panel">Access The Objects Panel</a>
 - <a href="#edit-annotation-attributes">Edit Annotation Attributes</a>
+- <a href="#edit-stable-attributes">Edit Stable Attributes</a>
+- <a href="#work-with-shadow-entities">Work With Shadow Entities</a>
 - <a href="#set-annotation-view-options">Set Annotation View Options</a>
 - <a href="#show-and-hide-annotations-tracks">Show And Hide Annotations/Tracks</a>
 - <a href="#submit-assessments">Submit Assessments</a>
@@ -58,6 +60,39 @@ The edit form opens with its first field already focused, so you can fill it in 
 - Confirm your changes by clicking "Update", or by pressing Enter while the "Update" button is focused. The panel then returns to its read-only view showing the saved values.
 
 To close the form without saving, click the "X" at the top of the panel.
+
+## Edit Stable Attributes
+
+Some attributes change only slowly — think of an asset condition that should not flip from "ok" to "deteriorated" within the few seconds you are watching it. An administrator can mark such an attribute as **stable** by giving it a stability window (the length of time a value is expected to hold). Highlighter then treats readings that disagree within that window as conflicts to resolve, rather than as a genuine change over time.
+
+Stable attributes behave differently in the attribute editor:
+
+- **One value for the whole entity.** When an attribute is stable and its stability window covers the entity's lifetime, it holds a single value across *all* of the entity's annotations (for example, the views of the same object across multiple cameras), instead of being set separately on each frame or view. Editing it once updates it for the entity everywhere. (If the window is shorter, the value is stable only within that window and can change over longer periods.)
+- **The effective value is always shown.** Even when the value was set on a different annotation or view, the dropdown still shows the entity's current value, so you always see what the entity actually claims.
+- **A marker shows when a value came from another view.** If the value was set on a different annotation, its control is outlined in orange and shows a "set on another view ↪ jump to it" link. Click the link to jump straight to the annotation that holds the value (when several views hold it, the link seeks to the one nearest the current playhead). In the read-only attribute view, this occurrence is flagged with a small "other view" link.
+- **Stable attributes can be left empty.** You may leave a stable attribute blank while you work. Required attributes are still enforced when you submit — and a required stable attribute set on *any* of the entity's annotations satisfies the requirement for the whole entity. If a required value is missing on submit, the editor jumps to the relevant annotation and highlights the attribute so you can fill it in.
+- **Changing a value moves it.** Editing a stable attribute to a new value moves that value onto the annotation you are currently editing and clears it from the entity's other annotations. Leaving the value unchanged leaves it on the annotation where it was originally set.
+
+Highlighter prevents a stable attribute from holding two different values within a single stability window in one submission: a value must hold for at least a window before it can change. If your window is as wide as the entity's whole lifetime, the value cannot change at all and is treated as a single entity-wide value.
+
+## Work With Shadow Entities
+
+When a step is configured to filter entities (see [Human Assessment Steps](../../managing-workflows/human-assessment-steps/#shadow-entities)), entities carried over from earlier assessment stages that are not relevant to your current task are **shadowed** — kept on the case but hidden from view so they stay out of your way. For example, a "vehicle damage" stage can shadow the trees and pedestrians detected by an earlier "object detection" stage while still showing the vehicles.
+
+Shadowed entities:
+
+- Are hidden on the canvas (drawn invisibly) rather than removed.
+- Do not appear in the entities list or on the timeline.
+- Are **not** saved when you submit, unless you promote them first.
+
+You can still work with them:
+
+- **Reveal on hover.** Move your pointer over a hidden entity to temporarily reveal it and show its labels (a "Shadow entity" hint appears).
+- **Promote by clicking.** Click a revealed shadow entity to promote it back into the active set — it becomes fully visible, appears in the entities list, and will be saved on submit. This affects only the annotation you clicked; the entity's other annotations are untouched. To put a promoted entity back into the shadows, select it and press **Shift + S** (see below).
+  - If the annotation you promote carries a stable attribute value that differs from the entity's current value, Highlighter prompts you to either keep the entity's existing value or adopt the promoted one (so it does not create a conflict within the stability window). Where the entity has no value yet, the promoted value is adopted silently.
+- **Shadow selected entities manually.** Select one or more tracks and press **Shift + S** (or choose "Shadow selected" from the menu) to move them out of the active set yourself.
+
+Shadow classification is per session — it is recalculated each time the queue loads and is not persisted.
 
 ## Set Annotation View Options
 Set annotation view options by clicking the View menu in the top toolbar, then clicking 'Annotation'. You will see a menu of options which you can toggle on or off.

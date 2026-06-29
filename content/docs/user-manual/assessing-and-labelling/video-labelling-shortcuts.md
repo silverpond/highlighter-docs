@@ -2,7 +2,7 @@
 title = "Video Labelling Shortcuts, Tools and Tips"
 description = "Boost video annotation efficiency in Highlighter AI with essential keyboard shortcuts, navigation tools, and productivity tips to speed up labelling and streamline workflows."
 date = 2025-05-01T08:00:00+00:00
-updated = 2025-05-01T08:00:00+00:00
+updated = 2026-06-28T08:00:00+00:00
 draft = false
 weight = 40
 sort_by = "weight"
@@ -44,6 +44,7 @@ See a summary of all keyboard shortcuts available in the Assessment Editor by ty
 - **s**: Split current track at current frame
 - **z**: Remove detection/keyframe
 - **Shift + A**: Assign entity ID to selected tracks
+- **Shift + S**: Shadow selected annotations (hide them from the active set — see [Shadow Entities](../working-in-the-assessment-editor/#work-with-shadow-entities))
 - **Ctrl + A**: Select all tracks that match similarity
 - **Delete/Backspace**: Delete selected tracks
 
