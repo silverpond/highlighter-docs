@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2023-09-26T08:00:00+00:00
+updated = 2026-06-24T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -18,6 +18,7 @@ Working in the Assessment Editor requires access to your tools
 - <a href="#use-assessment-editor-tools">Use Assessment Editor tools</a>
 - <a href="#access-the-file-list">Access The File List</a>
 - <a href="#access-the-objects-panel">Access The Objects Panel</a>
+- <a href="#edit-annotation-attributes">Edit Annotation Attributes</a>
 - <a href="#set-annotation-view-options">Set Annotation View Options</a>
 - <a href="#show-and-hide-annotations-tracks">Show And Hide Annotations/Tracks</a>
 - <a href="#submit-assessments">Submit Assessments</a>
@@ -46,6 +47,17 @@ Access the list of currently loaded files in your case by clicking the little pu
 
 ## Access the Objects Panel
 Access the objects panel using the little pull-out arrow at the right of the screen. Once open, click the little pull-in arrow to close again.
+
+## Edit Annotation Attributes
+The Objects Panel lists the attributes of the selected annotation (or, for video, its track). To change them, open the attribute editor by clicking the "Edit" button at the bottom of the panel, or by pressing shortcut key 'i'.
+
+The edit form opens with its first field already focused, so you can fill it in from the keyboard without reaching for the mouse:
+
+- Attributes with predefined options are dropdowns; other attributes are text or number fields. The focused field is outlined so you can always see where keyboard input will go.
+- Press Tab to move from one field to the next, and on to the "Update" button.
+- Confirm your changes by clicking "Update", or by pressing Enter while the "Update" button is focused. The panel then returns to its read-only view showing the saved values.
+
+To close the form without saving, click the "X" at the top of the panel.
 
 ## Set Annotation View Options
 Set annotation view options by clicking the View menu in the top toolbar, then clicking 'Annotation'. You will see a menu of options which you can toggle on or off.
