@@ -88,7 +88,7 @@ Shadowed entities:
 You can still work with them:
 
 - **Reveal on hover.** Move your pointer over a hidden entity to temporarily reveal it and show its labels (a "Shadow entity" hint appears).
-- **Promote by clicking.** Click a revealed shadow entity to promote it back into the active set — it becomes fully visible, appears in the entities list, and will be saved on submit. This affects only the annotation you clicked; the entity's other annotations are untouched. Clicking only promotes — clicking a promoted entity again won't re-shadow it; to put a promoted entity back into the shadows, select it and press **Shift + S** (see below).
+- **Promote by clicking.** Click a revealed shadow entity to promote it back into the active set — it becomes fully visible, appears in the entities list, and will be saved on submit. This affects only the annotation you clicked; the entity's other annotations are untouched. To put a promoted entity back into the shadows, select it and press **Shift + S** (see below).
   - If the annotation you promote carries a stable attribute value that differs from the entity's current value, Highlighter prompts you to either keep the entity's existing value or adopt the promoted one (so it does not create a conflict within the stability window). Where the entity has no value yet, the promoted value is adopted silently.
 - **Shadow selected entities manually.** Select one or more tracks and press **Shift + S** (or choose "Shadow selected" from the menu) to move them out of the active set yourself.
 
