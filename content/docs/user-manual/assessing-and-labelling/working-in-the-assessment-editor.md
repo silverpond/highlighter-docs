@@ -100,7 +100,7 @@ Shadow classification is per session — it is recalculated each time the queue 
 When you open a case, the editor jumps playback to the start of the **first identified object** — the earliest-starting annotation or track — so you land on something to assess straight away instead of at the start of the raw data window, which is often before any object appears. The timeline scrolls to match.
 
 - **Shadowed annotations/tracks are skipped.** The jump targets the first *visible* object, ignoring any entities that are [shadowed](#work-with-shadow-entities) for your current task. If a case has no visible objects, playback stays at the start.
-- **In a queue, this is on by default.** While assessing through a queue you land on the first object automatically. To turn it off — for example to always start at the beginning of the data — add `jump_to_first_track=false` to the URL.
+- **In a queue, this is on by default.** While assessing through a queue, you land on the first object automatically. To turn it off — for example, to always start at the beginning of the data — add `jump_to_first_track=false` to the URL.
 - **Outside a queue, it is opt-in.** When you open a case directly (a deep link with `case_id`), playback starts at the beginning of the data unless you add `jump_to_first_track=true` to the URL.
 - **An explicit start time always wins.** If the URL already specifies a position with `at_time=`, the editor seeks there and does not jump to the first object.
 
