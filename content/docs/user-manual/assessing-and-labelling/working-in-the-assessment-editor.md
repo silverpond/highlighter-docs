@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2026-06-28T08:00:00+00:00
+updated = 2026-07-03T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -21,6 +21,7 @@ Working in the Assessment Editor requires access to your tools
 - <a href="#edit-annotation-attributes">Edit Annotation Attributes</a>
 - <a href="#edit-stable-attributes">Edit Stable Attributes</a>
 - <a href="#work-with-shadow-entities">Work With Shadow Entities</a>
+- <a href="#jump-to-the-first-object">Jump To The First Object</a>
 - <a href="#set-annotation-view-options">Set Annotation View Options</a>
 - <a href="#show-and-hide-annotations-tracks">Show And Hide Annotations/Tracks</a>
 - <a href="#submit-assessments">Submit Assessments</a>
@@ -93,6 +94,15 @@ You can still work with them:
 - **Shadow selected entities manually.** Select one or more tracks and press **Shift + S** (or choose "Shadow selected" from the menu) to move them out of the active set yourself.
 
 Shadow classification is per session — it is recalculated each time the queue loads and is not persisted.
+
+## Jump To The First Object
+
+When you open a case, the editor jumps playback to the start of the **first identified object** — the earliest-starting annotation or track — so you land on something to assess straight away instead of at the start of the raw data window, which is often before any object appears. The timeline scrolls to match.
+
+- **Shadowed annotations/tracks are skipped.** The jump targets the first *visible* object, ignoring any entities that are [shadowed](#work-with-shadow-entities) for your current task. If a case has no visible objects, playback stays at the start.
+- **In a queue, this is on by default.** While assessing through a queue, you land on the first object automatically. To turn it off — for example, to always start at the beginning of the data — add `jump_to_first_track=false` to the URL.
+- **Outside a queue, it is opt-in.** When you open a case directly (a deep link with `case_id`), playback starts at the beginning of the data unless you add `jump_to_first_track=true` to the URL.
+- **An explicit start time always wins.** If the URL already specifies a position with `at_time=`, the editor seeks there and does not jump to the first object.
 
 ## Set Annotation View Options
 Set annotation view options by clicking the View menu in the top toolbar, then clicking 'Annotation'. You will see a menu of options which you can toggle on or off.
