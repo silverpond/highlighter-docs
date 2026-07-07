@@ -2,7 +2,7 @@
 title = "Downloading Model Weights"
 description = "How to download model weights (artefacts) from a Training Run"
 date = 2025-11-27T14:16:00+11:00
-updated = 2025-12-08T00:00:00+00:00
+updated = 2026-07-07T00:00:00+00:00
 draft = false
 weight = 400
 sort_by = "weight"
@@ -69,3 +69,33 @@ Once you have the Training-Run Artefact ID or Training Run ID:
 2. If you have a `training_run_id`, find and select that Training Run.
 3. If you have a `training_run_artefact_id`, you'll need to locate the Training Run that contains this artefact (the artefact ID can help you search or filter).
 4. Follow the steps in [Accessing Artefacts](#accessing-artefacts) above to download the specific artefact files.
+
+## Packaging Agent Artefacts with the CLI
+
+Use `hl agent build` when you want to prepare all model weights and other startup artefacts required by a local agent definition before running it. The command reads the agent definition, finds capabilities that download model files from URLs or Highlighter Training-Run Artefacts, and writes a manifest of the files it prepared.
+
+By default, artefacts are cached under Highlighter's local cache directory:
+
+```bash
+hl agent build agent.json
+```
+
+To write the artefacts to a specific directory instead:
+
+```bash
+hl agent build --output-dir ./agent-artefacts agent.json
+```
+
+To create a portable archive that can be moved to another machine:
+
+```bash
+hl agent build --archive agent-artefacts.tar.gz agent.json
+```
+
+Run an agent from a prepared archive with:
+
+```bash
+hl agent start --archive agent-artefacts.tar.gz agent.json
+```
+
+This is useful for offline or restricted-network deployments, because the agent can start from the packaged artefacts instead of downloading model weights at runtime.
