@@ -2,7 +2,7 @@
 title = "Working on the map"
 description = "Use the Operations Dashboard map tools to pan and rotate the camera, box-select items, place or draw new entities, and assess the current view."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-06-19T08:00:00+00:00
+updated = 2026-07-13T08:00:00+00:00
 draft = false
 weight = 4
 sort_by = "weight"
@@ -22,7 +22,7 @@ choosing a tool deactivates the others. Each tool also has a keyboard shortcut.
 - **Pan / rotate camera (h)** — the default. Drag to pan; **shift + drag** to
   rotate. Use this to move around and frame an area.
 - **Select entities (q)** — drag a rectangle to box-select everything inside
-  it. Hold **alt** while selecting to add to the current selection instead of
+  it. Hold **shift** while selecting to add to the current selection instead of
   replacing it. The selected items appear in the
   [Selected Items panel](../selecting-and-acting/).
 - **Place point entity (w)** — click on the map to drop a new point entity.

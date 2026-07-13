@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-07-13T08:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -13,6 +13,16 @@ lead = "Stay informed about the latest features, enhancements, and improvements 
 toc = true
 top = false
 +++
+
+## Consistent Selection and Safer Assessment Deletion
+
+**Release Date:** July 2026
+
+The Operations Dashboard and Assessment Editor now share the same Select interaction: click to replace a selection, Shift-click to toggle an item, drag to select intersecting shapes, and Shift-drag to add. The Assessment Editor also has a separate Hand tool for panning.
+
+Assessment deletion now includes **Delete Other Annotations** and **Delete Other Entities**. Every delete surface uses the same confirmation, protects active entity-level values that would otherwise lose their last annotation, and records a multi-annotation deletion as one undoable action.
+
+See [Working in the Assessment Editor](/docs/user-manual/assessing-and-labelling/working-in-the-assessment-editor/) and [Working on the Operations map](/docs/user-manual/operations-dashboard/working-on-the-map/).
 
 
 ## Taxon Group Import/Export Performance

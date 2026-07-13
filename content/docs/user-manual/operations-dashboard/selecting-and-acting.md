@@ -2,7 +2,7 @@
 title = "Selecting and acting on items"
 description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, or work through cases."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-06-19T08:00:00+00:00
+updated = 2026-07-13T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -18,7 +18,7 @@ top = false
 
 A single **click** on a record or entity *focuses* it: it opens that item's
 detail panel on the right. *Selecting* is separate — you build a
-**multi-selection** by box-selecting on the map, alt-clicking grid cards or tree
+**multi-selection** by box-selecting on the map, shift-clicking grid cards or tree
 rows, or adding items one at a time. Closing a detail panel clears the focus but
 leaves your selection intact.
 
