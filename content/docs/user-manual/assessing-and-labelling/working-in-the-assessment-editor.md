@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2026-06-24T08:00:00+00:00
+updated = 2026-07-13T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -19,6 +19,7 @@ Working in the Assessment Editor requires access to your tools
 - <a href="#access-the-file-list">Access The File List</a>
 - <a href="#access-the-objects-panel">Access The Objects Panel</a>
 - <a href="#edit-annotation-attributes">Edit Annotation Attributes</a>
+- <a href="#see-an-entitys-other-annotations">See An Entity's Other Annotations</a>
 - <a href="#set-annotation-view-options">Set Annotation View Options</a>
 - <a href="#show-and-hide-annotations-tracks">Show And Hide Annotations/Tracks</a>
 - <a href="#submit-assessments">Submit Assessments</a>
@@ -58,6 +59,14 @@ The edit form opens with its first field already focused, so you can fill it in 
 - Confirm your changes by clicking "Update", or by pressing Enter while the "Update" button is focused. The panel then returns to its read-only view showing the saved values.
 
 To close the form without saving, click the "X" at the top of the panel.
+
+## See An Entity's Other Annotations
+An entity can have more than one annotation — for example after entity resolution has matched the same physical object across several camera views, or when an object was detected more than once. Selecting any annotation of such an entity highlights all of them:
+
+- Every annotation belonging to the selected entity is outlined with an amber halo, in every open view.
+- Hidden (shadow) annotations of the entity are revealed while it stays selected, so you can see the whole entity even when parts of it are filtered out of the current stage.
+
+The halo only appears when the entity actually has more than one annotation loaded, so a plain single-annotation selection looks the same as before.
 
 ## Set Annotation View Options
 Set annotation view options by clicking the View menu in the top toolbar, then clicking 'Annotation'. You will see a menu of options which you can toggle on or off.

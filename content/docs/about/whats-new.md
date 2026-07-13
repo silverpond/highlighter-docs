@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-07-13T08:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -14,6 +14,17 @@ toc = true
 top = false
 +++
 
+
+## Entity Annotation Highlighting in the Assessment Editor
+
+**Release Date:** July 2026
+
+Selecting an annotation now highlights every other annotation that belongs to the same entity — useful after entity resolution has matched one physical object across several camera views.
+
+- All of the entity's annotations are outlined with an amber halo, in every open view.
+- Shadowed annotations of the entity are revealed while it stays selected.
+
+See [Working in the Assessment Editor](/docs/user-manual/assessing-and-labelling/working-in-the-assessment-editor/#see-an-entitys-other-annotations) for details.
 
 ## Taxon Group Import/Export Performance
 
