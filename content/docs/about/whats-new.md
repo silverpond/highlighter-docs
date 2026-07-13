@@ -15,6 +15,23 @@ top = false
 +++
 
 
+## Box-Select and Bulk Delete in the Assessment Editor
+
+**Release Date:** July 2026
+
+The assessment editor now supports selecting many annotations at once and deleting everything else in a couple of clicks.
+
+### What Changed
+
+- **Box select**: with the pointer tool active, hold Shift and drag out a box on the canvas to add every annotation completely inside it to the selection. Plain dragging still pans the canvas.
+- **Right-click menu**: right-clicking the canvas opens a context menu with two bulk actions, also available from the Edit menu:
+  - **Delete Other Annotations** keeps only the selected annotations.
+  - **Delete Other Entities** keeps every annotation belonging to the same entities as the selection.
+
+Both actions ask for confirmation and are undoable, and nothing is permanently removed until the assessment is submitted. See [Working in the Assessment Editor](/docs/user-manual/assessing-and-labelling/working-in-the-assessment-editor/#select-annotations-and-delete-the-rest) for details.
+
+Deletions also now protect entity-level values: when a deletion would remove every annotation holding a stable attribute value while its entity survives, the confirmation lists each at-risk value so you can keep it by moving it onto a surviving annotation of your choice.
+
 ## Shadow Entities in the Assessment Editor
 
 **Release Date:** June 2026

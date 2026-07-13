@@ -22,6 +22,7 @@ Working in the Assessment Editor requires access to your tools
 - <a href="#edit-stable-attributes">Edit Stable Attributes</a>
 - <a href="#work-with-shadow-entities">Work With Shadow Entities</a>
 - <a href="#jump-to-the-first-object">Jump To The First Object</a>
+- <a href="#select-annotations-and-delete-the-rest">Select Annotations And Delete The Rest</a>
 - <a href="#set-annotation-view-options">Set Annotation View Options</a>
 - <a href="#show-and-hide-annotations-tracks">Show And Hide Annotations/Tracks</a>
 - <a href="#submit-assessments">Submit Assessments</a>
@@ -113,6 +114,18 @@ When you open a case, the editor jumps playback to the start of the **first iden
 - **In a queue, this is on by default.** While assessing through a queue, you land on the first object automatically. To turn it off — for example, to always start at the beginning of the data — add `jump_to_first_track=false` to the URL.
 - **Outside a queue, it is opt-in.** When you open a case directly (a deep link with `case_id`), playback starts at the beginning of the data unless you add `jump_to_first_track=true` to the URL.
 - **An explicit start time always wins.** If the URL already specifies a position with `at_time=`, the editor seeks there and does not jump to the first object.
+
+## Select Annotations And Delete The Rest
+With the pointer tool active, click an annotation to select it, and Shift-click other annotations to add them to the selection. To select many annotations at once, hold Shift and drag out a box on the canvas — every annotation completely inside the box is added to the selection. Plain dragging (without Shift) still pans the canvas.
+
+Once you have a selection, right-click anywhere on the canvas (or open the Edit menu in the top toolbar) and choose:
+
+- **Delete Other Annotations** — keeps only the selected annotations and deletes every other annotation.
+- **Delete Other Entities** — keeps every annotation belonging to the same entities as the selected annotations, and deletes the annotations of all other entities.
+
+Both actions ask for confirmation before deleting, and can be undone with Ctrl+Z (one annotation at a time). As with other edits, nothing is permanently removed until you submit the assessment.
+
+Deleting annotations (through these actions, the Delete key, or the trash button in the entities panel) can strand an entity-level value: an attribute that is stable for the entity, where every annotation holding its value is being deleted while the entity keeps other annotations. When that would happen, the confirmation dialog lists each at-risk value with a checkbox and a picker — tick the values you want to keep and choose which surviving annotation to move each one onto. Unticked values are deleted along with their annotations.
 
 ## Set Annotation View Options
 Set annotation view options by clicking the View menu in the top toolbar, then clicking 'Annotation'. You will see a menu of options which you can toggle on or off.
