@@ -77,15 +77,17 @@ An entity that already has a parent is moved under the new one, together with
 its own descendants.
 
 You can also **drag a row in the hierarchy tree onto another entity** to move
-it under that entity. If the dragged entity is part of the current selection,
-the whole selection moves with it. Rows that can't accept the drop — such as
-the entities' current parent — show no drop highlight.
+it under that entity, or **onto the panel's "Entities" header** to remove its
+parent and move it back to the top level. If the dragged entity is part of the
+current selection, the whole selection moves with it. Targets that can't
+accept the drop — the entities' current parent, or the header when they have
+no parent — show no drop highlight.
 
 After any of these operations, the hierarchy tree expands to reveal the moved
 entities and scrolls them into view.
 
-To change a single entity's parent instead, open its detail panel and edit the
-**Parent** field.
+To change or clear a single entity's parent instead, open its detail panel and
+edit the **Parent** field.
 
 ## Cases
 
