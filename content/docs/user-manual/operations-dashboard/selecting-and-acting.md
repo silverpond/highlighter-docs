@@ -1,6 +1,6 @@
 +++
 title = "Selecting and acting on items"
-description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, or work through cases."
+description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, create a parent entity, or work through cases."
 date = 2026-06-19T08:00:00+00:00
 updated = 2026-07-21T08:00:00+00:00
 draft = false
@@ -62,6 +62,18 @@ them. A **survivor** is auto-selected (you can change it); annotations on the
 other entities are reassigned to the survivor, and the non-survivor entities are
 deleted. No entity is renamed. Because the non-survivors are removed, review the
 survivor choice before confirming the merge.
+
+## Create a parent entity
+
+Entities can be organised into a hierarchy — for example, poles grouped under a
+site. With one or more entities selected, **Create parent entity** opens a
+dialog that creates a new entity and makes every selected entity a child of it.
+Give the parent a **Name** (required) and optionally an **Object Class**. An
+entity that already has a parent is moved under the new one, together with its
+own descendants. The new parent then appears in the hierarchy tree on the left.
+
+To change a single entity's parent instead, open its detail panel and edit the
+**Parent** field.
 
 ## Cases
 
