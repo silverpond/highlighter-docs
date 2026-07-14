@@ -2,7 +2,7 @@
 title = "Selecting and acting on items"
 description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, or work through cases."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-06-19T08:00:00+00:00
+updated = 2026-07-14T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -16,15 +16,22 @@ top = false
 
 ## Focusing versus selecting
 
-A single **click** on a record or entity *focuses* it: it opens that item's
-detail panel on the right. *Selecting* is separate — you build a
-**multi-selection** by box-selecting on the map, alt-clicking grid cards or tree
-rows, or adding items one at a time. Closing a detail panel clears the focus but
-leaves your selection intact.
+A single **click** on a record, entity, or data source selects and focuses it:
+it replaces the selection and opens that item's detail panel on the right. Hold
+**Shift** while clicking map features, grid cards, or tree rows to add or remove
+an item without changing the focused detail. With the Select tool active, drag
+a box on the map to replace the selection with every record, entity, and data
+source inside it; hold Shift while starting the drag to add its results. Map
+clusters remain navigation controls and are not selectable.
+
+Closing a detail panel clears only the focus and leaves the selection intact.
+Press **Escape** when no selection drag is active to clear the selection.
 
 When more than one item is selected, the **Selected Items** panel appears on the
-right listing each item, and the status bar shows how many entities, records,
-and data sources are selected.
+right. It lists every kind in selection order, shows per-kind counts, and lets
+you open or remove individual items, clear the selection, create a workflow
+order from selected entities, or merge compatible selected entities. Actions
+that cannot use the current selection remain disabled with an explanation.
 
 ## Detail panels
 

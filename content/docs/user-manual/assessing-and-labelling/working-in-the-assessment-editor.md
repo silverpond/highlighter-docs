@@ -34,7 +34,7 @@ The assessment editor tools are laid out across in the top toolbar.
 ### Pan, Select, And Edit Annotations
 The Pan tool (shortcut key: 'h') is active when you open the editor. Drag the canvas to move around, or click an annotation to select it without opening its edit handles. The canvas shows a hand cursor in Pan, changing to a pointer over annotations you can click.
 
-Use the Select Annotation tool (shortcut key: 'q') when you want to select or edit geometry. Click an annotation to select it, or drag across the canvas to select every annotation intersecting the rectangle. Hold Shift while clicking or rectangle-selecting to add annotations to the current selection. Selected annotation geometry exposes handles for direct editing.
+Use the Select Annotation tool (shortcut key: 'q') when you want to select or edit geometry. Click an annotation to select it, or drag across the canvas to select every annotation intersecting the rectangle. Hold Shift while clicking or rectangle-selecting to add annotations to the current selection. Selected annotation geometry exposes handles for direct editing. In an editable assessment, hold Alt/Option while dragging selected annotations to move them.
 
 To move the canvas without leaving your current tool, hold Ctrl on Windows or Linux, or Command on macOS, while dragging. You can also drag with the middle mouse button. While either temporary pan is engaged the cursor changes to the hand, and panning does not change the current selection or annotation geometry.
 
@@ -115,15 +115,34 @@ When you open a case, the editor jumps playback to the start of the **first iden
 - **Outside a queue, it is opt-in.** When you open a case directly (a deep link with `case_id`), playback starts at the beginning of the data unless you add `jump_to_first_track=true` to the URL.
 - **An explicit start time always wins.** If the URL already specifies a position with `at_time=`, the editor seeks there and does not jump to the first object.
 
-## Select Annotations And Delete The Rest
-With the pointer tool active, click an annotation to select it, and Shift-click other annotations to add them to the selection. To select many annotations at once, hold Shift and drag out a box on the canvas — every annotation completely inside the box is added to the selection. Plain dragging (without Shift) still pans the canvas.
+## Select Items And Delete The Rest
+Assessment has one selection containing files, annotations, and entities. Click
+an item to replace the selection. Hold **Shift** while clicking to add or remove
+that item without changing the open file or active annotation editor. Files can
+be selected from Data Sources or the current-file heading; annotations from the
+canvas, timeline, entity list, or similar-tracks window; and entities from the
+entity list or tree.
+
+With the Select tool active, plain dragging replaces the selection with the
+visible annotations hit by the box. Start the drag while holding Shift to add
+them while preserving selected files and entities. Shadow annotations are not
+included by box selection.
+
+The same **Selected Items** panel used in Monitor Operations appears whenever
+the selection is non-empty. It shows total and per-kind counts, lets you remove
+or open items, and presents the actions applicable to the direct file,
+annotation, and entity projections. In a completed/read-only assessment the
+selection and panel continue to work, but mutation actions are disabled.
 
 Once you have a selection, right-click anywhere on the canvas (or open the Edit menu in the top toolbar) and choose:
 
 - **Delete Other Annotations** — keeps only the selected annotations and deletes every other annotation.
 - **Delete Other Entities** — keeps every annotation belonging to the same entities as the selected annotations, and deletes the annotations of all other entities.
 
-Both actions ask for confirmation before deleting, and can be undone with Ctrl+Z (one annotation at a time). As with other edits, nothing is permanently removed until you submit the assessment.
+Both actions ask for confirmation before deleting. One Ctrl+Z restores the
+whole deletion, including its selection and any stable values moved to surviving
+annotations. As with other edits, nothing is permanently removed until you
+submit the assessment.
 
 Deleting annotations (through these actions, the Delete key, or the trash button in the entities panel) can strand an entity-level value: an attribute that is stable for the entity, where every annotation holding its value is being deleted while the entity keeps other annotations. When that would happen, the confirmation dialog lists each at-risk value with a checkbox and a picker — tick the values you want to keep and choose which surviving annotation to move each one onto. Unticked values are deleted along with their annotations.
 
