@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2026-06-24T08:00:00+00:00
+updated = 2026-07-14T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -18,6 +18,7 @@ Working in the Assessment Editor requires access to your tools
 - <a href="#use-assessment-editor-tools">Use Assessment Editor tools</a>
 - <a href="#access-the-file-list">Access The File List</a>
 - <a href="#access-the-objects-panel">Access The Objects Panel</a>
+- <a href="#work-with-multiple-selected-items">Work With Multiple Selected Items</a>
 - <a href="#edit-annotation-attributes">Edit Annotation Attributes</a>
 - <a href="#set-annotation-view-options">Set Annotation View Options</a>
 - <a href="#show-and-hide-annotations-tracks">Show And Hide Annotations/Tracks</a>
@@ -28,7 +29,7 @@ Working in the Assessment Editor requires access to your tools
 The assessment editor tools are laid out across in the top toolbar.
 
 ### Use The Pointer Tool
-The most commonly used tool is the pointer tool (shortcut key: 'q'). This tool is used to move the canvas around.
+The pointer/selection tool (shortcut key: 'q') selects annotations. Click an annotation to select it, Shift-click to add or remove one, or drag a rectangle around several visible annotations. Use the hand tool (shortcut key: 'h') when you want to pan the canvas without changing selection.
 
 ### Use The Annotation Tools
 The annotation tools are grouped into a dropdown. The first one is the Bounding Box Annotation tool (shortcut key: 'w'), allowing you to draw rectangles. Click once to start, move your mouse until you see the rectangle you want, then click again to stop.
@@ -47,6 +48,27 @@ Access the list of currently loaded files in your case by clicking the little pu
 
 ## Access the Objects Panel
 Access the objects panel using the little pull-out arrow at the right of the screen. Once open, click the little pull-in arrow to close again.
+
+## Work With Multiple Selected Items
+
+When you select two or more files, annotations/tracks, or entities, the **Selected items** panel replaces the single-annotation Objects Panel on the right. Your current annotation focus is retained, so its attributes return when the selection is reduced to that one annotation again.
+
+Use the type buttons at the top of Selected items to choose which kind is listed and which actions are shown. This filters the panel only; it does not remove the other selected items. Scroll inside the item list to review larger selections, click a row to focus it, or use the × button to remove that item from the selection.
+
+The available actions depend on what is selected:
+
+- **Reassign tracks** moves only the directly selected tracks to a chosen entity. Other tracks belonging to their original entities stay where they are.
+- **New entity** moves the directly selected tracks to a new entity. With one annotation selected, the same action remains available in the Objects Panel header.
+- **Split view** is available for exactly two selected tracks from different files.
+- **Merge entities** combines directly selected entities by moving all of their tracks to one chosen survivor in the current assessment.
+- **Join** and **Union** retain their existing track operations and appear under the additional-actions menu when applicable.
+
+Destructive choices are grouped under **Delete** at the bottom of the panel. Each option shows the number of annotations and entities it will affect. Deletion still asks for confirmation and, when a stable entity value would otherwise be lost, lets you choose where to preserve that value.
+
+Assessment deletion changes the current submission: it removes annotations or
+removes a file from that submission. It does not permanently delete the
+account-wide file or entity records. Use Monitor Operations when you intend to
+delete those canonical records.
 
 ## Edit Annotation Attributes
 The Objects Panel lists the attributes of the selected annotation (or, for video, its track). To change them, open the attribute editor by clicking the "Edit" button at the bottom of the panel, or by pressing shortcut key 'i'.
