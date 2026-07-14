@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2026-07-03T08:00:00+00:00
+updated = 2026-07-14T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -18,6 +18,7 @@ Working in the Assessment Editor requires access to your tools
 - <a href="#use-assessment-editor-tools">Use Assessment Editor tools</a>
 - <a href="#access-the-file-list">Access The File List</a>
 - <a href="#access-the-objects-panel">Access The Objects Panel</a>
+- <a href="#create-reusable-pane-layouts">Create Reusable Pane Layouts</a>
 - <a href="#edit-annotation-attributes">Edit Annotation Attributes</a>
 - <a href="#edit-stable-attributes">Edit Stable Attributes</a>
 - <a href="#work-with-shadow-entities">Work With Shadow Entities</a>
@@ -50,6 +51,26 @@ Access the list of currently loaded files in your case by clicking the little pu
 
 ## Access the Objects Panel
 Access the objects panel using the little pull-out arrow at the right of the screen. Once open, click the little pull-in arrow to close again.
+
+## Create Reusable Pane Layouts
+
+An object class view layout opens a repeatable set of editor panes for entities of the same object class. A pane can find a data source by tags so it can be reused across different entity hierarchies, or it can always display one specific data source.
+
+To create or edit a layout:
+
+1. Right-click an entity and select **Edit layouts...**.
+2. Select **New layout**, or select **New layout from current view** to start with the panes already open.
+3. Give the layout a name. For each pane, choose one of these options:
+   - Select a **Specific data source** to always display that source. This source does not need to belong to the selected entity's hierarchy.
+   - Leave **Specific data source** set to **Match by tags**, select the tags that its data source must contain, and set its **Parent** level:
+      - `0` searches the selected entity and its descendants.
+      - `1` searches only data sources attached directly to the selected entity's parent.
+      - `2` searches only data sources attached directly to its grandparent. Larger numbers continue further up the hierarchy.
+4. Select **Save**.
+
+All selected tags in a pane must match the same data source. If a specific source is unavailable, or no data source matches at the configured parent level, Highlighter leaves that pane out. When you create a layout from the current view, Highlighter creates reusable tag matches and infers the parent level of each displayed data source; you can adjust them or select specific sources before saving.
+
+To use a saved layout, right-click an entity of that object class and select it from **Open Layout**. You can rename, edit, or delete layouts from **Edit layouts...**.
 
 ## Edit Annotation Attributes
 The Objects Panel lists the attributes of the selected annotation (or, for video, its track). To change them, open the attribute editor by clicking the "Edit" button at the bottom of the panel, or by pressing shortcut key 'i'.
