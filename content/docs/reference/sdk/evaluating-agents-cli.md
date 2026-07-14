@@ -18,7 +18,7 @@ top = false
 
 Evaluating a new agent or model against a reference dataset normally involves
 several manual steps: create a workflow order, add the reference data to it,
-run the agent over the created tasks, snapshot the agent's submissions as a new
+run the agent over the created tasks, snapshot the agent's assessments as a new
 dataset, and finally save a comparison between the two datasets on a research
 plan (evaluation).
 
@@ -35,7 +35,7 @@ hl agent evaluate agent-def.json \
 2. Populates it from the reference dataset.
 3. Runs the agent definition on exactly the tasks that were created — tasks
    belonging to other orders on the same workflow are never touched.
-4. Snapshots the agent's completed submissions as a locked dataset named
+4. Snapshots the agent's completed assessments as a locked dataset named
    `Eval output: <agent> on <dataset> <timestamp>`.
 5. Saves an evaluation comparison (reference dataset vs agent output) on the
    research plan, then prints a link to it. Open the comparison's **Generate**
@@ -50,10 +50,10 @@ definition must start with an `AssessmentRead` element.
 
 | Option | Description |
 |---|---|
-| `--reference-dataset-id` | Dataset holding the reference (baseline) submissions. Required. |
+| `--reference-dataset-id` | Dataset holding the reference (baseline) assessments. Required. |
 | `--workflow-id` | Workflow whose step the agent serves; the new order is created on it. Required. |
 | `--evaluation-id` | Evaluation (research plan) the comparison is saved on. Required. |
-| `--case-input files\|submissions` | What the order's cases start from: the reference dataset's bare data files (default — the agent starts from a clean slate), or clones of its full submissions (the agent sees the reference annotations). |
+| `--case-input files\|assessments` | What the order's cases start from: the reference dataset's bare data files (default — the agent starts from a clean slate), or clones of its full assessments (the agent sees the reference annotations). |
 | `--step-id` | Step the agent serves. Only needed when the order creates tasks on more than one step. |
 | `--overlap` | Annotation overlap for two annotations to count as the same entity (default 0.5). |
 | `--object-class-uuid` | Object classes to evaluate (repeatable). Defaults to the workflow's object classes. |
@@ -64,7 +64,7 @@ definition must start with an `AssessmentRead` element.
 
 The command checks every prerequisite up front — the agent definition is
 valid and task-driven, the dataset, workflow and research plan exist, the
-reference dataset has submissions, and the connected Highlighter server
+reference dataset has assessments, and the connected Highlighter server
 supports the required API — and exits before creating anything if a check
 fails.
 
