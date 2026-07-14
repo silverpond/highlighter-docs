@@ -66,11 +66,11 @@ survivor choice before confirming the merge.
 ## Assign a parent entity
 
 Entities can be organised into a hierarchy — for example, poles grouped under a
-site. With one or more entities selected, **Create parent entity** opens a
-dialog that assigns a parent to every selected entity, in one of two ways:
+site. With one or more entities selected, **Create/assign parent entity** opens
+a dialog that assigns a parent to every selected entity, in one of two ways:
 
 - **Create a new entity** — give it a **Name** (required) and optionally an
-  **Object Class**; the new parent then appears in the hierarchy tree.
+  **Object Class**.
 - **Use an existing entity** — search for and pick any entity in the account.
 
 An entity that already has a parent is moved under the new one, together with
@@ -78,7 +78,11 @@ its own descendants.
 
 You can also **drag a row in the hierarchy tree onto another entity** to move
 it under that entity. If the dragged entity is part of the current selection,
-the whole selection moves with it.
+the whole selection moves with it. Rows that can't accept the drop — such as
+the entities' current parent — show no drop highlight.
+
+After any of these operations, the hierarchy tree expands to reveal the moved
+entities and scrolls them into view.
 
 To change a single entity's parent instead, open its detail panel and edit the
 **Parent** field.
