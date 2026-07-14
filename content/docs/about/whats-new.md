@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-07-14T00:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -13,6 +13,20 @@ lead = "Stay informed about the latest features, enhancements, and improvements 
 toc = true
 top = false
 +++
+
+
+## One-Command Agent Evaluation from the CLI
+
+**Release Date:** July 2026
+
+The new `hl agent evaluate` CLI command automates the whole loop of evaluating
+an agent against a reference dataset: it creates a workflow order, populates it
+from the reference dataset, runs the agent on exactly the created tasks,
+snapshots the agent's output as a locked comparison dataset, and saves the
+comparison on your research plan — with clearly named artifacts at every step.
+
+See [Evaluating Agents from the CLI](../../reference/sdk/evaluating-agents-cli/)
+for details.
 
 
 ## Taxon Group Import/Export Performance
