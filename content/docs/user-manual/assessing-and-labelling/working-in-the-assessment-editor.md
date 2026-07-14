@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2026-07-03T08:00:00+00:00
+updated = 2026-07-14T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -88,10 +88,16 @@ Shadowed entities:
 
 You can still work with them:
 
-- **Reveal on hover.** Move your pointer over a hidden entity to temporarily reveal it and show its labels (a "Shadow entity" hint appears).
-- **Promote by clicking.** Click a revealed shadow entity to promote it back into the active set — it becomes fully visible, appears in the entities list, and will be saved on submit. This affects only the annotation you clicked; the entity's other annotations are untouched. To put a promoted entity back into the shadows, select it and press **Shift + S** (see below).
-  - If the annotation you promote carries a stable attribute value that differs from the entity's current value, Highlighter prompts you to either keep the entity's existing value or adopt the promoted one (so it does not create a conflict within the stability window). Where the entity has no value yet, the promoted value is adopted silently.
-- **Shadow selected entities manually.** Select one or more tracks and press **Shift + S** (or choose "Shadow selected" from the menu) to move them out of the active set yourself.
+- **Reveal on hover.** Move your pointer over a hidden entity to temporarily reveal it and show its labels.
+- **Promote by clicking.** Click a revealed shadow entity to promote its **whole entity** back into the active set — every annotation of that entity becomes fully visible, appears in the entities list, and will be saved on submit. (Promoting works on the whole entity so an object is never left split between the canvas and the shadow layer.) To put a promoted entity back into the shadows, select it and press **Shift + S** (see below).
+  - If the annotation you click carries a stable attribute value that differs from the entity's current value, Highlighter prompts you to either keep the entity's existing value or adopt the promoted one (so it does not create a conflict within the stability window). Where the entity has no value yet, the promoted value is adopted silently.
+- **Shadow the whole entity manually.** Shadowing any annotation shadows **every** annotation of its entity, so the object leaves the active set together. You can do this from several places:
+  - Select one or more tracks and press **Shift + S** (or choose "Shadow selected" from the menu).
+  - Click the shadow (eye-off) button in the attribute editor header, next to "Locate", while editing an annotation.
+  - Click the shadow button on an entity in the entities panel.
+
+  The two buttons ask you to confirm first, since they shadow the whole entity rather than the single annotation you started from.
+- **Works on any step.** Manual shadowing and unshadowing are deliberate actions you can take on **any** step, whether or not the step is configured to filter entities. (Step configuration only controls which entities are shadowed *automatically* when a case first loads.)
 
 Shadow classification is per session — it is recalculated each time the queue loads and is not persisted.
 
