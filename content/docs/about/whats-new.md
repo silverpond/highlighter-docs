@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2026-07-20T08:00:00+00:00
+updated = 2026-07-14T08:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -42,8 +42,8 @@ Assessment steps can now hide entities that aren't relevant to the task at hand,
 ### What's New
 
 - Administrators can enable **Shadow Entities** on a human assessment step and add **Key Attribute** rules that define which carried-over entities stay visible. Entities matching no rule are shadowed (hidden on the canvas, and left out of the entities list and timeline).
-- Assessors can **hover** to reveal a shadowed entity and **click** to promote its **whole entity** back into the active set. To shadow an entity, press **Shift + S**, use the shadow button in the attribute editor header, or use the shadow button on an entity in the entities panel — each shadows the whole entity, and manual shadowing works on any step.
-- Shadowed entities are kept on the case but are not saved on submit unless promoted.
+- Assessors can **hover** to reveal a shadowed entity, **click** to promote it back into the active set, and press **Shift + S** to shadow selected entities manually.
+- Shadowed entities are not saved on submit unless promoted — submitting drops them from the submission entirely, so they do not carry forward to later stages.
 
 See [Human Assessment Steps](../../user-manual/managing-workflows/human-assessment-steps/#shadow-entities) and [Work With Shadow Entities](../../user-manual/assessing-and-labelling/working-in-the-assessment-editor/#work-with-shadow-entities).
 
