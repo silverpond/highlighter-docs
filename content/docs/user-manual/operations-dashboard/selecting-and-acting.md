@@ -1,8 +1,8 @@
 +++
 title = "Selecting and acting on items"
-description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, or work through cases."
+description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and create, merge, or delete from it."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-07-13T08:00:00+00:00
+updated = 2026-07-14T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -49,6 +49,19 @@ them. A **survivor** is auto-selected (you can change it); annotations on the
 other entities are reassigned to the survivor, and the non-survivor entities are
 deleted. No entity is renamed. Because the non-survivors are removed, review the
 survivor choice before confirming the merge.
+
+## Delete selected records or entities
+
+Choose the **Records** or **Entities** type in **Selected Items**, then open
+**Delete** and choose **Selected records** or **Selected entities**. The command
+uses only the directly selected items of that type; items of another selected
+type are left alone.
+
+These Monitor Operations commands permanently delete the account-wide records
+or entities and their dependent data. Highlighter checks the complete selection
+before deleting it and asks for confirmation. If any selected item cannot be
+deleted, none of the batch is deleted and your selection remains available.
+Successful Monitor deletions cannot be undone.
 
 ## Cases
 
