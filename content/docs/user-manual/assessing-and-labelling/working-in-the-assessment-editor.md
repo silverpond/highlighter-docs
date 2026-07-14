@@ -73,8 +73,10 @@ The available actions depend on what is selected:
 - **Split view** is available for exactly two selected tracks from different files.
 - **Merge entities** combines directly selected entities by moving all of their tracks to one chosen survivor in the current assessment.
 - **Join** and **Union** retain their existing track operations and appear under the additional-actions menu when applicable.
+- **Selected files from submission** removes directly selected files from this submission. Tracks that exist only in those files are removed; tracks that continue in retained files are trimmed. If a removed track is the last holder of a stable entity value, you can preserve it on a surviving track before continuing.
+- **Selected entities** removes every annotation belonging to the directly selected entities from this submission.
 
-Destructive choices are grouped under **Delete** at the bottom of the panel. Each option shows the number of annotations and entities it will affect. Deletion still asks for confirmation and, when a stable entity value would otherwise be lost, lets you choose where to preserve that value.
+Destructive choices are grouped under **Delete** at the bottom of the panel. Each option shows the files, annotations, or entities it will affect. Deletion still asks for confirmation and, when a stable entity value would otherwise be lost, lets you choose where to preserve that value. Each confirmed action is one undo step.
 
 Assessment deletion changes the current submission: it removes annotations or
 removes a file from that submission. It does not permanently delete the
