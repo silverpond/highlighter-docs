@@ -2,7 +2,7 @@
 title = "Human Assessment Steps"
 description = "Configure human assessment steps in Highlighter AI, assign contributors, configure queue settings, and monitor task progress for manual review workflows."
 date = 2025-05-01T08:00:00+00:00
-updated = 2026-06-28T08:00:00+00:00
+updated = 2026-07-14T08:00:00+00:00
 draft = false
 weight = 40
 sort_by = "weight"
@@ -59,7 +59,7 @@ Rules combine with **OR** logic: an entity stays visible if it matches *at least
 
 The step details page shows a read-only summary of the configured key attribute rules.
 
-Assessors can reveal shadowed entities by hovering, promote them back into the active set by clicking, and manually shadow entities themselves — see [Work With Shadow Entities](../../assessing-and-labelling/working-in-the-assessment-editor/#work-with-shadow-entities).
+Assessors can reveal shadowed entities by hovering and promote a whole entity back into the active set by clicking — see [Work With Shadow Entities](../../assessing-and-labelling/working-in-the-assessment-editor/#work-with-shadow-entities). Assessors can also **manually** shadow or unshadow whole entities from the assessment editor; that works on any step regardless of this configuration, which only controls which entities are shadowed *automatically* when a case first loads.
 
 ## Assigning Contributors
 
