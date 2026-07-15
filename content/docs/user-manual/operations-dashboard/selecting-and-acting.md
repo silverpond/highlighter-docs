@@ -76,8 +76,10 @@ it under that entity, or **onto the panel's "Entities" header** to remove its
 parent and move it back to the top level. If the dragged entity is part of the
 current selection, the whole selection moves with it. Targets that can't
 accept the drop — the entities' current parent, or the header when they have
-no parent — show no drop highlight. After the move, the hierarchy tree expands
-to reveal the moved entities and scrolls them into view.
+no parent — show no drop highlight. While dragging, a label next to the cursor
+describes what the drop would do (for example *Move 2 entities under "Site A"*
+or *Remove parents*). After the move, the hierarchy tree expands to reveal the
+moved entities and scrolls them into view.
 
 To change or clear a single entity's parent instead, open its detail panel and
 edit the **Parent** field.
