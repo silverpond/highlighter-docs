@@ -28,7 +28,7 @@ Working in the Assessment Editor requires access to your tools
 The assessment editor tools are laid out across in the top toolbar.
 
 ### Use The Select Annotation Tool
-The most commonly used tool is the Select Annotation tool (shortcut key: 'q'). It shows a hand cursor: click and drag to move the canvas around. Click an annotation to select it — the cursor changes to a pointer when hovering over one. Shift-click adds or removes an annotation from the selection, and holding Shift while dragging draws a box that selects every annotation inside it.
+The most commonly used tool is the Select Annotation tool (shortcut key: 'q'). It shows a hand cursor: click and drag to move the canvas around. Click an annotation to select it — the cursor changes to a pointer when hovering over one. Shift-click adds or removes an annotation from the selection, and holding Shift while dragging draws a box that selects every annotation inside it. Holding Alt (Option on macOS) and dragging moves the selected annotation(s). While you hold Shift or Alt, a hint appears next to the cursor reminding you of the drag gesture it unlocks.
 
 ### Use The Annotation Tools
 The annotation tools are grouped into a dropdown. The first one is the Bounding Box Annotation tool (shortcut key: 'w'), allowing you to draw rectangles. Click once to start, move your mouse until you see the rectangle you want, then click again to stop.

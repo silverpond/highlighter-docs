@@ -2,7 +2,7 @@
 title = "Video Labelling Shortcuts, Tools and Tips"
 description = "Boost video annotation efficiency in Highlighter AI with essential keyboard shortcuts, navigation tools, and productivity tips to speed up labelling and streamline workflows."
 date = 2025-05-01T08:00:00+00:00
-updated = 2025-05-01T08:00:00+00:00
+updated = 2026-07-16T08:00:00+00:00
 draft = false
 weight = 40
 sort_by = "weight"
@@ -19,7 +19,7 @@ top = false
 See a summary of all keyboard shortcuts available in the Assessment Editor by typing **?** (Shift + /)
 
 ### Annotation Tool Shortcuts
-- **q**: Pointer/Selection tool
+- **q**: Select Annotation tool
 - **w**: Bounding Box tool
 - **e**: Polygon tool
 - **r**: Brush tool
@@ -27,6 +27,15 @@ See a summary of all keyboard shortcuts available in the Assessment Editor by ty
 - **y**: Line tool
 - **k**: Clone mode
 - **u**: Auto segment mode
+
+### Select Annotation Tool Mouse Gestures
+With the Select Annotation tool active, the mouse does the rest. The editor shows a hint next to the cursor while you hold Shift or Alt, reminding you of the drag gesture it unlocks:
+
+- **Drag**: Pan the canvas
+- **Click**: Select the annotation under the cursor (click empty space to clear the selection)
+- **Shift + Click**: Add or remove an annotation from the selection
+- **Shift + Drag**: Box-select every annotation inside the rectangle
+- **Alt/Option + Drag**: Move the selected annotation(s)
 
 ### Navigation
 - **Spacebar**: Play/pause video
