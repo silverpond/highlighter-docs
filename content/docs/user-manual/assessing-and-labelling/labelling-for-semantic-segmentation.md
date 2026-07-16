@@ -2,7 +2,7 @@
 title = "Labelling for Semantic Segmentation"
 description = "Use polygon and AI-assisted segmentation tools in Highlighter AI to create pixel-level annotations, ensuring accuracy and consistency for deep learning and computer vision workflows."
 date = 2023-09-26T08:00:00+00:00
-updated = 2023-09-26T08:00:00+00:00
+updated = 2026-07-16T08:00:00+00:00
 draft = false
 weight = 30
 sort_by = "weight"
@@ -40,7 +40,7 @@ When you first log in to Highlighter, you should see your assessment dashboard. 
 {{ resize_image(path="docs/user-manual/resources/auto-segment-tool.png", width=58, height=1, op="fit_width") }}
 2. A yellow box will appear. It shows where the AI is "looking", the area of the image that the auto-segment tool analyses to find objects. Pan and zoom to position the yellow box across the part of the image you want to find features within. **Note: To pan, click outside the bounds of the image.**
 3. Click a feature within the yellow box. The first time you do this, the AI will take some time to process that area, and the spinner will appear in the top toolbar. Once complete, it will then create a polygon matching the outlines of the feature. After that, if you don't move the yellow box, the following clicks will be much quicker. If you move the yellow box, the first click will take some time again.
-4. Continue clicking features within the yellow box. If you make a mistake or the tool doesn't find the feature you expect, hit the delete key to remove the polygon, or click the bin icon next to the highlighted Entity in the right panel. You may need to select the polygon you want to delete again - just change to the pointer tool, click the polygon, then delete it as described.
+4. Continue clicking features within the yellow box. If you make a mistake or the tool doesn't find the feature you expect, hit the delete key to remove the polygon, or click the bin icon next to the highlighted Entity in the right panel. You may need to select the polygon you want to delete again - just change to the Select Annotation tool, click the polygon, then delete it as described.
 
 {{ resize_image(path="docs/user-manual/resources/sam-important-points.png", width=720, height=1, op="fit_width") }}
 
