@@ -2,7 +2,7 @@
 title = "Video Labelling Shortcuts, Tools and Tips"
 description = "Boost video annotation efficiency in Highlighter AI with essential keyboard shortcuts, navigation tools, and productivity tips to speed up labelling and streamline workflows."
 date = 2025-05-01T08:00:00+00:00
-updated = 2026-07-14T08:00:00+00:00
+updated = 2026-07-20T08:00:00+00:00
 draft = false
 weight = 40
 sort_by = "weight"
@@ -19,7 +19,8 @@ top = false
 See a summary of all keyboard shortcuts available in the Assessment Editor by typing **?** (Shift + /)
 
 ### Annotation Tool Shortcuts
-- **q**: Pointer/Selection tool
+- **q**: Select Annotation tool
+- **h**: Pan tool
 - **w**: Bounding Box tool
 - **e**: Polygon tool
 - **r**: Brush tool

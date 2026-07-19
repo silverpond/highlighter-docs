@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2026-07-14T08:00:00+00:00
+updated = 2026-07-20T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -30,8 +30,10 @@ Working in the Assessment Editor requires access to your tools
 
 The assessment editor tools are laid out across in the top toolbar.
 
-### Use The Pointer Tool
-The most commonly used tool is the pointer tool (shortcut key: 'q'). This tool is used to move the canvas around.
+### Pan, Select, And Edit Annotations
+The Pan tool (shortcut key: 'h') is active when you open the editor. Drag the canvas to move around, or click an annotation to select it without opening its edit handles.
+
+Use the Select Annotation tool (shortcut key: 'q') when you want to select or edit geometry. Click an annotation to select it, or drag across the canvas to select every annotation intersecting the rectangle. Hold Shift while clicking or rectangle-selecting to add annotations to the current selection. Selected annotation geometry exposes handles for direct editing.
 
 ### Use The Annotation Tools
 The annotation tools are grouped into a dropdown. The first one is the Bounding Box Annotation tool (shortcut key: 'w'), allowing you to draw rectangles. Click once to start, move your mouse until you see the rectangle you want, then click again to stop.
