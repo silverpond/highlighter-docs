@@ -22,7 +22,7 @@ Working in the Assessment Editor requires access to your tools
 - <a href="#edit-stable-attributes">Edit Stable Attributes</a>
 - <a href="#work-with-shadow-entities">Work With Shadow Entities</a>
 - <a href="#jump-to-the-first-object">Jump To The First Object</a>
-- <a href="#select-annotations-and-delete-the-rest">Select Annotations And Delete The Rest</a>
+- <a href="#select-items-and-delete-the-rest">Select Items And Delete The Rest</a>
 - <a href="#set-annotation-view-options">Set Annotation View Options</a>
 - <a href="#show-and-hide-annotations-tracks">Show And Hide Annotations/Tracks</a>
 - <a href="#submit-assessments">Submit Assessments</a>
@@ -128,8 +128,9 @@ visible annotations hit by the box. Start the drag while holding Shift to add
 them while preserving selected files and entities. Shadow annotations are not
 included by box selection.
 
-The same **Selected Items** panel used in Monitor Operations appears whenever
-the selection is non-empty. It shows total and per-kind counts, lets you remove
+The same **Selected items** panel used in Monitor Operations appears whenever
+the selection is non-empty — except that a single selected annotation shows its
+attribute panel instead. It shows total and per-kind counts, lets you remove
 or open items, and presents the actions applicable to the direct file,
 annotation, and entity projections. In a completed/read-only assessment the
 selection and panel continue to work, but mutation actions are disabled.
@@ -137,9 +138,10 @@ selection and panel continue to work, but mutation actions are disabled.
 Once you have a selection, right-click anywhere on the canvas (or open the Edit menu in the top toolbar) and choose:
 
 - **Delete Other Annotations** — keeps only the selected annotations and deletes every other annotation.
-- **Delete Other Entities** — keeps every annotation belonging to the same entities as the selected annotations, and deletes the annotations of all other entities.
+- **Delete Other Entities** — keeps every annotation belonging to a selected entity or to the entity of a selected annotation, and deletes the annotations of all other entities.
 
-Both actions ask for confirmation before deleting. One Ctrl+Z restores the
+Both actions are greyed out when there is nothing they would delete, and ask
+for confirmation before deleting. One Ctrl+Z restores the
 whole deletion, including its selection and any stable values moved to surviving
 annotations. As with other edits, nothing is permanently removed until you
 submit the assessment.
