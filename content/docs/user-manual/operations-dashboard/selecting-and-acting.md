@@ -20,8 +20,8 @@ A single **click** on a record, entity, or data source selects and focuses it:
 it opens that item's detail panel on the right. Hold
 **Shift** while clicking map features, grid cards, or tree rows to add or remove
 an item without changing the focused detail. With the Select tool active, drag
-a box on the map to replace the selection with every record, entity, and data
-source inside it; hold Shift while starting the drag to add its results. Map
+a box on the map to select every record, entity, and data source inside it;
+hold Shift while starting the drag to add them to your existing selection. Map
 clusters remain navigation controls and are not selectable.
 
 Closing a detail panel clears only the focus and leaves the selection intact.
