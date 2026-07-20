@@ -137,10 +137,21 @@ or open items, and presents the actions applicable to the direct file,
 annotation, and entity projections. In a completed/read-only assessment the
 selection and panel continue to work, but mutation actions are disabled.
 
-Once you have a selection, right-click anywhere on the canvas (or open the Edit menu in the top toolbar) and choose:
+### Keep Only The Selected Annotations
 
-- **Delete Other Annotations** — keeps only the selected annotations and deletes every other annotation.
-- **Delete Other Entities** — keeps every annotation belonging to a selected entity or to the entity of a selected annotation, and deletes the annotations of all other entities.
+Select the annotations you want to keep, then right-click anywhere on the
+canvas (or open the Edit menu in the top toolbar) and choose **Delete Other
+Annotations**. Every annotation outside your selection is deleted — including
+any other annotations belonging to the same entities as the ones you kept.
+
+### Keep Only The Selected Entities
+
+To keep whole objects instead of individual annotations, make your selection
+and choose **Delete Other Entities** from the same right-click or Edit menu.
+Every entity you selected — plus the entity of each selected annotation — keeps
+all of its annotations, and the annotations of every other entity are deleted.
+Use this when you have selected only one view of an object but want to keep all
+of its views.
 
 Both actions are greyed out when there is nothing they would delete, and ask
 for confirmation before deleting. One Ctrl+Z restores the
