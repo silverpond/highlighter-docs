@@ -31,11 +31,11 @@ Working in the Assessment Editor requires access to your tools
 The assessment editor tools are laid out across in the top toolbar.
 
 ### Pan, Select, And Edit Annotations
-The Pan tool (shortcut key: 'h') is active when you open the editor. Drag the canvas to move around, or click an annotation to select it without opening its edit handles.
+The Pan tool (shortcut key: 'h') is active when you open the editor. Drag the canvas to move around, or click an annotation to select it without opening its edit handles. The canvas shows a hand cursor in Pan, changing to a pointer over annotations you can click.
 
 Use the Select Annotation tool (shortcut key: 'q') when you want to select or edit geometry. Click an annotation to select it, or drag across the canvas to select every annotation intersecting the rectangle. Hold Shift while clicking or rectangle-selecting to add annotations to the current selection. Selected annotation geometry exposes handles for direct editing.
 
-To move the canvas without leaving your current tool, hold Ctrl on Windows or Linux, or Command on macOS, while dragging. You can also drag with the middle mouse button. Temporary panning does not change the current selection or annotation geometry.
+To move the canvas without leaving your current tool, hold Ctrl on Windows or Linux, or Command on macOS, while dragging. You can also drag with the middle mouse button. While either temporary pan is engaged the cursor changes to the hand, and panning does not change the current selection or annotation geometry.
 
 ### Use The Annotation Tools
 The annotation tools are grouped into a dropdown. The first one is the Bounding Box Annotation tool (shortcut key: 'w'), allowing you to draw rectangles. Click once to start, move your mouse until you see the rectangle you want, then click again to stop.
