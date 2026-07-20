@@ -23,7 +23,7 @@ The assessment editor now supports selecting many items at once and deleting eve
 
 ### What Changed
 
-- **One selection, one panel**: files, annotations, and entities share a single selection, summarised in the same **Selected items** panel used in Monitor Operations.
+- **One selection, one panel**: files, annotations, and entities share a single selection, summarised in the same **Selected Items** panel used in the Operations Dashboard.
 - **Select and Pan tools**: with the Select tool active, drag out a box on the canvas to select the annotations it touches, replacing the current selection; hold Shift while starting the drag to add to it instead. Panning the canvas is now the separate Pan tool (the default).
 - **Right-click menu**: right-clicking the canvas opens a context menu with two bulk actions, also available from the Edit menu:
   - **Delete Other Annotations** keeps only the selected annotations.

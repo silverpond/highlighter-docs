@@ -125,14 +125,14 @@ from the Data Sources panel or the heading of the file you are viewing,
 annotations from the canvas, the timeline, the entity list, or the
 similar-tracks window, and entities from the entity list or tree.
 
-To select many annotations at once, use the Select tool to drag a box around
+To select many annotations at once, use the Select Annotation tool to drag a box around
 them — every visible annotation the box touches becomes your new selection.
 Hold Shift as you start the drag to add them to what you already have; files
 and entities you selected earlier stay selected. Annotations hidden as
 [shadows](#work-with-shadow-entities) are never picked up by a box.
 
-While you have items selected, the **Selected items** panel opens on the right
-— the same panel used in Monitor Operations. (The one exception is a single
+While you have items selected, the **Selected Items** panel opens on the right
+— the same panel used in the Operations Dashboard. (The one exception is a single
 selected annotation, which shows its attribute panel instead.) The panel counts
 what you have selected, lets you jump to or remove individual items, clear the
 selection, and run the actions that apply to the selected files, annotations,
