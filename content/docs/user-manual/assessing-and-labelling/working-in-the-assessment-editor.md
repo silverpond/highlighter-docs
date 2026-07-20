@@ -125,17 +125,19 @@ from the Data Sources panel or the heading of the file you are viewing,
 annotations from the canvas, the timeline, the entity list, or the
 similar-tracks window, and entities from the entity list or tree.
 
-With the Select tool active, plain dragging replaces the selection with the
-visible annotations hit by the box. Start the drag while holding Shift to add
-them while preserving selected files and entities. Shadow annotations are not
-included by box selection.
+To select many annotations at once, use the Select tool to drag a box around
+them — every visible annotation the box touches becomes your new selection.
+Hold Shift as you start the drag to add them to what you already have; files
+and entities you selected earlier stay selected. Annotations hidden as
+[shadows](#work-with-shadow-entities) are never picked up by a box.
 
-The same **Selected items** panel used in Monitor Operations appears whenever
-the selection is non-empty — except that a single selected annotation shows its
-attribute panel instead. It shows total and per-kind counts, lets you remove
-or open items, and presents the actions applicable to the direct file,
-annotation, and entity projections. In a completed/read-only assessment the
-selection and panel continue to work, but mutation actions are disabled.
+While you have items selected, the **Selected items** panel opens on the right
+— the same panel used in Monitor Operations. (The one exception is a single
+selected annotation, which shows its attribute panel instead.) The panel counts
+what you have selected, lets you jump to or remove individual items, clear the
+selection, and run the actions that apply to the selected files, annotations,
+or entities. In a completed assessment you can still select and inspect items,
+but actions that would change the submission are disabled.
 
 ### Keep Only The Selected Annotations
 
@@ -153,13 +155,20 @@ all of its annotations, and the annotations of every other entity are deleted.
 Use this when you have selected only one view of an object but want to keep all
 of its views.
 
-Both actions are greyed out when there is nothing they would delete, and ask
-for confirmation before deleting. One Ctrl+Z restores the
-whole deletion, including its selection and any stable values moved to surviving
-annotations. As with other edits, nothing is permanently removed until you
-submit the assessment.
+Both actions ask you to confirm before deleting anything, and are greyed out
+when there is nothing for them to delete. If you change your mind, a single
+Ctrl+Z brings everything back — the deleted annotations, your selection, and
+any values that were moved. As with other edits, nothing is permanently removed
+until you submit the assessment.
 
-Deleting annotations (through these actions, the Delete key, or the trash button in the entities panel) can strand an entity-level value: an attribute that is stable for the entity, where every annotation holding its value is being deleted while the entity keeps other annotations. When that would happen, the confirmation dialog lists each at-risk value with a checkbox and a picker — tick the values you want to keep and choose which surviving annotation to move each one onto. Unticked values are deleted along with their annotations.
+Deleting annotations — whether with these actions, the Delete key, or the trash
+button in the entities panel — can sometimes take an entity's recorded value
+with it. For example, a [stable attribute](#edit-stable-attributes) like a
+condition may have been set on the one annotation you are deleting, even though
+the entity keeps its other annotations. When that would happen, the
+confirmation dialog lists each value at risk. Keep a value ticked and choose
+which of the remaining annotations should carry it, and Highlighter moves it
+there; untick it to let the value be deleted along with its annotation.
 
 ## Set Annotation View Options
 Set annotation view options by clicking the View menu in the top toolbar, then clicking 'Annotation'. You will see a menu of options which you can toggle on or off.
