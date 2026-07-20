@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2026-07-14T08:00:00+00:00
+updated = 2026-07-20T08:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -14,6 +14,24 @@ toc = true
 top = false
 +++
 
+
+## Box-Select and Bulk Delete in the Assessment Editor
+
+**Release Date:** July 2026
+
+The assessment editor now supports selecting many items at once and deleting everything else in a couple of clicks.
+
+### What Changed
+
+- **One selection, one panel**: files, annotations, and entities share a single selection, summarised in the same **Selected Items** panel used in the Operations Dashboard.
+- **Select and Pan tools**: with the Select tool active, drag out a box on the canvas to select the annotations it touches, replacing the current selection; hold Shift while starting the drag to add to it instead. Panning the canvas is now the separate Pan tool (the default).
+- **Right-click menu**: right-clicking the canvas opens a context menu with two bulk actions, also available from the Edit menu:
+  - **Delete Other Annotations** keeps only the selected annotations.
+  - **Delete Other Entities** keeps every annotation belonging to the same entities as the selection.
+
+Both actions ask for confirmation and are undone by a single Ctrl+Z, and nothing is permanently removed until the assessment is submitted. See [Working in the Assessment Editor](/docs/user-manual/assessing-and-labelling/working-in-the-assessment-editor/#select-items-and-delete-the-rest) for details.
+
+Deletions also now protect entity-level values: when a deletion would remove every annotation holding a stable attribute value while its entity survives, the confirmation lists each at-risk value so you can keep it by moving it onto a surviving annotation of your choice.
 
 ## Shadow Entities in the Assessment Editor
 

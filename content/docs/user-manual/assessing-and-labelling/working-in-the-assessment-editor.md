@@ -22,6 +22,7 @@ Working in the Assessment Editor requires access to your tools
 - <a href="#edit-stable-attributes">Edit Stable Attributes</a>
 - <a href="#work-with-shadow-entities">Work With Shadow Entities</a>
 - <a href="#jump-to-the-first-object">Jump To The First Object</a>
+- <a href="#select-items-and-delete-the-rest">Select Items And Delete The Rest</a>
 - <a href="#set-annotation-view-options">Set Annotation View Options</a>
 - <a href="#show-and-hide-annotations-tracks">Show And Hide Annotations/Tracks</a>
 - <a href="#submit-assessments">Submit Assessments</a>
@@ -33,7 +34,7 @@ The assessment editor tools are laid out across in the top toolbar.
 ### Pan, Select, And Edit Annotations
 The Pan tool (shortcut key: 'h') is active when you open the editor. Drag the canvas to move around, or click an annotation to select it without opening its edit handles. The canvas shows a hand cursor in Pan, changing to a pointer over annotations you can click.
 
-Use the Select Annotation tool (shortcut key: 'q') when you want to select or edit geometry. Click an annotation to select it, or drag across the canvas to select every annotation intersecting the rectangle. Hold Shift while clicking or rectangle-selecting to add annotations to the current selection. Selected annotation geometry exposes handles for direct editing.
+Use the Select Annotation tool (shortcut key: 'q') when you want to select or edit geometry. Click an annotation to select it, or drag across the canvas to select every annotation intersecting the rectangle. Hold Shift while clicking or rectangle-selecting to add annotations to the current selection. Selected annotation geometry exposes handles for direct editing. In an editable assessment, hold Alt/Option while dragging selected annotations to move them.
 
 To move the canvas without leaving your current tool, hold Ctrl on Windows or Linux, or Command on macOS, while dragging. You can also drag with the middle mouse button. While either temporary pan is engaged the cursor changes to the hand, and panning does not change the current selection or annotation geometry.
 
@@ -113,6 +114,61 @@ When you open a case, the editor jumps playback to the start of the **first iden
 - **In a queue, this is on by default.** While assessing through a queue, you land on the first object automatically. To turn it off — for example, to always start at the beginning of the data — add `jump_to_first_track=false` to the URL.
 - **Outside a queue, it is opt-in.** When you open a case directly (a deep link with `case_id`), playback starts at the beginning of the data unless you add `jump_to_first_track=true` to the URL.
 - **An explicit start time always wins.** If the URL already specifies a position with `at_time=`, the editor seeks there and does not jump to the first object.
+
+## Select Items And Delete The Rest
+You can select more than one thing at a time, and mix files, annotations, and
+entities in a single selection. Clicking an item starts a fresh selection with
+just that item. Hold **Shift** while clicking to add items to the selection —
+or remove ones you have already picked — without losing your place: the file
+you have open and the annotation you are editing stay as they are. Select files
+from the Data Sources panel or the heading of the file you are viewing,
+annotations from the canvas, the timeline, the entity list, or the
+similar-tracks window, and entities from the entity list or tree.
+
+To select many annotations at once, use the Select Annotation tool to drag a box around
+them — every visible annotation the box touches becomes your new selection.
+Hold Shift as you start the drag to add them to what you already have; files
+and entities you selected earlier stay selected. Annotations hidden as
+[shadows](#work-with-shadow-entities) are never picked up by a box.
+
+While you have items selected, the **Selected Items** panel opens on the right
+— the same panel used in the Operations Dashboard. (The one exception is a single
+selected annotation, which shows its attribute panel instead.) The panel counts
+what you have selected, lets you jump to or remove individual items, clear the
+selection, and run the actions that apply to the selected files, annotations,
+or entities. In a completed assessment you can still select and inspect items,
+but actions that would change the submission are disabled.
+
+### Keep Only The Selected Annotations
+
+Select the annotations you want to keep, then right-click anywhere on the
+canvas (or open the Edit menu in the top toolbar) and choose **Delete Other
+Annotations**. Every annotation outside your selection is deleted — including
+any other annotations belonging to the same entities as the ones you kept.
+
+### Keep Only The Selected Entities
+
+To keep whole objects instead of individual annotations, make your selection
+and choose **Delete Other Entities** from the same right-click or Edit menu.
+Every entity you selected — plus the entity of each selected annotation — keeps
+all of its annotations, and the annotations of every other entity are deleted.
+Use this when you have selected only one view of an object but want to keep all
+of its views.
+
+Both actions ask you to confirm before deleting anything, and are greyed out
+when there is nothing for them to delete. If you change your mind, a single
+Ctrl+Z brings everything back — the deleted annotations, your selection, and
+any values that were moved. As with other edits, nothing is permanently removed
+until you submit the assessment.
+
+Deleting annotations — whether with these actions, the Delete key, or the trash
+button in the entities panel — can sometimes take an entity's recorded value
+with it. For example, a [stable attribute](#edit-stable-attributes) like a
+condition may have been set on the one annotation you are deleting, even though
+the entity keeps its other annotations. When that would happen, the
+confirmation dialog lists each value at risk. Keep a value ticked and choose
+which of the remaining annotations should carry it, and Highlighter moves it
+there; untick it to let the value be deleted along with its annotation.
 
 ## Set Annotation View Options
 Set annotation view options by clicking the View menu in the top toolbar, then clicking 'Annotation'. You will see a menu of options which you can toggle on or off.
