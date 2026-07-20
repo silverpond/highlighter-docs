@@ -35,6 +35,8 @@ The Pan tool (shortcut key: 'h') is active when you open the editor. Drag the ca
 
 Use the Select Annotation tool (shortcut key: 'q') when you want to select or edit geometry. Click an annotation to select it, or drag across the canvas to select every annotation intersecting the rectangle. Hold Shift while clicking or rectangle-selecting to add annotations to the current selection. Selected annotation geometry exposes handles for direct editing.
 
+To move the canvas without leaving your current tool, hold Ctrl on Windows or Linux, or Command on macOS, while dragging. You can also drag with the middle mouse button. Temporary panning does not change the current selection or annotation geometry.
+
 ### Use The Annotation Tools
 The annotation tools are grouped into a dropdown. The first one is the Bounding Box Annotation tool (shortcut key: 'w'), allowing you to draw rectangles. Click once to start, move your mouse until you see the rectangle you want, then click again to stop.
 

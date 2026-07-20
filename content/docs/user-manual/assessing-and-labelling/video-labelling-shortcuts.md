@@ -31,6 +31,8 @@ See a summary of all keyboard shortcuts available in the Assessment Editor by ty
 
 ### Navigation
 - **Spacebar**: Play/pause video
+- **Ctrl + drag** (Windows/Linux) or **Command + drag** (macOS): Temporarily pan from any annotation tool
+- **Middle-button drag**: Temporarily pan from any annotation tool
 - **Left/Right arrows**: Frame-by-frame navigation
 - **Shift + Left/Right**: Jump 1 second
 - **Alt + Left/Right**: Jump to previous/next marker
