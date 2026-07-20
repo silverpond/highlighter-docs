@@ -17,7 +17,7 @@ top = false
 ## Focusing versus selecting
 
 A single **click** on a record, entity, or data source selects and focuses it:
-it replaces the selection and opens that item's detail panel on the right. Hold
+it opens that item's detail panel on the right. Hold
 **Shift** while clicking map features, grid cards, or tree rows to add or remove
 an item without changing the focused detail. With the Select tool active, drag
 a box on the map to replace the selection with every record, entity, and data
