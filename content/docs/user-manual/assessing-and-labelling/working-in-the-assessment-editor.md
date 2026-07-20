@@ -116,12 +116,14 @@ When you open a case, the editor jumps playback to the start of the **first iden
 - **An explicit start time always wins.** If the URL already specifies a position with `at_time=`, the editor seeks there and does not jump to the first object.
 
 ## Select Items And Delete The Rest
-Assessment has one selection containing files, annotations, and entities. Click
-an item to replace the selection. Hold **Shift** while clicking to add or remove
-that item without changing the open file or active annotation editor. Files can
-be selected from Data Sources or the current-file heading; annotations from the
-canvas, timeline, entity list, or similar-tracks window; and entities from the
-entity list or tree.
+You can select more than one thing at a time, and mix files, annotations, and
+entities in a single selection. Clicking an item starts a fresh selection with
+just that item. Hold **Shift** while clicking to add items to the selection —
+or remove ones you have already picked — without losing your place: the file
+you have open and the annotation you are editing stay as they are. Select files
+from the Data Sources panel or the heading of the file you are viewing,
+annotations from the canvas, the timeline, the entity list, or the
+similar-tracks window, and entities from the entity list or tree.
 
 With the Select tool active, plain dragging replaces the selection with the
 visible annotations hit by the box. Start the drag while holding Shift to add
