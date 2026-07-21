@@ -2,7 +2,7 @@
 title = "Selecting and acting on items"
 description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, or work through cases."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-07-14T08:00:00+00:00
+updated = 2026-07-21T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -26,6 +26,12 @@ clusters remain navigation controls and are not selectable.
 
 Closing a detail panel clears only the focus and leaves the selection intact.
 Press **Escape** when no selection drag is active to clear the selection.
+
+A selection holds at most 500 items. A drag that would take you past that is
+refused whole — your existing selection stays as it was, and a message tells you
+how many items the drag covered. Zoom in or drag a smaller area to stay under
+the limit. Nothing is silently dropped, so what the panel lists is always
+exactly what you selected.
 
 When more than one item is selected, the **Selected Items** panel appears on the
 right. It lists every kind in selection order, shows per-kind counts, and lets
