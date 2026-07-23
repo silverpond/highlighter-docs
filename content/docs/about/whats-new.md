@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-07-23T08:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -13,6 +13,24 @@ lead = "Stay informed about the latest features, enhancements, and improvements 
 toc = true
 top = false
 +++
+
+## Highlighter Appliance Registration
+
+**Release Date:** July 2026
+
+Highlighter Appliances can now register with Highlighter Cloud without a
+manually copied user API token. A technician starts registration on the
+appliance, while an account administrator verifies a short comparison value,
+reviews the proposed Device and streams, and approves the connection in the
+browser.
+
+The new **Develop → Media → Appliances** pages keep registration, credential,
+and operational health separate. They also show when an appliance is waiting
+for its first report and provide detailed heartbeat, MediaMTX, signalling,
+storage, and per-source progress.
+
+See [Register a Highlighter Appliance](/docs/user-manual/data-management/registering-an-appliance/)
+for the complete setup and recovery workflow.
 
 
 ## Taxon Group Import/Export Performance
