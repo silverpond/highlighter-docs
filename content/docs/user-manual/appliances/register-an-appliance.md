@@ -1,21 +1,24 @@
 +++
 title = "Register an Appliance"
-description = "Approve an appliance, map its video channels, and manage its credential"
+description = "Approve one appliance and connect its video channel to Highlighter Cloud"
+date = 2026-07-24T08:00:00+00:00
+updated = 2026-07-24T08:00:00+00:00
 weight = 10
 draft = false
 +++
 
 An account administrator must approve each appliance before it can report to
-Highlighter Cloud. Registration creates a Device and the selected Data Sources
-in your account. The appliance keeps its enrollment key and Cloud credential
-locally; you do not need to copy either value.
+Highlighter Cloud. The proof of concept supports one new appliance with one
+video channel. Registration creates one Device and one Data Source in your
+account. The appliance keeps its enrollment key and Cloud credential locally;
+you do not need to copy either value.
 
 ## Before you begin
 
 Check that:
 
 - the appliance can reach your Highlighter Cloud URL over HTTPS;
-- its video channels and playback address are configured; and
+- exactly one video camera and its playback address are configured;
 - you can sign in to Highlighter as an account administrator.
 
 ## Register
@@ -33,8 +36,9 @@ phrase. Leave it running while you complete approval.
 2. Enter the short code if the URL did not fill it in.
 3. Confirm that the comparison phrase in the browser exactly matches the
    phrase shown by the appliance.
-4. Review the proposed Device name, placement, timezone, and playback address.
-5. Select the video channels to create or map to existing Data Sources.
+4. Review the hostname, video channel, playback address, and enrollment-key
+   thumbprint.
+5. Enter the Device and Data Source names.
 6. Approve the registration.
 
 The appliance proves possession of its enrollment key, installs its Cloud
@@ -51,31 +55,17 @@ sudo highlighter-appliance status
 ```
 
 A healthy registration reports an active credential and Cloud authentication
-as `ok`. In Highlighter, open **Appliances** to view the Device, selected Data
-Sources, credential state, and last contact time.
+as `ok`. In Highlighter, open **Data Sources** to see the new video source and
+**Operations** to see the appliance heartbeat.
 
 The same persisted identity and credential are reused after a restart; browser
 approval is not repeated.
 
-## Rotate the credential
+## POC limitations
 
-To replace the runtime credential without interrupting authentication, run:
-
-```console
-sudo highlighter-appliance credentials rotate
-```
-
-The appliance installs the replacement and restarts its monitor. Cloud keeps
-the previous credential valid until it receives a heartbeat authenticated by
-the replacement and the appliance acknowledges the change. Retrying the command
-after a network interruption resumes the same rotation.
-
-## Local recovery commands
-
-`sudo highlighter-appliance credentials clear` removes the credential and
-enrollment key while retaining the installation identity and manifest. Use it
-only when following a reconnect or credential-loss recovery procedure.
-
-`sudo highlighter-appliance factory-reset --yes` removes all local appliance
-identity. It is destructive and requires a new administrator-approved
-registration.
+This proof of concept does not provide credential rotation, reconnect, reset,
+existing-Device adoption, multiple channels, or an appliance management page.
+Do not delete files from `/var/lib/highlighter-appliance`: rerunning `register`
+does not recover or replace a lost registration. Contact the appliance
+engineering team if local registration state is damaged or the credential must
+be replaced.
