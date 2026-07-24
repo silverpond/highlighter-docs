@@ -43,8 +43,7 @@ phrase. Leave it running while you complete approval.
 
 The appliance proves possession of its enrollment key, installs its Cloud
 credential and manifest, and verifies the credential against Cloud. Its monitor
-then begins reporting a heartbeat. If you deny the request or the code expires,
-run the registration command again to receive a new code.
+then begins reporting a heartbeat.
 
 ## Check registration
 
