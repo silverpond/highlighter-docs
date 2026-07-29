@@ -2,7 +2,7 @@
 title = "Selecting and acting on items"
 description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, edit or reparent entities, or work through cases."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-07-21T08:00:00+00:00
+updated = 2026-07-29T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
