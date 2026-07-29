@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2026-07-14T08:00:00+00:00
+updated = 2026-07-29T08:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"

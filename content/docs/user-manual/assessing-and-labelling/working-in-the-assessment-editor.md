@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2026-07-14T08:00:00+00:00
+updated = 2026-07-29T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
