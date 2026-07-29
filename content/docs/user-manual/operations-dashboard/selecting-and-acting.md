@@ -1,8 +1,8 @@
 +++
 title = "Selecting and acting on items"
-description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, or work through cases."
+description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, edit or reparent entities, or work through cases."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-07-21T08:00:00+00:00
+updated = 2026-07-29T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -62,6 +62,27 @@ them. A **survivor** is auto-selected (you can change it); annotations on the
 other entities are reassigned to the survivor, and the non-survivor entities are
 deleted. No entity is renamed. Because the non-survivors are removed, review the
 survivor choice before confirming the merge.
+
+## Assign a parent entity
+
+Entities can be organised into a hierarchy — for example, poles grouped under a
+site. With one or more entities selected, **Edit entities** opens a dialog
+whose **Parent entity** field moves every selected entity under the chosen
+parent. An entity that already has a parent is moved under the new one,
+together with its own descendants.
+
+You can also **drag a row in the hierarchy tree onto another entity** to move
+it under that entity, or **onto the panel's "Entities" header** to remove its
+parent and move it back to the top level. If the dragged entity is part of the
+current selection, the whole selection moves with it. Targets that can't
+accept the drop — the entities' current parent, or the header when they have
+no parent — show no drop highlight. While dragging, a label next to the cursor
+describes what the drop would do (for example *Move 2 entities under "Site A"*
+or *Remove parents*). After the move, the hierarchy tree expands to reveal the
+moved entities and scrolls them into view.
+
+To change or clear a single entity's parent instead, open its detail panel and
+edit the **Parent** field.
 
 ## Cases
 
