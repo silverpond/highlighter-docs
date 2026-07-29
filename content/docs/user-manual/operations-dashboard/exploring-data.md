@@ -2,7 +2,7 @@
 title = "Finding the data you need"
 description = "Narrow what the Operations Dashboard shows using scopes, a date range and timeline, search filters, saved-query layers, and map viewport filters."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-06-19T08:00:00+00:00
+updated = 2026-07-27T08:00:00+00:00
 draft = false
 weight = 3
 sort_by = "weight"
@@ -41,6 +41,16 @@ The **search** bar builds filter pills that narrow results by taxonomy and
 attributes — for example `class:` to match an object class or `condition:` to
 match an attribute condition. Typing in the search bar also filters the entity
 **Hierarchy** panel.
+
+### Jump to a case
+
+Paste a **case ID** (such as `cse_…`) into the search bar to go straight to that
+case. Highlighter looks it up and shows the matching case with two actions:
+
+- **Open in Assessment Editor** — open the case for assessing or labelling.
+- **Show related records and entities** — filter the dashboard to that case,
+  re-centre the map on the case's subject entity, and open that entity's
+  [detail panel](../selecting-and-acting/#detail-panels) on the right.
 
 ## Layers
 
