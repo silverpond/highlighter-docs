@@ -2,7 +2,7 @@
 title = "Train an ML Capability"
 description = "Train an ML capability in Highlighter AI, set up capability inputs/outputs, create snapshot datasets, configure and schedule training runs, inspect metrics, and deploy models efficiently."
 date = 2024-03-15T08:00:00+00:00
-updated = 2024-03-15T08:00:00+00:00
+updated = 2026-07-29T08:00:00+00:00
 draft = false
 weight = 300
 sort_by = "weight"
@@ -86,7 +86,8 @@ The steps are as follows:
     - Dev: Holdout set used to compute the metrics during training
     - Test: [Optional] Additional holdout set typically used to compute metrics for academic reporting.
 4. Select the **Model Template**
-5. Apply overrides
+5. Choose a **Trainer Config File** when a preset is available. The preset's original YAML or JSON text is loaded into **Trainer Config**.
+6. Edit **Trainer Config** as free text. Highlighter saves the text exactly as entered, so it can contain the format required by the selected trainer.
 
 
 ## Schedule training
@@ -100,6 +101,5 @@ The steps are as follows:
 ## Inspect training metrics
 
 ## Deploy the capability
-
 
 
