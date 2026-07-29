@@ -49,7 +49,7 @@ case. Highlighter looks it up and shows the matching case with two actions:
 
 - **Open in Assessment Editor** — open the case for assessing or labelling.
 - **Show related records and entities** — filter the dashboard to that case,
-  recentre the map on the case's subject entity, and open that entity's
+  re-centre the map on the case's subject entity, and open that entity's
   [detail panel](../selecting-and-acting/#detail-panels) on the right.
 
 ## Layers
