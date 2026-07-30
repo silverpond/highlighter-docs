@@ -2,7 +2,7 @@
 title = "Managing Workflow Orders"
 description = "Approve or return Workflow Orders to draft, mark Cases ready or draft, and duplicate an existing Order in Highlighter AI."
 date = 2026-07-28T08:00:00+00:00
-updated = 2026-07-28T08:00:00+00:00
+updated = 2026-07-30T08:00:00+00:00
 draft = false
 weight = 12
 sort_by = "weight"
@@ -49,6 +49,6 @@ You can duplicate an Order from either place:
 - the **Orders** tab of the Workflow — click the **Duplicate** button on the Order's row, or
 - the Order's page — click the **Duplicate** button in the header.
 
-The new Order is created as a **draft** and unlocked, carrying the original's configuration (Original Source URL filter, case-matching strategy, radius, planned start) along with its associated task definitions and permissions. Every Case is copied as a **draft** Case holding the same data files as its original, via a fresh, unassessed submission — no prior assessment data or annotations are carried over. Cancelled or failed Cases are not copied. The copy is named `Copy of <name>`, with a number appended if that name is already taken.
+The new Order is created as a **draft** and unlocked, carrying the original's configuration (Original Source URL filter, case-matching strategy, radius, planned start) along with its associated task definitions and permissions. Every Case is copied as a **draft** Case — regardless of the original Case's state — holding the same data files as its original, via a fresh, unassessed submission. No prior assessment data or annotations are carried over. The copy is named `Copy of <name>`, with a number appended if that name is already taken.
 
 The copy's Cases are populated in the background, so the new Order may briefly show no Cases immediately after you duplicate it — refresh the page to see them appear. Because the copy starts in draft, nothing is processed until you approve the Order and mark its Cases ready.
