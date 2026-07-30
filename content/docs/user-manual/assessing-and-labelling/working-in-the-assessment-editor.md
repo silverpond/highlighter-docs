@@ -53,9 +53,9 @@ All tools allow you to zoom in and out using the scroll wheel of your mouse. You
 
 ## Navigate The Time Period
 
-The timeline bar at the bottom of the editor shows the current time period as a start and end time. Click either time to open the Time Range dialog and type specific datetimes, or use the chevron buttons beside the times to step back (`‹`) or forward (`›`) by one whole period. Each click shifts the window by its own duration (keeping periods contiguous) and reloads the tracks for the new window.
+The timeline bar at the bottom of the editor shows the current time period as a start and end time. Click either time to open the Time Range dialog and type specific dates and times, or use the chevron buttons beside the times to step back ('‹') or forward ('›') by one whole period. Each click shifts the window by its own duration (keeping periods contiguous) and reloads the tracks for the new window.
 
-In Live mode the `›` (next) button is disabled, since there is nothing after "now"; clicking `‹` (previous) exits Live mode and steps back to the previous period.
+In Live mode, the '›' (next) button is disabled, since there is nothing after "now"; clicking '‹' (previous) exits Live mode and steps back to the previous period.
 
 ## Access The File List
 Access the list of currently loaded files in your case by clicking the little pull-out arrow at the left of the screen. Once open, click the little pull-in arrow to close again. This can also be toggled using shortcut key 'l'.
