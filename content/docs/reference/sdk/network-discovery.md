@@ -2,7 +2,7 @@
 title = "Network Device Discovery"
 description = "Discover IP cameras and devices on your network using mDNS/Bonjour with the Highlighter SDK"
 date = 2025-12-17T08:00:00+00:00
-updated = 2025-12-17T08:00:00+00:00
+updated = 2026-07-31T08:00:00+00:00
 draft = false
 weight = 50
 sort_by = "weight"
@@ -58,6 +58,51 @@ hl datasource discover find --serial GB2148455
 # Batch lookup multiple cameras and save to CSV
 hl datasource discover batch --file macs.txt --output cameras.csv
 ```
+
+## Compare Cloud Devices with the Local Network
+
+Use `hl device discover compare` to compare the device entities in Highlighter
+Cloud with devices discovered on the local network. The command matches devices
+by MAC address, falling back to serial number when available.
+
+```bash
+# Show a table of all cloud and local devices
+hl device discover compare
+
+# Export machine-readable results
+hl device discover compare --format json > device-inventory.json
+hl device discover compare --format csv > device-inventory.csv
+```
+
+By default, the comparison also:
+
+- Checks whether each mDNS hostname resolves to the advertised IP address.
+- Probes bounded, directly connected IPv4 subnets to find known cloud MAC
+  addresses that did not advertise through mDNS.
+- Queries MediaMTX for the upstream source URL and recent recording/liveness
+  status when a MediaMTX playback URL is configured.
+
+The table and structured output report whether a device is online through mDNS
+or ARP, was not detected, or could not be determined. Use these options to
+control network activity and filtering:
+
+```bash
+# Skip active subnet probing and only use mDNS results
+hl device discover compare --no-probe-subnets
+
+# Skip MediaMTX liveness checks while retaining source URL lookup
+hl device discover compare --no-probe-mediamtx
+
+# Show only cloud devices missing from the local network
+hl device discover compare --show missing-local
+
+# Exit non-zero if a MAC conflict or ambiguous match is found
+hl device discover compare --strict
+```
+
+Active subnet discovery is limited to directly connected IPv4 networks with at
+most 1024 hosts by default. Change the limit with `--max-subnet-hosts`, or use
+`--no-probe-subnets` on networks where active probing is not appropriate.
 
 ## Command Reference
 
