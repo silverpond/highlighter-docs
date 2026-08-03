@@ -2,7 +2,7 @@
 title = "Network Device Discovery"
 description = "Discover IP cameras and devices on your network using mDNS/Bonjour with the Highlighter SDK"
 date = 2025-12-17T08:00:00+00:00
-updated = 2026-07-31T08:00:00+00:00
+updated = 2026-08-03T08:00:00+00:00
 draft = false
 weight = 50
 sort_by = "weight"
@@ -77,20 +77,25 @@ hl device discover compare --format csv > device-inventory.csv
 By default, the comparison also:
 
 - Checks whether each mDNS hostname resolves to the advertised IP address.
-- Probes bounded, directly connected IPv4 subnets to find known cloud MAC
-  addresses that did not advertise through mDNS.
 - Queries MediaMTX for the upstream source URL and recent recording/liveness
   status when a MediaMTX playback URL is configured.
+
+Active subnet probing is opt-in. Add `--probe-subnets` to find known cloud MAC
+addresses that did not advertise through mDNS by probing bounded, directly
+connected IPv4 subnets. The scan is limited to 1024 hosts by default.
 
 The table and structured output report whether a device is online through mDNS
 or ARP, was not detected, or could not be determined. Use these options to
 control network activity and filtering:
 
 ```bash
-# Skip active subnet probing and only use mDNS results
+# Recover known cloud cameras that did not advertise through mDNS
+hl device discover compare --probe-subnets
+
+# Skip active subnet probing explicitly
 hl device discover compare --no-probe-subnets
 
-# Skip MediaMTX liveness checks while retaining source URL lookup
+# Skip both MediaMTX source lookup and liveness checks
 hl device discover compare --no-probe-mediamtx
 
 # Show only cloud devices missing from the local network
@@ -100,9 +105,13 @@ hl device discover compare --show missing-local
 hl device discover compare --strict
 ```
 
-Active subnet discovery is limited to directly connected IPv4 networks with at
-most 1024 hosts by default. Change the limit with `--max-subnet-hosts`, or use
-`--no-probe-subnets` on networks where active probing is not appropriate.
+Change the subnet limit with `--max-subnet-hosts`. The neighbor-table settle
+wait is one second by default and can be changed with
+`--mac-discovery-settle-seconds`.
+
+JSON and CSV output includes the descriptive `hl_cloud_rtsp_url` and
+`hl_cloud_playback` fields. The earlier `rtsp_urls` and `mediamtx_urls` names
+remain available as compatibility aliases.
 
 ## Command Reference
 
