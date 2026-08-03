@@ -2,7 +2,7 @@
 title = "Network Device Discovery"
 description = "Discover IP cameras and devices on your network using mDNS/Bonjour with the Highlighter SDK"
 date = 2025-12-17T08:00:00+00:00
-updated = 2026-08-03T08:00:00+00:00
+updated = 2026-08-04T08:00:00+00:00
 draft = false
 weight = 50
 sort_by = "weight"
@@ -98,6 +98,9 @@ hl device discover compare --no-probe-subnets
 # Skip both MediaMTX source lookup and liveness checks
 hl device discover compare --no-probe-mediamtx
 
+# Skip the extra 30-day recording-history request for idle paths
+hl device discover compare --no-mediamtx-history
+
 # Show only cloud devices missing from the local network
 hl device discover compare --show missing-local
 
@@ -109,9 +112,10 @@ Change the subnet limit with `--max-subnet-hosts`. The neighbor-table settle
 wait is one second by default and can be changed with
 `--mac-discovery-settle-seconds`.
 
-JSON and CSV output includes the descriptive `hl_cloud_rtsp_url` and
-`hl_cloud_playback` fields. The earlier `rtsp_urls` and `mediamtx_urls` names
-remain available as compatibility aliases.
+JSON and CSV output includes the descriptive `hl_cloud_rtsp_url`,
+`hl_cloud_playback`, and `upstream_source_urls` fields. The earlier
+`rtsp_urls`, `mediamtx_urls`, and `media_server_url` names remain available as
+compatibility aliases.
 
 ## Command Reference
 
