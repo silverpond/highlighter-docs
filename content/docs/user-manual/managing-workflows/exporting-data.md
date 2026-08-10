@@ -50,18 +50,22 @@ Choose the data format for your export:
 #### Files
 
 - Downloads the original image files as a ZIP archive
-- Files are exported with standardized naming: `<external-id>_<workflow[-order]-name>_<count>.<suffix>`
+- Files are exported with standardized naming: `<external-id (padded to 12 digits)>_<workflow[-order]-name>_<count>.<suffix>`
 - Example filename: `000003112442_8492192_1.jpg`
 - Does not include annotation data - only the original files
 - Useful for archiving or transferring original source files
 
+Selecting **Files** changes the export button to **Export Case Files**. Click it to open the **Export Case Files** dialog, then click **Download Files** to download the ZIP.
+
 ##### Customize the ZIP path
 
-You can control the folder structure and filenames inside the ZIP by entering a folder path template before downloading the files. Use Liquid-style variables and `/` to create folders.
+In the **Export Case Files** dialog, the **Folder path template (inside ZIP)** field controls the folder structure and filenames inside the ZIP. Use Liquid-style variables and `/` to create folders. Click **Show available variables** to see the list in the dialog.
 
 For example:
 
 `{{ WORKFLOW_ORDER_NAME }}/{{ CASE_EXTERNAL_ID }}/{{ FILENAME }}`
+
+produces entries such as `8492192/3112442/000003112442_8492192_1.jpg`.
 
 The following variables are available:
 
@@ -76,9 +80,19 @@ The following variables are available:
 - `ORIGINAL_FILENAME`: Original uploaded filename
 - `FILENAME`: Default generated filename
 
-If no template is provided, files are placed at the ZIP root using the default filename pattern shown above.
+If the field is left blank, files are placed at the ZIP root using the default filename pattern shown above.
 
-Templates support plain variables only. Tags, filters, and `${TOKEN}` syntax are not supported. Invalid path characters are sanitized; unsafe paths, including absolute paths and paths containing `..`, are rejected.
+Templates support plain variables only, and only the variables listed above - an unrecognised variable is rejected. Tags (`{% ... %}`), filters (`{{ TOKEN | filter }}`), and `${TOKEN}` syntax are not supported. Invalid path characters are replaced with underscores; unsafe paths, including absolute paths and paths containing `..`, are rejected. When a template is invalid, the download fails with a message explaining what was wrong.
+
+##### Set a default ZIP path template for the workflow
+
+If you always want the same folder structure, save it once for the whole workflow instead of typing it for each export:
+
+1. On the **Admin** tab, find the **Workflow Settings** panel on the right
+2. Enter your template in **Default case files ZIP path template**
+3. Click **Save Workflow Settings**
+
+The saved template pre-fills the **Folder path template (inside ZIP)** field every time you open the **Export Case Files** dialog, and you can still edit it there to override it for a single export. Leave the setting blank to clear it. The same validation rules apply - an invalid template is rejected with an error message and the previous setting is kept.
 
 #### Annotated Files (select workflow order)
 
