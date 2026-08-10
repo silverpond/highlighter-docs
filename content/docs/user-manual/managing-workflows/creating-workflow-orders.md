@@ -20,7 +20,7 @@ Workflow Orders are a way of dividing up the work of your Assessment Workflow in
 
 A Workflow Order funnels work through a sequence of Workflow Steps. For example, the sequence might be Data Source -> Machine Assessment Step -> Human Assessment Step. The following instructions assume your sequence of Workflow steps has already been set up, and includes a data source as the first step.
 
-To export workflow data (CSV results or case files) for a workflow order, see [Exporting Workflow Data](/docs/user-manual/managing-workflows/exporting-workflow-data/).
+To export workflow data (CSV results or case files) for a workflow order, see [Exporting Data](/docs/user-manual/managing-workflows/exporting-data/).
 
 - <a href="#navigate-to-the-workflow-orders-page">Navigate To The Workflow Orders Page</a>
 - <a href="#manually-create-workflow-orders">Manually Create Workflow Orders</a>

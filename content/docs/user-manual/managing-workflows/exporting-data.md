@@ -2,7 +2,7 @@
 title = "Exporting Data"
 description = "Export assessment workflow data into CSV reports with flexible formatting options including attribute values, confidences, and annotations layouts, and flexible file downloads."
 date = 2023-09-26T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-08-10T08:00:00+00:00
 draft = false
 weight = 50
 sort_by = "weight"
@@ -48,13 +48,41 @@ Choose the data format for your export:
 - More compact but less detailed confidence information
 
 #### Files
+
 - Downloads the original image files as a ZIP archive
 - Files are exported with standardized naming: `<external-id>_<workflow[-order]-name>_<count>.<suffix>`
 - Example filename: `000003112442_8492192_1.jpg`
 - Does not include annotation data - only the original files
 - Useful for archiving or transferring original source files
 
+##### Customize the ZIP path
+
+You can control the folder structure and filenames inside the ZIP by entering a folder path template before downloading the files. Use Liquid-style variables and `/` to create folders.
+
+For example:
+
+`{{ WORKFLOW_ORDER_NAME }}/{{ CASE_EXTERNAL_ID }}/{{ FILENAME }}`
+
+The following variables are available:
+
+- `WORKFLOW_NAME`: Project or workflow name
+- `WORKFLOW_ORDER_NAME`: Workflow order name, or the workflow name if no order is selected
+- `CASE_ID`: Case database ID
+- `CASE_SHORT_ID`: Case short ID
+- `CASE_EXTERNAL_ID`: External ID (entity, case, or short ID)
+- `CASE_EXTERNAL_ID_PADDED`: External ID zero-padded to 12 digits
+- `FILE_UUID`: File unique identifier
+- `FILE_COUNT`: File number within the case, starting at 1
+- `FILE_EXT`: File extension, such as `.jpg` or `.png`
+- `ORIGINAL_FILENAME`: Original uploaded filename
+- `FILENAME`: Default generated filename
+
+If no template is provided, files are placed at the ZIP root using the default filename pattern shown above.
+
+Templates support plain variables only. Tags, filters, and `${TOKEN}` syntax are not supported. Invalid path characters are sanitized; unsafe paths, including absolute paths and paths containing `..`, are rejected.
+
 #### Annotated Files (select workflow order)
+
 - Downloads image files with annotations visually overlaid/drawn on them
 - Requires selecting a specific workflow order from the Order dropdown
 - Files are delivered as a ZIP archive via email link when ready

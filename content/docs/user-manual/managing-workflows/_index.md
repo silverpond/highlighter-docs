@@ -7,4 +7,4 @@ weight = 30
 draft = false
 +++
 
-Export workflow data, including CSV results and case files: [Exporting Workflow Data](/docs/user-manual/managing-workflows/exporting-workflow-data/).
+Export workflow data, including CSV results and case files: [Exporting Data](/docs/user-manual/managing-workflows/exporting-data/).
