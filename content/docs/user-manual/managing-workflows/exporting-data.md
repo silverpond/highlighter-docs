@@ -69,8 +69,7 @@ The following variables are available:
 - `WORKFLOW_ORDER_NAME`: Workflow order name, or the workflow name if no order is selected
 - `CASE_ID`: Case database ID
 - `CASE_SHORT_ID`: Case short ID
-- `CASE_EXTERNAL_ID`: External ID (entity, case, or short ID)
-- `CASE_EXTERNAL_ID_PADDED`: External ID zero-padded to 12 digits
+- `CASE_EXTERNAL_ID`: Case external ID; if blank, falls back to the case entity's external ID, then the case short ID
 - `FILE_UUID`: File unique identifier
 - `FILE_COUNT`: File number within the case, starting at 1
 - `FILE_EXT`: File extension, such as `.jpg` or `.png`
