@@ -23,8 +23,10 @@ leaving all other streams running without interruption.
 ## What it applies to
 
 Inline stream restart applies **only** to inline streams created by
-`HLAgent.run_inline_inputs` (i.e. when you pass `--files`, `--urls`, or
-`stream_definitions` to `hl agent start` or `Runtime.run`).
+`HLAgent.run_inline_inputs`. These are the inline inputs you pass to
+`hl agent start` as positional file/URL arguments or via
+`--stream-definitions-file`, or to `Runtime.run` via its `files`, `urls`,
+or `stream_definitions` arguments.
 
 It does **not** retry durable Highlighter Tasks. Failed Tasks are recorded
 as `FAILED` once; retrying failed work is modelled by creating a new retry
