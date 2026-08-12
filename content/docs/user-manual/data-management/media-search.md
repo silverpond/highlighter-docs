@@ -2,7 +2,7 @@
 title = "Media Search to Discover Assets"
 description = "Use Media Search in Highlighter AI to find, filter, and download files by applying detailed filters like data source, metadata, and assessment workflows."
 date = 2023-09-26T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-08-12T08:00:00+00:00
 draft = false
 weight = 10
 sort_by = "weight"
@@ -119,7 +119,11 @@ Choose one or more assessment workflows containing desired files.
 
 #### Filter by Assessment Workflow Orders
 
-Choose one or more assessment workflow orders containing desired files. To use this filter, you need to also set the Assessment Workflow filter, as above, to the workflow that contains the selected assessment workflow order.
+Choose one or more assessment workflow orders containing desired files. You do not need to set the Assessment Workflow filter as well: with no workflow chosen, every order in your account is listed as 'Workflow - Order'. Choosing a workflow first shortens that list to the orders belonging to it.
+
+#### Filter by Cases
+
+Choose one or more cases containing desired files. The list of cases comes from the assessment workflow order you have chosen, so set the Assessment Workflow Orders filter first to browse them.
 
 #### Filter by Capabilities
 
