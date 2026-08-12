@@ -69,14 +69,20 @@ case. Choose the **Workflow**, then decide where the records land:
 
 - **Create new** — Highlighter creates a workflow order (give it a **Name**, or
   accept the generated one) and a single case inside it holding every selected
-  record.
+  record. The case takes the order's name.
 - **Add to existing** — pick one of that workflow's existing orders, then choose
-  **Create new case** to start a case holding the records, or **Add to existing
-  case** and pick a case from that order to attach them to.
+  **Create new case** to start a case holding the records (name it under **Case
+  name**, or accept the generated name), or **Add to existing case** and pick a
+  case from that order to attach them to.
 
 Unlike the entity flow, all the selected records go into **one** case rather
 than one case each. When the records are added, the confirmation links straight
 to the case.
+
+Case names are worth setting: the **Add to existing case** list labels each case
+by its name, falling back to its short id — which is all an unnamed case has to
+tell it apart from the others in the order. You can type either into the list to
+search it.
 
 ## Merge entities
 
