@@ -1,8 +1,8 @@
 +++
 title = "Selecting and acting on items"
-description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, edit or reparent entities, or work through cases."
+description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — send entities or records to a workflow order, merge entities, edit or reparent entities, or work through cases."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-07-29T08:00:00+00:00
+updated = 2026-08-12T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -35,8 +35,9 @@ exactly what you selected.
 
 When more than one item is selected, the **Selected Items** panel appears on the
 right. It lists every kind in selection order, shows per-kind counts, and lets
-you open or remove individual items, clear the selection, create a workflow
-order from selected entities, or merge compatible selected entities. Actions
+you open or remove individual items, clear the selection, send selected entities
+or records to a workflow order, or merge compatible selected entities. The
+actions on offer follow the kind you have the panel switched to, and actions
 that cannot use the current selection remain disabled with an explanation.
 
 ## Detail panels
@@ -46,14 +47,36 @@ source**. From it you can view and edit the item's details, jump to related
 items, locate the item on the map, and — for a data source — open its
 **recordings**.
 
-## Create a workflow order
+## Send a selection to a workflow order
+
+The actions offered in the **Selected Items** panel follow the kind of item you
+are looking at, so switch the panel to **Entities** or **Records** first. See
+[Managing Workflows](../../managing-workflows/) for what happens to an order
+once it is created.
+
+### From selected entities
 
 With one or more entities selected, **Create workflow order** opens a dialog
 that builds an order from the selection. Choose an **Object Class** and a
 **Workflow**, and optionally a **Name**. Only the selected entities of the
 chosen object class are added as cases, so a mixed selection is filtered down to
-the class you pick. See [Managing Workflows](../../managing-workflows/) for what
-happens to an order once it is created.
+the class you pick. Each entity becomes its own case.
+
+### From selected records
+
+With one or more records selected, **Add to workflow order** puts them into a
+case. Choose the **Workflow**, then decide where the records land:
+
+- **Create new** — Highlighter creates a workflow order (give it a **Name**, or
+  accept the generated one) and a single case inside it holding every selected
+  record.
+- **Add to existing** — pick one of that workflow's existing orders, then choose
+  **Create new case** to start a case holding the records, or **Add to existing
+  case** and pick a case from that order to attach them to.
+
+Unlike the entity flow, all the selected records go into **one** case rather
+than one case each. When the records are added, the confirmation links straight
+to the case.
 
 ## Merge entities
 
