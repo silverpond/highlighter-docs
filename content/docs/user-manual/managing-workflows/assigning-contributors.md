@@ -190,6 +190,7 @@ For additional assistance with contributor assignments:
 
 ## Related Documentation
 
+- [Inviting Team Members](../inviting-team-members/) — add users to your account before assigning them here
 - [Human Assessment Steps](../human-assessment-steps/)
 - [Creating Assessment Workflows](../creating-assessment-workflows/)
 - [Creating Workflow Orders](../creating-workflow-orders/)
