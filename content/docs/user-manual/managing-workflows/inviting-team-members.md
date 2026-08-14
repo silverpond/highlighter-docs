@@ -16,7 +16,7 @@ top = false
 
 ## Overview
 
-Before a user can be assigned to workflows, workflow orders, or steps (see [Assigning Contributors to Workflows](../assigning-contributors/)), they must first exist as a member of your Highlighter account. The **Team Members** page (`/users`) is where account administrators add new users, send them an email invitation, assign their account-wide role, and manage their access over time.
+Before a user can be assigned to workflows, workflow orders, or steps (see [Assigning Contributors to Workflows](../assigning-contributors/)), they must first exist as a member of your Highlighter account. The **Team Members** page is where account administrators add new users, send them an email invitation, assign their account-wide role, and manage their access over time.
 
 ## Who Can Manage Team Members
 
@@ -24,7 +24,7 @@ Access to the Team Members page and the ability to add, invite, edit, or deactiv
 
 ## Navigating to Team Members
 
-1. Open **Account Settings**
+1. Click the user name menu in the bottom left
 2. Click **Manage Team**
 
 This takes you to the Team Members page, which lists every user in your account along with their role, active status, invitation status, and last sign-in date.
