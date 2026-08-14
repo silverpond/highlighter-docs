@@ -24,7 +24,7 @@ Access to the Team Members page and the ability to add, invite, edit, or deactiv
 
 ## Navigating to Team Members
 
-1. Click the user name menu in the bottom left
+1. Click your User Name in the bottom left to open the Account Settings menu
 2. Click **Manage Team**
 
 This takes you to the Team Members page, which lists every user in your account along with their role, active status, invitation status, and last sign-in date.
