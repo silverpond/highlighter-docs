@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-08-17T08:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -13,6 +13,27 @@ lead = "Stay informed about the latest features, enhancements, and improvements 
 toc = true
 top = false
 +++
+
+
+## iOS App Account Connection
+
+**Release Date:** August 2026
+
+The Highlighter app for iOS can now connect to your account through a secure
+browser sign-in: you approve the app for one selected account, and it receives
+short-lived, automatically renewed API access — no passwords or personal access
+tokens in the app.
+
+### What Changed
+
+- Approving the app happens in your browser on the new consent screen, where
+  you choose which one of your accounts it may use.
+- Connections are credential-safe: the app holds short-lived tokens, not your
+  password.
+- Disconnecting from the app revokes the connection immediately.
+
+See [Connecting the iOS App](../user-manual/connecting-the-ios-app/) for
+details.
 
 
 ## Taxon Group Import/Export Performance
