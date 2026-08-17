@@ -2,7 +2,7 @@
 title = "Train an ML Capability"
 description = "Train an ML capability in Highlighter AI, set up capability inputs/outputs, create snapshot datasets, configure and schedule training runs, inspect metrics, and deploy models efficiently."
 date = 2024-03-15T08:00:00+00:00
-updated = 2024-03-15T08:00:00+00:00
+updated = 2026-08-17T08:00:00+00:00
 draft = false
 weight = 300
 sort_by = "weight"
@@ -57,17 +57,20 @@ information.
 First, generate the training configuration and download the required datasets:
 
 ```bash
-hl generate training-run <TRAINING_RUN_ID> <TRAINER_TYPE> [ML_TRAINING_DIR]
+hl generate training-run <TRAINING_RUN_ID> [ML_TRAINING_DIR]
 ```
 
 **Parameters:**
 - `TRAINING_RUN_ID`: The ID of your Highlighter Training Run
-- `TRAINER_TYPE`: Currently supports `yolo-det|yolo-seg|yolo-cls` for YOLO detection models
 - `ML_TRAINING_DIR`: Directory for training files (default: `./ml_training`)
+
+The trainer type (e.g. `yolo-det`, `yolo-seg`, `yolo-cls`) is not passed on the
+command line — it is read from the **Trainer Config File** configured on the
+Training Run in Highlighter.
 
 **Example:**
 ```bash
-hl generate training-run 123 yolo-det ./my_training
+hl generate training-run 123 ./my_training
 ```
 
 This command will:
@@ -106,17 +109,17 @@ This command will:
 After training completes, export the model and upload the artefact with metrics:
 
 ```bash
-hl train export [TRAINING_RUN_DIR] <CHECKPOINT> <CONFIG>
+hl train export [TRAINING_RUN_DIR] <CHECKPOINT> [--config CONFIG]
 ```
 
 **Parameters:**
 - `TRAINING_RUN_DIR`: Directory containing training configuration (default: current directory)
 - `CHECKPOINT`: Path to the trained model checkpoint file
-- `CONFIG`: Path to the YOLO configuration file
+- `--config`: Optional trainer-specific evaluation config (not needed for built-in trainers)
 
 **Example:**
 ```bash
-hl train export . runs/detect/train/weights/best.pt runs/detect/train/args.yaml
+hl train export . runs/detect/train/weights/best.pt
 ```
 
 This command will:
@@ -130,10 +133,11 @@ This command will:
 You can also evaluate a model checkpoint separately:
 
 ```bash
-hl train evaluate [TRAINING_RUN_DIR] <CHECKPOINT> <CONFIG> [--create]
+hl train evaluate [TRAINING_RUN_DIR] <CHECKPOINT> [--config CONFIG] [--create]
 ```
 
 **Parameters:**
+- `--config`: Optional trainer-specific evaluation config (not needed for built-in trainers)
 - `--create`: If set, creates the metric results in the Highlighter Research Plan
 
 ---
@@ -189,14 +193,14 @@ hl train evaluate [TRAINING_RUN_DIR] <CHECKPOINT> <CONFIG> [--create]
 
 ### Configure the Training Run (Web UI)
 
-  1. From the **Develop** tab select **Training** then click **Train new model**
+  1. From the **Develop** tab select **Training** then click **Train a new model**
   2. Select the **Capability** (Model) whose interface this training run should follow. This will determine the output classes of the trained model and filtering that will be performed on the dataset prior to training.
   3. Name the Training run, select the datasets for each split. _The train set cannot have any overlay with the dev or test set_
     - Train: Used the train the model
     - Dev: Holdout set used to compute the metrics during training
     - Test: [Optional] Additional holdout set typically used to compute metrics for academic reporting.
-4. Select the **Model Template**
-5. Apply overrides
+4. Select the **Trainer Config File**
+5. Apply overrides via the **Trainer Config** and **Crop Args** editors
 
 
 ### Schedule Training (Web UI)
