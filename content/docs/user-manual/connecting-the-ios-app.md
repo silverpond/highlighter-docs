@@ -49,7 +49,7 @@ days of age.
   revokes the connection immediately.
 - **If you no longer have the app**: the connection expires on its own (after
   30 days unused, and at most 90 days total). If you need it revoked sooner,
-  contact your account administrator.
+  contact Highlighter support.
 
 If you suspect the connection is being misused, disconnect it from the app and
 contact support. Any access token already issued stops working within 15
