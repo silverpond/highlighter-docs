@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2026-07-29T08:00:00+00:00
+updated = 2026-08-19T00:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -13,6 +13,18 @@ lead = "Stay informed about the latest features, enhancements, and improvements 
 toc = true
 top = false
 +++
+
+## Observation Time-Series API
+
+**Release Date:** August 2026
+
+Highlighter now provides a paginated API for retrieving observation readings
+directly from observation data sources. Integrations can request a precise time
+range, filter by data source or measured attribute, and continue safely with an
+opaque cursor.
+
+See [Observations API](/docs/reference/observations-api/) for the request and
+response reference.
 
 
 ## Box-Select and Bulk Delete in the Assessment Editor
