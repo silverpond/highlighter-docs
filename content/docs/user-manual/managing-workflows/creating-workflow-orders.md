@@ -2,7 +2,7 @@
 title = "Creating Workflow Orders"
 description = "Create Workflow Orders in Highlighter AI，manually or via CSV to group data files, streamline processing, track results, and scale enterprise annotation workflows."
 date = 2023-09-26T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-08-19T08:00:00+00:00
 draft = false
 weight = 10
 sort_by = "weight"
@@ -22,6 +22,7 @@ A Workflow Order funnels work through a sequence of Workflow Steps. For example,
 
 - <a href="#navigate-to-the-workflow-orders-page">Navigate To The Workflow Orders Page</a>
 - <a href="#manually-create-workflow-orders">Manually Create Workflow Orders</a>
+- <a href="#add-selected-records-from-monitor-operations">Add Selected Records from Monitor Operations</a>
 - <a href="#bulk-create-workflow-orders">Bulk-Create Workflow Orders</a>
 
 ## Navigate To The Workflow Orders Page
@@ -45,6 +46,17 @@ Check the data presented including number of files matched and the list of match
 
 You will be returned to your Workflow page with a message indicating whether it was successful. Scroll down again to the 'Orders' section and locate the new Workflow Order in the list.
 
+## Add Selected Records from Monitor Operations
+
+Use this when you have selected records in Monitor Operations and need to place all of them in one specific case. This is separate from adding files by a workflow order's matching strategy.
+
+1. In Monitor Operations, select one or more records and open the **Selected items** panel.
+2. With the **Records** scope selected, click **Add selected records to workflow order**.
+3. Choose a workflow, then either create a workflow order or choose an existing unlocked workflow order.
+4. For an existing order, create a new case or choose an existing case. Enter names where needed, then click **Submit**.
+
+Highlighter adds the selected records to the chosen case and confirms the result. You can open the case from the confirmation message.
+
 ## Bulk-Create Workflow Orders
 You can also create Workflow Orders in bulk by uploading a CSV. This saves time and reduces errors when you have a lot of Orders to create.
 
@@ -59,4 +71,3 @@ You will see instructions about the format of CSV required. Once you have create
 Also set the 'State of Orders' dropdown to indicate whether you want the new Workflow Orders to be created as 'draft' or 'approved'. The state of an order is a way to indicate whether it's a work-in-progress that you will make further changes to, or whether it's finished and approved.
 
 Then click 'Create Orders' and you'll be redirected to your orders page, with a message indicating the results, for example:<blockquote>Successfully imported orders: 30 total, 30 created, 0 skipped due to same name, 0 skipped due to same filter original source url.</blockquote> You can change your CSV and try again - only orders that don't already exists in the system will be created.
-
