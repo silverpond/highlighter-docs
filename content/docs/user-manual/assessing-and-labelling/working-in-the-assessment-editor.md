@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2026-06-24T08:00:00+00:00
+updated = 2026-08-19T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -20,6 +20,7 @@ Working in the Assessment Editor requires access to your tools
 - <a href="#access-the-objects-panel">Access The Objects Panel</a>
 - <a href="#edit-annotation-attributes">Edit Annotation Attributes</a>
 - <a href="#set-annotation-view-options">Set Annotation View Options</a>
+- <a href="#save-default-chart-attributes-in-a-view">Save Default Chart Attributes In A View</a>
 - <a href="#show-and-hide-annotations-tracks">Show And Hide Annotations/Tracks</a>
 - <a href="#submit-assessments">Submit Assessments</a>
 
@@ -69,6 +70,18 @@ Set the visibility of each of these options individually:
 - Attributes - detailed listing of known annotation attributes
 
 Options stay set even after reloading the page, or moving to new cases or data files.
+
+## Save Default Chart Attributes In A View
+
+Click an attribute in a chart legend to show or hide its series. This choice remains in the current editor while the chart redraws, but it is not saved automatically.
+
+To reuse the choice as a named default view:
+
+1. Use the chart legend to show the attributes you want and hide the others.
+2. Open the **View** menu and choose **Save View as Object-Class Layout**.
+3. Enter a name and save the layout.
+
+Open that named layout for another entity of the same object class to apply the saved chart visibility. Attributes not configured in the view remain shown by default. Hiding a chart attribute changes only its presentation; the underlying observations are still loaded and remain available from the legend.
 
 ## Show And Hide Annotations/Tracks
 Show or hide all annotations/tracks (including associated text) by clicking the View menu, then "Show/hide annotations/tracks" (shortcut key 'f'). Hidden annotations/tracks are still submitted.
