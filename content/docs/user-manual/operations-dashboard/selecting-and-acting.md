@@ -2,7 +2,7 @@
 title = "Selecting and acting on items"
 description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, or work through cases."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-06-19T08:00:00+00:00
+updated = 2026-08-21T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -25,6 +25,23 @@ leaves your selection intact.
 When more than one item is selected, the **Selected Items** panel appears on the
 right listing each item, and the status bar shows how many entities, records,
 and data sources are selected.
+
+## Select every matching record
+
+In the **Records Gallery**, use the checkbox above the cards to select the
+records that are currently loaded. If the filtered result contains more
+records, a message offers **Select all matching records**. Choose it to select
+the complete result, including records on pages that have not been loaded.
+
+The complete-result selection belongs to the current gallery query. Changing a
+filter, date range, scope, or applied map viewport ends that selection. This
+keeps bulk actions aligned with the result set you reviewed.
+
+Open the gallery's **⋯** menu to add the selected records to a dataset or
+workflow order. When all matching records are selected, Highlighter applies
+the current query on the server instead of loading every record into the
+browser. Adding records to a workflow order uses that order's configured
+[case matching strategy](../../managing-workflows/case-matching-strategies/).
 
 ## Detail panels
 

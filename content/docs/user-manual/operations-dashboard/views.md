@@ -2,7 +2,7 @@
 title = "Map, grid, and dashboard views"
 description = "The three ways the Operations Dashboard shows your data — an interactive map, a grid of thumbnails, and a summary dashboard of tiles and worklists."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-06-19T08:00:00+00:00
+updated = 2026-08-21T08:00:00+00:00
 draft = false
 weight = 2
 sort_by = "weight"
@@ -46,6 +46,8 @@ header.
   record to open it.
 - Selected cards are marked with a tick. You can add cards to a
   [multi-selection](../selecting-and-acting/) without opening them.
+- In the Records Gallery, the selection bar can select the loaded cards and
+  then expand the selection to every record matching the current query.
 - If nothing matches, the grid explains whether the query returned no results
   or failed.
 
