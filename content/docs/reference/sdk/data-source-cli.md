@@ -2,7 +2,7 @@
 title = "Data Source Management CLI"
 description = "Manage Highlighter data sources via CLI with smart matching, templates, and bulk operations"
 date = 2025-12-17T08:00:00+00:00
-updated = 2025-12-17T08:00:00+00:00
+updated = 2026-07-01T08:00:00+00:00
 draft = false
 weight = 60
 sort_by = "weight"
@@ -21,6 +21,7 @@ The `hl datasource` command group provides comprehensive tools for managing data
 **Key capabilities:**
 
 - **Cloud Operations** - Create, list, view, update, and delete data sources
+- **Tags** - Add, remove, or replace data source tags
 - **Import/Export** - Sync data sources between local files and Highlighter Cloud
 - **Smart Matching** - Automatically match local and cloud data sources by ID, UUID, name, or URI
 - **Templates** - Use predefined templates for common camera configurations
@@ -42,6 +43,7 @@ hl datasource
 ├── view             # View details of a single data source
 ├── create           # Create a new data source
 ├── update           # Update an existing data source
+├── tags             # Add, remove, or replace data source tags
 ├── delete           # Delete a data source
 ├── import           # Import local data sources to cloud
 └── export           # Export cloud data sources to local file
@@ -58,6 +60,9 @@ hl datasource list
 # Create a new data source
 hl datasource create --name "Camera-Front-Entrance" \
   --source-uri "rtsp://10.1.1.100:554/stream"
+
+# Replace tags on a data source
+hl datasource tags set --uuid 550e8400-e29b-41d4-a716-446655440000 site:melbourne status:active
 
 # Export all data source definitions to a file
 hl datasource list --format json > my-cameras.json
@@ -247,6 +252,43 @@ hl datasource update --uuid 550e8400-e29b-41d4-a716-446655440000 \
 hl datasource update --id 1234 \
   --name "Camera-New-Name" \
   --source-uri "rtsp://10.1.1.92:554/stream"
+```
+
+---
+
+### `hl datasource tags`
+
+Add, remove, or replace tags on a data source. Tags can be key-only (`needs-review`) or key/value pairs (`site:melbourne`).
+
+**Usage:**
+```bash
+hl datasource tags set [OPTIONS] [TAGS...]
+hl datasource tags add [OPTIONS] TAGS...
+hl datasource tags remove [OPTIONS] TAGS...
+```
+
+**Options:**
+- `--id ID` - Data source ID
+- `--uuid UUID` - Data source UUID
+- `--name, -n NAME` - Data source name
+- `--format [table|json]` - Output format for `set` (default: table)
+
+**Note:** Must provide exactly one of `--id`, `--uuid`, or `--name`.
+
+**Examples:**
+
+```bash
+# Replace all tags on a data source
+hl datasource tags set --uuid 550e8400-e29b-41d4-a716-446655440000 site:melbourne status:active
+
+# Clear all tags from a data source
+hl datasource tags set --uuid 550e8400-e29b-41d4-a716-446655440000
+
+# Add tags
+hl datasource tags add --id 1234 needs-review camera:front-entrance
+
+# Remove tags
+hl datasource tags remove --name "Camera-Front-Entrance" needs-review
 ```
 
 ---
