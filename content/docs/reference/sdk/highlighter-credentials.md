@@ -2,7 +2,7 @@
 title = "Highlighter SDK Credentials"
 description = "How to create a set credentials for interacting with Highlighter via the CLI or Python SDK"
 date = 2024-03-12T08:00:00+00:00
-updated = 2024-03-12T08:00:00+00:00
+updated = 2026-08-18T08:00:00+00:00
 draft = false
 weight = 1
 sort_by = "weight"
@@ -20,8 +20,8 @@ Highlighter via the CLI or the Python SDK.
 
 ### Create an API Token
 
-1. Click the user icon on the right of the top ribbon {{ resize_image(path="docs/user-manual/resources/user-icon.png", width=200, height=1, op="fit_width") }}
-1. Click your name at the top of the dropdown
+1. Click your name and email at the bottom of the left sidebar to open the account dropdown
+1. Click **Profile** in the dropdown
 2. Scroll to the bottom and click **Request Access Token** and save it somewhere safe
 
 #### Option 1: Environment Variables
