@@ -2,7 +2,7 @@
 title = "Scaffolding a new agent"
 description = "How to use Scaffolds to bootstrap your Highlighter agents"
 date = 2025-02-27T08:00:00+00:00
-updated = 2025-02-27T08:00:00+00:00
+updated = 2026-08-25T08:00:00+00:00
 draft = false
 weight = 100
 sort_by = "weight"
@@ -151,6 +151,36 @@ hl agent start agents/YOUR_AGENT_DEF.json VIDEO_PATH
 hl agent start agents\YOUR_AGENT_DEF.json VIDEO_PATH
 ```
 {% end %}
+
+## Inspect and edit an agent locally
+
+Use `hl agent show` to inspect a local agent definition in a keyboard-driven
+capability view. It shows one expanded capability at a time and only displays
+values supplied in the agent and selected task JSON files:
+
+```bash
+hl agent show -s tasks.json[0,1] agents/YOUR_AGENT_DEF.json
+```
+
+The optional `-s` argument accepts a task JSON list and a comma-separated,
+zero-based index selection. If no selection is supplied, the agent definition
+is shown without stream columns.
+
+Press **?** at any time in the capability view for detailed keyboard help. Use
+**Tab** to move between the capability outline and its parameter-table
+rows. Use **j**/**k** (or the arrow keys) to move through capabilities or
+parameters, and **h**/**l** to select a stream value cell and page across
+stream columns. The selected pipeline element, stream header, and value cell
+are marked with **▶**. The outline stays above the selected capability's table.
+The full active value and its JSON source location appear in highlighted bands
+below the table. A dash means no value is supplied in the JSON.
+
+Press **Enter** to edit the source currently supplying the selected value. For
+a dash, Enter creates a capability-qualified override on the selected stream.
+Press **a** for the agent-parameter editor and **g** for the read-only graph;
+press **q** to return from either view. Press **s**, then **y**, to save after
+confirming, or **q** from the capability view to exit without saving. Changes are written
+back to the local JSON files; only selected task records are changed.
 
 ## Training
 
