@@ -163,8 +163,8 @@ hl agent show -s tasks.json[0,1] agents/YOUR_AGENT_DEF.json
 ```
 
 The optional `-s` argument accepts a task JSON list and a comma-separated,
-zero-based index selection. If no selection is supplied, the agent definition
-is shown without stream columns.
+zero-based index selection. If no selection is supplied, the capability table
+shows global values from the agent definition.
 
 Press **?** at any time in the capability view for detailed keyboard help. Use
 **Tab** to move between the capability outline and its parameter-table
@@ -175,12 +175,16 @@ are marked with **▶**. The outline stays above the selected capability's table
 The full active value and its JSON source location appear in highlighted bands
 below the table. A dash means no value is supplied in the JSON.
 
-Press **Enter** to edit the source currently supplying the selected value. For
-a dash, Enter creates a capability-qualified override on the selected stream.
+Press **Enter** to choose an edit target. Choose **g** to set the selected
+capability parameter globally for all streams, or **s** to add or update a
+capability-qualified override for the selected stream. A global edit writes to
+the capability's parameters in the agent definition and removes matching
+qualified and unqualified task parameters from every stream.
+
 Press **a** for the agent-parameter editor and **g** for the read-only graph;
-press **q** to return from either view. Press **s**, then **y**, to save after
-confirming, or **q** from the capability view to exit without saving. Changes are written
-back to the local JSON files; only selected task records are changed.
+press **q** to return from either view. From the capability view, **q** prompts
+you to save changes before exiting. Changes are kept in memory until that exit
+confirmation.
 
 ## Training
 
