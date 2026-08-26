@@ -2,7 +2,7 @@
 title = "Highlighter SDK Credentials"
 description = "How to create a set credentials for interacting with Highlighter via the CLI or Python SDK"
 date = 2024-03-12T08:00:00+00:00
-updated = 2024-03-12T08:00:00+00:00
+updated = 2026-08-26T08:00:00+00:00
 draft = false
 weight = 1
 sort_by = "weight"
@@ -72,4 +72,31 @@ compuglobalhypermeganet:
 
 You can now use the `--profile compuglobalhypermeganet` option when using the CLI or
 `HLClient.from_profile(...)` if using the Python SDK
+
+##### Selecting a default profile
+
+`hl profile set <name>` sets the default profile for the current project
+(written to `./.hl_config`); add `--global` to set it for your user. Without a
+name, the command shows an interactive menu of the available profiles.
+`hl profile list` shows every available profile and the store it lives in:
+
+- **Secure profiles**, created with `hl profile create` and kept in your
+  operating system's credential store.
+- **Legacy profiles**, the plaintext YAML file described above
+  (`~/.highlighter-profiles.yaml`, or the path in `HL_PROFILES_YAML`).
+
+If the same name exists in both stores, the secure profile wins. Selecting a
+legacy profile prints a warning that it is stored in plaintext and should be
+migrated:
+
+```bash
+hl profile migrate --path ~/.highlighter-profiles.yaml
+```
+
+A default profile must stay resolvable for later commands, so `hl profile set`
+refuses to select a legacy profile that was only found through a one-off
+`--profiles-path` argument: migrate it first, or export `HL_PROFILES_YAML` to
+point at the file. A legacy profiles file that cannot be read or parsed is
+reported as an error naming the file, rather than silently appearing as
+"no profiles".
 
