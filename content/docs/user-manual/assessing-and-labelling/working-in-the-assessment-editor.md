@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2026-06-24T08:00:00+00:00
+updated = 2026-08-26T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -16,6 +16,7 @@ top = false
 Working in the Assessment Editor requires access to your tools
 
 - <a href="#use-assessment-editor-tools">Use Assessment Editor tools</a>
+- <a href="#refresh-a-pane">Refresh A Pane</a>
 - <a href="#access-the-file-list">Access The File List</a>
 - <a href="#access-the-objects-panel">Access The Objects Panel</a>
 - <a href="#edit-annotation-attributes">Edit Annotation Attributes</a>
@@ -41,6 +42,9 @@ Once you have selected a tool within this group, it remains on top of the dropdo
 
 ### Zoom
 All tools allow you to zoom in and out using the scroll wheel of your mouse. You can also click the magnifying glass tools with the plus and minus inside.
+
+### Refresh A Pane
+If a media or chart pane shows an error, or you need to load newly available source files, click the refresh icon next to its data source selector. The pane reloads its source while keeping your current position where possible. For a live video source, refresh also reconnects to the device.
 
 ## Access The File List
 Access the list of currently loaded files in your case by clicking the little pull-out arrow at the left of the screen. Once open, click the little pull-in arrow to close again. This can also be toggled using shortcut key 'l'.
