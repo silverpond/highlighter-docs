@@ -82,11 +82,12 @@ name, the command shows an interactive menu of the available profiles.
 
 - **Secure profiles**, created with `hl profile create` and kept in your
   operating system's credential store.
-- **Legacy profiles**, the plaintext YAML file described above
-  (`~/.highlighter-profiles.yaml`, or the path in `HL_PROFILES_YAML`).
+- **YAML profiles**, the plaintext profiles file described above
+  (`~/.highlighter-profiles.yaml`, or the path in `HL_PROFILES_YAML`), shown
+  with the store label `[yaml]`.
 
 If the same name exists in both stores, the secure profile wins. Selecting a
-legacy profile prints a warning that it is stored in plaintext and should be
+YAML profile prints a warning that it is stored in plaintext and should be
 migrated:
 
 ```bash
@@ -94,9 +95,8 @@ hl profile migrate --path ~/.highlighter-profiles.yaml
 ```
 
 A default profile must stay resolvable for later commands, so `hl profile set`
-refuses to select a legacy profile that was only found through a one-off
+refuses to select a YAML profile that was only found through a one-off
 `--profiles-path` argument: migrate it first, or export `HL_PROFILES_YAML` to
-point at the file. A legacy profiles file that cannot be read or parsed is
-reported as an error naming the file, rather than silently appearing as
-"no profiles".
+point at the file. A profiles file that cannot be read or parsed is reported as
+an error naming the file, rather than silently appearing as "no profiles".
 
