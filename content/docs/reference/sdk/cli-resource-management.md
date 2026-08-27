@@ -2,7 +2,7 @@
 title = "CLI Resource Management"
 description = "Manage core Highlighter resources like cases, experiments, and workflows directly from the command line."
 date = 2025-03-05T08:00:00+00:00
-updated = 2026-08-25T00:00:00+00:00
+updated = 2026-08-28T00:00:00+00:00
 draft = false
 weight = 70
 sort_by = "weight"
@@ -130,11 +130,14 @@ Manage the cases within your workflows.
 # Create a new case
 hl case create --workflow-order-id <ORDER_ID> --name "My Case"
 
-# Read a case (metadata only: no files are downloaded)
-hl case read --id <CASE_ID>
+# Get one case's resource information; no files are downloaded
+hl case get --id <CASE_ID>
 
 # List the cases in a workflow order
-hl case read --workflow-order-id <ORDER_ID> --limit 25
+hl case list --workflow-order-id <ORDER_ID> --limit 25
+
+# Export a case: download its files into <OUTPUT_DIR>/<CASE_ID>/
+hl case export --id <CASE_ID> --output-dir <OUTPUT_DIR>
 
 # Copy a case: a new case over the same data files
 hl case copy --id <CASE_ID> [--title "Copy title"] [--workflow-order-id <ORDER_ID>]
@@ -146,9 +149,11 @@ hl case delete --id <CASE_ID>
 hl case message create --case-id <CASE_ID> --content "Please review this."
 ```
 
-`case read` reports the case's data files (including their UUIDs) and tasks,
-which `case create` needs as input. `case copy` re-creates a case over the same
-data files — useful for re-running an agent without disturbing the original.
+`case get` reports the case's data files (including their UUIDs) and tasks,
+which `case create` needs as input. `case export` downloads payload files,
+selectable by content type and time window. `case copy` re-creates a case over
+the same data files — useful for re-running an agent without disturbing the
+original. `case read` remains as a deprecated alias of `case get`.
 
 ## Entities
 
