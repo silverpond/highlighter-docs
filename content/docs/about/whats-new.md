@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2026-08-19T00:00:00+00:00
+updated = 2026-09-01T00:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -13,6 +13,25 @@ lead = "Stay informed about the latest features, enhancements, and improvements 
 toc = true
 top = false
 +++
+
+## Declare the Coordinate System of Imported Entities
+
+**Release Date:** September 2026
+
+Entity imports now ask which coordinate reference system a file's coordinates are
+in, rather than assuming WGS84. KML and CSV do not record their own datum, and
+assuming wrong does not fail — the import succeeds and every entity sits a fixed
+distance from where it belongs, about 1.5 m for Australian GDA94 data read as
+WGS84.
+
+Set it on the task definition for KML and Shapefile import steps, in the KML
+upload form on an object class page, or in the bulk case CSV dialog; the CLI takes
+`--entity-source-srid` and the API takes `coordinatesSrid`. Shapefile imports read
+it from the `.prj` sidecar when you upload one. Leaving it blank keeps the previous
+behaviour, so existing imports are unaffected.
+
+See [Coordinate Systems for Imported Entities](/docs/user-manual/data-management/entity-coordinate-systems/).
+
 
 ## Observation Time-Series API
 

@@ -2,7 +2,7 @@
 title = "Setting Up a Workflow via CLI"
 description = "Create task definitions, machine assessment steps, and workflow orders entirely from the command line — no web UI required."
 date = 2026-04-02T00:00:00+00:00
-updated = 2026-04-02T00:00:00+00:00
+updated = 2026-09-01T00:00:00+00:00
 draft = false
 weight = 55
 sort_by = "weight"
@@ -49,10 +49,24 @@ hl --profile myaccount task-definition create \
   --task-type "KmlToEntity::EntityDetection" \
   --object-class-id <OBJECT_CLASS_UUID> \
   --entity-external-id-type "Pole" \
-  --entity-external-id-field-name "SITE_LABEL"
+  --entity-external-id-field-name "SITE_LABEL" \
+  --entity-source-srid 4283
 ```
 
 Note the `id` from the response — you'll need it for the next step.
+
+### Declare the source coordinate system
+
+`--entity-source-srid` is the EPSG code the source file's coordinates are in.
+Omit it and Highlighter assumes 4326 (WGS84).
+
+KML and CSV files do not record which coordinate system they use, so getting this
+wrong does not fail — it silently imports every entity a fixed distance from where
+it belongs. Reading Australian GDA94 data (`4283`) as WGS84 puts it about 1.5 m
+out. See [Coordinate Systems for Imported Entities →](/docs/user-manual/data-management/entity-coordinate-systems/).
+
+Shapefile imports are the exception: upload the `.prj` sidecar with the `.dbf` and
+Highlighter reads the coordinate system from it instead.
 
 ### Supported task types
 

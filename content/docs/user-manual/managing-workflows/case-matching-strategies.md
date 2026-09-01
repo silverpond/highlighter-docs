@@ -2,7 +2,7 @@
 title = "Case Matching Strategies"
 description = "Configure case matching strategies in Highlighter workflow orders to automatically associate files with entities using geolocation, ingestion path, or manual assignment methods."
 date = 2025-12-05T08:00:00+00:00
-updated = 2025-12-05T08:00:00+00:00
+updated = 2026-09-01T00:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -291,6 +291,9 @@ For Geolocation and Ingestion Path strategies to work, you need cases for your e
 1. Navigate to your workflow order
 2. Use the bulk case creation feature
 3. Upload a CSV with entity information (entity_id or entity_external_id)
+4. If the CSV carries `entity_gps_latitude` and `entity_gps_longitude`, set **GPS
+   coordinate system (EPSG)** to whatever those columns are in — see
+   [Coordinate Systems for Imported Entities →](/docs/user-manual/data-management/entity-coordinate-systems/)
 
 **Option 2: Manual Case Creation**
 1. Create cases individually through the UI
@@ -309,6 +312,7 @@ Use the Highlighter API to programmatically create cases for entities
 - Entities have cases in the workflow order
 - Entities have valid GPS coordinates set
 - GPS coordinates are accurate (not default/placeholder values)
+- Entity coordinates were imported in the right [coordinate system →](/docs/user-manual/data-management/entity-coordinate-systems/) — a wrong one shifts every entity by the same distance and bearing
 - Cases are in "pre-processing" state (not completed or failed)
 
 ### Files Not Matching with Ingestion Path

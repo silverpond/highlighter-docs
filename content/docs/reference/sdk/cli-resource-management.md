@@ -2,7 +2,7 @@
 title = "CLI Resource Management"
 description = "Manage core Highlighter resources like cases, experiments, and workflows directly from the command line."
 date = 2025-03-05T08:00:00+00:00
-updated = 2026-04-02T00:00:00+00:00
+updated = 2026-09-01T00:00:00+00:00
 draft = false
 weight = 70
 sort_by = "weight"
@@ -55,7 +55,8 @@ hl task-definition create \
   --task-type "KmlToEntity::EntityDetection" \
   --object-class-id <OBJECT_CLASS_UUID> \
   --entity-external-id-type "Pole" \
-  --entity-external-id-field-name "SITE_LABEL"
+  --entity-external-id-field-name "SITE_LABEL" \
+  --entity-source-srid 4283
 
 # Delete a task definition
 hl task-definition delete --id <UUID>
@@ -68,6 +69,11 @@ Supported `--task-type` values:
 | `Review` | Human review step (no machine agent) |
 | `KmlToEntity::EntityDetection` | Import entities from KML files |
 | `DbfToEntity::EntityDetection` | Import entities from DBF (Shapefile attribute) files |
+
+`--entity-source-srid` is the EPSG code the source file's coordinates are in
+(default 4326, WGS84). Neither KML nor DBF records its own datum, so a wrong value
+imports every entity a fixed distance from where it belongs — see
+[Coordinate Systems for Imported Entities →](/docs/user-manual/data-management/entity-coordinate-systems/).
 
 ## Workflow Orders
 
