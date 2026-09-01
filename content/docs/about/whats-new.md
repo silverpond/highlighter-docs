@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-09-01T08:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -14,6 +14,36 @@ toc = true
 top = false
 +++
 
+
+## Highlighter Mobile App for iOS
+
+**Release Date:** September 2026
+
+Highlighter now has an iOS app for the people doing inspections in the field.
+
+### What's New
+
+- **Sign in with your Highlighter account** through Highlighter's own web login,
+  so multi-factor authentication and single sign-on work as they do in the
+  browser and the app never handles your password.
+- **Register your iPhone or iPad as a device**, giving the imagery it captures a
+  data source of its own.
+- **Work your cases from the field** — a dashboard of case counts and recent
+  activity, a searchable and filterable case list, and per-case overview, data
+  and map tabs.
+- **Message on a case** from the phone, into the same conversation the web app
+  shows.
+- **Three ways to send imagery** — attach a photo or video to a specific case,
+  pick photos by hand, or turn on **Media Sync** and have the phone's new
+  imagery routed to the right data source by camera serial number without anyone
+  choosing it.
+- **See where imagery came from** on a map of every uploaded file that carries
+  coordinates.
+
+Uploads are held on the device until they succeed and continue in the
+background, with an optional Wi-Fi-only setting for metered plans.
+
+See the [Mobile App](../../user-manual/mobile-app/) section of the user manual.
 
 ## Taxon Group Import/Export Performance
 
