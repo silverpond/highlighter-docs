@@ -14,6 +14,17 @@ toc = true
 top = false
 +++
 
+## Canonical Case JSON from the CLI
+
+**Release Date:** September 2026
+
+`hl case get --id <CASE_ID>` now returns a canonical JSON representation of a
+Case without downloading its files. Ready Cases include their trigger time,
+workflow and site identity, pallet entities, data sources, latest submission
+metadata, and Highlighter URL.
+
+The existing `hl case read` command remains available as a deprecated alias.
+
 
 ## Taxon Group Import/Export Performance
 

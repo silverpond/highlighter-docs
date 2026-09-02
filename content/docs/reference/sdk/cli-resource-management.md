@@ -2,7 +2,7 @@
 title = "CLI Resource Management"
 description = "Manage core Highlighter resources like cases, experiments, and workflows directly from the command line."
 date = 2025-03-05T08:00:00+00:00
-updated = 2026-04-02T00:00:00+00:00
+updated = 2026-09-02T00:00:00+00:00
 draft = false
 weight = 70
 sort_by = "weight"
@@ -136,6 +136,18 @@ hl case delete --id <CASE_ID>
 # Add a message to a case
 hl case message create --case-id <CASE_ID> --content "Please review this."
 ```
+
+To read one Case as JSON without downloading its files, use:
+
+```bash
+hl case get --id <CASE_ID>
+```
+
+For a complete ready Case, the `case` value is the canonical Case resource
+including trigger time, workflow and site identity, pallet entities, data
+sources, latest submission metadata, and the Highlighter URL. The command is
+read-only and does not write files or download payloads. `hl case read` remains
+available as a deprecated alias.
 
 ## Entities
 
