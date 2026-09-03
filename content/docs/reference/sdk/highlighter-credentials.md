@@ -2,7 +2,7 @@
 title = "Highlighter SDK Credentials"
 description = "How to create a set credentials for interacting with Highlighter via the CLI or Python SDK"
 date = 2024-03-12T08:00:00+00:00
-updated = 2026-09-09T08:00:00+00:00
+updated = 2026-09-11T08:00:00+00:00
 draft = false
 weight = 1
 sort_by = "weight"
@@ -113,3 +113,20 @@ no-op, and updating a profile that does not exist tells you to create it first.
 `update` writes the profile back the same way `create` does, so on a machine
 with no OS keyring it needs the same `--allow-plaintext` opt-in.
 
+### Diagnose Active Credentials
+
+Run `hl doctor` to check the active endpoint and credentials alongside local
+system diagnostics:
+
+```bash
+hl doctor
+hl doctor --format json
+```
+
+The HLClient section reports the endpoint, authenticated user's display name,
+role, and account. It distinguishes where profile credentials were loaded from
+(the OS keyring, plaintext profile store, legacy profile file, environment, or
+explicit command-line arguments) from how a profile was selected. When a
+profile is active, `Profile` shows its name and `Selected by` identifies the
+`--profile` option, `HL_DEFAULT_PROFILE`, or configuration file that selected
+it.
