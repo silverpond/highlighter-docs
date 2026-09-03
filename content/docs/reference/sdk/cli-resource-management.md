@@ -2,7 +2,7 @@
 title = "CLI Resource Management"
 description = "Manage core Highlighter resources like cases, experiments, and workflows directly from the command line."
 date = 2025-03-05T08:00:00+00:00
-updated = 2026-08-24T00:00:00+00:00
+updated = 2026-09-03T00:00:00+00:00
 draft = false
 weight = 70
 sort_by = "weight"
@@ -42,7 +42,7 @@ informational logging, leaving only command output and errors — useful when
 scripting, since it drops the noise without affecting the JSON on stdout:
 
 ```bash
-hl --quiet case read --workflow-order-id <ORDER_ID>
+hl --quiet case list --workflow-order-id <ORDER_ID>
 ```
 
 ## Task Definitions
@@ -175,14 +175,17 @@ Manage the cases within your workflows.
 # Create a new case
 hl case create --workflow-order-id <ORDER_ID> --title "My Case"
 
-# Read a single case, including its data file IDs and tasks
-hl case read --id <CASE_ID>
+# Get a single case, including its data file IDs and tasks
+hl case get --id <CASE_ID>
 
 # List the cases in a workflow order
-hl case read --workflow-order-id <ORDER_ID> --limit 50
+hl case list --workflow-order-id <ORDER_ID> --limit 50
 
 # Copy a case onto a new case over the same data files
 hl case copy --id <CASE_ID>
+
+# Download a case's files into <OUTPUT_DIR>/<CASE_ID>/
+hl case export --id <CASE_ID> --output-dir <OUTPUT_DIR>
 
 # Delete a specific case
 hl case delete --id <CASE_ID>
@@ -191,9 +194,21 @@ hl case delete --id <CASE_ID>
 hl case message create --case-id <CASE_ID> --content "Please review this."
 ```
 
-`hl case read` reports the data file IDs and tasks attached to a case — exactly
+`hl case get` reports the data file IDs and tasks attached to a case — exactly
 the input `hl case create` expects, which is what makes a case reproducible
-from the CLI.
+from the CLI. It reads the case only: no files are downloaded. (`hl case read`
+still works as a deprecated alias of `hl case get`, and warns on stderr.)
+
+`hl case list` is the separate collection query — without
+`--workflow-order-id` it lists the account's cases, most recent first, 25 at a
+time unless you raise `--limit`.
+
+`hl case export` is the one that writes to disk, downloading the case's files
+under `<OUTPUT_DIR>/<CASE_ID>/` alongside a `case.json`, a `manifest.json`, and
+(unless you pass `--no-include-messages`) a `messages.json`. Use `--content-type`
+to download only files of a given type, `--file-structure` to choose how they
+are named, and `-B`/`-A` (`hh:mm:ss`) to pad the data-source time window either
+side of the case.
 
 `hl case copy` creates a new case over the same data files as the source case
 (matched by data file UUID), carrying across its entity, description, and
