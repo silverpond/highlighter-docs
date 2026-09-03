@@ -130,3 +130,15 @@ explicit command-line arguments) from how a profile was selected. When a
 profile is active, `Profile` shows its name and `Selected by` identifies the
 `--profile` option, `HL_DEFAULT_PROFILE`, or configuration file that selected
 it.
+
+### SDK Client Construction Migration Note
+
+`HLClient.from_credential(...)` and `HLClient.from_profile(...)` return a client
+without changing the process-wide default client. Prefer passing the returned
+client to the operation that needs it. If existing code still calls
+`HLClient.get_client()`, register the intended default explicitly:
+
+```python
+client = HLClient.from_profile("compuglobalhypermeganet")
+HLClient.set_instance(client)
+```
