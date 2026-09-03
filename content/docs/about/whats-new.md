@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-09-03T00:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -14,6 +14,34 @@ toc = true
 top = false
 +++
 
+
+## Filtered Case Exports with `--where`
+
+**Release Date:** September 2026
+
+`hl case export` can now download exactly the files you need instead of an
+entire case. Pass a small, SQL-like `--where` expression and the server
+resolves the selection before a single byte is downloaded.
+
+### What's New
+
+- **`--where`**: filter by exact file or datasource identity, content type,
+  and a recorded-time window (e.g. one camera for a 15-minute period).
+- **`--dry-run`**: print the resolved file metadata, sizes, and durations as
+  JSON without creating a directory or downloading anything.
+- **`hl case export-fields`**: discover the fields, types, operators, and
+  limits supported by your server, in table or JSON form.
+
+### Getting Started
+
+```bash
+hl case export --id <CASE_ID> \
+  --where "data_source_uuid = '<SOURCE_UUID>' AND content_type = 'VIDEO' AND recorded_period OVERLAPS ('2026-08-06T07:35:00+10:00', '2026-08-06T07:50:00+10:00')" \
+  --output-dir ./exports
+```
+
+See the [CLI reference](/docs/reference/sdk/cli-resource-management/) for the
+full field list and option rules.
 
 ## Taxon Group Import/Export Performance
 

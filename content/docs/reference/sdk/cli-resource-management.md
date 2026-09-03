@@ -2,7 +2,7 @@
 title = "CLI Resource Management"
 description = "Manage core Highlighter resources like cases, experiments, and workflows directly from the command line."
 date = 2025-03-05T08:00:00+00:00
-updated = 2026-04-02T00:00:00+00:00
+updated = 2026-09-03T00:00:00+00:00
 draft = false
 weight = 70
 sort_by = "weight"
@@ -136,6 +136,64 @@ hl case delete --id <CASE_ID>
 # Add a message to a case
 hl case message create --case-id <CASE_ID> --content "Please review this."
 ```
+
+### Exporting case files
+
+Download a case's payload files to a local directory:
+
+```bash
+hl case export --id <CASE_ID> --output-dir ./exports
+```
+
+#### Filtering exports with `--where`
+
+Instead of downloading everything attached to a case, select exactly the files
+you need with a small, SQL-like expression. The expression is compiled and
+executed by the server; only the matching file UUIDs are downloaded.
+
+```bash
+# One camera (datasource) for a 15-minute window
+hl case export \
+  --id <CASE_ID> \
+  --where "data_source_uuid = '<SOURCE_UUID>' AND content_type = 'VIDEO' AND recorded_period OVERLAPS ('2026-08-06T07:35:00+10:00', '2026-08-06T07:50:00+10:00')" \
+  --output-dir ./exports
+
+# One exact file, asserted to be video from a given camera
+hl case export \
+  --id <CASE_ID> \
+  --where "file_id = 25900021 AND data_source_uuid = '<SOURCE_UUID>' AND content_type = 'VIDEO'" \
+  --output-dir ./exports
+```
+
+`==` is accepted as an alias for `=`. Timestamps must include a UTC offset
+(`Z` or `+10:00`). Version 1 supports these fields:
+
+| Field | Type | Operators |
+| --- | --- | --- |
+| `file_id` | integer | `=`, `==` |
+| `file_uuid` | UUID | `=`, `==` |
+| `data_source_id` | integer | `=`, `==` |
+| `data_source_uuid` | UUID | `=`, `==` |
+| `content_type` | file content type | `=`, `==` |
+| `recorded_period` | timestamp period | `OVERLAPS` |
+
+Predicates are combined with `AND`. Discover the authoritative list of fields,
+types, operators, and limits from your server at any time:
+
+```bash
+hl case export-fields              # human-readable table
+hl case export-fields --format json  # for scripts and AI agents
+```
+
+To see what would be downloaded — file metadata, sizes, durations, and the
+canonical expression — without creating a directory or downloading a byte:
+
+```bash
+hl case export --id <CASE_ID> --where "data_source_uuid = '<SOURCE_UUID>'" --dry-run
+```
+
+`--where` cannot be combined with the legacy `--content-type`, `--before`, or
+`--after` selectors; put those constraints in the expression instead.
 
 ## Entities
 
