@@ -2,7 +2,7 @@
 title = "CLI Resource Management"
 description = "Manage core Highlighter resources like cases, experiments, and workflows directly from the command line."
 date = 2025-03-05T08:00:00+00:00
-updated = 2026-04-02T00:00:00+00:00
+updated = 2026-09-03T00:00:00+00:00
 draft = false
 weight = 70
 sort_by = "weight"
@@ -22,7 +22,9 @@ You can manage the following resources directly from your terminal:
 
 *   **Cases**: `hl case`
 *   **Entities**: `hl entity`
+*   **Object Classes**: `hl object-class`
 *   **Task Definitions**: `hl task-definition`
+*   **Tasks**: `hl task`
 *   **Workflow Steps**: `hl step`
 *   **Workflows**: `hl workflow` & `hl workflow-order`
 *   **Experiments & Training**: `hl experiment`, `hl evaluation`, `hl training-run`
@@ -33,6 +35,14 @@ Use the `--help` flag with any command to see available options:
 ```bash
 hl task-definition --help
 hl entity --help
+```
+
+Pass `--quiet` (or `-q`) before the subcommand to suppress warnings and
+informational logging, leaving only command output and errors — useful when
+scripting, since it drops the noise without affecting the JSON on stdout:
+
+```bash
+hl --quiet case list --workflow-order-id <ORDER_ID>
 ```
 
 ## Task Definitions
@@ -68,6 +78,41 @@ Supported `--task-type` values:
 | `Review` | Human review step (no machine agent) |
 | `KmlToEntity::EntityDetection` | Import entities from KML files |
 | `DbfToEntity::EntityDetection` | Import entities from DBF (Shapefile attribute) files |
+
+## Object Classes
+
+```bash
+# List all object classes in the account
+hl object-class list
+
+# Filter by name (case-insensitive substring match)
+hl object-class list --name Pole
+
+# Cap the number returned
+hl object-class list --limit 20
+
+# Read specific object classes once you know their name or ID
+hl object-class read --names Pole Vehicle
+hl object-class read --ids 1 2 3
+```
+
+`hl object-class list` is the way to discover object class names and IDs when
+you don't already know them — `hl object-class read` requires you to name the
+classes you want up front.
+
+## Tasks
+
+```bash
+# Add files to a workflow order — creates cases and tasks automatically
+hl task create --workflow-order-id <ORDER_ID> --file-ids <FILE_ID_1> --file-ids <FILE_ID_2>
+
+# Create a task on a case that already exists (e.g. one made with `hl case create` or `hl case copy`)
+hl task create --case-id <CASE_ID> --step-id <STEP_ID>
+```
+
+`--case-id`/`--step-id` attaches a task directly to an existing case, which is
+the only way to give a case created via the CLI something for `hl agent start`
+to run. `--step-id` is required with `--case-id`.
 
 ## Workflow Orders
 
@@ -128,7 +173,19 @@ Manage the cases within your workflows.
 
 ```bash
 # Create a new case
-hl case create --workflow-order-id <ORDER_ID> --name "My Case"
+hl case create --workflow-order-id <ORDER_ID> --title "My Case"
+
+# Get a single case, including its data file IDs and tasks
+hl case get --id <CASE_ID>
+
+# List the cases in a workflow order
+hl case list --workflow-order-id <ORDER_ID> --limit 50
+
+# Copy a case onto a new case over the same data files
+hl case copy --id <CASE_ID>
+
+# Download a case's files into <OUTPUT_DIR>/<CASE_ID>/
+hl case export --id <CASE_ID> --output-dir <OUTPUT_DIR>
 
 # Delete a specific case
 hl case delete --id <CASE_ID>
@@ -136,6 +193,30 @@ hl case delete --id <CASE_ID>
 # Add a message to a case
 hl case message create --case-id <CASE_ID> --content "Please review this."
 ```
+
+`hl case get` reports the data file IDs and tasks attached to a case — exactly
+the input `hl case create` expects, which is what makes a case reproducible
+from the CLI. It reads the case only: no files are downloaded. (`hl case read`
+still works as a deprecated alias of `hl case get`, and warns on stderr.)
+
+`hl case list` is the separate collection query — without
+`--workflow-order-id` it lists the account's cases, most recent first, 25 at a
+time unless you raise `--limit`.
+
+`hl case export` is the one that writes to disk, downloading the case's files
+under `<OUTPUT_DIR>/<CASE_ID>/` alongside a `case.json`, a `manifest.json`, and
+(unless you pass `--no-include-messages`) a `messages.json`. Use `--content-type`
+to download only files of a given type, `--file-structure` to choose how they
+are named, and `-B`/`-A` (`hh:mm:ss`) to pad the data-source time window either
+side of the case.
+
+`hl case copy` creates a new case over the same data files as the source case
+(matched by data file UUID), carrying across its entity, description, and
+importance. The copy always starts in the `ready` state, even if the source
+case was completed, since state itself does not travel with the copy. Useful
+for re-running an agent over the same inputs without disturbing the original
+case. Pass `--workflow-order-id` to place the copy in a different order, or
+`--state draft` to hold it back.
 
 ## Entities
 
