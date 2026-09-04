@@ -2,7 +2,7 @@
 title = "Selecting and acting on items"
 description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, edit or reparent entities, or work through cases."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-07-29T08:00:00+00:00
+updated = 2026-09-04T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -62,6 +62,21 @@ them. A **survivor** is auto-selected (you can change it); annotations on the
 other entities are reassigned to the survivor, and the non-survivor entities are
 deleted. No entity is renamed. Because the non-survivors are removed, review the
 survivor choice before confirming the merge.
+
+## Bulk actions from the Records Gallery
+
+When you select records in the **Records Gallery**, open **Bulk actions** to
+add the selection to an existing unlocked workflow order or dataset. The menu
+shows whether the action applies to the loaded selection or to all records
+matching the current query.
+
+For a workflow order, choose the destination from the searchable **Workflow
+Order** field and click **Add to Order**. Highlighter uses the workflow order's
+case-matching strategy to decide how the records are grouped into cases; this
+action does not create a new order or let you choose an individual case.
+
+The same menu can add the selected or query-matched records to an unlocked
+dataset. A confirmation message reports how many files were added.
 
 ## Assign a parent entity
 
