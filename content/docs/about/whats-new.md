@@ -14,6 +14,21 @@ toc = true
 top = false
 +++
 
+## Bounded Case File Export Filtering
+
+**Release Date:** September 4, 2026
+
+The case export CLI now supports server-side `--where` filtering and a
+metadata-only `--dry-run` preview. Use `hl case export-fields` to discover the
+available file, datasource, content-type, and recording-period predicates.
+
+Filtered exports resolve the matching files before downloading them, while
+previews report file metadata and size/duration totals without creating output
+files.
+
+See [Case File Export Filtering](/docs/reference/sdk/case-file-export/) for
+examples and the complete syntax.
+
 
 ## Taxon Group Import/Export Performance
 
