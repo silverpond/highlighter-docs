@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-09-04T08:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -14,6 +14,33 @@ toc = true
 top = false
 +++
 
+
+## Connector Improvements
+
+**Release Date:** September 2026
+
+Connectors, which notify external systems when something happens in Highlighter, have been reworked to make them easier to configure and to show what has actually been delivered.
+
+### What Changed
+
+- **A simpler form.** Choosing a notification type now reveals only the fields it needs, instead of presenting every field for every configuration. Object classes and steps are chosen from searchable lists rather than typed as JSON, and each event's filter appears directly beneath that event.
+- **Authenticated webhooks.** HTTP Request connectors can send a bearer token. The token is stored encrypted, is never displayed again, and requires an `https` address unless the endpoint is local.
+- **Send a test notification.** A button on the connector page delivers a dummy payload through every enabled notification type and reports the outcome, so a URL, token, or Slack channel can be checked without waiting for a real event.
+- **See what happened.** The connector page now lists its delivery history with the event, how it was sent, its status, the number of attempts, and any error returned, alongside counts of pending, accepted, retrying, and failed notifications.
+- **Better retries.** Failures that might succeed later, such as a server error or a rate limit, are retried; failures that cannot succeed, such as a missing endpoint, are reported instead of being retried for days. Transient mail server problems are now retried rather than silently discarded.
+- **The UI Path option has been removed** from the connector form.
+
+### Action Required
+
+**HTTP Request connectors now send a JSON body.** Previously the request body was form-encoded while its header advertised JSON, which meant numbers and booleans arrived as text and nested values needed special decoding. The body now matches the header:
+
+```json
+{"event": "project_file_completed", "payload": {"case_id": 123}}
+```
+
+If you receive Highlighter webhooks, check that your endpoint parses a JSON body before this release reaches your environment.
+
+See [Connectors](/docs/user-manual/managing-workflows/connectors/) for full details.
 
 ## Taxon Group Import/Export Performance
 
