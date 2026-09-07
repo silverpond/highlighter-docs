@@ -2,7 +2,7 @@
 title = "Connectors"
 description = "Notify external systems when something happens in Highlighter, using HTTP webhooks, email, or Slack, and check delivery from the connector page."
 date = 2026-09-04T08:00:00+00:00
-updated = 2026-09-04T08:00:00+00:00
+updated = 2026-09-07T08:00:00+00:00
 draft = false
 weight = 60
 sort_by = "weight"
@@ -38,7 +38,9 @@ Sends the event to a URL of your choosing.
 - **Authentication** — `None`, or `Bearer token` to send an `Authorization: Bearer …` header.
 - **Bearer Token** — the token itself. It is stored encrypted and is never shown again. Leave the field blank when editing to keep the existing token.
 
-When authentication is set, the URL must use `https`, so the token is not sent in clear text. Addresses on `localhost` and `127.0.0.1` are exempt, so you can test against a local endpoint.
+When authentication is set, the URL must use `https`, so the token is not sent in clear text. There is no exemption for local addresses — to test against a local endpoint, leave **Authentication** on `None`.
+
+Changing the URL of a connector that stores a token requires you to re-enter the token, so a credential issued for one destination is never sent to another.
 
 The request is a `POST` with a JSON body and `Content-Type: application/json`:
 
