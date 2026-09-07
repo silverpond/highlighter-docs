@@ -2,7 +2,7 @@
 title = "CLI Resource Management"
 description = "Manage core Highlighter resources like cases, experiments, and workflows directly from the command line."
 date = 2025-03-05T08:00:00+00:00
-updated = 2026-04-02T00:00:00+00:00
+updated = 2026-09-08T00:00:00+00:00
 draft = false
 weight = 70
 sort_by = "weight"
@@ -130,12 +130,28 @@ Manage the cases within your workflows.
 # Create a new case
 hl case create --workflow-order-id <ORDER_ID> --name "My Case"
 
+# List cases, most recent first (JSON output)
+hl case list --workflow-order-id <ORDER_ID> --limit 25
+
+# Filter cases by state, importance, text and time (repeatable filters accept multiple values)
+hl case list \
+  --states completed --states ready \
+  --importance HIGH \
+  --search "flood" \
+  --created-at-from 2026-01-01T00:00:00Z \
+  --order-by latest_message_at
+
+# Find cases within a bounding box (MIN_LON MIN_LAT MAX_LON MAX_LAT)
+hl case list --bounds 153.0 -27.5 153.1 -27.4
+
 # Delete a specific case
 hl case delete --id <CASE_ID>
 
 # Add a message to a case
 hl case message create --case-id <CASE_ID> --content "Please review this."
 ```
+
+`hl case list` also accepts `--query` (entity external id), `--ids`, `--titles`, `--workflow-ids`, `--entity-ids`, `--data-file-ids`, `--completed-at-from/--completed-at-to`, `--created-at-to`, and `--updated-at-from/--updated-at-to`. Run `hl case list --help` for the full list.
 
 ## Entities
 
