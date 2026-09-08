@@ -130,7 +130,7 @@ Manage the cases within your workflows.
 # Create a new case
 hl case create --workflow-order-id <ORDER_ID> --name "My Case"
 
-# List cases, most recent first (JSON output)
+# List cases, most recent first (JSON array output)
 hl case list --workflow-order-id <ORDER_ID> --limit 25
 
 # Filter cases by state, importance, text and time (repeatable filters accept multiple values)
@@ -152,6 +152,8 @@ hl case message create --case-id <CASE_ID> --content "Please review this."
 ```
 
 `hl case list` also accepts `--query` (entity external id), `--ids`, `--titles`, `--workflow-ids`, `--entity-ids`, `--data-file-ids`, `--completed-at-from/--completed-at-to`, `--created-at-to`, and `--updated-at-from/--updated-at-to`. Run `hl case list --help` for the full list.
+
+`--limit` may exceed the server's page size (200): the CLI fetches additional pages automatically and prints the results as a single JSON array. The same applies to `hl case message list`.
 
 ## Entities
 
