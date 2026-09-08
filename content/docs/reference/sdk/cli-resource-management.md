@@ -181,6 +181,10 @@ hl case get --id <CASE_ID>
 # List the cases in a workflow order
 hl case list --workflow-order-id <ORDER_ID> --limit 50
 
+# Update one or more cases
+hl case update --id <CASE_ID> --state paused --importance HIGH
+hl case update --id <CASE_ID_1>,<CASE_ID_2>,<CASE_ID_3> --title "Renamed batch"
+
 # Copy a case onto a new case over the same data files
 hl case copy --id <CASE_ID>
 
@@ -205,6 +209,12 @@ still works as a deprecated alias of `hl case get`, and warns on stderr.)
 `hl case list` is the separate collection query — without
 `--workflow-order-id` it lists the account's cases, most recent first, 25 at a
 time unless you raise `--limit`.
+
+`hl case update` changes case fields: `--title`, `--description`, `--state`,
+`--importance`, `--trigger`, `--sort-order`, and `--completed-at`. Pass several
+case IDs as a comma-separated `--id` list to apply the same change to every case
+in the batch; each result is printed as its own JSON line, and the command exits
+non-zero if any update failed.
 
 `hl case export` is the one that writes to disk. The downloaded payloads land
 in `<OUTPUT_DIR>/<CASE_ID>/data_files/`, next to a `case.json`, a
