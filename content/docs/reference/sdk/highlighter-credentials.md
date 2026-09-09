@@ -79,12 +79,19 @@ You can now use the `--profile compuglobalhypermeganet` option when using the CL
 store, so the API token never sits in a file you have to protect yourself:
 
 ```bash
-hl profile create   --name compuglobalhypermeganet   --api-token d000d0d0d0d0d0d0d000d0d0d0d0d0d0   --endpoint-url https://compuglobalhypermeganet.highlighter.ai/graphql
+hl profile create \
+  --name compuglobalhypermeganet \
+  --api-token d000d0d0d0d0d0d0d000d0d0d0d0d0d0 \
+  --endpoint-url https://compuglobalhypermeganet.highlighter.ai/graphql
 ```
 
 All three options are required. On a machine with no OS keyring, the command
-stops rather than quietly writing the token to disk; pass `--allow-plaintext`
-to accept a local plaintext fallback instead.
+stops rather than quietly writing the token to disk, and tells you what to do
+instead: set `HL_WEB_GRAPHQL_API_TOKEN` and `HL_WEB_GRAPHQL_ENDPOINT` (the
+option above, suited to CI), or accept a local plaintext fallback by passing
+`--allow-plaintext` or setting `HL_ALLOW_PLAINTEXT_PROFILE_STORE=1`. The
+fallback file is `~/.highlighter/profiles.secrets.toml`, and every command that
+reads it warns that it holds credentials in plaintext.
 
 ##### Rotating a token or moving an account
 
@@ -103,4 +110,6 @@ Only `--name` is required. Pass `--api-token`/`-t`, `--endpoint-url`/`-u`, or
 both; anything you leave out keeps its current value, and any cloud credentials
 on the profile are preserved. Passing neither is an error rather than a silent
 no-op, and updating a profile that does not exist tells you to create it first.
+`update` writes the profile back the same way `create` does, so on a machine
+with no OS keyring it needs the same `--allow-plaintext` opt-in.
 
