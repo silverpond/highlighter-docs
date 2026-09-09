@@ -2,7 +2,7 @@
 title = "CLI Resource Management"
 description = "Manage core Highlighter resources like cases, experiments, and workflows directly from the command line."
 date = 2025-03-05T08:00:00+00:00
-updated = 2026-09-03T00:00:00+00:00
+updated = 2026-09-09T00:00:00+00:00
 draft = false
 weight = 70
 sort_by = "weight"
@@ -187,6 +187,9 @@ hl case copy --id <CASE_ID>
 # Download a case's files into <OUTPUT_DIR>/<CASE_ID>/
 hl case export --id <CASE_ID> --output-dir <OUTPUT_DIR>
 
+# Download only the video and image files
+hl case export --id <CASE_ID> --output-dir <OUTPUT_DIR> --content-type VIDEO --content-type IMAGE
+
 # Delete a specific case
 hl case delete --id <CASE_ID>
 
@@ -203,12 +206,35 @@ still works as a deprecated alias of `hl case get`, and warns on stderr.)
 `--workflow-order-id` it lists the account's cases, most recent first, 25 at a
 time unless you raise `--limit`.
 
-`hl case export` is the one that writes to disk, downloading the case's files
-under `<OUTPUT_DIR>/<CASE_ID>/` alongside a `case.json`, a `manifest.json`, and
-(unless you pass `--no-include-messages`) a `messages.json`. Use `--content-type`
-to download only files of a given type, `--file-structure` to choose how they
-are named, and `-B`/`-A` (`hh:mm:ss`) to pad the data-source time window either
-side of the case.
+`hl case export` is the one that writes to disk. The downloaded payloads land
+in `<OUTPUT_DIR>/<CASE_ID>/data_files/`, next to a `case.json`, a
+`manifest.json`, and (unless you pass `--no-include-messages`) a
+`messages.json`. Use `--file-structure` to choose how the files are named, and
+`-B`/`-A` (`hh:mm:ss`) to pad the data-source time window either side of the
+case.
+
+### Downloading only some of a case's files
+
+A case that spans a video stream and a set of observations can export a lot more
+than you need. `--content-type` (short form `-C`) restricts the download to
+files of the types you name:
+
+| Value | Value | Value |
+| --- | --- | --- |
+| `IMAGE` | `VIDEO` | `TEXT` |
+| `JSON` | `AUDIO` | `WEB_PAGE` |
+| `KML` | `LIDAR` | `OBSERVATION` |
+| `CSV` | `DBF` | |
+
+The option is case-insensitive and repeatable — give it once per type you want,
+as in the example above. Omit it and every file is downloaded, which is the
+behaviour you get without the flag.
+
+The filter applies to both halves of an export: the files attached to the case's
+latest submission, and the files pulled from its data sources across the case's
+time window. The filter that was applied is recorded in `manifest.json` under
+`contentTypes`, so an export directory says for itself whether it holds
+everything or a subset.
 
 `hl case copy` creates a new case over the same data files as the source case
 (matched by data file UUID), carrying across its entity, description, and
