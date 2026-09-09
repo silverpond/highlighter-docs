@@ -2,7 +2,7 @@
 title = "Highlighter SDK Credentials"
 description = "How to create a set credentials for interacting with Highlighter via the CLI or Python SDK"
 date = 2024-03-12T08:00:00+00:00
-updated = 2026-08-18T08:00:00+00:00
+updated = 2026-09-09T08:00:00+00:00
 draft = false
 weight = 1
 sort_by = "weight"
@@ -72,4 +72,35 @@ compuglobalhypermeganet:
 
 You can now use the `--profile compuglobalhypermeganet` option when using the CLI or
 `HLClient.from_profile(...)` if using the Python SDK
+
+#### Option 3: Profiles stored by the CLI
+
+`hl profile create` stores a profile in your operating system's credential
+store, so the API token never sits in a file you have to protect yourself:
+
+```bash
+hl profile create   --name compuglobalhypermeganet   --api-token d000d0d0d0d0d0d0d000d0d0d0d0d0d0   --endpoint-url https://compuglobalhypermeganet.highlighter.ai/graphql
+```
+
+All three options are required. On a machine with no OS keyring, the command
+stops rather than quietly writing the token to disk; pass `--allow-plaintext`
+to accept a local plaintext fallback instead.
+
+##### Rotating a token or moving an account
+
+`hl profile update` changes the fields you name and leaves the rest of the
+profile alone, so rotating a token does not mean re-entering the endpoint:
+
+```bash
+# Rotate the token, keep the endpoint
+hl profile update --name compuglobalhypermeganet --api-token <NEW_TOKEN>
+
+# Point an existing profile at a different account
+hl profile update --name compuglobalhypermeganet --endpoint-url https://other-account.highlighter.ai/graphql
+```
+
+Only `--name` is required. Pass `--api-token`/`-t`, `--endpoint-url`/`-u`, or
+both; anything you leave out keeps its current value, and any cloud credentials
+on the profile are preserved. Passing neither is an error rather than a silent
+no-op, and updating a profile that does not exist tells you to create it first.
 
