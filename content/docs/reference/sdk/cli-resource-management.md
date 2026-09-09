@@ -206,11 +206,12 @@ still works as a deprecated alias of `hl case get`, and warns on stderr.)
 `--workflow-order-id` it lists the account's cases, most recent first, 25 at a
 time unless you raise `--limit`.
 
-`hl case export` is the one that writes to disk, downloading the case's files
-under `<OUTPUT_DIR>/<CASE_ID>/` alongside a `case.json`, a `manifest.json`, and
-(unless you pass `--no-include-messages`) a `messages.json`. Use
-`--file-structure` to choose how the files are named, and `-B`/`-A`
-(`hh:mm:ss`) to pad the data-source time window either side of the case.
+`hl case export` is the one that writes to disk. The downloaded payloads land
+in `<OUTPUT_DIR>/<CASE_ID>/data_files/`, next to a `case.json`, a
+`manifest.json`, and (unless you pass `--no-include-messages`) a
+`messages.json`. Use `--file-structure` to choose how the files are named, and
+`-B`/`-A` (`hh:mm:ss`) to pad the data-source time window either side of the
+case.
 
 ### Downloading only some of a case's files
 
