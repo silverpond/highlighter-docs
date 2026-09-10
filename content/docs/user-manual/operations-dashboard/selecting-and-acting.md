@@ -2,7 +2,7 @@
 title = "Selecting and acting on items"
 description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, edit or reparent entities, or work through cases."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-07-29T08:00:00+00:00
+updated = 2026-08-13T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -45,6 +45,16 @@ The detail panel opens on the right for a **record**, **entity**, or **data
 source**. From it you can view and edit the item's details, jump to related
 items, locate the item on the map, and — for a data source — open its
 **recordings**.
+
+Use **Open in Editor** in a data source's actions menu to open it in the
+[Assessment Editor](../../assessing-and-labelling/) with the dashboard's
+current date range. An entity's actions menu groups editor links by **Device**
+and **Subject** inside **Open in Editor**. In either section, choose **Default**
+to let Highlighter arrange the editor, or choose a saved layout by name.
+
+You can reach the same editor views from the **Hierarchy** panel. Right-click
+an entity, open **Open in Editor**, then choose **Default** or a saved layout.
+These links also carry the dashboard's current date range into the editor.
 
 ## Create a workflow order
 
