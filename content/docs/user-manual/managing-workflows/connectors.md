@@ -2,7 +2,7 @@
 title = "Connectors"
 description = "Notify external systems when something happens in Highlighter, using HTTP webhooks, email, or Slack, and check delivery from the connector page."
 date = 2026-09-04T08:00:00+00:00
-updated = 2026-09-07T08:00:00+00:00
+updated = 2026-09-10T08:00:00+00:00
 draft = false
 weight = 60
 sort_by = "weight"
@@ -122,7 +122,7 @@ Beneath them, the **Events** table lists each delivery, newest first, showing wh
 
 A failure that might succeed later is retried; one that cannot is not.
 
-- **HTTP Request** — a `5xx` response or `429 Too Many Requests` is retried, as are timeouts and connection failures. Any other `4xx`, such as `404 Not Found` or `403 Forbidden`, is treated as a configuration problem and is not retried.
+- **HTTP Request** — a `5xx` response, `429 Too Many Requests` or `408 Request Timeout` is retried, as are client-side timeouts and connection failures. Any other `4xx`, such as `404 Not Found` or `403 Forbidden`, is treated as a configuration problem and is not retried.
 - **Email** — a busy or unreachable mail server is retried. Other failures are not.
 - **Slack** — rate limiting and Slack server errors are retried. Other errors, such as an unknown channel, are not. An authentication failure also marks the Slack workspace as needing attention.
 
