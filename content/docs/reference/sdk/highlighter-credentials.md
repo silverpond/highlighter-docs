@@ -133,10 +133,11 @@ it.
 
 ### SDK Client Construction Migration Note
 
-`HLClient.from_credential(...)` and `HLClient.from_profile(...)` return a client
-without changing the process-wide default client. Prefer passing the returned
-client to the operation that needs it. If existing code still calls
-`HLClient.get_client()`, register the intended default explicitly:
+`HLClient.from_credential(...)`, `HLClient.from_profile(...)`, and
+`HLClient.from_env()` return a client without changing the process-wide default
+client. Prefer passing the returned client to the operation that needs it. If
+existing code still calls `HLClient.get_client()`, register the intended default
+explicitly:
 
 ```python
 client = HLClient.from_profile("compuglobalhypermeganet")
