@@ -123,13 +123,29 @@ hl doctor
 hl doctor --format json
 ```
 
-The HLClient section reports the endpoint, authenticated user's display name,
-role, and account. It distinguishes where profile credentials were loaded from
-(the OS keyring, plaintext profile store, legacy profile file, environment, or
-explicit command-line arguments) from how a profile was selected. When a
-profile is active, `Profile` shows its name and `Selected by` identifies the
-`--profile` option, `HL_DEFAULT_PROFILE`, or configuration file that selected
-it.
+The `HLClient` section reports the endpoint, the authenticated user's display
+name, role, and account. `Source` says where the credentials themselves came
+from — the OS keyring, the plaintext profile store, a legacy profile file, the
+environment, or explicit command-line arguments:
+
+```
+HLClient
+  Status:       ok
+  Endpoint:     https://compuglobalhypermeganet.highlighter.ai/graphql
+  Source:       OS keyring
+  Profile:      compuglobalhypermeganet
+  Selected by:  cli_args (--profile)
+  User:         Demo user
+  Role:         Admin
+  Account:      Compu Global Hyper Meganet
+```
+
+How the credentials were *stored* is reported separately from how a profile was
+*selected*. When a profile is active, `Profile` shows its name and `Selected by`
+identifies what chose it — `cli_args (--profile)`, `env HL_DEFAULT_PROFILE`, or
+the path of the `.hl_config` file. Credentials read from the environment or
+passed as `--api-token`/`--endpoint-url` involve no profile at all, so both
+fields are omitted.
 
 ### SDK Client Construction Migration Note
 
