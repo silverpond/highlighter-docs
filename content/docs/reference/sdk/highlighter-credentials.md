@@ -2,7 +2,7 @@
 title = "Highlighter SDK Credentials"
 description = "How to create a set credentials for interacting with Highlighter via the CLI or Python SDK"
 date = 2024-03-12T08:00:00+00:00
-updated = 2026-09-09T08:00:00+00:00
+updated = 2026-09-11T08:00:00+00:00
 draft = false
 weight = 1
 sort_by = "weight"
@@ -113,3 +113,49 @@ no-op, and updating a profile that does not exist tells you to create it first.
 `update` writes the profile back the same way `create` does, so on a machine
 with no OS keyring it needs the same `--allow-plaintext` opt-in.
 
+### Diagnose Active Credentials
+
+Run `hl doctor` to check the active endpoint and credentials alongside local
+system diagnostics:
+
+```bash
+hl doctor
+hl doctor --format json
+```
+
+The `HLClient` section reports the endpoint, the authenticated user's display
+name, role, and account. `Source` says where the credentials themselves came
+from — the OS keyring, the plaintext profile store, a legacy profile file, the
+environment, or explicit command-line arguments:
+
+```
+HLClient
+  Status:       ok
+  Endpoint:     https://compuglobalhypermeganet.highlighter.ai/graphql
+  Source:       OS keyring
+  Profile:      compuglobalhypermeganet
+  Selected by:  cli_args (--profile)
+  User:         Demo user
+  Role:         Admin
+  Account:      Compu Global Hyper Meganet
+```
+
+How the credentials were *stored* is reported separately from how a profile was
+*selected*. When a profile is active, `Profile` shows its name and `Selected by`
+identifies what chose it — `cli_args (--profile)`, `env HL_DEFAULT_PROFILE`, or
+the path of the `.hl_config` file. Credentials read from the environment or
+passed as `--api-token`/`--endpoint-url` involve no profile at all, so both
+fields are omitted.
+
+### SDK Client Construction Migration Note
+
+`HLClient.from_credential(...)`, `HLClient.from_profile(...)`, and
+`HLClient.from_env()` return a client without changing the process-wide default
+client. Prefer passing the returned client to the operation that needs it. If
+existing code still calls `HLClient.get_client()`, register the intended default
+explicitly:
+
+```python
+client = HLClient.from_profile("compuglobalhypermeganet")
+HLClient.set_instance(client)
+```
