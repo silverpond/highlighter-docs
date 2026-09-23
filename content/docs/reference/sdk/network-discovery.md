@@ -2,7 +2,7 @@
 title = "Network Device Discovery"
 description = "Discover IP cameras and devices on your network using mDNS/Bonjour with the Highlighter SDK"
 date = 2025-12-17T08:00:00+00:00
-updated = 2025-12-17T08:00:00+00:00
+updated = 2026-08-04T08:00:00+00:00
 draft = false
 weight = 50
 sort_by = "weight"
@@ -58,6 +58,64 @@ hl datasource discover find --serial GB2148455
 # Batch lookup multiple cameras and save to CSV
 hl datasource discover batch --file macs.txt --output cameras.csv
 ```
+
+## Compare Cloud Devices with the Local Network
+
+Use `hl device discover compare` to compare the device entities in Highlighter
+Cloud with devices discovered on the local network. The command matches devices
+by MAC address, falling back to serial number when available.
+
+```bash
+# Show a table of all cloud and local devices
+hl device discover compare
+
+# Export machine-readable results
+hl device discover compare --format json > device-inventory.json
+hl device discover compare --format csv > device-inventory.csv
+```
+
+By default, the comparison also:
+
+- Checks whether each mDNS hostname resolves to the advertised IP address.
+- Queries MediaMTX for the upstream source URL and recent recording/liveness
+  status when a MediaMTX playback URL is configured.
+
+Active subnet probing is opt-in. Add `--probe-subnets` to find known cloud MAC
+addresses that did not advertise through mDNS by probing bounded, directly
+connected IPv4 subnets. The scan is limited to 1024 hosts by default.
+
+The table and structured output report whether a device is online through mDNS
+or ARP, was not detected, or could not be determined. Use these options to
+control network activity and filtering:
+
+```bash
+# Recover known cloud cameras that did not advertise through mDNS
+hl device discover compare --probe-subnets
+
+# Skip active subnet probing explicitly
+hl device discover compare --no-probe-subnets
+
+# Skip both MediaMTX source lookup and liveness checks
+hl device discover compare --no-probe-mediamtx
+
+# Skip the extra 30-day recording-history request for idle paths
+hl device discover compare --no-mediamtx-history
+
+# Show only cloud devices missing from the local network
+hl device discover compare --show missing-local
+
+# Exit non-zero if a MAC conflict or ambiguous match is found
+hl device discover compare --strict
+```
+
+Change the subnet limit with `--max-subnet-hosts`. The neighbor-table settle
+wait is one second by default and can be changed with
+`--mac-discovery-settle-seconds`.
+
+JSON and CSV output includes the descriptive `hl_cloud_rtsp_url`,
+`hl_cloud_playback`, and `upstream_source_urls` fields. The earlier
+`rtsp_urls`, `mediamtx_urls`, and `media_server_url` names remain available as
+compatibility aliases.
 
 ## Command Reference
 
