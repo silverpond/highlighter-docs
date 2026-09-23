@@ -101,7 +101,7 @@ Four events accept a filter, shown directly beneath the event once you tick it. 
 - **Assessment Finalised** — *Only these object classes*. The connector fires only when the assessment contains an annotation of one of the chosen classes.
 - **Tasks Added To Machine Assessment Step** — *Only these steps*.
 - **Finished Tasks In Machine Assessment Step** — *Only these steps*.
-- **Case Ready** — *Only these workflows* and *Only these workflow orders*. When both are set, a case must match both.
+- **Case Ready** — *Only these workflows* and *Only these workflow orders*. When both are set, a case must match both. Case Ready also has two settings that change what each notification contains rather than which cases are sent. See [Choosing What a Case Carries](#choosing-what-a-case-carries).
 
 Each filter applies to every notification type the connector uses.
 
@@ -119,6 +119,15 @@ A case that fails any of these checks still becomes ready, but no notification i
 
 Cases created before the Case Ready event was released in September 2026 are never announced, even if they are marked ready later.
 
+### Choosing What a Case Carries
+
+Two more settings appear beneath **Case Ready**. They decide what the entities in each notification look like, not which cases are sent:
+
+- **Only these object classes** — which entities are listed in `entities`. The candidates are the case's own entity and any entity annotated or given an attribute value in the case's latest submission. Leave it empty to list every one of them.
+- **Publish these entity attributes** — attributes to include on every listed entity. Each becomes a key named after the attribute in camelCase, so *Condition Grade* becomes `conditionGrade`. Leave it empty to send only each entity's `id`, `externalId`, `externalIdType` and `objectClass`.
+
+The connector page shows these as *Only these object classes* and *Published entity attributes*. Because the settings belong to the connector, two connectors subscribed to Case Ready can receive different documents for the same case.
+
 ### What Is Sent
 
 For an **HTTP Request** connector, the body is a versioned JSON document describing the case:
@@ -133,36 +142,38 @@ For an **HTTP Request** connector, the body is a versioned JSON document describ
     "case": {
       "id": "018f3478-9d2a-7f6b-b75d-20bbba3d8972",
       "shortId": "cse_B47M2QxR9vKd3TnL-a8fWe",
-      "title": "Leaning pallet stack in forklift aisle",
-      "description": "Pallet stack is leaning into the marked travel aisle and may fall.",
+      "title": "Leaning stack in travel aisle",
+      "description": "Stack is leaning into the marked travel aisle and may fall.",
       "state": "ready",
       "createdAt": "2026-08-31T02:14:18.640Z",
       "updatedAt": "2026-08-31T02:14:22.481Z",
       "triggeredAt": "2026-08-31T02:14:18.120Z",
-      "triggerReason": "palletDefectSeverity == 'high'",
+      "triggerReason": "conditionGrade == 'high'",
       "workflowId": "d1e1a9ec-1f0e-4f36-9d0a-0f4c2a6c8f11",
-      "workflowName": "OH&S pallet review",
+      "workflowName": "OH&S asset review",
       "workflowOrderId": "3fbd92b8-ced3-4cdc-9b24-91b8ce225343",
-      "workflowOrderName": "Melbourne pallet alerts",
-      "subject": { "id": "9609404e-9fa4-4373-9ad9-56ac8151f2c6", "name": "Pallet 874231" },
+      "workflowOrderName": "Melbourne asset alerts",
+      "subject": { "id": "9609404e-9fa4-4373-9ad9-56ac8151f2c6", "name": "Asset 874231" },
       "entities": [
         {
           "id": "9609404e-9fa4-4373-9ad9-56ac8151f2c6",
-          "externalId": "PALLET-874231",
-          "externalIdType": "pallet_id",
-          "objectClass": "pallet",
-          "palletDefectSeverity": { "value": "high", "occurredAt": "2026-08-31T02:14:18.120Z" }
+          "externalId": "ASSET-874231",
+          "externalIdType": "asset_id",
+          "objectClass": "machine",
+          "conditionGrade": { "value": "high", "occurredAt": "2026-08-31T02:14:18.120Z" }
         }
       ],
       "dataSources": [
         {
           "id": "0e285e4e-1395-4d94-87f9-c934329f8384",
-          "name": "Forklift 07 front camera",
+          "name": "Aisle 07 front camera",
           "serialNumber": "CAM-0007",
+          "sourceType": "mediamtx",
+          "contentType": "video_stream",
           "device": {
             "id": "779c51c4-ad1e-44f5-8701-51d92ea3d527",
-            "externalId": "FORKLIFT-07",
-            "externalIdType": "forklift_id"
+            "externalId": "VEHICLE-07",
+            "externalIdType": "vehicle_id"
           }
         }
       ],
@@ -187,9 +198,12 @@ For an **HTTP Request** connector, the body is a versioned JSON document describ
 ```
 
 - Every `id` is a UUID, including `workflowId`. Timestamps are UTC ISO 8601 with milliseconds.
-- `subject` is the entity the case is about, or `null` if the case has none. Other items in `entities` give context only.
+- `subject` is the entity the case is about, or `null` if the case has none. It is always sent, even when **Only these object classes** leaves it out of `entities`. The other items in `entities` give context only.
 - `triggerReason` is the trigger that opened the case, or `null` for a case opened without one.
-- `palletDefectSeverity` and the camera `device` appear only on cases that carry them. `device` is `null` for a camera with no device, and `externalId` and `externalIdType` are `null` for an entity with no external identity.
+- `objectClass` is the entity's object class name in lower case.
+- `conditionGrade` in the example is one published entity attribute. Each attribute is sent as an object with its `value` and when it was observed (`occurredAt`). The value is the enum value for an enum attribute, and otherwise the stored value as text. An entity with no value for a published attribute still has the key, set to `null`, so every entity has the same shape.
+- `externalId` and `externalIdType` are `null` for an entity with no external identity.
+- `dataSources` is in no particular order, so tell sources apart by `sourceType` (such as `mediamtx`, `rtmp`, `manual_upload` or `external_api`) and `contentType` (such as `video_stream`, `image` or `observation`). `device` is `null` for a data source with no device.
 - `latestSubmission.occurredAtFrom` and `occurredAtTo` can be `null`.
 - `files[].url` is a pre-signed link you can download directly until it expires. If Highlighter cannot sign a file, its `url` is `null` and the case is still sent.
 - `url` opens the case in the Assessment Editor at `/assess`. The older `/annotate` address opens the same editor, so existing links keep working.
