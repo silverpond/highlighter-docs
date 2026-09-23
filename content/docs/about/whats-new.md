@@ -14,6 +14,12 @@ toc = true
 top = false
 +++
 
+## Scheduled Case Creation
+
+**Release Date:** September 2026
+
+A Workflow Order can now create a Case for chosen entities every day. Pick the entities in the **Scheduled Case Creation** section of the Order's page. Each night, while the Order is approved, Highlighter creates one ready Case per entity and sends it into the Workflow's steps. See [Schedule Daily Cases](../../user-manual/managing-workflows/managing-workflow-orders/#schedule-daily-cases).
+
 ## Case Ready Webhook
 
 **Release Date:** September 2026
