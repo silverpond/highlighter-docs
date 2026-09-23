@@ -107,7 +107,7 @@ Each filter applies to every notification type the connector uses.
 
 ## Case Ready Webhook
 
-A connector subscribed to **Case Ready** is notified once for each case that moves from **draft** to **ready**. This covers a case you mark ready yourself (see [Mark a Case Ready or Draft](../managing-workflow-orders/#mark-a-case-ready-or-draft)) and cases that a workflow moves to ready in bulk. A case is only announced once: marking it draft and then ready again does not send a second notification.
+A connector subscribed to **Case Ready** is notified once for each case that moves from **draft** to **ready**. This covers a case you mark ready yourself (see [Mark a Case Ready or Draft](../managing-workflow-orders/#mark-a-case-ready-or-draft)) and cases moved to ready together, such as with the order's **Mark all ready** button. A case is only announced once: marking it draft and then ready again does not send a second notification.
 
 A case is announced only if all of these are true:
 
@@ -116,6 +116,8 @@ A case is announced only if all of these are true:
 - it has a submission.
 
 A case that fails any of these checks still becomes ready, but no notification is sent for it.
+
+Cases created before the Case Ready event was released in September 2026 are never announced, even if they are marked ready later.
 
 ### What Is Sent
 
@@ -130,7 +132,7 @@ For an **HTTP Request** connector, the body is a versioned JSON document describ
   "payload": {
     "case": {
       "id": "018f3478-9d2a-7f6b-b75d-20bbba3d8972",
-      "shortId": "cse_B47M2Q",
+      "shortId": "cse_B47M2QxR9vKd3TnL-a8fWe",
       "title": "Leaning pallet stack in forklift aisle",
       "description": "Pallet stack is leaning into the marked travel aisle and may fall.",
       "state": "ready",
@@ -188,6 +190,7 @@ For an **HTTP Request** connector, the body is a versioned JSON document describ
 - `subject` is the entity the case is about, or `null` if the case has none. Other items in `entities` give context only.
 - `triggerReason` is the trigger that opened the case, or `null` for a case opened without one.
 - `palletDefectSeverity` and the camera `device` appear only on cases that carry them. `device` is `null` for a camera with no device, and `externalId` and `externalIdType` are `null` for an entity with no external identity.
+- `latestSubmission.occurredAtFrom` and `occurredAtTo` can be `null`.
 - `files[].url` is a pre-signed link you can download directly until it expires. If Highlighter cannot sign a file, its `url` is `null` and the case is still sent.
 - `url` opens the case in the Assessment Editor at `/assess`. The older `/annotate` address opens the same editor, so existing links keep working.
 
