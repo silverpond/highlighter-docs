@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2026-09-10T00:00:00+00:00
+updated = 2026-09-23T00:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -13,6 +13,14 @@ lead = "Stay informed about the latest features, enhancements, and improvements 
 toc = true
 top = false
 +++
+
+## Case Ready Webhook
+
+**Release Date:** September 2026
+
+Connectors can now subscribe to a **Case Ready** event, which fires once when a case moves from draft to ready. HTTP Request connectors receive a versioned JSON document describing the case, including its workflow, entities, data sources, latest submission, and file links. Idempotency headers let your endpoint safely ignore repeated deliveries. You can limit the event to particular workflows or workflow orders, and choose which object classes and entity attributes each connector receives. See [Case Ready Webhook](../../user-manual/managing-workflows/connectors/#case-ready-webhook).
+
+Workflows now have their own UUID, which the webhook reports as `workflowId`. The Assessment Editor is also available at `/assess`, and the existing `/annotate` links still work.
 
 ## Connector Improvements
 
