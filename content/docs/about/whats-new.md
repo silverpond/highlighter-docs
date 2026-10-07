@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2026-09-23T00:00:00+00:00
+updated = 2026-10-07T00:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -13,6 +13,28 @@ lead = "Stay informed about the latest features, enhancements, and improvements 
 toc = true
 top = false
 +++
+
+## Correct a Task's Status from a Step Page
+
+**Release Date:** October 2026
+
+Account admins can now change a task's status from the **Tasks** panel of any workflow step. Click the task's status label and choose a new status in the **Change task status** dialog. Setting a task back to **Pending** clears its lease so it can be picked up again. Successful tasks, and running tasks that are actively leased, cannot be changed. See [Correcting a Task's Status](../../user-manual/managing-workflows/machine-assessment-steps/#correcting-a-task-s-status).
+
+## Provenance Links in the Case Ready Webhook
+
+**Release Date:** October 2026
+
+Each entity attribute published in a **Case Ready** notification now carries `provenanceUrls`: links to the crop of the image the value was observed on, so a person receiving the notification can see the evidence behind it. The links need a signed-in Highlighter user. See [Connectors](../../user-manual/managing-workflows/connectors/).
+
+Daily scheduled Cases also now cover the previous calendar day, so each Case inspects a complete day. See [Schedule Daily Cases](../../user-manual/managing-workflows/managing-workflow-orders/#schedule-daily-cases).
+
+## SDK: SAM3 from the CLI, Agent Inspection, and Video Source Recovery
+
+**Release Date:** October 2026
+
+- **`hl sam3 infer` and `hl sam3 serve`** segment local images with a text prompt, either in one run or from a server that keeps the model loaded. See [Running SAM3 from the CLI](../../reference/sdk/sam3/#running-sam3-from-the-cli).
+- **`hl agent show`** opens an agent definition in the terminal, showing its graph and the value each capability parameter takes for each stream, and lets you edit them. See [Inspecting Agent Definitions](../../reference/sdk/agent-show/).
+- **Video sources** now decide separately whether to retry network errors (`retry_network_errors`) and whether to start again at the end of a video (`restart_on_eof`), so a finite video fetched over HTTPS is no longer processed repeatedly. See [Video Source Retries and End-of-File Behaviour](../../reference/sdk/video-source-recovery/).
 
 ## Scheduled Case Creation
 

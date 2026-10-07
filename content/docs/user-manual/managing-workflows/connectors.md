@@ -2,7 +2,7 @@
 title = "Connectors"
 description = "Notify external systems when something happens in Highlighter, using HTTP webhooks, email, or Slack, and check delivery from the connector page."
 date = 2026-09-04T08:00:00+00:00
-updated = 2026-09-23T08:00:00+00:00
+updated = 2026-10-07T08:00:00+00:00
 draft = false
 weight = 60
 sort_by = "weight"
@@ -160,7 +160,11 @@ For an **HTTP Request** connector, the body is a versioned JSON document describ
           "externalId": "ASSET-874231",
           "externalIdType": "asset_id",
           "objectClass": "machine",
-          "conditionGrade": { "value": "high", "occurredAt": "2026-08-31T02:14:18.120Z" }
+          "conditionGrade": {
+            "value": "high",
+            "occurredAt": "2026-08-31T02:14:18.120Z",
+            "provenanceUrls": ["https://<account>.<host>/observations/<observation uuid>/crop"]
+          }
         }
       ],
       "dataSources": [
@@ -201,7 +205,9 @@ For an **HTTP Request** connector, the body is a versioned JSON document describ
 - `subject` is the entity the case is about, or `null` if the case has none. It is always sent, even when **Only these object classes** leaves it out of `entities`. The other items in `entities` give context only.
 - `triggerReason` is the trigger that opened the case, or `null` for a case opened without one.
 - `objectClass` is the entity's object class name in lower case.
-- `conditionGrade` in the example is one published entity attribute. Each attribute is sent as an object with its `value` and when it was observed (`occurredAt`). The value is the enum value for an enum attribute, and otherwise the stored value as text. An entity with no value for a published attribute still has the key, set to `null`, so every entity has the same shape.
+- `conditionGrade` in the example is one published entity attribute. Each attribute is sent as an object with its `value`, when it was observed (`occurredAt`), and links to what it was observed on (`provenanceUrls`). The value is the enum value for an enum attribute, and otherwise the stored value as text. An entity with no value for a published attribute still has the key, set to `null`, so every entity has the same shape.
+- `provenanceUrls` is a list of links to the crop of the image the value was observed on, so a person can see why Highlighter holds that value. The list is empty unless there is a crop to serve: the value's annotation must be in the case's latest submission, on an image file, and a polygon or line with some width and height. A value observed on a video frame, or annotated as a point or mask, has no link.
+- Unlike `files[].url`, a provenance link is not pre-signed. It is on your account's address and needs a signed-in Highlighter user who is allowed to view the annotation, so a person can open it in a browser but your server cannot download it. Someone who is not signed in is sent to the sign-in page, and a signed-in user without access to the annotation gets a 404.
 - `externalId` and `externalIdType` are `null` for an entity with no external identity.
 - `dataSources` is in no particular order, so tell sources apart by `sourceType` (such as `mediamtx`, `rtmp`, `manual_upload` or `external_api`) and `contentType` (such as `video_stream`, `image` or `observation`). `device` is `null` for a data source with no device.
 - `latestSubmission.occurredAtFrom` and `occurredAtTo` can be `null`.
