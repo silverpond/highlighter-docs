@@ -2,7 +2,7 @@
 title = "Selecting and acting on items"
 description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, edit or reparent entities, or work through cases."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-09-04T08:00:00+00:00
+updated = 2026-10-07T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -65,18 +65,24 @@ survivor choice before confirming the merge.
 
 ## Bulk actions from the Records Gallery
 
-When you select records in the **Records Gallery**, open **Bulk actions** to
-add the selection to an existing unlocked workflow order or dataset. The menu
-shows whether the action applies to the loaded selection or to all records
-matching the current query.
+When you select records in the **Records Gallery**, open the **⋯** menu in the
+gallery's header (its tooltip reads *Bulk actions*) to add the selection to an
+existing workflow order or dataset. Each menu item says what it will act on:
+**Add to Workflow Order (3 selected)** for the records you selected, or **Add
+all matching records to Workflow Order** when every record matching the current
+query is selected. **Add to Dataset** is labelled the same way.
 
 For a workflow order, choose the destination from the searchable **Workflow
 Order** field and click **Add to Order**. Highlighter uses the workflow order's
 case-matching strategy to decide how the records are grouped into cases; this
-action does not create a new order or let you choose an individual case.
+action does not create a new order or let you choose an individual case. A
+confirmation message reports how many cases were created.
 
-The same menu can add the selected or query-matched records to an unlocked
-dataset. A confirmation message reports how many files were added.
+**Add to Dataset** works the same way: choose the **Dataset** and click **Add
+to Dataset**. Its confirmation message reports how many submissions were added.
+
+The menu also offers **Bulk Download**, which downloads the files matching the
+current filters.
 
 ## Assign a parent entity
 
