@@ -2,7 +2,7 @@
 title = "Machine Assessment Steps"
 description = "Configure machine-powered steps in Highlighter AI—assign AI agents, set quality thresholds, handle routing logic, and optimize performance for scalable enterprise workflows."
 date = 2025-05-01T08:00:00+00:00
-updated = 2025-11-19T08:00:00+00:00
+updated = 2026-10-07T08:00:00+00:00
 draft = false
 weight = 30
 sort_by = "weight"
@@ -132,6 +132,30 @@ Machine assessment steps are automated workflow components that use trained AI a
 - **Performance Degradation**: Identify and address performance issues
 - **Resource Bottlenecks**: Optimize resource allocation
 - **Data Quality Issues**: Handle problematic input data
+
+### Correcting a Task's Status
+
+An account admin can change the status of a task from the step's page, for example to send a failed task back to be picked up again. This works on the **Tasks** panel of every step type, not only Machine Assessment Steps.
+
+1. Open the step's page and find the task in the **Tasks** panel. Use the **Pending**, **Running**, **Failed** or **Success** tab to narrow the list.
+2. Click the task's status label in the first column. Labels you can change show *Change task status* when you hover over them.
+3. In the **Change task status** dialog, choose **Pending**, **Running**, **Failed** or **Success** from **Status**.
+4. Click **Save status**. The page confirms with *Task#&lt;id&gt; status updated to &lt;status&gt;.* and returns you to the same tab and page of the list.
+
+What each change does:
+
+- **Pending** clears the task's previous lease, so an agent or assessor can pick it up again.
+- **Success** advances the workflow, as it does when a task completes normally.
+- Any change may send notifications and start or stop agents.
+
+Two kinds of task cannot be changed, and their status label is not clickable:
+
+- A task that is already **success**. This keeps completed workflow state intact.
+- A **running** task that an agent or assessor currently holds a lease on. Wait for the lease to expire or for the task to finish.
+
+If the task becomes ineligible between opening the dialog and saving, nothing changes and the page reports *Successful tasks and tasks with an active running lease cannot be changed.*
+
+Users who are not admins see the status labels but cannot click them.
 
 ## Best Practices
 

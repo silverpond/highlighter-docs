@@ -2,7 +2,7 @@
 title = "Segment Anything Model 3 (SAM3)"
 description = "Reference documentation for the SAM3 inference capability."
 date = 2025-02-11T08:00:00+00:00
-updated = 2026-03-30T08:00:00+00:00
+updated = 2026-10-07T08:00:00+00:00
 draft = false
 weight = 200
 sort_by = "weight"
@@ -259,3 +259,72 @@ hl agent start agent.json test_image.png
 
 This will process each image and save the results to the `data_out/sam3/` directory: a JSON file containing the raw Highlighter entities and a JPEG with the detected polygons rendered on the source image.
 
+## Running SAM3 from the CLI
+
+Two `hl sam3` commands segment local images with a text prompt, without building an agent. They need no Highlighter credentials, and are available from SDK version 2.6.92.
+
+Both need the SAM3 runtime (`pip install 'highlighter-sdk[sam3]'`) and a local checkpoint passed with `--weights`; nothing is downloaded for you. See [Model weights](#model-weights) for how to get `sam3.pt`. `--device` defaults to `cuda`, and there is no automatic fallback to CPU.
+
+### Segment images with `hl sam3 infer`
+
+```bash
+hl sam3 infer \
+  --input ./images \
+  --output ./results \
+  --weights /path/to/sam3.pt \
+  --prompt cat
+```
+
+| Option | Meaning |
+|---|---|
+| `--input` | What to segment — see below. Required. |
+| `--output` | Directory for the results. It must be new or empty. Required. |
+| `--weights` | Local SAM3 checkpoint. Required. |
+| `--prompt` | The text concept to segment. Every image gets the same prompt. Required. |
+| `--confidence-threshold` | Between 0 and 1. Defaults to `0.5`. |
+| `--device` | Defaults to `cuda`. |
+
+`--input` can be:
+
+- a single `.jpg`, `.jpeg` or `.png` image;
+- a directory. The images directly inside it are processed in filename order and given frame IDs from 1. Subdirectories are not searched;
+- a workspace containing `evaluation/manifest.json`, which takes precedence over loose images. The manifest lists the frames to process, for example `{"examples": [{"frame_id": 9, "image_path": "evaluation/images/cat.jpg"}]}`.
+
+The output directory receives:
+
+- `manifest.json` — the prompt, the threshold, each image's instances with their scores and mask paths, and details of the run. Mask paths are relative to the output directory;
+- `masks/frame_<id>/instance_<n>.png` — one binary mask per predicted instance;
+- `run_notes.md` — a short record of the run.
+
+Progress is written to stderr and a JSON summary to stdout, so the summary can be piped. `hl --quiet sam3 infer …` hides the progress.
+
+Inputs are checked before the model is loaded, so a bad path or option fails straight away. A run that fails part-way can leave some masks behind; retry into a fresh output directory.
+
+### Keep the model loaded with `hl sam3 serve`
+
+Most of an `hl sam3 infer` run is spent loading the checkpoint. To segment many images, or to try several prompts, load the model once and send images to it over HTTP:
+
+```bash
+hl sam3 serve --weights /path/to/sam3.pt
+# Serving SAM3 on http://127.0.0.1:8000
+
+curl --data-binary @cat.jpg "http://127.0.0.1:8000/infer?prompt=cat"
+curl --data-binary @cat.jpg "http://127.0.0.1:8000/infer?prompt=cat&confidence_threshold=0.7"
+```
+
+`hl sam3 serve` takes `--weights`, `--confidence-threshold` and `--device` as above, plus `--host` (default `127.0.0.1`) and `--port` (default `8000`).
+
+| Request | Result |
+|---|---|
+| `POST /infer?prompt=<text>` with the image as the request body | JSON with `prompt`, `confidence_threshold`, `image_size` (`[width, height]`) and `instances`. Each instance has a `score` and a base64 `mask_png`, in the same format as the mask files `hl sam3 infer` writes. |
+| `GET /health` | `{"status": "ok"}` once the model is loaded. |
+
+The optional `confidence_threshold` query parameter overrides the server's `--confidence-threshold` for that request only.
+
+Requests are processed one at a time. Errors come back as JSON `{"error": ...}` and the server keeps running: 400 for a bad request, 404 for an unknown path, 405 for `GET /infer`, and 500 if inference fails.
+
+The server has no authentication and is meant as a local tool, not a production service. It listens only on `127.0.0.1` by default. To use it from another machine, tunnel to it rather than exposing it with `--host`:
+
+```bash
+ssh -L 8000:localhost:8000 <host>
+```

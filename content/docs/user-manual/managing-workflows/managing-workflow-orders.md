@@ -2,7 +2,7 @@
 title = "Managing Workflow Orders"
 description = "Approve or return Workflow Orders to draft, mark Cases ready or draft, schedule daily Cases, and duplicate an existing Order in Highlighter AI."
 date = 2026-07-28T08:00:00+00:00
-updated = 2026-09-23T08:00:00+00:00
+updated = 2026-10-07T08:00:00+00:00
 draft = false
 weight = 12
 sort_by = "weight"
@@ -50,6 +50,8 @@ An Order can create a new Case for each of a set of entities every day. For exam
 3. Click **Save schedule**. The page confirms *Scheduled case creation updated.*
 
 Each night at midnight (Melbourne time), Highlighter creates one Case for each selected entity, marks it **ready**, and releases it into the Workflow's steps so it can be assessed. The new Cases appear in the Order's list of Cases like any other.
+
+Each scheduled Case covers the previous calendar day: its submission spans from the start to the end of the day that has just finished, so the Case inspects a complete day of recordings rather than the day that is only beginning.
 
 - The schedule runs only while the Order is approved (or processing). While the Order is in draft, nothing is created, and missed days are not made up later.
 - Each entity gets at most one scheduled Case per day.
