@@ -2,7 +2,7 @@
 title = "Case messages"
 description = "Read and send messages on a Highlighter case from the mobile app, and use the inbox to see everything that has been said recently across your cases."
 date = 2026-09-01T08:00:00+00:00
-updated = 2026-09-01T08:00:00+00:00
+updated = 2026-10-07T08:00:00+00:00
 draft = false
 weight = 3
 sort_by = "weight"
@@ -27,6 +27,9 @@ To add a message, type into the **Message** field at the bottom and send. The
 message is posted to Highlighter, so it is visible to everyone else on the case
 — on the web as well as on mobile. If it cannot be sent, the app tells you and
 leaves the text where it is.
+
+A message you have started typing is kept if you switch to another tab or leave
+the case, and is waiting when you come back to it.
 
 If the conversation cannot be loaded at all, the tab shows the reason and a
 **Try Again** button.

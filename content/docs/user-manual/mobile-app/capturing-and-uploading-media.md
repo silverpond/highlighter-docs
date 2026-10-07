@@ -2,7 +2,7 @@
 title = "Capturing and uploading media"
 description = "Three ways to get photos and video from an iPhone into Highlighter — attaching media to a case, picking photos by hand, and Media Sync watching the library."
 date = 2026-09-01T08:00:00+00:00
-updated = 2026-09-01T08:00:00+00:00
+updated = 2026-10-07T08:00:00+00:00
 draft = false
 weight = 4
 sort_by = "weight"
@@ -14,13 +14,14 @@ toc = true
 top = false
 +++
 
-The mobile app has three routes for imagery, for three different jobs.
+The mobile app has four routes for imagery, for four different jobs.
 
 | Route | Use it when | Where it lives |
 | --- | --- | --- |
 | **Add Data** | You want a photo or video attached to a specific case | The **+** button in the tab bar |
 | **Upload Photos** | You want to send a handful of photos from the library | **Profile → Media** |
 | **Media Sync** | You want everything this phone captures to arrive by itself | **Profile → Media** |
+| **Upload to Highlighter** | The images are in another app, such as a drone's | That app's share sheet |
 
 **Upload Photos** and **Media Sync** both read the same iOS photo library, so
 only one of them is active at a time. The app presents them as a choice, and
@@ -55,6 +56,30 @@ queue with a **Try Again** button.
 
 If you find yourself picking the same photos every evening, the screen offers
 **Set Up Media Sync** as the standing alternative.
+
+## Upload to Highlighter — sharing from another app
+
+Some apps keep their imagery where Highlighter cannot read it — a drone's
+companion app, for example. Send it across with the iOS share sheet instead.
+
+1. In the other app (or in Photos, Files or Safari), select the images and tap
+   **Share**.
+2. Choose **Upload to Highlighter**. You can share up to 500 images at a time.
+3. The sheet shows *Adding 1 of N…* and then *Added N photos to Highlighter*. Tap
+   **Done** to go back to the app you came from.
+
+Nothing uploads at that moment. The images are handed to Highlighter and upload
+the next time you open it, where **Upload Photos** opens to show their progress.
+From there they are treated exactly like photos you picked by hand: duplicates
+are skipped, they are routed by camera serial number, and they are held on the
+device until uploaded.
+
+If the sheet says an image *couldn't be read*, the rest were still added. If
+nothing could be added, it says so and nothing is sent — try again, or pick the
+images in Upload Photos.
+
+Shared images that have not been uploaded yet are discarded when you sign out
+or change which Highlighter the app signs in at.
 
 ## Media Sync — watching the library
 
@@ -92,6 +117,10 @@ The Media Sync screen shows the running state:
   by Upload Photos, and changing it in either place changes it in both.
 - **Problems** — anything that failed, with **Try Again**.
 - **Check Again** — rescan now.
+- **Can't find your photos?** — a reminder at the bottom of the screen: transfer
+  the photos from the camera to this device first, because no app can see photos
+  left on a memory card. If they were already on the device before Media Sync was
+  set up, use **Rescan whole library**.
 
 ### Settings
 

@@ -16,7 +16,7 @@ top = false
 
 ## Highlighter Mobile App for iOS
 
-**Release Date:** September 2026
+**Release Date:** October 2026
 
 Highlighter now has an iOS app for the people doing inspections in the field.
 
@@ -28,13 +28,17 @@ Highlighter now has an iOS app for the people doing inspections in the field.
 - **Register your iPhone or iPad as a device**, giving the imagery it captures a
   data source of its own.
 - **Work your cases from the field** — a dashboard of case counts and recent
-  activity, a searchable and filterable case list, and per-case overview, data
-  and map tabs.
+  activity, a searchable case list you can filter by status and sort by
+  distance, recent discussion or importance, and per-case overview, data and
+  map tabs.
+- **Create, edit and archive cases** on the phone. Changes are saved to
+  Highlighter and appear on the web.
 - **Message on a case** from the phone, into the same conversation the web app
   shows.
-- **Three ways to send imagery** — attach a photo or video to a specific case,
-  pick photos by hand, or turn on **Media Sync** and have the phone's new
-  imagery routed to the right data source by camera serial number without anyone
+- **Four ways to send imagery** — attach a photo or video to a specific case,
+  pick photos by hand, share images in from another app with **Upload to
+  Highlighter**, or turn on **Media Sync** and have the phone's new imagery
+  routed to the right data source by camera serial number without anyone
   choosing it.
 - **See where imagery came from** on a map of every uploaded file that carries
   coordinates.
