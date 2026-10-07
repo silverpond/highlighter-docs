@@ -137,7 +137,7 @@ Machine assessment steps are automated workflow components that use trained AI a
 
 An account admin can change the status of a task from the step's page, for example to send a failed task back to be picked up again. This works on the **Tasks** panel of every step type, not only Machine Assessment Steps.
 
-1. Open the step's page and find the task in the **Tasks** panel. Use the **Pending**, **Running**, **Failed** or **Success** tab to narrow the list.
+1. Open the step's page and find the task in the **Tasks** panel. The panel opens on the **All** tab; use the **Pending**, **Running**, **Success** or **Failed** tab to narrow the list.
 2. Click the task's status label in the first column. Labels you can change show *Change task status* when you hover over them.
 3. In the **Change task status** dialog, choose **Pending**, **Running**, **Failed** or **Success** from **Status**.
 4. Click **Save status**. The page confirms with *Task#&lt;id&gt; status updated to &lt;status&gt;.* and returns you to the same tab and page of the list.

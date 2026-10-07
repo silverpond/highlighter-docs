@@ -32,7 +32,7 @@ hl agent show agent.json -s tasks.json
 
 The agent definition must be a `.json` file.
 
-`-s` / `--stream-definitions-file` names a task JSON file: a JSON list with one object per stream. With it, the screen shows one column of values per stream, so you can compare streams side by side. To show only some of the streams, add a selection in square brackets:
+`-s` / `--stream-definitions-file` names a task JSON file: a JSON list with one object per stream. With it, the screen shows one column of values per stream, headed by the stream's `stream_name` and its position in the file (such as `front-gate:0`), so you can compare streams side by side. To show only some of the streams, add a selection in square brackets:
 
 ```bash
 hl agent show agent.json -s "tasks.json[0,2]"         # by position, counting from 0
@@ -78,7 +78,7 @@ Press `Enter` on a parameter. When streams are loaded you are asked for the edit
 - `g` — **global**. Sets the value in the capability's `parameters` in the agent definition, and removes any override of that parameter from every stream, so all streams take the new value.
 - `s` — **stream**. Sets a capability-qualified override (`"<Capability>.<parameter>"`) on the selected stream only.
 
-Then type the new value as JSON — `0.4`, `true`, `"text"`, `[1, 2]`, `null` — and press `Enter` to accept or `Esc` to cancel. Invalid JSON is rejected with a message and nothing changes. Without streams loaded, an edit is always global.
+The bottom line then shows the current value. Delete it with `Backspace`, type the new value as JSON — `0.4`, `true`, `"text"`, `[1, 2]`, `null` — and press `Enter` to accept or `Esc` to cancel. Invalid JSON is rejected with a message and nothing changes. Without streams loaded, an edit is always global.
 
 Edits in the agent parameters view (`a`) set the agent definition's top-level `parameters`.
 
