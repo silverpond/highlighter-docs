@@ -2,7 +2,7 @@
 title = "Network Device Discovery"
 description = "Discover IP cameras and devices on your network using mDNS/Bonjour with the Highlighter SDK"
 date = 2025-12-17T08:00:00+00:00
-updated = 2026-08-04T08:00:00+00:00
+updated = 2026-10-07T08:00:00+00:00
 draft = false
 weight = 50
 sort_by = "weight"
@@ -77,15 +77,18 @@ hl device discover compare --format csv > device-inventory.csv
 By default, the comparison also:
 
 - Checks whether each mDNS hostname resolves to the advertised IP address.
-- Queries MediaMTX for the upstream source URL and recent recording/liveness
-  status when a MediaMTX playback URL is configured.
+- Asks MediaMTX's control API for each path's upstream source URL and whether a
+  source is publishing to it — `ready`, `idle`, or `unknown_path` — when a
+  MediaMTX playback URL is configured.
 
 Active subnet probing is opt-in. Add `--probe-subnets` to find known cloud MAC
 addresses that did not advertise through mDNS by probing bounded, directly
 connected IPv4 subnets. The scan is limited to 1024 hosts by default.
 
 The table and structured output report whether a device is online through mDNS
-or ARP, was not detected, or could not be determined. Use these options to
+or ARP, was not detected, or could not be determined. A device found through
+mDNS whose hostname does not resolve, or resolves to a different address, is
+still reported as online, with that noted. Use these options to
 control network activity and filtering:
 
 ```bash
@@ -97,9 +100,6 @@ hl device discover compare --no-probe-subnets
 
 # Skip both MediaMTX source lookup and liveness checks
 hl device discover compare --no-probe-mediamtx
-
-# Skip the extra 30-day recording-history request for idle paths
-hl device discover compare --no-mediamtx-history
 
 # Show only cloud devices missing from the local network
 hl device discover compare --show missing-local
