@@ -76,6 +76,30 @@ other entities are reassigned to the survivor, and the non-survivor entities are
 deleted. No entity is renamed. Because the non-survivors are removed, review the
 survivor choice before confirming the merge.
 
+## Bulk actions from the Records Gallery
+
+When you select records in the **Records Gallery**, open the **⋯** menu in the
+gallery's header (its tooltip reads *Bulk actions*) to add the selection to an
+existing workflow order or dataset. Each menu item says what it will act on:
+**Add to Workflow Order (3 selected)** for the records you selected, or **Add
+all matching records to Workflow Order** when every record matching the current
+query is selected. **Add to Dataset** is labelled the same way. With nothing
+selected, the items read just **Add to Workflow Order** and **Add to Dataset**
+and act on every record matching the current filters; the dialog warns you
+when no filters are applied, because that adds every record in the account.
+
+For a workflow order, choose the destination from the searchable **Workflow
+Order** field and click **Add to Order**. Highlighter uses the workflow order's
+case-matching strategy to decide how the records are grouped into cases; this
+action does not create a new order or let you choose an individual case. A
+confirmation message reports how many cases were created.
+
+**Add to Dataset** works the same way: choose the **Dataset** and click **Add
+to Dataset**. Its confirmation message reports how many submissions were added.
+
+The menu also offers **Bulk Download**, which downloads the files matching the
+current filters.
+
 ## Assign a parent entity
 
 Entities can be organised into a hierarchy — for example, poles grouped under a
