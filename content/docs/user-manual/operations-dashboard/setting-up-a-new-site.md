@@ -63,9 +63,10 @@ Have these to hand:
 4. Click to place each corner of the site boundary, then **double-click** to
    finish. You need at least three corners. Press **Esc** to abandon the shape.
 5. In the **New Entity** card, choose the site's **Object Class**, enter its
-   **Name**, and click **Create**. **External ID** and **External ID Type**
-   are optional — fill them in only if you track the site under your own
-   identifier in another system.
+   **Name**, and click **Create**. Always enter a name: the card lets you
+   create an entity without one, and it is then listed by its ID.
+   **External ID** and **External ID Type** are optional — fill them in only
+   if you track the site under your own identifier in another system.
 
 Satellite imagery can be months or years old, so a newly built site may show
 as an empty block of land. Draw an approximate boundary from its neighbours;
@@ -189,14 +190,16 @@ or use one order per site; choose whichever makes the cases easiest to find.
 
 ## 8. Review the result
 
-Open the case from the order page with its **Edit** button, or from the
-**Cases** panel on the Operations Dashboard.
+Open the case in the Assessment Editor with the pencil (**Assess Case**) button
+on its row of the order page, or from the **Cases** panel on the Operations
+Dashboard: click the case there, then its name in the detail panel.
 
 - **The report.** Files the agent produces, such as a written report, are
   attached to the case and listed with the case's other files. Refresh the
   page if the agent finished after you opened the case.
-- **The chat.** Open the case chat to see what the agent did and to ask
-  follow-up questions. Mention an agent with `@` to direct a question to it.
+- **The chat.** Switch the view selector at the top left of the editor pane
+  from **Editor** to **Chat** to see what the agent did and to ask follow-up
+  questions. Mention an agent with `@` to direct a question to it.
   While the agent is replying, the chat shows *Assistant is working…*; a
   detailed answer can take a few minutes.
 
@@ -225,9 +228,9 @@ site is listed under **Scheduled Case Creation**, and that the workflow does
 not have **Require unique entity per workflow order** turned on.
 
 **The site was created under the wrong name.** Rename the entity from its
-detail panel (**Edit**). If the incoming data is also labelled with the old
-name, the feed's configuration and the data source URIs need to change to
-match; contact [Highlighter support](../../../about/support/) to rename data
+detail panel: click **Actions** (**⋯**), then **Edit**. If the incoming data is
+also labelled with the old name, the feed's configuration and the data source
+URIs need to change to match; contact [Highlighter support](../../../about/support/) to rename data
 that has already been stored.
 
 **You want reports for days that have already passed.** Scheduled cases are

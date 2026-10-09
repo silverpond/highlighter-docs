@@ -44,24 +44,27 @@ Entities that have a place in the world — a site, a building, a zone, an asset
    - **Object Class** — what kind of thing the entity is. This decides its
      colour on the map and which workflows can use it.
    - **Name** — how the entity is listed in the hierarchy, cases, and reports.
+     The card does not insist on one, but an entity created without a name is
+     listed by its ID, so always enter it.
    - **External ID** and **External ID Type** — optional. Use them when the
      entity is already tracked under an identifier in another system, so the
      two can be matched up.
 3. Click **Create**. A confirmation appears and the entity is added to the
    map and the hierarchy, ready to inspect or include in a workflow order.
 
-Press **Esc**, or click **Cancel** in the status bar or the card, to abandon a
-shape or an entity you have not yet created. Nothing is saved until you click
-**Create**.
+While you are still placing a point or drawing a shape, press **Esc** or click
+**Cancel** in the status bar to abandon it. Once the **New Entity** card is
+open, click **Cancel** on the card instead; **Esc** does not close it. Nothing
+is saved until you click **Create**.
 
 A new entity starts at the top level of the hierarchy. To place it under
 another entity, see
 [Assign a parent entity](../selecting-and-acting/#assign-a-parent-entity).
 
 To change an entity afterwards, open its
-[detail panel](../selecting-and-acting/#detail-panels). **Edit** changes its
-name, external ID, and parent, and **Set Location** lets you click a new
-position for it on the map.
+[detail panel](../selecting-and-acting/#detail-panels) and click the **Actions**
+(**⋯**) button at the top. **Edit** changes its name, external ID, and parent,
+and **Set Location** lets you click a new position for it on the map.
 
 For a worked example that adds a whole site, see
 [Setting up a new site for monitoring and reporting](../setting-up-a-new-site/).
