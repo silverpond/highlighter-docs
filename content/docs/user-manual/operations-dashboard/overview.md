@@ -2,7 +2,7 @@
 title = "Overview"
 description = "Tour of the Operations Dashboard — the Operate workspace where you monitor live assessment data on a map, grid, and dashboard, inspect entities and records, and act on cases and orders."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-06-19T08:00:00+00:00
+updated = 2026-10-09T08:00:00+00:00
 draft = false
 weight = 1
 sort_by = "weight"
@@ -61,8 +61,29 @@ Panels can be opened around the main view and resized to suit your layout: the
 and the right-hand **detail panel**. Your current view, filters, and selection
 are kept in the page URL, so a dashboard state can be bookmarked or shared.
 
+The **Hierarchy** panel lists data sources beneath the entities they belong to.
+From the logo menu, **View** then **Hierarchy Panel** chooses which link is
+used: **Show Default Subject Data Sources** (the entity the data is about, and
+the default) or **Show Device Data Sources** (the equipment the data comes
+from). See
+[Default subject and device](../../data-management/creating-data-sources/#default-subject-and-device).
+
+## Getting to settings
+
+The **Settings** (gear) button in the top bar opens the **Develop** area, where
+you manage [workflows and orders](../../managing-workflows/),
+[data sources](../../data-management/creating-data-sources/), and taxonomy.
+**Operate** in the top navigation brings you back.
+
+## Adding a new site
+
+To bring a new site onto the dashboard and into scheduled reporting, follow
+[Setting up a new site for monitoring and reporting](../setting-up-a-new-site/).
+
 ## Related
 
+- [Creating data sources](../../data-management/creating-data-sources/) —
+  connecting the data that appears here to the entities it describes.
 - [Monitoring & Reporting](../../concepts/monitoring/) — the concept behind the
   data this dashboard surfaces.
 - [Managing Workflows](../../managing-workflows/) — creating the workflows,

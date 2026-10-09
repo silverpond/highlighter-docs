@@ -2,7 +2,7 @@
 title = "Selecting and acting on items"
 description = "Focus and inspect records, entities, and data sources, gather a multi-selection, and act on it — create a workflow order, merge entities, edit or reparent entities, or work through cases."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-10-07T08:00:00+00:00
+updated = 2026-10-09T08:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -67,6 +67,16 @@ that builds an order from the selection. Choose an **Object Class** and a
 chosen object class are added as cases, so a mixed selection is filtered down to
 the class you pick. See [Managing Workflows](../../managing-workflows/) for what
 happens to an order once it is created.
+
+The action lives in the **Selected Items** panel, which opens only when more
+than one item is selected. To create an order for a single entity, select a
+second entity of a different object class alongside it and pick the first
+entity's object class in the dialog.
+
+The cases are created as **drafts**, so no work starts straight away. Open the
+order from the workflow's **Orders** tab and click **Mark Ready** on a case, or
+**Mark all ready**, to release the cases into the workflow's steps — see
+[Mark a Case Ready or Draft](../../managing-workflows/managing-workflow-orders/#mark-a-case-ready-or-draft).
 
 ## Merge entities
 
