@@ -1,8 +1,8 @@
 +++
 title = "Working on the map"
-description = "Use the Operations Dashboard map tools to pan and rotate the camera, box-select items, place or draw new entities, and assess the current view."
+description = "Use the Operations Dashboard map tools to pan and rotate the camera, box-select items, place or draw new entities, and open the current view in the editor."
 date = 2026-06-19T08:00:00+00:00
-updated = 2026-06-19T08:00:00+00:00
+updated = 2026-08-13T08:00:00+00:00
 draft = false
 weight = 4
 sort_by = "weight"
@@ -40,9 +40,9 @@ Opening an item from another surface — a grid card, the entity tree, or a
 detail panel — can recentre and zoom the map to that item and briefly pulse its
 location so it is easy to spot.
 
-## Assessing the current view
+## Opening the current view in the editor
 
-When you zoom in far enough, an **Assess** button appears over the map.
+When you zoom in far enough, an **Open in Editor** button appears over the map.
 It opens the [Assessment Editor](../../assessing-and-labelling/) loaded with
 everything inside the current map view and date range, so you can move straight
 from spotting something to assessing or labelling it.
