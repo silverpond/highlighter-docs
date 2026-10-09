@@ -50,7 +50,8 @@ Use **Open in Editor** in a data source's actions menu to open it in the
 [Assessment Editor](../../assessing-and-labelling/) with the dashboard's
 current date range. An entity's actions menu groups its editor links under
 **Open in Editor** into a **Device** section, a **Subject** section, or both,
-depending on how the entity is linked to data sources. In a section, choose
+depending on how the entity is linked to data sources; an entity with no
+linked data source has no **Open in Editor** item. In a section, choose
 **Default** to let Highlighter arrange the editor, or choose a saved layout by
 name. Each link opens the editor in a new tab.
 
