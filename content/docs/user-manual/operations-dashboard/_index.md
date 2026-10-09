@@ -10,4 +10,5 @@ draft = false
 The **Operations Dashboard** is the **Operate** workspace where you watch what
 your assessment workflows are producing and act on it. Start with the
 **Overview** for a tour, then dive into the detailed guides for views, finding
-data, working on the map, and acting on what you find.
+data, working on the map, and acting on what you find. To add a new site and
+its data, see **Setting up a new site for monitoring and reporting**.

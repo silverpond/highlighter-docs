@@ -2,7 +2,7 @@
 title = "Managing Workflow Orders"
 description = "Approve or return Workflow Orders to draft, mark Cases ready or draft, schedule daily Cases, and duplicate an existing Order in Highlighter AI."
 date = 2026-07-28T08:00:00+00:00
-updated = 2026-10-07T08:00:00+00:00
+updated = 2026-10-09T08:00:00+00:00
 draft = false
 weight = 12
 sort_by = "weight"
@@ -47,7 +47,8 @@ An Order can create a new Case for each of a set of entities every day. For exam
 
 1. Open the Order's page and find the **Scheduled Case Creation** section.
 2. In **Entities**, search for and select the entities that should get a daily Case.
-3. Click **Save schedule**. The page confirms *Scheduled case creation updated.*
+3. A row appears for each selected entity. In it, search for and select the data sources that entity's Cases should cover.
+4. Click **Save schedule**. The page confirms *Scheduled case creation updated.*
 
 Each night at midnight (Melbourne time), Highlighter creates one Case for each selected entity, marks it **ready**, and releases it into the Workflow's steps so it can be assessed. The new Cases appear in the Order's list of Cases like any other.
 
@@ -55,6 +56,17 @@ Each scheduled Case covers the previous calendar day: its submission spans from 
 
 - The schedule runs only while the Order is approved (or processing). While the Order is in draft, nothing is created, and missed days are not made up later.
 - Each entity gets at most one scheduled Case per day.
+- Each scheduled Case's submission is linked to the data sources chosen for its entity. Data sources can be left empty when the Workflow's steps find their own data from the entity, for example an agent that reads the data sources nested beneath it.
+
+### Add or Remove an Entity
+
+To start daily Cases for another entity, such as a newly added site, add it to **Entities**, choose its data sources, and click **Save schedule**. Its first Case is created at the next midnight run. To stop daily Cases for one entity, remove it from **Entities** and save. Cases already created are kept.
+
+Every scheduled Case is processed by the Workflow's steps each night, so the schedule is also where you control how much machine processing runs. Schedule the entities you are actively reviewing, and add the rest as you are ready for them.
+
+### Cases for Earlier Days
+
+The schedule only creates Cases going forward. To see a result before the first midnight run, create a Case for the entity by hand and mark it ready: see [Create a workflow order](../../operations-dashboard/selecting-and-acting/#create-a-workflow-order) and [Mark a Case Ready or Draft](#mark-a-case-ready-or-draft). To have Cases created for days that have already passed, contact [Highlighter support](../../../about/support/).
 
 To stop the schedule, remove every entity from **Entities** and click **Save schedule**. The page confirms *Scheduled case creation disabled.*
 
