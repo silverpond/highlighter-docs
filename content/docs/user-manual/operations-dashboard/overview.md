@@ -61,12 +61,10 @@ Panels can be opened around the main view and resized to suit your layout: the
 and the right-hand **detail panel**. Your current view, filters, and selection
 are kept in the page URL, so a dashboard state can be bookmarked or shared.
 
-The **Hierarchy** panel lists data sources beneath the entities they belong to.
-From the logo menu, **View** then **Hierarchy Panel** chooses which link is
-used: **Show Default Subject Data Sources** (the entity the data is about, and
-the default) or **Show Device Data Sources** (the equipment the data comes
-from). See
-[Default subject and device](../../data-management/creating-data-sources/#default-subject-and-device).
+The **Hierarchy** panel also lists data sources beneath the entities they
+belong to; see
+[Default subject and device](../../data-management/creating-data-sources/#default-subject-and-device)
+for which entity they are listed under.
 
 ## Getting to settings
 

@@ -61,17 +61,16 @@ These links also carry the dashboard's current date range into the editor.
 
 ## Create a workflow order
 
-With one or more entities selected, **Create workflow order** opens a dialog
-that builds an order from the selection. Choose an **Object Class** and a
-**Workflow**, and optionally a **Name**. Only the selected entities of the
+With entities selected, **Create workflow order** in the **Selected Items**
+panel opens a dialog that builds an order from the selection. Choose an
+**Object Class** and a **Workflow**, and optionally a **Name**. Only the selected entities of the
 chosen object class are added as cases, so a mixed selection is filtered down to
 the class you pick. See [Managing Workflows](../../managing-workflows/) for what
 happens to an order once it is created.
 
-The action lives in the **Selected Items** panel, which opens only when more
-than one item is selected. To create an order for a single entity, select a
-second entity of a different object class alongside it and pick the first
-entity's object class in the dialog.
+Because the panel needs more than one selected item, create an order for a
+single entity by selecting a second entity of a different object class
+alongside it and picking the first entity's object class in the dialog.
 
 The cases are created as **drafts**, so no work starts straight away. Open the
 order from the workflow's **Orders** tab and click **Mark Ready** on a case, or
@@ -113,7 +112,7 @@ current filters.
 ## Assign a parent entity
 
 Entities can be organised into a hierarchy — for example, poles grouped under a
-site. With one or more entities selected, **Edit entities** opens a dialog
+site. With more than one entity selected, **Edit entities** opens a dialog
 whose **Parent entity** field moves every selected entity under the chosen
 parent. An entity that already has a parent is moved under the new one,
 together with its own descendants.

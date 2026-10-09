@@ -28,8 +28,8 @@ at once, or to script it, use the
 ## Create a data source
 
 1. Click **Develop** in the top navigation, then **Data Sources** under
-   **Media** in the side navigation. From the Operations Dashboard, the
-   **Settings** (gear) button in the top bar takes you to the Develop area.
+   **Media** in the side navigation. From the Operations Dashboard, use the
+   [Settings button](../../operations-dashboard/overview/#getting-to-settings).
 2. Click **New Data Source**.
 3. Fill in the fields described below and click **Save Data Source**.
 

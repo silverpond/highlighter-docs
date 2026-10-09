@@ -60,19 +60,15 @@ Have these to hand:
    or click one to see which it is. Switching the basemap to **Satellite**
    (bottom left of the map) makes it much easier to find the right spot.
 3. Choose **Draw polygon entity (e)** in the map toolbar.
-4. Click to place each corner of the site boundary, then **double-click** to
-   finish. You need at least three corners. Press **Esc** to abandon the shape.
+4. Click each corner of the site boundary, then **double-click** to finish.
 5. In the **New Entity** card, choose the site's **Object Class**, enter its
-   **Name**, and click **Create**. Always enter a name: the card lets you
-   create an entity without one, and it is then listed by its ID.
-   **External ID** and **External ID Type** are optional — fill them in only
-   if you track the site under your own identifier in another system.
+   **Name**, and click **Create**.
 
-Satellite imagery can be months or years old, so a newly built site may show
-as an empty block of land. Draw an approximate boundary from its neighbours;
-it only needs to be good enough to find and select the site.
-
-See [Working on the map](../working-on-the-map/) for more on the map tools.
+See [Adding an entity](../working-on-the-map/#adding-an-entity) for the card's
+fields and how to cancel a shape. If the site is too new to show on the
+[satellite imagery](../working-on-the-map/#basemap), draw an approximate
+boundary from its neighbours; it only needs to be good enough to find and
+select the site.
 
 ## 2. Draw the areas inside the site
 
@@ -133,14 +129,14 @@ Back on the Operations Dashboard, open the **Hierarchy** panel and expand the
 new site. Each area should be listed under the site, and each data source
 under its area.
 
-If the data sources are missing, open the logo menu, choose **View** and then
-**Hierarchy Panel**, and make sure **Show Default Subject Data Sources** is
-selected. If a data source appears under the wrong area, edit it and correct
-its **Default Subject**.
+If the data sources are missing, make sure the panel is showing default
+subject data sources — see
+[Default subject and device](../../data-management/creating-data-sources/#default-subject-and-device).
+If a data source appears under the wrong area, edit it and correct its
+**Default Subject**.
 
-This check matters: an agent producing a report for the site finds the data to
-analyse by walking down from the site to its areas and their data sources. A
-data source that is not nested under the site is not seen.
+This check matters because a report for the site only sees the data sources
+nested beneath it.
 
 ## 6. Add the site to the daily schedule
 
@@ -155,13 +151,9 @@ data source that is not nested under the site is not seen.
 From the next run, the site gets its own case every night, covering the
 previous calendar day. See
 [Schedule Daily Cases](../../managing-workflows/managing-workflow-orders/#schedule-daily-cases)
-for exactly when cases are created and what stops them.
-
-To stop reporting on a site, remove it from **Entities** and save the schedule
-again. Its existing cases are kept. Each scheduled case uses machine processing
-time, so it is worth scheduling only the sites you are actively reviewing — for
-example, removing a site between production runs and adding it back when the
-next one starts.
+for exactly when cases are created, and
+[Add or Remove an Entity](../../managing-workflows/managing-workflow-orders/#add-or-remove-an-entity)
+for taking a site off the schedule between production runs.
 
 ## 7. Run a report now (optional)
 
@@ -169,17 +161,13 @@ The schedule first runs at the next midnight. To see a result sooner, create a
 case for the site by hand:
 
 1. On the Operations Dashboard, hold **Shift** and click the site and one of
-   its areas. The **Selected Items** panel, which holds the order action, only
-   opens when more than one item is selected.
-2. Choose **Create workflow order**, pick the site's **Object Class** and the
-   reporting **Workflow**, and give the order a recognisable **Name**. Only
-   entities of the chosen object class become cases, so the area you selected
-   alongside the site is left out. See
+   its areas, then choose **Create workflow order** with the site's
+   **Object Class** and the reporting **Workflow**. The area is only there to
+   open the action and is left out of the order; see
    [Create a workflow order](../selecting-and-acting/#create-a-workflow-order).
-3. Open the new order from the workflow's **Orders** tab. Its case is created
-   as a **draft**, which is why nothing has happened yet.
-4. Click **Mark Ready** on the case row. This releases the case into the
-   workflow's steps, and the machine step starts work.
+2. Open the new order from the workflow's **Orders** tab and click
+   **Mark Ready** on its case. Cases created this way start as drafts, so
+   nothing runs until you do.
 
 A machine step that analyses a full day of data can take several minutes. The
 case's progress through each step is shown on the order page — refresh it to
@@ -219,26 +207,25 @@ statements about **missing data** before reading anything else — see below.
    the first day's report is often incomplete. Earlier history is not always
    loaded when a feed is first connected.
 
-**Nothing happened after creating an order.** The case is still a draft. Open
-the order and click **Mark Ready** on the case. A scheduled order must also be
-**approved** before it creates cases.
+**Nothing happened after creating an order.** The case is still a draft; click
+**Mark Ready** on it ([step 7](#7-run-a-report-now-optional)).
 
-**No case was created overnight.** Check that the order is approved, that the
-site is listed under **Scheduled Case Creation**, and that the workflow does
-not have **Require unique entity per workflow order** turned on.
+**No case was created overnight.** Check the conditions in
+[Schedule Daily Cases](../../managing-workflows/managing-workflow-orders/#schedule-daily-cases):
+the order must be approved and the site listed under
+**Scheduled Case Creation**.
 
 **The site was created under the wrong name.** Rename the entity from its
 detail panel: click **Actions** (**⋯**), then **Edit**. If the incoming data is
 also labelled with the old name, the feed's configuration and the data source
-URIs need to change to match; contact [Highlighter support](../../../about/support/) to rename data
-that has already been stored.
+URIs need to change to match; contact
+[Highlighter support](../../../about/support/) to rename data that has already
+been stored.
 
-**You want reports for days that have already passed.** Scheduled cases are
-only created going forward, one per site per day, and missed days are not made
-up. Keeping one case per day makes a day-by-day review much easier than one
-case covering a long period, because each day's data sits beside the
-assessment of that day. Contact [Highlighter support](../../../about/support/)
-to have cases created for earlier days.
+**You want reports for days that have already passed.** See
+[Cases for Earlier Days](../../managing-workflows/managing-workflow-orders/#cases-for-earlier-days).
+Ask for one case per day rather than one covering the whole period, so each
+day's data sits beside its own assessment.
 
 ## Related
 
