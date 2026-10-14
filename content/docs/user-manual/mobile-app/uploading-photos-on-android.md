@@ -2,7 +2,7 @@
 title = "Uploading photos on Android"
 description = "Get inspection photos from an Android phone or tablet into Highlighter — pick them by hand with Upload Photos, or let Media Sync find and upload new imagery automatically."
 date = 2026-10-07T08:00:00+00:00
-updated = 2026-10-07T08:00:00+00:00
+updated = 2026-10-14T00:00:00+00:00
 draft = false
 weight = 13
 sort_by = "weight"
@@ -86,11 +86,20 @@ Then tap **Start Media Sync**. There is nothing else to configure.
 Photos already on the device when you set it up are left alone; only new imagery
 is synced.
 
+While **Sync photos automatically** is on and the app can read all photos, a new
+photo in the library starts a scan by itself, even when another app is in front
+or Highlighter is closed. A drone flight app that saves each photo as it is
+taken, for example, has its photos uploaded without anyone opening Highlighter.
+Android may delay the scan on an idle device with the screen off; **Check Again**
+scans at once.
+
 ### What you see afterwards
 
 - **Status** — *Matched by camera serial*, how many photos have uploaded and how
   many are queued, and how much is safely stored on the device. Uploads continue
-  whenever there is a connection. Below that, each camera's data source with what
+  whenever there is a connection. An upload that failed because of the
+  connection or a busy server is tried again by itself after a short wait, and
+  one that stops moving for a minute is stopped and retried. Below that, each camera's data source with what
   has uploaded and what is still to go; **Change** points a camera's imagery at
   a different data source.
 - **Check Again** — look for new photos now.
