@@ -2,7 +2,7 @@
 title = "What's New in Highlighter"
 description = "Recent updates, new features, and improvements to Highlighter AI platform"
 date = 2025-11-19T08:00:00+00:00
-updated = 2026-10-07T00:00:00+00:00
+updated = 2026-10-14T00:00:00+00:00
 draft = false
 weight = 15
 sort_by = "weight"
@@ -13,6 +13,12 @@ lead = "Stay informed about the latest features, enhancements, and improvements 
 toc = true
 top = false
 +++
+
+## Assign an Entity When Creating a Case in the Assessment Editor
+
+**Release Date:** October 2026
+
+The Assessment Editor's **New Case** dialog has a new optional **Entity** field. Search for an entity, including one without a name, and the new Case is assigned to it. See [Create A New Case](../../user-manual/assessing-and-labelling/working-in-the-assessment-editor/#create-a-new-case).
 
 ## Correct a Task's Status from a Step Page
 

@@ -2,7 +2,7 @@
 title = "Working in the Assessment Editor"
 description = "Hone your skills in assessment Editor tools: use pointer, annotation, zoom, panels, and shortcuts to efficiently annotate and submit cases in Highlighter AI."
 date = 2023-09-26T08:00:00+00:00
-updated = 2026-07-20T08:00:00+00:00
+updated = 2026-10-14T00:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -192,6 +192,18 @@ Options stay set even after reloading the page, or moving to new cases or data f
 Show or hide all annotations/tracks (including associated text) by clicking the View menu, then "Show/hide annotations/tracks" (shortcut key 'f'). Hidden annotations/tracks are still submitted.
 
 What is the difference between annotations and tracks? If you are working with images for example, you will work with annotations. However if you are working with video for example, annotations are grouped together into tracks, that stretch over time.
+
+## Create A New Case
+You can create a new Case from the files and time period you are looking at, for example to follow up something you noticed in another Workflow. Click the Highlighter logo at the top left of the editor (its tooltip is **Menu**), then choose **Case** > **New**. The **New Case** dialog asks for:
+
+- **Workflow** — the Workflow the new Case belongs to.
+- **Workflow Order** — one of that Workflow's Orders. The list refreshes when you change the Workflow. You need permission to add to the Order.
+- **Entity (optional)** — the entity the Case is about. Start typing to search; entities without a name are listed too, shown by their external ID (for example `serial:1234`) or, failing that, their ID. Leave it empty to create a Case with no entity.
+- **From** and **To** — the time period the Case covers, in your local time. They start at the period of your current submission. **To** must be after **From**.
+
+Click **Create**. The new Case starts as a draft. It covers the same data sources as the current one, and carries the data files of your current submission. Highlighter then shows the new Case's link; click **Go to Case** to open it in a new tab.
+
+If a check fails, for example **To** is not after **From**, Highlighter shows the reason and closes the dialog without creating anything. Choose **Case** > **New** again to start over.
 
 ## Submit Assessments
 Submit assessments by clicking the "Submit" button. Next to that button is a dropdown menu which has other options including "Skip" and "Flag and Submit".
