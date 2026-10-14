@@ -34,7 +34,7 @@ Both settings default to `0`, which lets ONNX Runtime and FFmpeg pick their own 
 
 The SDK uses the first of these that is set:
 
-1. The `--highlighter-config-path` option, given before the command, e.g. `hl --highlighter-config-path /etc/highlighter/config agent start …`.
+1. The `--highlighter-config-path` option. It belongs to `hl` itself, so it goes before the command name, e.g. `hl --highlighter-config-path /etc/highlighter/config agent start …`.
 2. The `HL_CONFIG_PATH` environment variable. An empty value counts as unset.
 3. `~/.highlighter/config`. If `HL_DIR` is set, the file is `config` in that directory instead.
 
@@ -55,10 +55,10 @@ From SDK version 2.6.94, `hl agent start` and every other command honour `HL_CON
 - **A file named by `--highlighter-config-path` or `HL_CONFIG_PATH`**: the command stops with exit code 2 instead of falling back to the defaults:
 
   ```text
-  Config file not found at /etc/highlighter/config. Specify a valid file with --highlighter-config-path or HL_CONFIG_PATH, or unset HL_CONFIG_PATH and omit --highlighter-config-path to use defaults.
+  Failed to load configuration: Config file not found at /etc/highlighter/config. Specify a valid file with --highlighter-config-path or HL_CONFIG_PATH, or unset HL_CONFIG_PATH and omit --highlighter-config-path to use defaults.
   ```
 
-A file that does not parse, or holds an invalid value, also stops the command with exit code 2.
+A file that does not parse, or holds an invalid value such as a negative thread count, also stops the command with exit code 2 and says what is wrong.
 
 ## Checking Which File Is Loaded
 
