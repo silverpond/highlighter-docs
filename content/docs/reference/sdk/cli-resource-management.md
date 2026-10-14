@@ -2,7 +2,7 @@
 title = "CLI Resource Management"
 description = "Manage core Highlighter resources like cases, experiments, and workflows directly from the command line."
 date = 2025-03-05T08:00:00+00:00
-updated = 2026-09-09T00:00:00+00:00
+updated = 2026-10-14T00:00:00+00:00
 draft = false
 weight = 70
 sort_by = "weight"
@@ -181,9 +181,9 @@ hl case get --id <CASE_ID>
 # List the cases in a workflow order
 hl case list --workflow-order-id <ORDER_ID> --limit 50
 
-# Update one or more cases
-hl case update --id <CASE_ID> --state paused --importance HIGH
-hl case update --id <CASE_ID_1>,<CASE_ID_2>,<CASE_ID_3> --title "Renamed batch"
+# Update a case
+hl case update --id <CASE_ID> --state paused --importance high
+hl case update --id <CASE_ID> --title "Renamed case"
 
 # Copy a case onto a new case over the same data files
 hl case copy --id <CASE_ID>
@@ -210,11 +210,22 @@ still works as a deprecated alias of `hl case get`, and warns on stderr.)
 `--workflow-order-id` it lists the account's cases, most recent first, 25 at a
 time unless you raise `--limit`.
 
-`hl case update` changes case fields: `--title`, `--description`, `--state`,
-`--importance`, `--trigger`, `--sort-order`, and `--completed-at`. Pass several
-case IDs as a comma-separated `--id` list to apply the same change to every case
-in the batch; each result is printed as its own JSON line, and the command exits
-non-zero if any update failed.
+`hl case update` changes one case, named by `--id`. Pass at least one field:
+
+- `--title` and `--description`.
+- `--state` — one of `draft`, `ready`, `processing`, `paused`, `completed`,
+  `cancelled` or `failed`. Moving a draft case to `ready` is what publishes the
+  `case_ready` webhook and adds the case to its workflow, so it is the last step
+  of creating a case by hand.
+- `--importance` — one of `very_low`, `low`, `medium`, `high` or `critical`.
+- `--completed-at` — when the case was completed, in ISO-8601. `--state
+  completed` sets it to now if you leave it out.
+- `--trigger` — why the case was opened, published as `triggerReason`, and
+  `--triggered-at`, when that happened, in ISO-8601.
+
+The command prints the result as one line of JSON. If Highlighter refuses the
+update, for example because the case does not exist, the JSON lists the errors
+and the command exits non-zero with `Case update failed`.
 
 `hl case export` is the one that writes to disk. The downloaded payloads land
 in `<OUTPUT_DIR>/<CASE_ID>/data_files/`, next to a `case.json`, a
