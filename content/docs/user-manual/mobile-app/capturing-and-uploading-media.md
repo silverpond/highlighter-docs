@@ -2,7 +2,7 @@
 title = "Capturing and uploading media"
 description = "Three ways to get photos and video from an iPhone into Highlighter — attaching media to a case, picking photos by hand, and Media Sync watching the library."
 date = 2026-09-01T08:00:00+00:00
-updated = 2026-10-07T08:00:00+00:00
+updated = 2026-10-15T00:00:00+00:00
 draft = false
 weight = 4
 sort_by = "weight"
@@ -40,6 +40,12 @@ Tap the **+** in the middle of the tab bar.
 
 **Save Data** stays disabled until there is both a case and something to upload.
 Media you attach but never save is discarded when you close the sheet.
+
+Saved media joins the same upload queue as Upload Photos. A photo with no camera
+serial number in it waits there until there is a destination for such photos —
+**Profile → Media → Upload Photos** shows *1 photo needs a data source* — and
+then uploads and attaches to the case. See
+[Choosing a data source](#choosing-a-data-source).
 
 ## Upload Photos — picking by hand
 

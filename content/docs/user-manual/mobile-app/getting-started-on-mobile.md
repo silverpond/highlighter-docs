@@ -2,7 +2,7 @@
 title = "Getting started on mobile"
 description = "Install the Highlighter iOS app, sign in to your Highlighter account, and register your iPhone or iPad as a Highlighter device."
 date = 2026-09-01T08:00:00+00:00
-updated = 2026-10-07T08:00:00+00:00
+updated = 2026-10-15T00:00:00+00:00
 draft = false
 weight = 1
 sort_by = "weight"
@@ -66,8 +66,8 @@ your account. Registering the phone creates that record on the server, and it is
 what gives the photos and video you capture somewhere to be filed.
 
 Registering is not part of signing in. Do it from the **Profile** tab: under
-**Registered Devices**, tap **Add Device**. Tapping your avatar on the Dashboard
-also shows whether this device is registered, with a **Register Device** button
+**Registered Devices**, tap **Add Device**. The menu button (☰) at the top left
+of the Dashboard also shows whether this device is registered, with a **Register Device** button
 that takes you to the Profile tab.
 
 On the **Register Device** screen:
