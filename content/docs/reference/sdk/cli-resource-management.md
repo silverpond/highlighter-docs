@@ -175,7 +175,7 @@ Manage the cases within your workflows.
 # Create a new case
 hl case create --workflow-order-id <ORDER_ID> --title "My Case"
 
-# Create a draft case over existing data files, then mark it ready
+# Create a case from data files, then mark it ready
 hl case create --workflow-order-id <ORDER_ID> --initial-data-file-ids <FILE_UUID>
 hl case update --id <CASE_ID> --state ready
 
@@ -214,31 +214,21 @@ still works as a deprecated alias of `hl case get`, and warns on stderr.)
 `--workflow-order-id` it lists the account's cases, most recent first, 25 at a
 time unless you raise `--limit`.
 
-`hl case update` changes one case, named by `--id`. Pass at least one field:
+`hl case update` changes one case, named by `--id`. Pass at least one of:
 
-- `--title` and `--description`.
-- `--state` — one of `draft`, `ready`, `processing`, `paused`, `completed`,
-  `cancelled` or `failed`. `hl case create` makes a draft case, so moving it to
-  `ready` is the last step of creating a case by hand: it adds the case to its
-  workflow, creating its task, and publishes the `case_ready` webhook to any
-  connector subscribed to it.
-- `--importance` — one of `very_low`, `low`, `medium`, `high` or `critical`.
-- `--completed-at` — when the case was completed, in ISO-8601. `--state
-  completed` sets it to now if you leave it out.
-- `--trigger` — why the case was opened, published as `triggerReason`, and
-  `--triggered-at`, when that happened, in ISO-8601.
+- `--title`, `--description`
+- `--state`: `draft`, `ready`, `processing`, `paused`, `completed`,
+  `cancelled` or `failed`
+- `--importance`: `very_low`, `low`, `medium`, `high` or `critical`
+- `--completed-at` (ISO-8601; `--state completed` defaults it to now)
+- `--trigger` (published as `triggerReason`) and `--triggered-at` (ISO-8601)
 
-The `case_ready` webhook goes out once per case, and only for a case that has
-a data file. Create the case with `--initial-data-file-ids`, which takes data
-file UUIDs (the `uuid` that `hl case get` reports, not the numeric `id`). A case
-created without one still becomes ready and gets its task, but no webhook is
-sent, and `hl case update` succeeds without saying so. Setting `ready` on a case
-that is already ready sends nothing, and neither does moving a case back to
-`draft` and then to `ready` again once it has been published.
+New cases are drafts. Marking one `ready` creates its task and sends the
+`case_ready` webhook, once per case, and only if the case has a data file
+(`--initial-data-file-ids` takes data file UUIDs).
 
-The command prints the result as one line of JSON. If Highlighter refuses the
-update, for example because the case does not exist, the JSON lists the errors
-and the command exits non-zero with `Case update failed`.
+It prints one line of JSON. On failure, the JSON lists the errors and the
+command exits non-zero.
 
 `hl case export` is the one that writes to disk. The downloaded payloads land
 in `<OUTPUT_DIR>/<CASE_ID>/data_files/`, next to a `case.json`, a
