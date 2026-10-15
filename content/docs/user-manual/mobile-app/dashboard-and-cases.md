@@ -2,7 +2,7 @@
 title = "Dashboard and cases"
 description = "Get around the Highlighter mobile app — the Dashboard, the Cases list, and everything on a case: overview, messages, data, and map."
 date = 2026-09-01T08:00:00+00:00
-updated = 2026-10-07T08:00:00+00:00
+updated = 2026-10-15T00:00:00+00:00
 draft = false
 weight = 2
 sort_by = "weight"
@@ -46,15 +46,15 @@ The Dashboard summarises your account at a glance:
   currently sorted by. **View All** switches to the Cases tab.
 
 Pull down to refresh, or tap the refresh control in the header — the header also
-shows how long ago the list was last updated. Tapping your avatar opens a small
-summary sheet showing whether this device is registered, its name and its last
+shows how long ago the list was last updated. The menu button (☰) at the top left
+opens a small summary sheet showing whether this device is registered, its name and its last
 known location, with a shortcut to the Profile tab to register or change it.
 
 ## The Cases list
 
 The **Cases** tab lists every case you have access to. Each row shows the case
 title, its status and importance, its location if it has one and how far away
-that is, its date, and a preview of the most recent message on it.
+that is, its date, and the newest message on it, when there is one.
 
 - **Search** — typing in the search box searches on the server, so it matches
   cases that have not been loaded yet, including partial reference codes.
@@ -63,10 +63,11 @@ that is, its date, and a preview of the most recent message on it.
   Cancelled and Failed.
 - **Sort** — the sort control orders the list one of three ways. The ranking is
   done by Highlighter across all your cases, not just the ones loaded so far.
-  - **Nearest** — closest to where the phone is now. This is the order the app
-    starts in. It needs location access; until the phone has a position, the
-    list stays in Most Recent order, and if access has been refused the option
-    reads *Nearest unavailable*.
+  - **Nearest** — closest to where the phone is now, with the distance on each
+    row. This is the order the app starts in. It needs a position from the
+    phone: until there is one — because location access has been refused, or no
+    fix has arrived yet — the option reads *Nearest unavailable* and the list
+    stays in Most Recent order.
   - **Most Recent** — most recently discussed first, with cases nobody has
     messaged last.
   - **Importance** — most important first, newest first among equals.
@@ -100,11 +101,12 @@ The conversation on the case. See [Case messages](../case-messages/).
 
 ### Data
 
-Every file attached to the case, numbered — the tab's label carries the count — each row showing its filename, the
-coordinates it was captured at (or *No GPS data*) and its capture date (or *No
-capture date*).
+Every file attached to the case — the tab's label carries the count — each row
+showing its filename, the coordinates it was captured at (or *No GPS data*) and
+its capture date (or *No capture date*).
 
-Tapping a row opens the **data point detail** screen with a full preview of the
+Tapping a row opens the data point's screen, titled with its number (for
+example **Data Point #1**), with a full preview of the
 photo or video, where and when it was captured, the device it came from, its
 notes, and an **Export** action. Tap the preview to see it full screen.
 
