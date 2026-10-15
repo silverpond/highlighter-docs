@@ -214,22 +214,6 @@ still works as a deprecated alias of `hl case get`, and warns on stderr.)
 `--workflow-order-id` it lists the account's cases, most recent first, 25 at a
 time unless you raise `--limit`.
 
-`hl case update` changes one case, named by `--id`. Pass at least one of:
-
-- `--title`, `--description`
-- `--state`: `draft`, `ready`, `processing`, `paused`, `completed`,
-  `cancelled` or `failed`
-- `--importance`: `very_low`, `low`, `medium`, `high` or `critical`
-- `--completed-at` (ISO-8601; `--state completed` defaults it to now)
-- `--trigger` (published as `triggerReason`) and `--triggered-at` (ISO-8601)
-
-New cases are drafts. Marking one `ready` creates its task and sends the
-`case_ready` webhook, once per case, and only if the case has a data file
-(`--initial-data-file-ids` takes data file UUIDs).
-
-It prints one line of JSON. On failure, the JSON lists the errors and the
-command exits non-zero.
-
 `hl case export` is the one that writes to disk. The downloaded payloads land
 in `<OUTPUT_DIR>/<CASE_ID>/data_files/`, next to a `case.json`, a
 `manifest.json`, and (unless you pass `--no-include-messages`) a
