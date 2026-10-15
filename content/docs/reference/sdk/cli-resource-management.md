@@ -2,7 +2,7 @@
 title = "CLI Resource Management"
 description = "Manage core Highlighter resources like cases, experiments, and workflows directly from the command line."
 date = 2025-03-05T08:00:00+00:00
-updated = 2026-09-09T00:00:00+00:00
+updated = 2026-10-15T00:00:00+00:00
 draft = false
 weight = 70
 sort_by = "weight"
@@ -175,11 +175,19 @@ Manage the cases within your workflows.
 # Create a new case
 hl case create --workflow-order-id <ORDER_ID> --title "My Case"
 
+# Create a case from data files, then mark it ready
+hl case create --workflow-order-id <ORDER_ID> --initial-data-file-ids <FILE_UUID>
+hl case update --id <CASE_ID> --state ready
+
 # Get a single case, including its data file IDs and tasks
 hl case get --id <CASE_ID>
 
 # List the cases in a workflow order
 hl case list --workflow-order-id <ORDER_ID> --limit 50
+
+# Update a case
+hl case update --id <CASE_ID> --state paused --importance high
+hl case update --id <CASE_ID> --title "Renamed case"
 
 # Copy a case onto a new case over the same data files
 hl case copy --id <CASE_ID>
