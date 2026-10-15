@@ -2,7 +2,7 @@
 title = "Cases and messages on Android"
 description = "Use the Highlighter Android app's dashboard, browse and search your cases, create and edit cases, open a case's files, and read and reply to case messages."
 date = 2026-10-07T08:00:00+00:00
-updated = 2026-10-14T00:00:00+00:00
+updated = 2026-10-15T00:00:00+00:00
 draft = false
 weight = 12
 sort_by = "weight"
@@ -28,11 +28,12 @@ The **Dashboard** is the first screen after signing in.
   are more cases still to load, so the true figure is at least that.
 - **Recent Messages** — the newest messages from any of your cases. **View All**
   opens the full message list.
-- **Recent Cases** — the first four cases in the list.
+- **Recent Cases** — the first four cases in the list. **View All** opens the
+  Cases tab.
 
 The Dashboard shows the same list of cases as the Cases tab. If you have
-searched, filtered or re-sorted there, the counts and Recent Cases here reflect
-that.
+searched or re-sorted there, the counts and Recent Cases here reflect that. The
+status filter does not change the Dashboard.
 
 Tap the refresh control in the header to reload; beside it the header shows how
 long ago the cases were last updated. If the cases cannot be loaded, the screen
@@ -41,8 +42,9 @@ shows *Couldn't load dashboard* and a **Try Again** button.
 ## The Cases list
 
 The **Cases** tab lists every case you have access to. Each row shows a
-thumbnail, the case title, its status and importance, its reference and date,
-and a preview of the most recent message on it.
+thumbnail, the case title, its status and importance, its location, its date,
+and the newest message on it, when there is one. The case's reference is shown
+beside the date when it differs from the title.
 
 - **Search** — typing in the search box searches on the server, so it matches
   cases that have not been loaded yet.
@@ -127,8 +129,9 @@ Tapping a row opens the **data point** screen:
 Open a case and choose the **Messages** tab. Messages appear as a conversation,
 oldest first, your own on one side and everyone else's on the other.
 
-Only the most recent messages are loaded, and the screen says so. A case with no
-conversation yet reads *"No messages yet."*
+Only the most recent messages are loaded. When a case has older ones, the
+conversation starts with *Showing the most recent messages.* A case with no
+conversation yet reads *No messages yet*.
 
 To add a message, type into the **Message** field at the bottom and tap the send
 arrow. The message is posted to Highlighter, so it is visible to everyone else

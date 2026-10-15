@@ -2,7 +2,7 @@
 title = "Uploading photos on Android"
 description = "Get inspection photos from an Android phone or tablet into Highlighter — pick them by hand with Upload Photos, or let Media Sync find and upload new imagery automatically."
 date = 2026-10-07T08:00:00+00:00
-updated = 2026-10-14T00:00:00+00:00
+updated = 2026-10-15T00:00:00+00:00
 draft = false
 weight = 13
 sort_by = "weight"
@@ -73,15 +73,16 @@ the device's photo library on its own.
 ### Setting it up
 
 Media Sync needs access to **all** photos. It only reads them; it never changes
-or deletes them.
-
-- If access has not been given, the screen shows *Photo access needed* with
-  **Allow Photo Access**, or **Open Settings** if it was refused earlier.
-- If you chose **Allow limited access**, the screen warns *Selected photos only*:
-  the app can see only the photos you picked, so it will not find new imagery by
-  itself. Tap **Change Access** and allow all photos.
+or deletes them. If access has not been given, the screen shows *Photo access
+needed* with **Allow Photo Access**, or **Open Settings** if it was refused
+earlier.
 
 Then tap **Start Media Sync**. There is nothing else to configure.
+
+If you gave **Allow limited access**, Media Sync still starts, but its screen
+warns *Selected photos only*: the app can see only the photos you picked, so it
+will not find new imagery by itself. Tap **Change Access** and choose **Allow
+all**.
 
 Photos already on the device when you set it up are left alone; only new imagery
 is synced.
