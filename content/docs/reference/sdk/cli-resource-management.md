@@ -2,7 +2,7 @@
 title = "CLI Resource Management"
 description = "Manage core Highlighter resources like cases, experiments, and workflows directly from the command line."
 date = 2025-03-05T08:00:00+00:00
-updated = 2026-10-14T00:00:00+00:00
+updated = 2026-10-15T00:00:00+00:00
 draft = false
 weight = 70
 sort_by = "weight"
@@ -175,6 +175,10 @@ Manage the cases within your workflows.
 # Create a new case
 hl case create --workflow-order-id <ORDER_ID> --title "My Case"
 
+# Create a draft case over existing data files, then mark it ready
+hl case create --workflow-order-id <ORDER_ID> --initial-data-file-ids <FILE_UUID>
+hl case update --id <CASE_ID> --state ready
+
 # Get a single case, including its data file IDs and tasks
 hl case get --id <CASE_ID>
 
@@ -214,14 +218,23 @@ time unless you raise `--limit`.
 
 - `--title` and `--description`.
 - `--state` — one of `draft`, `ready`, `processing`, `paused`, `completed`,
-  `cancelled` or `failed`. Moving a draft case to `ready` is what publishes the
-  `case_ready` webhook and adds the case to its workflow, so it is the last step
-  of creating a case by hand.
+  `cancelled` or `failed`. `hl case create` makes a draft case, so moving it to
+  `ready` is the last step of creating a case by hand: it adds the case to its
+  workflow, creating its task, and publishes the `case_ready` webhook to any
+  connector subscribed to it.
 - `--importance` — one of `very_low`, `low`, `medium`, `high` or `critical`.
 - `--completed-at` — when the case was completed, in ISO-8601. `--state
   completed` sets it to now if you leave it out.
 - `--trigger` — why the case was opened, published as `triggerReason`, and
   `--triggered-at`, when that happened, in ISO-8601.
+
+The `case_ready` webhook goes out once per case, and only for a case that has
+a data file. Create the case with `--initial-data-file-ids`, which takes data
+file UUIDs (the `uuid` that `hl case get` reports, not the numeric `id`). A case
+created without one still becomes ready and gets its task, but no webhook is
+sent, and `hl case update` succeeds without saying so. Setting `ready` on a case
+that is already ready sends nothing, and neither does moving a case back to
+`draft` and then to `ready` again once it has been published.
 
 The command prints the result as one line of JSON. If Highlighter refuses the
 update, for example because the case does not exist, the JSON lists the errors
