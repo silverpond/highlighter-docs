@@ -1,0 +1,19 @@
++++
+title = "Mobile App"
+description = "The Highlighter mobile apps for iOS and Android — sign in, register your phone or tablet as a device, follow your cases in the field, and get photos into Highlighter from the device that holds them."
+template = "docs/section.html"
+sort_by = "weight"
+weight = 15
+draft = false
++++
+
+The **Highlighter mobile app** is for the people doing inspections in the field.
+It signs in to the same Highlighter account you use on the web, shows you the
+cases you are working on, lets you talk to the rest of the team about them, and
+gets the imagery on the device into Highlighter.
+
+There is an app for iPhone and iPad, and one for Android phones and tablets.
+They do the same job, but they are not identical, so each has its own pages with
+the platform in their titles. Start with *Getting started* for your platform to
+sign in and register your device, then follow the guide for the job you are
+doing.
