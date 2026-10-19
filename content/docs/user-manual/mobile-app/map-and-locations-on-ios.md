@@ -1,8 +1,8 @@
 +++
-title = "Map and locations"
+title = "Map and locations on iOS"
 description = "See uploaded files plotted on a map in the Highlighter mobile app, filter by case, and understand how the app records where your phone is."
 date = 2026-09-01T08:00:00+00:00
-updated = 2026-10-07T08:00:00+00:00
+updated = 2026-10-19T00:00:00+00:00
 draft = false
 weight = 5
 sort_by = "weight"
@@ -44,7 +44,7 @@ the data point behind it.
 
 The Cases list can be sorted by **Nearest**, which ranks cases by the distance
 from the phone to each case's location and shows that distance on the row. See
-[Dashboard and cases](../dashboard-and-cases/).
+[Dashboard and cases](../dashboard-and-cases-on-ios/).
 
 ## Where the phone is
 

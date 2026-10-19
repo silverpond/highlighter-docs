@@ -1,8 +1,8 @@
 +++
-title = "Getting started on mobile"
+title = "Getting started on iOS"
 description = "Install the Highlighter iOS app, sign in to your Highlighter account, and register your iPhone or iPad as a Highlighter device."
 date = 2026-09-01T08:00:00+00:00
-updated = 2026-10-15T00:00:00+00:00
+updated = 2026-10-19T00:00:00+00:00
 draft = false
 weight = 1
 sort_by = "weight"
@@ -92,7 +92,7 @@ change your role.
 ### If you have already chosen where your photos go
 
 If you have already picked a destination by hand for photos from this phone (see
-[Capturing and uploading media](../capturing-and-uploading-media/)), registering
+[Capturing and uploading media](../capturing-and-uploading-media-on-ios/)), registering
 the device changes where the *next* photos go. The app asks *Change where this
 iPhone's photos go?* before it does, and explains:
 
@@ -108,4 +108,4 @@ lives on the server, and the app recovers it when you sign in.
 ## Registering more than one device
 
 **Add Device** on the Profile tab registers additional devices — see
-[Profile and device settings](../profile-and-device-settings/).
+[Profile and device settings](../profile-and-device-settings-on-ios/).

@@ -1,8 +1,8 @@
 +++
-title = "Case messages"
+title = "Case messages on iOS"
 description = "Read and send messages on a Highlighter case from the mobile app, and use the inbox to see everything that has been said recently across your cases."
 date = 2026-09-01T08:00:00+00:00
-updated = 2026-10-15T00:00:00+00:00
+updated = 2026-10-19T00:00:00+00:00
 draft = false
 weight = 3
 sort_by = "weight"

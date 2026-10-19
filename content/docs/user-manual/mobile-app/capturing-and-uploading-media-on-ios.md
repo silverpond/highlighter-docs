@@ -1,8 +1,8 @@
 +++
-title = "Capturing and uploading media"
+title = "Capturing and uploading media on iOS"
 description = "Three ways to get photos and video from an iPhone into Highlighter — attaching media to a case, picking photos by hand, and Media Sync watching the library."
 date = 2026-09-01T08:00:00+00:00
-updated = 2026-10-15T00:00:00+00:00
+updated = 2026-10-19T00:00:00+00:00
 draft = false
 weight = 4
 sort_by = "weight"

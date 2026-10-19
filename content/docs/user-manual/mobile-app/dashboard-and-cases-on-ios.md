@@ -1,8 +1,8 @@
 +++
-title = "Dashboard and cases"
+title = "Dashboard and cases on iOS"
 description = "Get around the Highlighter mobile app — the Dashboard, the Cases list, and everything on a case: overview, messages, data, and map."
 date = 2026-09-01T08:00:00+00:00
-updated = 2026-10-15T00:00:00+00:00
+updated = 2026-10-19T00:00:00+00:00
 draft = false
 weight = 2
 sort_by = "weight"
@@ -97,7 +97,7 @@ the number of **devices** those files came from.
 
 ### Messages
 
-The conversation on the case. See [Case messages](../case-messages/).
+The conversation on the case. See [Case messages](../case-messages-on-ios/).
 
 ### Data
 

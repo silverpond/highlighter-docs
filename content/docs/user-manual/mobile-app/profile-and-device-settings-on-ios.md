@@ -1,8 +1,8 @@
 +++
-title = "Profile and device settings"
+title = "Profile and device settings on iOS"
 description = "Your account details, registered devices, media route, location readout and sign-out in the Highlighter mobile app."
 date = 2026-09-01T08:00:00+00:00
-updated = 2026-10-07T08:00:00+00:00
+updated = 2026-10-19T00:00:00+00:00
 draft = false
 weight = 6
 sort_by = "weight"
@@ -36,7 +36,7 @@ quoting when you report a problem:
 - The app's version and build number.
 
 To sign in at a different Highlighter, sign out and use the gear on the Welcome
-screen — see [Getting started on mobile](../getting-started-on-mobile/).
+screen — see [Getting started on iOS](../getting-started-on-ios/).
 
 ## Registered devices
 
@@ -44,7 +44,7 @@ The devices registered to your account from this app, each with its name and
 device ID, with the one currently in use marked **In Use**. Tap a row to make it the current device.
 
 **Add Device** registers another one — the same form described in
-[Getting started on mobile](../getting-started-on-mobile/).
+[Getting started on iOS](../getting-started-on-ios/).
 
 A phone that has not been registered reads *"You have not registered a device"*.
 Registration lives on the server, so signing in on a phone that has been
@@ -55,13 +55,13 @@ registered before recovers it without you doing anything.
 Chooses how photographs reach Highlighter — **Upload Photos** (pick them by
 hand) or **Media Sync** (hand over the library). They read the same photo
 library, so only one is used at a time. See
-[Capturing and uploading media](../capturing-and-uploading-media/).
+[Capturing and uploading media](../capturing-and-uploading-media-on-ios/).
 
 ## Location
 
 A readout of the phone's most recent GPS fix and when it was last sent to
 Highlighter, with the controls to grant or fix location access. See
-[Map and locations](../map-and-locations/).
+[Map and locations](../map-and-locations-on-ios/).
 
 ## Sign out
 
