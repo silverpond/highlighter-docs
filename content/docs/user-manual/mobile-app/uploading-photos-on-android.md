@@ -4,7 +4,7 @@ description = "Get inspection photos from an Android phone or tablet into Highli
 date = 2026-10-07T08:00:00+00:00
 updated = 2026-10-15T00:00:00+00:00
 draft = false
-weight = 13
+weight = 14
 sort_by = "weight"
 template = "docs/page.html"
 

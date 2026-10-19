@@ -2,7 +2,7 @@
 title = "Getting started on Android"
 description = "Install the Highlighter Android app, sign in to your Highlighter account, and register your phone or tablet as a Highlighter device."
 date = 2026-10-07T08:00:00+00:00
-updated = 2026-10-07T08:00:00+00:00
+updated = 2026-10-19T00:00:00+00:00
 draft = false
 weight = 11
 sort_by = "weight"
@@ -62,12 +62,13 @@ Install or enable one, then try again."*
 
 ## Getting around
 
-The bar at the bottom has three tabs:
+The bar at the bottom has four tabs:
 
 | Tab | What it is |
 | --- | --- |
-| **Dashboard** | Case counts, recent messages, and recent cases |
-| **Cases** | The full list of your cases, searchable and filterable |
+| **Dashboard** | Case counts, recent messages, and the first few cases |
+| **Cases** | The full list of your cases, searchable, filterable and sortable by distance |
+| **Map** | Your cases and their located files on a map |
 | **Profile** | The server you are signed in at, this device, how photos reach Highlighter, sign out |
 
 Each tab keeps its place while you visit another.
